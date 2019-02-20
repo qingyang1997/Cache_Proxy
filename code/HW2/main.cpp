@@ -168,10 +168,10 @@ int main(int argc, char **argv) {
   socket_info_t socket_info;
   socket_info.hostname = nullptr;
   socket_info.port = "12345";
-  int status = setup(&socket_info);
+  int status = setup(&socket_info); // Create Socket
   if (status == -1)
     return EXIT_FAILURE;
-  status = wait(&socket_info);
+  status = wait(&socket_info); // Bind & Listen
   if (status == -1)
     return EXIT_FAILURE;
   while (1) {
