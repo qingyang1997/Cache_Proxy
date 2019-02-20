@@ -33,6 +33,10 @@ public:
     size_t slash = first_line.find('/');
 
     // in this version, I assume that there is a whole url in the first line
+    // size_t http = first_line.find("http");
+    // if(http == first_line.npos){
+
+    // }
     value = first_line.substr(space + 1, slash - space - 2);
     if (value != "http" && value != "https") {
       throw ErrorException("invalid protocol");

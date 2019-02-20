@@ -33,7 +33,7 @@ int setup(socket_info_t *socket_info) {
                   &(socket_info->host_info), &(socket_info->host_info_list));
   if (status != 0) {
     //   cout << "Error: cannot get address info for host" << endl;
-    return EXIT_FAILURE;
+    return -1;
   } // if
 
   socket_info->socket_fd = socket(socket_info->host_info_list->ai_family,
@@ -41,9 +41,9 @@ int setup(socket_info_t *socket_info) {
                                   socket_info->host_info_list->ai_protocol);
   if (socket_info->socket_fd == -1) {
     // cout << "Error: cannot create socket" << endl;
-    return EXIT_FAILURE;
+    return -1;
   } // if
-  return EXIT_SUCCESS;
+  return 0;
 }
 
 int wait(socket_info_t *socket_info) {
@@ -54,14 +54,10 @@ int wait(socket_info_t *socket_info) {
                   socket_info->host_info_list->ai_addrlen);
   if (status == -1) {
     // cout << "Error: cannot bind socket" << endl;
-    return EXIT_FAILURE;
+    return -1;
   } // if
   status = listen(socket_info->socket_fd, 100);
-  if (status == -1) {
-    // cout << "Error: cannot listen on socket" << endl;
-    return EXIT_FAILURE;
-  } // if
-  return EXIT_SUCCESS;
+  return status;
 }
 
 int acc(socket_info_t *socket_info, int *client_connection_fd) {
@@ -78,14 +74,8 @@ int acc(socket_info_t *socket_info, int *client_connection_fd) {
 }
 
 int connect_socket(socket_info_t *socket_info) {
-  int status =
-      connect(socket_info->socket_fd, socket_info->host_info_list->ai_addr,
-              socket_info->host_info_list->ai_addrlen);
-  if (status == -1) {
-    //    cout << "Error: cannot connect to socket" << endl;
-    return EXIT_FAILURE;
-  } // if
-  return EXIT_SUCCESS;
+  return connect(socket_info->socket_fd, socket_info->host_info_list->ai_addr,
+                 socket_info->host_info_list->ai_addrlen);
 }
 int client_setup(socket_info_t *socket_info) {
   memset(&socket_info->host_info, 0, sizeof(socket_info->host_info));
@@ -98,7 +88,7 @@ int client_setup(socket_info_t *socket_info) {
                   &(socket_info->host_info), &(socket_info->host_info_list));
   if (status != 0) {
     //    cout << "Error: cannot get address info for host" << endl;
-    return EXIT_FAILURE;
+    return -1;
   } // if
 
   socket_info->socket_fd = socket(socket_info->host_info_list->ai_family,
@@ -106,9 +96,9 @@ int client_setup(socket_info_t *socket_info) {
                                   socket_info->host_info_list->ai_protocol);
   if (socket_info->socket_fd == -1) {
     //    cout << "Error: cannot create socket" << endl;
-    return EXIT_FAILURE;
+    return -1;
   } // if
-  return EXIT_SUCCESS;
+  return 0;
 }
 
 #endif // PROXY_MYSOCKET_H

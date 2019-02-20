@@ -140,7 +140,12 @@ void handler(int client_fd) {
         size_t end_of_header = temp.find("\r\n\r\n") + 4;
         response.update_body(&message[end_of_header],
                              recv_bytes - end_of_header);
+      } catch (ErrorException &e) {
+        std::cout << e.what() << std::endl;
+        return;
       } catch (...) {
+        std::cout << "Undefined Exception" << std::endl;
+        return;
       }
       std::string key = "Content-Length";
       cout << "[DEBUG] Content-Lenght " << response.get_value(key) << endl;
@@ -158,7 +163,8 @@ void handler(int client_fd) {
     }
 
     close(client_fd);
-  } catch (...) {
+  } catch (ErrorException &e) {
+    std::cout << e.what() << std::endl;
     close(client_fd);
     return;
   }
