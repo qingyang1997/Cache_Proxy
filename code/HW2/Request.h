@@ -31,18 +31,14 @@ public:
     // }
     first_line_msg.method = value;
     size_t slash = first_line.find('/');
-
-    // in this version, I assume that there is a whole url in the first line
-    // size_t http = first_line.find("http");
-    // if(http == first_line.npos){
-
-    // }
-    value = first_line.substr(space + 1, slash - space - 2);
-    if (value != "http" && value != "https") {
-      throw ErrorException("invalid protocol");
+    size_t http = first_line.find("http");
+    value = "http";
+    if (http != first_line.npos && http + 4 < first_line.size() &&
+        first_line[http + 4] == 's') {
+      value = "https";
     }
+    value = first_line.substr(space + 1, slash - space - 2);
     first_line_msg.protocol = value;
-
     space = first_line.find(' ', space + 1);
     value = first_line.substr(slash + 2, space - slash - 3);
     size_t colon = value.find(':');
