@@ -60,7 +60,6 @@ void read_multi(int read_fd, std::string &body, int content_length) {
 
 void send_multi(int send_fd, std::string &body) {
   size_t total_bytes = 0;
-
   while (1) {
     size_t send_size = (total_bytes + SEND_LENGTH > body.size())
                            ? body.size() - total_bytes
@@ -146,8 +145,11 @@ void handler(int client_fd) {
 
       std::string key = "Content-Length";
       cout << "[DEBUG] Content-Lenght " << response.get_value(key) << endl;
-      read_multi(server_socket_info.socket_fd, response.get_body(),
-                 atoi(response.get_value(key).c_str()));
+      if (response.get_body().size() != 0) {
+        read_multi(server_socket_info.socket_fd, response.get_body(),
+                   atoi(response.get_value(key).c_str()));
+      }
+
       std::cout << "[DEBUG] body received successfully" << std::endl;
       std::string response_header = "";
       response.reconstruct_header(header);
@@ -175,8 +177,11 @@ void handler(int client_fd) {
 
       cout << "[DEBUG] Response Content-Lenght " << response.get_value(key)
            << endl;
-      read_multi(server_socket_info.socket_fd, response.get_body(),
-                 atoi(response.get_value(key).c_str()));
+      if (response.get_body().size() != 0) {
+        read_multi(server_socket_info.socket_fd, response.get_body(),
+                   atoi(response.get_value(key).c_str()));
+      }
+
       std::cout << "[DEBUG] body received successfully" << std::endl;
 
       std::string response_header = "";
