@@ -1,4 +1,4 @@
-#include "Cache.h"
+//#include "Cache.h"
 #include "Mysocket.h"
 #include "Request.h"
 #include "Response.h"
@@ -39,8 +39,6 @@ void read_multi(int read_fd, std::string &body, int content_length) {
     ssize_t recv_bytes = recv(read_fd, &body[total_bytes], RECV_LENGTH, 0);
     total_bytes += recv_bytes;
     if (recv_bytes == 0) {
-      std::cout << "0000000000000" << std::endl;
-      perror("read_multi");
       if (errno == EINTR) {
         // client exits
         throw ErrorException("client exit");
@@ -49,7 +47,6 @@ void read_multi(int read_fd, std::string &body, int content_length) {
       } else {
         break;
       }
-
     } else if (recv_bytes < RECV_LENGTH) {
       // didn't get enough data
       body.resize(total_bytes);
@@ -75,32 +72,22 @@ void send_multi(int send_fd, std::string &body) {
   }
   std::cout << "[INFO] successfully send " << total_bytes << std::endl;
 }
-
-// void exchange_data(int source_fd, int destination_fd) {
-//   // read
-//   std::string data = "";
-//   read_multi(source_fd, data, 0);
-//   std::cout << "[DEBUG] successfully received " << data.size() << std::endl;
-//   // send
-//   send_multi(destination_fd, data);
-//   std::cout << "[DEBUG] successfully sent " << data.size() << std::endl;
-// }
-
-void exchange_data(int source_fd, int destination_fd) {
-  // read
-  std::string data = "";
-  data.resize(8192);
-  size_t cap = recv(source_fd, &data[0], 8192, 0);
-  std::cout << errno << std::endl;
-  data.resize(cap);
+int exchange_data(int sour_fd, int dest_fd) {
+  std::vector<char> temp;
+  temp.resize(32768);
+  size_t cap;
+  cap = recv(sour_fd, &temp.data()[0], 8192, 0);
+  temp.resize(cap);
+  std::cout << "get " << cap << " from " << sour_fd;
   if (cap == 0) {
-    throw ErrorException("cap == 0");
+    std::cout << "TUNNEL CLOSED\r\n";
+    return -1;
   }
-  //  std::cout << "[DEBUG] successfully received " << data.size() << std::endl;
-  // send
-  send(destination_fd, &data[0], cap, 0);
-  // std::cout << "[DEBUG] successfully sent " << data.size() << std::endl;
+  send(dest_fd, &temp.data()[0], cap, 0);
+  std::cout << " send " << cap << " to " << dest_fd << std::endl;
+  return 0;
 }
+
 void handler(int client_fd) {
   Request request;
   try {
@@ -217,23 +204,23 @@ void handler(int client_fd) {
       std::cout << "[DEBUG] send body successfully" << std::endl;
     } else if (request.get_method() == "CONNECT") {
       // select
-      std::cout << "[INFO] CONNECT" << std::endl;
-      fd_set sockset;
-      FD_ZERO(&sockset);
-      int maxfd = client_fd > server_socket_info.socket_fd
-                      ? client_fd
-                      : server_socket_info.socket_fd;
-      FD_SET(client_fd, &sockset);
-      FD_SET(server_socket_info.socket_fd, &sockset);
-      struct timeval time;
-      time.tv_sec = 0;
-      time.tv_usec = 10000000;
-
       // answer the client
       std::string message = "HTTP/1.1 200 OK\r\n\r\n";
       send(client_fd, message.c_str(), message.size(), 0);
       std::cout << "[INFO] CONNECT RESPONSE TO CLIENT" << std::endl;
       while (1) {
+        std::cout << "[INFO] CONNECT" << std::endl;
+        fd_set sockset;
+        FD_ZERO(&sockset);
+        int maxfd = client_fd > server_socket_info.socket_fd
+                        ? client_fd
+                        : server_socket_info.socket_fd;
+        FD_SET(client_fd, &sockset);
+        FD_SET(server_socket_info.socket_fd, &sockset);
+        struct timeval time;
+        time.tv_sec = 0;
+        time.tv_usec = 10000000;
+
         int ret = select(maxfd + 1, &sockset, nullptr, nullptr, &time);
 
         if (ret == -1) {
@@ -246,10 +233,19 @@ void handler(int client_fd) {
         try {
           if (FD_ISSET(client_fd, &sockset)) {
             std::cout << "[DEBUG] client to server" << std::endl;
-            exchange_data(client_fd, server_socket_info.socket_fd);
+            //            exchange_data(client_fd,
+            //            server_socket_info.socket_fd);
+            if (exchange_data(client_fd, server_socket_info.socket_fd) == -1) {
+              std::cout << "[DEBUG] transfer failure" << std::endl;
+              break;
+            }
           } else {
             std::cout << "[DEBUG] server to client" << std::endl;
-            exchange_data(server_socket_info.socket_fd, client_fd);
+            // exchange_data(server_socket_info.socket_fd, client_fd);
+            if (exchange_data(server_socket_info.socket_fd, client_fd) == -1) {
+              std::cout << "[DEBUG] transfer failure" << std::endl;
+              break;
+            }
           }
         } catch (ErrorException &e) {
           std::cout << e.what() << std::endl;
