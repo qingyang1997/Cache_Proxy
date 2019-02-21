@@ -44,15 +44,14 @@ void Http::parse_by_line(string &message,
     size_t space = message.find(' ', start);
     string key = message.substr(start, space - start - 1);
     string value = message.substr(space + 1, end - space - 1);
-    if (key == "Host") {
-      size_t colon = value.find(':');
-      if (colon != value.npos) {
-        string port = value.substr(colon + 1);
-        header_pair["Port"] = port;
-        value = value.substr(0, colon);
-      }
-    }
-    header_pair[key] = message.substr(space + 1, end - space - 1);
+    // if (key == "Host") {
+    //   size_t colon = value.find(':');
+    //   if (colon != value.npos) {
+    //     string port = value.substr(colon + 1);
+    //     header_pair["Port"] = port;
+    //   }
+    // }
+    header_pair[key] = value;
     start = end + 2;
     if (start >= message.size()) {
       break;
@@ -68,7 +67,6 @@ void Http::parse_head(string &message) {
   }
   string first_line = message.substr(0, end_pos);
   this->first_line = first_line;
-  parse_first_line();
   string remain = message.substr(end_pos + 2);
   end_pos = remain.find("\r\n\r\n");
   if (end_pos == remain.npos) {
@@ -77,6 +75,7 @@ void Http::parse_head(string &message) {
   remain = remain.substr(0, end_pos + 2);
   parse_by_line(remain, header_pair);
   parse_cache_control();
+  parse_first_line();
   // error check?
 }
 

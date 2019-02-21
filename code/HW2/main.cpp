@@ -38,6 +38,8 @@ void read_multi(int read_fd, std::string &body, int content_length) {
     ssize_t recv_bytes = recv(read_fd, &body[total_bytes], RECV_LENGTH, 0);
     total_bytes += recv_bytes;
     if (recv_bytes == 0) {
+      std::cout << "0000000000000" << std::endl;
+      perror("read_multi");
       if (errno == EINTR) {
         // client exits
         throw ErrorException("client exit");
@@ -73,16 +75,32 @@ void send_multi(int send_fd, std::string &body) {
   std::cout << "[INFO] successfully send " << total_bytes << std::endl;
 }
 
+// void exchange_data(int source_fd, int destination_fd) {
+//   // read
+//   std::string data = "";
+//   read_multi(source_fd, data, 0);
+//   std::cout << "[DEBUG] successfully received " << data.size() << std::endl;
+//   // send
+//   send_multi(destination_fd, data);
+//   std::cout << "[DEBUG] successfully sent " << data.size() << std::endl;
+// }
+
 void exchange_data(int source_fd, int destination_fd) {
   // read
   std::string data = "";
-  read_multi(source_fd, data, 0);
-  std::cout << "[DEBUG] successfully received " << data.size() << std::endl;
-  // send
-  send_multi(destination_fd, data);
-  std::cout << "[DEBUG] successfully sent " << data.size() << std::endl;
-}
+  data.resize(8192);
+  size_t cap = recv(source_fd, &data[0], 8192, 0);
+  // int ret = getpeername(client_fd, )
+  std::cout << errno << std::endl;
+  std::cout << "0000000000000" << std::endl;
+  perror("read_multi");
 
+  data.resize(cap);
+  //  std::cout << "[DEBUG] successfully received " << data.size() << std::endl;
+  // send
+  send(destination_fd, &data[0], cap, 0);
+  // std::cout << "[DEBUG] successfully sent " << data.size() << std::endl;
+}
 void handler(int client_fd) {
   Request request;
   try {
@@ -100,13 +118,18 @@ void handler(int client_fd) {
 
     std::cout << e.what() << std::endl;
   }
+  std::string header = "";
+  request.reconstruct_header(header);
+  std::cout << "[DEBUG] parsed header " << header << std::endl;
   Response response;
   response.set_uid(request.get_uid());
 
   socket_info_t server_socket_info;
-  std::string hostname = request.get_Host();
+  std::string hostname = request.get_host();
+  std::cout << "[DEBUG] HOST " << hostname << std::endl;
   server_socket_info.hostname = hostname.c_str();
   std::string port = request.get_port();
+  std::cout << "[DEBUG] PORT " << port << std::endl;
   server_socket_info.port = port.c_str();
 
   // socket
@@ -130,9 +153,9 @@ void handler(int client_fd) {
   }
 
   try {
-    std::string header = "";
-    request.reconstruct_header(header);
-    std::cout << "[DEBUG] reconstruct header " << header << std::endl;
+    // std::string header = "";
+    // request.reconstruct_header(header);
+    // std::cout << "[DEBUG] reconstruct header " << header << std::endl;
 
     if (request.get_method() == "GET") {
       // send request
@@ -194,6 +217,7 @@ void handler(int client_fd) {
       std::cout << "[DEBUG] send body successfully" << std::endl;
     } else if (request.get_method() == "CONNECT") {
       // select
+      std::cout << "[INFO] CONNECT" << std::endl;
       fd_set sockset;
       FD_ZERO(&sockset);
       int maxfd = client_fd > server_socket_info.socket_fd
@@ -206,10 +230,12 @@ void handler(int client_fd) {
       time.tv_usec = 10000000;
 
       // answer the client
-      std::string message = "HTTP/1.1 200 OK";
+      std::string message = "200 OK\r\n\r\n";
       send(client_fd, message.c_str(), message.size(), 0);
+      std::cout << "[INFO] CONNECT RESPONSE TO CLIENT" << std::endl;
       while (1) {
         int ret = select(maxfd + 1, &sockset, nullptr, nullptr, &time);
+
         if (ret == -1) {
           std::cout << "select error" << std::endl;
           break;
@@ -219,8 +245,10 @@ void handler(int client_fd) {
         }
         try {
           if (FD_ISSET(client_fd, &sockset)) {
+            std::cout << "[DEBUG] client to server" << std::endl;
             exchange_data(client_fd, server_socket_info.socket_fd);
           } else {
+            std::cout << "[DEBUG] server to client" << std::endl;
             exchange_data(server_socket_info.socket_fd, client_fd);
           }
         } catch (ErrorException &e) {

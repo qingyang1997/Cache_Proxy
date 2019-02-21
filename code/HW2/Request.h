@@ -37,21 +37,26 @@ public:
         first_line[http + 4] == 's') {
       value = "https";
     }
-    value = first_line.substr(space + 1, slash - space - 2);
     first_line_msg.protocol = value;
     space = first_line.find(' ', space + 1);
     value = first_line.substr(slash + 2, space - slash - 3);
     size_t colon = value.find(':');
+    if (http != first_line.npos) {
+      colon = value.find(':', colon);
+    }
     string port = "";
     if (colon != value.npos) {
       port = value.substr(colon + 1);
-      value = value.substr(0, colon);
     }
     if (port.empty()) {
       port = (first_line_msg.protocol == "http") ? "80" : "443";
     }
-    slash = value.find('/');
-    value = value.substr(0, slash);
+    std::string key = "Host";
+    value = get_value(key);
+    colon = value.find(':');
+    if (colon != value.npos) {
+      value = value.substr(0, colon);
+    }
     first_line_msg.host = value;
     first_line_msg.port = port;
   }
@@ -59,8 +64,8 @@ public:
   string get_protocol() { return first_line_msg.protocol; }
   string get_host() { return first_line_msg.host; }
   string get_port() { return first_line_msg.port; }
-  string get_Host() { return header_pair["Host"]; }
-  string get_Port() { return header_pair["Port"]; }
+  // string get_Host() { return header_pair["Host"]; }
+  // string get_Port() { return header_pair["Port"]; }
 
   // for testing
   void display() {
