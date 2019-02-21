@@ -74,7 +74,15 @@ void send_multi(int send_fd, std::string &body) {
   std::cout << "[INFO] successfully send " << total_bytes << std::endl;
 }
 
-void exchange_data(int source_fd, int destination_fd) {}
+void exchange_data(int source_fd, int destination_fd) {
+  // read
+  std::string data = "";
+  read_multi(source_fd, data, 0);
+  std::cout << "[DEBUG] successfully received " << data.size() << std::endl;
+  // send
+  send_multi(destination_fd, data);
+  std::cout << "[DEBUG] successfully sent " << data.size() << std::endl;
+}
 
 void handler(int client_fd) {
   Request request;
@@ -198,19 +206,25 @@ void handler(int client_fd) {
       while (1) {
         int ret = select(maxfd + 1, &sockset, nullptr, nullptr, &time);
         if (ret == -1) {
-          throw ErrorException("select error");
+          std::cout << "select error" << std::endl;
+          break;
         }
         if (ret == 0) {
           break;
         }
-        if (FD_ISSET(client_fd, &sockset)) {
-
-        } else {
+        try {
+          if (FD_ISSET(client_fd, &sockset)) {
+            exchange_data(client_fd, server_socket_info.socket_fd);
+          } else {
+            exchange_data(server_socket_info.socket_fd, client_fd);
+          }
+        } catch (ErrorException &e) {
+          std::cout << e.what() << std::endl;
+          break;
         }
       }
-
-      // data changing
-
+      close(client_fd);
+      close(server_socket_info.socket_fd);
       // exit
     }
     close(client_fd);
