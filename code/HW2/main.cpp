@@ -72,19 +72,38 @@ void send_multi(int send_fd, std::string &body) {
   }
   std::cout << "[INFO] successfully send " << total_bytes << std::endl;
 }
-int exchange_data(int sour_fd, int dest_fd) {
+
+// int exchange_data(int client_fd, int destination_fd) {
+//   std::string temp;
+//   temp.resize(32768);
+//   ssize_t recv_bytes;
+//   recv_bytes = recv(client_fd, &temp[0], 8192, 0);
+//   temp.resize(recv_bytes);
+//   std::cout << "[INFO] client " << client_fd << "sent " << recv_bytes
+//             << std::endl;
+//   if (recv_bytes == 0) {
+//     return -1;
+//   }
+//   send(destination_fd, &temp[0], recv_bytes, 0);
+//   std::cout << "[INFO] proxy sent " << recv_bytes << " to " << destination_fd
+//             << std::endl;
+//   return 0;
+// }
+
+int exchange_data(int client_fd, int destination_fd) {
   std::vector<char> temp;
   temp.resize(32768);
-  size_t cap;
-  cap = recv(sour_fd, &temp.data()[0], 8192, 0);
-  temp.resize(cap);
-  std::cout << "get " << cap << " from " << sour_fd;
-  if (cap == 0) {
-    std::cout << "TUNNEL CLOSED\r\n";
+  ssize_t recv_bytes;
+  recv_bytes = recv(client_fd, &temp.data()[0], 8192, 0);
+  temp.resize(recv_bytes);
+  std::cout << "[INFO] client " << client_fd << "sent " << recv_bytes
+            << std::endl;
+  if (recv_bytes == 0) {
     return -1;
   }
-  send(dest_fd, &temp.data()[0], cap, 0);
-  std::cout << " send " << cap << " to " << dest_fd << std::endl;
+  send(destination_fd, &temp.data()[0], recv_bytes, 0);
+  std::cout << "[INFO] proxy sent " << recv_bytes << " to " << destination_fd
+            << std::endl;
   return 0;
 }
 
