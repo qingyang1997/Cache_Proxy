@@ -33,36 +33,27 @@ void read_header(int read_fd, Http &http) {
 
 void read_multi(int read_fd, std::string &body, int content_length) {
   int total_bytes = body.size();
-  if (content_length > 0) {
-    while (1) {
-      body.resize(total_bytes + RECV_LENGTH);
-      ssize_t recv_bytes = recv(read_fd, &body[total_bytes], RECV_LENGTH, 0);
-      total_bytes += recv_bytes;
-      if (recv_bytes == 0) {
-        throw ErrorException("client exit in read_multi");
-      } else if (recv_bytes < 1024) {
-        // didn't get enough data
-        body.resize(total_bytes);
-      }
-      if (total_bytes >= content_length) {
-        // finished receiving
+  while (1) {
+    body.resize(total_bytes + RECV_LENGTH);
+    ssize_t recv_bytes = recv(read_fd, &body[total_bytes], RECV_LENGTH, 0);
+    total_bytes += recv_bytes;
+    if (recv_bytes == 0) {
+      if (errno == EINTR) {
+        // client exits
+        throw ErrorException("client exit");
+      } else if (content_length > 0) {
+        throw ErrorException("not finish reading");
+      } else {
         break;
       }
+
+    } else if (recv_bytes < RECV_LENGTH) {
+      // didn't get enough data
+      body.resize(total_bytes);
     }
-  } else {
-    // no specific content_length in the response header
-    // read until no data in the buffer (NOT SURE)
-    while (1) {
-      body.resize(total_bytes + RECV_LENGTH);
-      ssize_t recv_bytes = recv(read_fd, &body[total_bytes], RECV_LENGTH, 0);
-      total_bytes += recv_bytes;
-      if (recv_bytes == 0) {
-        // finished reading? (maybe the socket was closed...)
-        break;
-      } else if (recv_bytes < RECV_LENGTH) {
-        // didn't get enough data
-        body.resize(total_bytes);
-      }
+    if (content_length > 0 && total_bytes >= content_length) {
+      // finished receiving
+      break;
     }
   }
 }
