@@ -51,6 +51,9 @@ public:
     if (port.empty()) {
       port = (first_line_msg.protocol == "http") ? "80" : "443";
     }
+    if (first_line_msg.method == "CONNECT") {
+      port = "443";
+    }
     std::string key = "Host";
     value = get_value(key);
     colon = value.find(':');

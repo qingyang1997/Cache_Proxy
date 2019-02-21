@@ -90,12 +90,11 @@ void exchange_data(int source_fd, int destination_fd) {
   std::string data = "";
   data.resize(8192);
   size_t cap = recv(source_fd, &data[0], 8192, 0);
-  // int ret = getpeername(client_fd, )
   std::cout << errno << std::endl;
-  std::cout << "0000000000000" << std::endl;
-  perror("read_multi");
-
   data.resize(cap);
+  if (cap == 0) {
+    throw ErrorException("cap == 0");
+  }
   //  std::cout << "[DEBUG] successfully received " << data.size() << std::endl;
   // send
   send(destination_fd, &data[0], cap, 0);
@@ -230,7 +229,7 @@ void handler(int client_fd) {
       time.tv_usec = 10000000;
 
       // answer the client
-      std::string message = "200 OK\r\n\r\n";
+      std::string message = "HTTP/1.1 200 OK\r\n\r\n";
       send(client_fd, message.c_str(), message.size(), 0);
       std::cout << "[INFO] CONNECT RESPONSE TO CLIENT" << std::endl;
       while (1) {
