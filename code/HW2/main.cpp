@@ -1,3 +1,4 @@
+#include "Cache.h"
 #include "Mysocket.h"
 #include "Request.h"
 #include "Response.h"
@@ -168,6 +169,7 @@ int main(int argc, char **argv) {
   socket_info_t socket_info;
   socket_info.hostname = nullptr;
   socket_info.port = "12345";
+  Cache cache;
   int status = setup(&socket_info); // Create Socket
   if (status == -1)
     return EXIT_FAILURE;
