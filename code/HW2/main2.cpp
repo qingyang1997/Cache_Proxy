@@ -13,9 +13,7 @@ int uid = 0;
 void read_header(int read_fd, Http &http) {
   char message[HEADER_LENGTH];
   memset(message, 0, sizeof(message));
-  std::cout << "[DEBUG] blocked?" << std::endl;
   ssize_t recv_bytes = recv(read_fd, &message, sizeof(message), 0);
-  std::cout << "[DEBUG] blocked?" << std::endl;
   if (recv_bytes == 0) {
     std::string temp("client close socket");
     throw ErrorException(temp);
@@ -34,27 +32,27 @@ void read_header(int read_fd, Http &http) {
   http.update_body(&message[end_of_header], recv_bytes - end_of_header);
 }
 
-void read_multi(int read_fd, std::string &body, int content_length) {
-  int total_bytes = body.size();
+void read_multi(int read_fd, std::vector<char> &read_buff, int content_length) {
+
+  int total_bytes = 0;
   while (1) {
-    body.resize(total_bytes + RECV_LENGTH);
-    ssize_t recv_bytes = recv(read_fd, &body[total_bytes], RECV_LENGTH, 0);
+    read_buff.resize(total_bytes + RECV_LENGTH);
+    ssize_t recv_bytes = recv(read_fd, &read_buff[total_bytes], RECV_LENGTH, 0);
     total_bytes += recv_bytes;
-    std::cout << "[DEBUG] read size " << total_bytes << std::endl;
     if (recv_bytes == 0) {
       perror("0000");
       if (errno == EINTR) {
         // client exits
         throw ErrorException("client exit");
       } else if (content_length > 0) {
-        // throw ErrorException("not finish reading");
+        //        throw ErrorException("not finish reading");
         break;
       } else {
         break;
       }
     } else if (recv_bytes < RECV_LENGTH) {
       // didn't get enough data
-      body.resize(total_bytes);
+      read_buff.resize(total_bytes);
     }
     if (content_length > 0 && total_bytes >= content_length) {
       // finished receiving
@@ -163,8 +161,10 @@ void handler(int client_fd) {
       std::string key = "Content-Length";
       cout << "[DEBUG] Content-Lenght " << response.get_value(key) << endl;
       if (response.get_body().size() != 0) {
-        read_multi(server_socket_info.socket_fd, response.get_body(),
+        std::vector<char> read_buff;
+        read_multi(server_socket_info.socket_fd, read_buff,
                    atoi(response.get_value(key).c_str()));
+        response.update_body(&read_buff.data()[0], read_buff.size());
       }
 
       std::cout << "[DEBUG] body received successfully" << std::endl;
@@ -178,27 +178,27 @@ void handler(int client_fd) {
       std::cout << "[DEBUG] send body successfully" << std::endl;
     } // if method == GET
     else if (request.get_method() == "POST") {
+      // finish reading request
       std::cout << "[INFO] POST" << std::endl;
       std::string key = "Content-Length";
-      std::cout << "[DEBUG] Request Content-Lenght " << request.get_value(key)
-                << std::endl;
-      if (atoi(request.get_value(key).c_str()) >
-          (int)request.get_body().size()) {
-        read_multi(client_fd, request.get_body(),
-                   atoi(request.get_value(key).c_str()));
-      }
-      std::cout << "[DEBUG] send to server successfully" << std::endl;
-      send_multi(server_socket_info.socket_fd, header);
-      send_multi(server_socket_info.socket_fd, request.get_body());
+      cout << "[DEBUG] Request Content-Lenght " << request.get_value(key)
+           << endl;
+      std::vector<char> read_buff;
+      read_multi(client_fd, read_buff, atoi(request.get_value(key).c_str()));
+      request.update_body(&read_buff.data()[0], read_buff.size());
 
-      std::cout << "[DEBUG] waiting for response" << std::endl;
+      // send to server
+      std::cout << "[DEBUG] send to server successfully" << std::endl;
+      send_multi(client_fd, header);
+      // receive response
       read_header(server_socket_info.socket_fd, response);
 
       cout << "[DEBUG] Response Content-Lenght " << response.get_value(key)
            << endl;
       if (response.get_body().size() != 0) {
-        read_multi(server_socket_info.socket_fd, response.get_body(),
+        read_multi(server_socket_info.socket_fd, read_buff,
                    atoi(response.get_value(key).c_str()));
+        response.update_body(&read_buff.data()[0], read_buff.size());
       }
 
       std::cout << "[DEBUG] body received successfully" << std::endl;
@@ -212,6 +212,8 @@ void handler(int client_fd) {
       send_multi(client_fd, response.get_body());
       std::cout << "[DEBUG] send body successfully" << std::endl;
     } else if (request.get_method() == "CONNECT") {
+      // select
+      // answer the client
       std::string message = "HTTP/1.1 200 OK\r\n\r\n";
       send(client_fd, message.c_str(), message.size(), 0);
       std::cout << "[INFO] CONNECT RESPONSE TO CLIENT" << std::endl;
@@ -240,12 +242,15 @@ void handler(int client_fd) {
         try {
           if (FD_ISSET(client_fd, &sockset)) {
             std::cout << "[DEBUG] client to server" << std::endl;
+            //            exchange_data(client_fd,
+            //            server_socket_info.socket_fd);
             if (exchange_data(client_fd, server_socket_info.socket_fd) == -1) {
               std::cout << "[DEBUG] transfer failure" << std::endl;
               break;
             }
           } else {
             std::cout << "[DEBUG] server to client" << std::endl;
+            // exchange_data(server_socket_info.socket_fd, client_fd);
             if (exchange_data(server_socket_info.socket_fd, client_fd) == -1) {
               std::cout << "[DEBUG] transfer failure" << std::endl;
               break;
@@ -258,6 +263,7 @@ void handler(int client_fd) {
       }
       close(client_fd);
       close(server_socket_info.socket_fd);
+      // exit
     }
     close(client_fd);
   } catch (ErrorException &e) {

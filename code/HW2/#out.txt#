@@ -1,0 +1,3359 @@
+[DEBUG] REQUEST 0
+CONNECT p4-bi2i7igywez2q-wzwxti4ra2dahtws-510631-s1-v6exp3-v4.metric.gstatic.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: p4-bi2i7igywez2q-wzwxti4ra2dahtws-510631-s1-v6exp3-v4.metric.gstatic.com:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: p4-bi2i7igywez2q-wzwxti4ra2dahtws-510631-s1-v6exp3-v4.metric.gstatic.com:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST p4-bi2i7igywez2q-wzwxti4ra2dahtws-510631-s1-v6exp3-v4.metric.gstatic.com
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 4sent 517
+[INFO] proxy sent 517 to 6
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 6sent 1418
+[INFO] proxy sent 1418 to 4
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 6sent 1418
+[INFO] proxy sent 1418 to 4
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 6sent 583
+[INFO] proxy sent 583 to 4
+[INFO] CONNECT
+[DEBUG] REQUEST 1
+POST http://ocsp.pki.goog/GTSGIAG3 HTTP/1.1
+Host: ocsp.pki.goog
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+Content-Length: 75
+Connection: keep-alive
+
+0I0G0E0C0A0	+
+[DEBUG] parse successfully
+[DEBUG] parsed header POST /GTSGIAG3 HTTP/1.1
+Connection: close
+Content-Length: 75
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: ocsp.pki.goog
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+
+
+[DEBUG] HOST ocsp.pki.goog
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] POST
+[DEBUG] Request Content-Lenght 75
+[DEBUG] REQUEST 2
+CONNECT googleads.g.doubleclick.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: googleads.g.doubleclick.net:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: googleads.g.doubleclick.net:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST googleads.g.doubleclick.net
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 517
+[INFO] proxy sent 517 to 10
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 156
+[INFO] proxy sent 156 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 51
+[INFO] proxy sent 51 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 177
+[INFO] proxy sent 177 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 1238
+[INFO] proxy sent 1238 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 239
+[INFO] proxy sent 239 to 10
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 69
+[INFO] proxy sent 69 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 38
+[INFO] proxy sent 38 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 38
+[INFO] proxy sent 38 to 10
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 444
+[INFO] proxy sent 444 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 38
+[INFO] proxy sent 38 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 46
+[INFO] proxy sent 46 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 46
+[INFO] proxy sent 46 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 4sent 568
+[INFO] proxy sent 568 to 6
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 6sent 502
+[INFO] proxy sent 502 to 4
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 6sent 62
+[INFO] proxy sent 62 to 4
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 6sent 31
+[INFO] proxy sent 31 to 4
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 6sent 252
+[INFO] proxy sent 252 to 4
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 6sent 70
+[INFO] proxy sent 70 to 4
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 4sent 31
+[INFO] proxy sent 31 to 6
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 4sent 39
+[INFO] proxy sent 39 to 6
+[INFO] CONNECT
+[DEBUG] REQUEST 3
+CONNECT csi.gstatic.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: csi.gstatic.com:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: csi.gstatic.com:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST csi.gstatic.com
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] REQUEST 5
+CONNECT pagead2.googlesyndication.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: pagead2.googlesyndication.com:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: pagead2.googlesyndication.com:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST pagead2.googlesyndication.com
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] REQUEST 7
+CONNECT adservice.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: adservice.google.com:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: adservice.google.com:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST adservice.google.com
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] client to server
+[INFO] client 12sent 602
+[INFO] proxy sent 602 to 15
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 156
+[INFO] proxy sent 156 to 12
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 16sent 517
+[INFO] proxy sent 517 to 18
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 51
+[INFO] proxy sent 51 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 177
+[INFO] proxy sent 177 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 1484
+[INFO] proxy sent 1484 to 15
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 69
+[INFO] proxy sent 69 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 156
+[INFO] proxy sent 156 to 16
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 38
+[INFO] proxy sent 38 to 12
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 38
+[INFO] proxy sent 38 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 16sent 51
+[INFO] proxy sent 51 to 18
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 16sent 177
+[INFO] proxy sent 177 to 18
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 16sent 465
+[INFO] proxy sent 465 to 18
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 398
+[INFO] proxy sent 398 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 118
+[INFO] proxy sent 118 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 46
+[INFO] proxy sent 46 to 12
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 9sent 517
+[INFO] proxy sent 517 to 13
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 69
+[INFO] proxy sent 69 to 16
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 16sent 38
+[INFO] proxy sent 38 to 18
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 46
+[INFO] proxy sent 46 to 15
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 38
+[INFO] proxy sent 38 to 16
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 393
+[INFO] proxy sent 393 to 16
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 445
+[INFO] proxy sent 445 to 16
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 173
+[INFO] proxy sent 173 to 16
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 16sent 46
+[INFO] proxy sent 46 to 18
+[INFO] CONNECT
+[DEBUG] REQUEST 4
+GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/v321/main.css
+Connection: keep-alive
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.6.10.1550773773; __utmt=1
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header GET /v321/bgv.png HTTP/1.1
+Connection: close
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.6.10.1550773773; __utmt=1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/v321/main.css
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+
+[DEBUG] HOST www.cplusplus.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] REQUEST 8
+GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/v321/main.css
+Connection: keep-alive
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.6.10.1550773773; __utmt=1
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header GET /v321/bgh.png HTTP/1.1
+Connection: close
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.6.10.1550773773; __utmt=1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/v321/main.css
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+
+[DEBUG] HOST www.cplusplus.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] REQUEST 6
+CONNECT securepubads.g.doubleclick.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: securepubads.g.doubleclick.net:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: securepubads.g.doubleclick.net:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST securepubads.g.doubleclick.net
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] GET
+[INFO] successfully send 610
+[DEBUG] send to server successfully
+[DEBUG] connect successfully
+[INFO] GET
+[INFO] successfully send 610
+[DEBUG] send to server successfully
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 646
+[INFO] proxy sent 646 to 22
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 13sent 1418
+[INFO] proxy sent 1418 to 9
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 13sent 1418
+[INFO] proxy sent 1418 to 9
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 212
+[INFO] proxy sent 212 to 14
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 64
+[INFO] proxy sent 64 to 22
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 13sent 503
+[INFO] proxy sent 503 to 9
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 170
+[INFO] proxy sent 170 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 1020
+[INFO] proxy sent 1020 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 9sent 93
+[INFO] proxy sent 93 to 13
+[INFO] CONNECT
+[DEBUG] REQUEST 9
+POST http://ocsp.pki.goog/GTSGIAG3 HTTP/1.1
+Host: ocsp.pki.goog
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+Content-Length: 75
+Connection: keep-alive
+
+0I0G0E0C0A0	+
+[DEBUG] parse successfully
+[DEBUG] parsed header POST /GTSGIAG3 HTTP/1.1
+Connection: close
+Content-Length: 75
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: ocsp.pki.goog
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+
+
+[DEBUG] HOST ocsp.pki.goog
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] server to client
+[INFO] client 22sent 502
+[INFO] proxy sent 502 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 62
+[INFO] proxy sent 62 to 14
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 31
+[INFO] proxy sent 31 to 22
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] POST
+[DEBUG] Request Content-Lenght 75
+[DEBUG] server to client
+[INFO] client 22sent 31
+[INFO] proxy sent 31 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 13sent 284
+[INFO] proxy sent 284 to 9
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 13sent 69
+[INFO] proxy sent 69 to 9
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 503
+[INFO] proxy sent 503 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 1418
+[INFO] proxy sent 1418 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 2836
+[INFO] proxy sent 2836 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 2836
+[INFO] proxy sent 2836 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 1639
+[INFO] proxy sent 1639 to 14
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 39
+[INFO] proxy sent 39 to 22
+[INFO] CONNECT
+[DEBUG] REQUEST 11
+CONNECT www.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: www.google.com:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: www.google.com:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST www.google.com
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] client to server
+[INFO] client 12sent 611
+[INFO] proxy sent 611 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 38
+[INFO] proxy sent 38 to 15
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 630
+[INFO] proxy sent 630 to 27
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 79
+[INFO] proxy sent 79 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 118
+[INFO] proxy sent 118 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 59
+[INFO] proxy sent 59 to 12
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 46
+[INFO] proxy sent 46 to 15
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 212
+[INFO] proxy sent 212 to 25
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 64
+[INFO] proxy sent 64 to 27
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 170
+[INFO] proxy sent 170 to 27
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 523
+[INFO] proxy sent 523 to 27
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 502
+[INFO] proxy sent 502 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 62
+[INFO] proxy sent 62 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 31
+[INFO] proxy sent 31 to 25
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 31
+[INFO] proxy sent 31 to 27
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 215
+[INFO] proxy sent 215 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 70
+[INFO] proxy sent 70 to 25
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 574
+[INFO] proxy sent 574 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 562
+[INFO] proxy sent 562 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 563
+[INFO] proxy sent 563 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 39
+[INFO] proxy sent 39 to 27
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 89
+[INFO] proxy sent 89 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 31
+[INFO] proxy sent 31 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 39
+[INFO] proxy sent 39 to 14
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 39
+[INFO] proxy sent 39 to 22
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 68
+[INFO] proxy sent 68 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 31
+[INFO] proxy sent 31 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 68
+[INFO] proxy sent 68 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 31
+[INFO] proxy sent 31 to 14
+[INFO] CONNECT
+[DEBUG] REQUEST 14
+CONNECT www.google-analytics.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: www.google-analytics.com:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: www.google-analytics.com:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST www.google-analytics.com
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 920
+[INFO] proxy sent 920 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 29sent 597
+[INFO] proxy sent 597 to 31
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 156
+[INFO] proxy sent 156 to 29
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 29sent 51
+[INFO] proxy sent 51 to 31
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 29sent 177
+[INFO] proxy sent 177 to 31
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 29sent 579
+[INFO] proxy sent 579 to 31
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 69
+[INFO] proxy sent 69 to 29
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 29sent 38
+[INFO] proxy sent 38 to 31
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 334
+[INFO] proxy sent 334 to 29
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 46
+[INFO] proxy sent 46 to 29
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 29sent 46
+[INFO] proxy sent 46 to 31
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 84
+[INFO] proxy sent 84 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 2836
+[INFO] proxy sent 2836 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 2836
+[INFO] proxy sent 2836 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 2836
+[INFO] proxy sent 2836 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 2836
+[INFO] proxy sent 2836 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 748
+[INFO] proxy sent 748 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 503
+[INFO] proxy sent 503 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 46
+[INFO] proxy sent 46 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 922
+[INFO] proxy sent 922 to 27
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 79
+[INFO] proxy sent 79 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 118
+[INFO] proxy sent 118 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 46
+[INFO] proxy sent 46 to 12
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 46
+[INFO] proxy sent 46 to 15
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 67
+[INFO] proxy sent 67 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 31
+[INFO] proxy sent 31 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 39
+[INFO] proxy sent 39 to 25
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 39
+[INFO] proxy sent 39 to 27
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 1278
+[INFO] proxy sent 1278 to 10
+[INFO] CONNECT
+[DEBUG] REQUEST 17
+CONNECT sync.mookie1.cn:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: sync.mookie1.cn:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: sync.mookie1.cn:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST sync.mookie1.cn
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] server to client
+[INFO] client 10sent 75
+[INFO] proxy sent 75 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 84
+[INFO] proxy sent 84 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 46
+[INFO] proxy sent 46 to 10
+[INFO] CONNECT
+[DEBUG] REQUEST 18
+CONNECT us-u.openx.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: us-u.openx.net:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: us-u.openx.net:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST us-u.openx.net
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] REQUEST 19
+CONNECT d.agkn.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: d.agkn.com:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: d.agkn.com:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST d.agkn.com
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] REQUEST 20
+CONNECT image6.pubmatic.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: image6.pubmatic.com:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: image6.pubmatic.com:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST image6.pubmatic.com
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] REQUEST 21
+CONNECT cm.g.doubleclick.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: cm.g.doubleclick.net:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: cm.g.doubleclick.net:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST cm.g.doubleclick.net
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] setup successfully
+[DEBUG] setup successfully
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 36sent 517
+[INFO] proxy sent 517 to 40
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 37sent 517
+[INFO] proxy sent 517 to 41
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 34sent 593
+[INFO] proxy sent 593 to 43
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 38sent 517
+[INFO] proxy sent 517 to 42
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 40sent 1460
+[INFO] proxy sent 1460 to 36
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 40sent 1078
+[INFO] proxy sent 1078 to 36
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 41sent 1448
+[INFO] proxy sent 1448 to 37
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 41sent 1448
+[INFO] proxy sent 1448 to 37
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 41sent 1295
+[INFO] proxy sent 1295 to 37
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 156
+[INFO] proxy sent 156 to 34
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 37sent 126
+[INFO] proxy sent 126 to 41
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 34sent 51
+[INFO] proxy sent 51 to 43
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 42sent 102
+[INFO] proxy sent 102 to 38
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 42sent 45
+[INFO] proxy sent 45 to 38
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 34sent 177
+[INFO] proxy sent 177 to 43
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 36sent 80
+[INFO] proxy sent 80 to 40
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 34sent 365
+[INFO] proxy sent 365 to 43
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 36sent 607
+[INFO] proxy sent 607 to 40
+[INFO] CONNECT
+[DEBUG] REQUEST 22
+POST http://status.rapidssl.com/ HTTP/1.1
+Host: status.rapidssl.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+Content-Length: 83
+Connection: keep-alive
+
+0Q0O0M0K0I0	+
+[DEBUG] parse successfully
+[DEBUG] parsed header POST / HTTP/1.1
+Connection: close
+Content-Length: 83
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: status.rapidssl.com
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+
+
+[DEBUG] HOST status.rapidssl.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] client to server
+[INFO] client 38sent 51
+[INFO] proxy sent 51 to 42
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 38sent 969
+[INFO] proxy sent 969 to 42
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 41sent 51
+[INFO] proxy sent 51 to 37
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 40sent 79
+[INFO] proxy sent 79 to 36
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 40sent 79
+[INFO] proxy sent 79 to 36
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 69
+[INFO] proxy sent 69 to 34
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] POST
+[DEBUG] Request Content-Lenght 83
+[DEBUG] client to server
+[INFO] client 34sent 38
+[INFO] proxy sent 38 to 43
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 40sent 46
+[INFO] proxy sent 46 to 36
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 40sent 914
+[INFO] proxy sent 914 to 36
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 36sent 31
+[INFO] proxy sent 31 to 40
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 38
+[INFO] proxy sent 38 to 34
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 216
+[INFO] proxy sent 216 to 34
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 38
+[INFO] proxy sent 38 to 34
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 46
+[INFO] proxy sent 46 to 34
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 34sent 46
+[INFO] proxy sent 46 to 43
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 42sent 1025
+[INFO] proxy sent 1025 to 38
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[DEBUG] client to server
+[INFO] client 33sent 517
+[INFO] client 34sent 322
+[INFO] proxy sent 322 to 43
+[INFO] CONNECT
+[INFO] proxy sent 517 to 35
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 387
+[INFO] proxy sent 387 to 34
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 46
+[INFO] proxy sent 46 to 34
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 34sent 46
+[INFO] proxy sent 46 to 43
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 35sent 2896
+[INFO] proxy sent 2896 to 33
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 35sent 1266
+[INFO] proxy sent 1266 to 33
+[INFO] CONNECT
+[DEBUG] REQUEST 23
+POST http://ocsp.digicert.com/ HTTP/1.1
+Host: ocsp.digicert.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+Content-Length: 83
+Connection: keep-alive
+
+0Q0O0M0K0I0	+
+[DEBUG] parse successfully
+[DEBUG] parsed header POST / HTTP/1.1
+Connection: close
+Content-Length: 83
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: ocsp.digicert.com
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+
+
+[DEBUG] HOST ocsp.digicert.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] client to server
+[INFO] client 33sent 126
+[INFO] proxy sent 126 to 35
+[INFO] CONNECT
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] POST
+[DEBUG] Request Content-Lenght 83
+[DEBUG] client to server
+[INFO] client 9sent 177
+[INFO] proxy sent 177 to 13
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 9sent 463
+[INFO] proxy sent 463 to 13
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 9sent 38
+[INFO] proxy sent 38 to 13
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 9sent 209
+[INFO] proxy sent 209 to 13
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 9sent 38
+[INFO] proxy sent 38 to 13
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 37sent 0
+[DEBUG] transfer failure
+[DEBUG] client to server
+[INFO] client 33sent 0
+[DEBUG] transfer failure
+[DEBUG] client to server
+[INFO] client 12sent 1238
+[INFO] proxy sent 1238 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 138
+[INFO] proxy sent 138 to 15
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 13sent 38
+[INFO] proxy sent 38 to 9
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 79
+[INFO] proxy sent 79 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 164
+[INFO] proxy sent 164 to 12
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 16sent 131
+[INFO] proxy sent 131 to 18
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 46
+[INFO] proxy sent 46 to 15
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 540
+[INFO] proxy sent 540 to 16
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 46
+[INFO] proxy sent 46 to 16
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 16sent 46
+[INFO] proxy sent 46 to 18
+[INFO] CONNECT
+[DEBUG] REQUEST 12
+GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/v321/main.css
+Connection: keep-alive
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.7.10.1550773773; __utmt=1
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header GET /v321/bgv.png HTTP/1.1
+Connection: close
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.7.10.1550773773; __utmt=1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/v321/main.css
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+
+[DEBUG] HOST www.cplusplus.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] REQUEST 13
+GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/v321/main.css
+Connection: keep-alive
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.7.10.1550773773; __utmt=1
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header GET /v321/bgh.png HTTP/1.1
+Connection: close
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.7.10.1550773773; __utmt=1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/v321/main.css
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+
+[DEBUG] HOST www.cplusplus.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] setup successfully
+[DEBUG] client to server
+[INFO] client 14sent 836
+[INFO] proxy sent 836 to 22
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] GET
+[INFO] successfully send 610
+[DEBUG] send to server successfully
+[DEBUG] connect successfully
+[INFO] GET
+[INFO] successfully send 610
+[DEBUG] send to server successfully
+[DEBUG] server to client
+[INFO] client 13sent 220
+[INFO] proxy sent 220 to 9
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 13sent 38
+[INFO] proxy sent 38 to 9
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 13sent 46
+[INFO] proxy sent 46 to 9
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 13sent 76
+[INFO] proxy sent 76 to 9
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 13sent 38
+[INFO] proxy sent 38 to 9
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 9sent 46
+[INFO] proxy sent 46 to 13
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 1498
+[INFO] proxy sent 1498 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 2836
+[INFO] proxy sent 2836 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 2836
+[INFO] proxy sent 2836 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 1700
+[INFO] proxy sent 1700 to 14
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 504
+[INFO] proxy sent 504 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 39
+[INFO] proxy sent 39 to 22
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 243
+[INFO] proxy sent 243 to 12
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 46
+[INFO] proxy sent 46 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 184
+[INFO] proxy sent 184 to 27
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 67
+[INFO] proxy sent 67 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 31
+[INFO] proxy sent 31 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 39
+[INFO] proxy sent 39 to 25
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 39
+[INFO] proxy sent 39 to 27
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 1607
+[INFO] proxy sent 1607 to 22
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 68
+[INFO] proxy sent 68 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 31
+[INFO] proxy sent 31 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 39
+[INFO] proxy sent 39 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 68
+[INFO] proxy sent 68 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 31
+[INFO] proxy sent 31 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 68
+[INFO] proxy sent 68 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 31
+[INFO] proxy sent 31 to 14
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 39
+[INFO] proxy sent 39 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 29sent 448
+[INFO] proxy sent 448 to 31
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 84
+[INFO] proxy sent 84 to 29
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 73
+[INFO] proxy sent 73 to 29
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 46
+[INFO] proxy sent 46 to 29
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 29sent 46
+[INFO] proxy sent 46 to 31
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 819
+[INFO] proxy sent 819 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 42
+[INFO] proxy sent 42 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 16sent 135
+[INFO] proxy sent 135 to 18
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 81
+[INFO] proxy sent 81 to 16
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 748
+[INFO] proxy sent 748 to 16
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 46
+[INFO] proxy sent 46 to 16
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 16sent 46
+[INFO] proxy sent 46 to 18
+[INFO] CONNECT
+[DEBUG] REQUEST 24
+GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/v321/main.css
+Connection: keep-alive
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.8.10.1550773773; __utmt=1
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header GET /v321/bgv.png HTTP/1.1
+Connection: close
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.8.10.1550773773; __utmt=1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/v321/main.css
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+
+[DEBUG] HOST www.cplusplus.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] REQUEST 25
+GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/v321/main.css
+Connection: keep-alive
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.8.10.1550773773; __utmt=1
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header GET /v321/bgh.png HTTP/1.1
+Connection: close
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.8.10.1550773773; __utmt=1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/v321/main.css
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+
+[DEBUG] HOST www.cplusplus.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] client to server
+[INFO] client 14sent 873
+[INFO] proxy sent 873 to 22
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] GET
+[INFO] successfully send 610
+[DEBUG] send to server successfully
+[DEBUG] connect successfully
+[INFO] GET
+[INFO] successfully send 610
+[DEBUG] send to server successfully
+[DEBUG] server to client
+[INFO] client 22sent 1498
+[INFO] proxy sent 1498 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 2836
+[INFO] proxy sent 2836 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 1418
+[INFO] proxy sent 1418 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 1418
+[INFO] proxy sent 1418 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 2137
+[INFO] proxy sent 2137 to 14
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 39
+[INFO] proxy sent 39 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 187
+[INFO] proxy sent 187 to 27
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 488
+[INFO] proxy sent 488 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 38
+[INFO] proxy sent 38 to 15
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 79
+[INFO] proxy sent 79 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 118
+[INFO] proxy sent 118 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 59
+[INFO] proxy sent 59 to 12
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 46
+[INFO] proxy sent 46 to 15
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 67
+[INFO] proxy sent 67 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 31
+[INFO] proxy sent 31 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 39
+[INFO] proxy sent 39 to 25
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 39
+[INFO] proxy sent 39 to 27
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 538
+[INFO] proxy sent 538 to 22
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 99
+[INFO] proxy sent 99 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 39
+[INFO] proxy sent 39 to 14
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 39
+[INFO] proxy sent 39 to 22
+[INFO] CONNECT
+[DEBUG] RESPONSE 4
+HTTP/1.1 200 OK
+Date: Thu, 21 Feb 2019 18:34:06 GMT
+Server: Apache/2.2.22
+Last-Modified: Tue, 17 Jun 2014 15:49:18 GMT
+ETag: "7080b11-41f-4fc0a16215b80"
+Accept-Ranges: bytes
+Content-Length: 1055
+Connection: close
+Content-Type: image/png
+
+‰PNG
+
+
+[DEBUG] parse successfully
+[DEBUG] Content-Lenght 1055
+not finish reading
+[DEBUG] RESPONSE 8
+HTTP/1.1 200 OK
+Date: Thu, 21 Feb 2019 18:34:06 GMT
+Server: Apache/2.2.22
+Last-Modified: Tue, 17 Jun 2014 15:49:17 GMT
+ETag: "7080b10-76-4fc0a16121940"
+Accept-Ranges: bytes
+Content-Length: 118
+Connection: close
+Content-Type: image/png
+
+‰PNG
+
+
+[DEBUG] parse successfully
+[DEBUG] Content-Lenght 118
+not finish reading
+[DEBUG] client to server
+[INFO] client 29sent 456
+[INFO] proxy sent 456 to 31
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 84
+[INFO] proxy sent 84 to 29
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 73
+[INFO] proxy sent 73 to 29
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 46
+[INFO] proxy sent 46 to 29
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 29sent 46
+[INFO] proxy sent 46 to 31
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 840
+[INFO] proxy sent 840 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 821
+[INFO] proxy sent 821 to 10
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 483
+[INFO] proxy sent 483 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 46
+[INFO] proxy sent 46 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 46
+[INFO] proxy sent 46 to 10
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 81
+[INFO] proxy sent 81 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 2836
+[INFO] proxy sent 2836 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 2349
+[INFO] proxy sent 2349 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 46
+[INFO] proxy sent 46 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 916
+[INFO] proxy sent 916 to 27
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 67
+[INFO] proxy sent 67 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 70
+[INFO] proxy sent 70 to 25
+[INFO] CONNECT
+[DEBUG] REQUEST 29
+CONNECT sync.mookie1.cn:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: sync.mookie1.cn:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: sync.mookie1.cn:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST sync.mookie1.cn
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] client to server
+[INFO] client 25sent 39
+[INFO] proxy sent 39 to 27
+[INFO] CONNECT
+[DEBUG] REQUEST 15
+CONNECT tpc.googlesyndication.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: tpc.googlesyndication.com:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: tpc.googlesyndication.com:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST tpc.googlesyndication.com
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] client to server
+[INFO] client 7sent 1280
+[INFO] proxy sent 1280 to 10
+[INFO] CONNECT
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 75
+[INFO] proxy sent 75 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 84
+[INFO] proxy sent 84 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 30sent 598
+[INFO] proxy sent 598 to 53
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 46
+[INFO] proxy sent 46 to 10
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 53sent 156
+[INFO] proxy sent 156 to 30
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 30sent 51
+[INFO] proxy sent 51 to 53
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 30sent 177
+[INFO] proxy sent 177 to 53
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 30sent 1060
+[INFO] proxy sent 1060 to 53
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 53sent 69
+[INFO] proxy sent 69 to 30
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 30sent 38
+[INFO] proxy sent 38 to 53
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 30sent 42
+[INFO] proxy sent 42 to 53
+[INFO] CONNECT
+[DEBUG] REQUEST 26
+GET http://www.cplusplus.com/forum/ HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/reference/
+Connection: keep-alive
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.9.10.1550773773; __utmt=1
+Upgrade-Insecure-Requests: 1
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header GET /forum/ HTTP/1.1
+Connection: close
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.9.10.1550773773; __utmt=1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/reference/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+
+[DEBUG] HOST www.cplusplus.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] server to client
+[INFO] client 53sent 38
+[INFO] proxy sent 38 to 30
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] GET
+[INFO] successfully send 691
+[DEBUG] send to server successfully
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 52sent 0
+[DEBUG] transfer failure
+[DEBUG] client to server
+[INFO] client 12sent 534
+[INFO] proxy sent 534 to 15
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 79
+[INFO] proxy sent 79 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 164
+[INFO] proxy sent 164 to 12
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 46
+[INFO] proxy sent 46 to 15
+[INFO] CONNECT
+client close socket
+[DEBUG] parsed header 
+
+
+[DEBUG] HOST 
+[DEBUG] PORT 
+[INFO] CONNECTING SERVER
+getaddrinfo failure
+[DEBUG] RESPONSE 12
+HTTP/1.1 200 OK
+Date: Thu, 21 Feb 2019 18:34:08 GMT
+Server: Apache/2.2.22
+Last-Modified: Tue, 17 Jun 2014 15:49:18 GMT
+ETag: "7080b11-41f-4fc0a16215b80"
+Accept-Ranges: bytes
+Content-Length: 1055
+Connection: close
+Content-Type: image/png
+
+‰PNG
+
+
+[DEBUG] parse successfully
+[DEBUG] Content-Lenght 1055
+not finish reading
+[DEBUG] RESPONSE 13
+HTTP/1.1 200 OK
+Date: Thu, 21 Feb 2019 18:34:08 GMT
+Server: Apache/2.2.22
+Last-Modified: Tue, 17 Jun 2014 15:49:17 GMT
+ETag: "7080b10-76-4fc0a16121940"
+Accept-Ranges: bytes
+Content-Length: 118
+Connection: close
+Content-Type: image/png
+
+‰PNG
+
+
+[DEBUG] parse successfully
+[DEBUG] Content-Lenght 118
+not finish reading
+client close socket
+[DEBUG] parsed header 
+
+
+[DEBUG] HOST 
+[DEBUG] PORT 
+[INFO] CONNECTING SERVER
+getaddrinfo failure
+[DEBUG] RESPONSE 24
+HTTP/1.1 200 OK
+Date: Thu, 21 Feb 2019 18:34:10 GMT
+Server: Apache/2.2.22
+Last-Modified: Tue, 17 Jun 2014 15:49:18 GMT
+ETag: "7080b11-41f-4fc0a16215b80"
+Accept-Ranges: bytes
+Content-Length: 1055
+Connection: close
+Content-Type: image/png
+
+‰PNG
+
+
+[DEBUG] parse successfully
+[DEBUG] Content-Lenght 1055
+not finish reading
+[DEBUG] RESPONSE 25
+HTTP/1.1 200 OK
+Date: Thu, 21 Feb 2019 18:34:10 GMT
+Server: Apache/2.2.22
+Last-Modified: Tue, 17 Jun 2014 15:49:17 GMT
+ETag: "7080b10-76-4fc0a16121940"
+Accept-Ranges: bytes
+Content-Length: 118
+Connection: close
+Content-Type: image/png
+
+‰PNG
+
+
+[DEBUG] parse successfully
+[DEBUG] Content-Lenght 118
+not finish reading
+[DEBUG] RESPONSE 26
+HTTP/1.1 200 OK
+Date: Thu, 21 Feb 2019 18:34:12 GMT
+Server: Apache/2.2.22
+X-Powered-By: PHP/5.4.38-0+deb7u1
+Cache-Control: max-age=0
+ETag: 1550773937
+Last-Modified: Thu, 21 Feb 2019 18:32:17 GMT
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 3263
+Connection: close
+Content-Type: text/html
+
+‹
+[DEBUG] parse successfully
+[DEBUG] Content-Lenght 3263
+[DEBUG] body received successfully
+[DEBUG] reconstruct header 
+[INFO] successfully send 317
+[DEBUG] send header successfully
+[INFO] successfully send 3263
+[DEBUG] send body successfully
+[DEBUG] client to server
+[INFO] client 12sent 1314
+[INFO] proxy sent 1314 to 15
+[INFO] CONNECT
+client close socket
+[DEBUG] parsed header 
+
+
+[DEBUG] HOST 
+[DEBUG] PORT 
+[INFO] CONNECTING SERVER
+getaddrinfo failure
+client close socket
+[DEBUG] parsed header 
+
+
+[DEBUG] HOST 
+[DEBUG] PORT 
+[INFO] CONNECTING SERVER
+getaddrinfo failure
+[DEBUG] server to client
+[INFO] client 15sent 79
+[INFO] proxy sent 79 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 164
+[INFO] proxy sent 164 to 12
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 46
+[INFO] proxy sent 46 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 16sent 132
+[INFO] proxy sent 132 to 18
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 82
+[INFO] proxy sent 82 to 16
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 536
+[INFO] proxy sent 536 to 16
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 18sent 46
+[INFO] proxy sent 46 to 16
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 16sent 46
+[INFO] proxy sent 46 to 18
+[INFO] CONNECT
+[DEBUG] REQUEST 30
+GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/v321/main.css
+Connection: keep-alive
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.9.10.1550773773; __utmt=1
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header GET /v321/bgv.png HTTP/1.1
+Connection: close
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.9.10.1550773773; __utmt=1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/v321/main.css
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+
+[DEBUG] HOST www.cplusplus.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] REQUEST 31
+GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/v321/main.css
+Connection: keep-alive
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.9.10.1550773773; __utmt=1
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header GET /v321/bgh.png HTTP/1.1
+Connection: close
+Cookie: __utma=62705790.739870549.1550756577.1550758977.1550773768.3; __utmc=62705790; __utmz=62705790.1550756577.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); consent=cookie; __gads=ID=06ad25bdac3a64a9:T=1550758987:S=ALNI_Mbmu6nA4UqmTwPjpQAMghz2Sm_rcA; __utmb=62705790.9.10.1550773773; __utmt=1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/v321/main.css
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+
+[DEBUG] HOST www.cplusplus.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] setup successfully
+[DEBUG] client to server
+[INFO] client 14sent 829
+[INFO] proxy sent 829 to 22
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] GET
+[INFO] successfully send 610
+[DEBUG] send to server successfully
+[DEBUG] connect successfully
+[INFO] GET
+[INFO] successfully send 610
+[DEBUG] send to server successfully
+[DEBUG] server to client
+[INFO] client 22sent 1497
+[INFO] proxy sent 1497 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 2836
+[INFO] proxy sent 2836 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 2356
+[INFO] proxy sent 2356 to 14
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22sent 39
+[INFO] proxy sent 39 to 14
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 14sent 39
+[INFO] proxy sent 39 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 241
+[INFO] proxy sent 241 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 575
+[INFO] proxy sent 575 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 38
+[INFO] proxy sent 38 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 1238
+[INFO] proxy sent 1238 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 1190
+[INFO] proxy sent 1190 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 208
+[INFO] proxy sent 208 to 27
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 79
+[INFO] proxy sent 79 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 118
+[INFO] proxy sent 118 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 59
+[INFO] proxy sent 59 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 91
+[INFO] proxy sent 91 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 224
+[INFO] proxy sent 224 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 316
+[INFO] proxy sent 316 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 46
+[INFO] proxy sent 46 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 46
+[INFO] proxy sent 46 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 34sent 257
+[INFO] proxy sent 257 to 43
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 34sent 134
+[INFO] proxy sent 134 to 43
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 67
+[INFO] proxy sent 67 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 31
+[INFO] proxy sent 31 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 39
+[INFO] proxy sent 39 to 25
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 39
+[INFO] proxy sent 39 to 27
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 309
+[INFO] proxy sent 309 to 34
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 371
+[INFO] proxy sent 371 to 34
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 46
+[INFO] proxy sent 46 to 34
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 130
+[INFO] proxy sent 130 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 2836
+[INFO] proxy sent 2836 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 34sent 46
+[INFO] proxy sent 46 to 43
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1289
+[INFO] proxy sent 1289 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 36sent 318
+[INFO] proxy sent 318 to 40
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 172
+[INFO] proxy sent 172 to 34
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 351
+[INFO] proxy sent 351 to 34
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 38
+[INFO] proxy sent 38 to 34
+[INFO] CONNECT
+[DEBUG] REQUEST 34
+CONNECT t.myvisualiq.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: t.myvisualiq.net:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: t.myvisualiq.net:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST t.myvisualiq.net
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] server to client
+[INFO] client 40sent 278
+[INFO] proxy sent 278 to 36
+[INFO] CONNECT
+[DEBUG] REQUEST 35
+CONNECT dsum-sec.casalemedia.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: dsum-sec.casalemedia.com:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: dsum-sec.casalemedia.com:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST dsum-sec.casalemedia.com
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 158
+[INFO] proxy sent 158 to 27
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 28sent 563
+[INFO] proxy sent 563 to 37
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] REQUEST 36
+CONNECT sync.mookie1.cn:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: sync.mookie1.cn:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: sync.mookie1.cn:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST sync.mookie1.cn
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] client to server
+[INFO] client 32sent 517
+[INFO] proxy sent 517 to 46
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 37sent 137
+[INFO] proxy sent 137 to 28
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 28sent 51
+[INFO] proxy sent 51 to 37
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 46sent 1448
+[INFO] proxy sent 1448 to 32
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 46sent 1448
+[INFO] proxy sent 1448 to 32
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 28sent 608
+[INFO] proxy sent 608 to 37
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 46sent 1200
+[INFO] proxy sent 1200 to 32
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 46sent 269
+[INFO] proxy sent 269 to 32
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 67
+[INFO] proxy sent 67 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 31
+[INFO] proxy sent 31 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 39
+[INFO] proxy sent 39 to 25
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 32sent 126
+[INFO] proxy sent 126 to 46
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 32sent 635
+[INFO] proxy sent 635 to 46
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 39
+[INFO] proxy sent 39 to 27
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 46sent 258
+[INFO] proxy sent 258 to 32
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 37sent 344
+[INFO] proxy sent 344 to 28
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 274
+[INFO] proxy sent 274 to 15
+[INFO] CONNECT
+[DEBUG] REQUEST 37
+CONNECT s0.2mdn.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: s0.2mdn.net:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: s0.2mdn.net:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST s0.2mdn.net
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] REQUEST 38
+CONNECT googleads4.g.doubleclick.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: googleads4.g.doubleclick.net:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: googleads4.g.doubleclick.net:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST googleads4.g.doubleclick.net
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] setup successfully
+[DEBUG] client to server
+[INFO] client 34sent 126
+[INFO] proxy sent 126 to 43
+[INFO] CONNECT
+[DEBUG] REQUEST 39
+CONNECT d.agkn.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: d.agkn.com:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: d.agkn.com:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST d.agkn.com
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] server to client
+[INFO] client 15sent 196
+[INFO] proxy sent 196 to 12
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 15sent 46
+[INFO] proxy sent 46 to 12
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 12sent 46
+[INFO] proxy sent 46 to 15
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 52sent 584
+[INFO] proxy sent 584 to 56
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 50sent 601
+[INFO] proxy sent 601 to 57
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 46sent 997
+[INFO] proxy sent 997 to 32
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 43sent 89
+[INFO] proxy sent 89 to 34
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 55sent 517
+[INFO] proxy sent 517 to 59
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 34sent 46
+[INFO] proxy sent 46 to 43
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 156
+[INFO] proxy sent 156 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 57sent 156
+[INFO] proxy sent 156 to 50
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 52sent 51
+[INFO] proxy sent 51 to 56
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 52sent 177
+[INFO] proxy sent 177 to 56
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 52sent 265
+[INFO] proxy sent 265 to 56
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 50sent 51
+[INFO] proxy sent 51 to 57
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 59sent 1448
+[INFO] proxy sent 1448 to 55
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 59sent 1448
+[INFO] proxy sent 1448 to 55
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 59sent 1295
+[INFO] proxy sent 1295 to 55
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 50sent 177
+[INFO] proxy sent 177 to 57
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 50sent 1206
+[INFO] proxy sent 1206 to 57
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 55sent 126
+[INFO] proxy sent 126 to 59
+[INFO] CONNECT
+[DEBUG] REQUEST 40
+POST http://status.rapidssl.com/ HTTP/1.1
+Host: status.rapidssl.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+Content-Length: 83
+Connection: keep-alive
+
+0Q0O0M0K0I0	+
+[DEBUG] parse successfully
+[DEBUG] parsed header POST / HTTP/1.1
+Connection: close
+Content-Length: 83
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: status.rapidssl.com
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+
+
+[DEBUG] HOST status.rapidssl.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] server to client
+[INFO] client 56sent 69
+[INFO] proxy sent 69 to 52
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 52sent 38
+[INFO] proxy sent 38 to 56
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 57sent 69
+[INFO] proxy sent 69 to 50
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 50sent 38
+[INFO] proxy sent 38 to 57
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 57sent 38
+[INFO] proxy sent 38 to 50
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 59sent 51
+[INFO] proxy sent 51 to 55
+[INFO] CONNECT
+[DEBUG] setup successfully
+[DEBUG] server to client
+[INFO] client 56sent 268
+[INFO] proxy sent 268 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 2836
+[INFO] proxy sent 2836 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 2836
+[INFO] proxy sent 2836 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 2836
+[INFO] proxy sent 2836 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] POST
+[DEBUG] Request Content-Lenght 83
+[DEBUG] server to client
+[INFO] client 56sent 2836
+[INFO] proxy sent 2836 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 2836
+[INFO] proxy sent 2836 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 1418
+[INFO] proxy sent 1418 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 2836
+[INFO] proxy sent 2836 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 56sent 2100
+[INFO] proxy sent 2100 to 52
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 57sent 399
+[INFO] proxy sent 399 to 50
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 52sent 46
+[INFO] proxy sent 46 to 56
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 50sent 46
+[INFO] proxy sent 46 to 57
+[INFO] CONNECT
+[DEBUG] REQUEST 32
+GET http://pagead2.googlesyndication.com/pagead/gen_204?id=sodar&v=24&t=2&bgai=Bx0cS4O5uXKDlLcTvhQbj46HoAgAAAAA4AeAEAg&bg=!W1ilWEBENjlQDxo4tEkCAAAANVIAAAADCgAC3_iZASdd6TbZzgdqwFCwcd1bO0ytuyKR6vUdAMmhPZ_yMHTsqdiuC57T3b7Yo_2BA9Ci-qjzyxNg-4H-yci2vbSzxzEe5Dafy459MRFRvxlZCye2o0Kgo5jnIsZ5-cInuwzk_zeP4VvyuHdC9JZlzLR5OtYuFq8SvwtaAOe6qaq_gAf8frCTPTvHGzJIdu39luRt8gvt7BW5NrFe9IIABorSFvMBYzW3vHX3U40o2DvaYJ_xpt7fhnMZuY1P-ZT0f4xpYCmyIna3WwdFoML8RSSt_aqhoGNCy98ml0lIZNN4iJoWiUirZ0NASKLvxaBx0HJqdZ2hDo8koZ78NmLVQu8vZIsx2UCkQvHYAG9-pEt2efb3teqigYBhKM-LNngW-oES5qkbS5R3yB2t HTTP/1.1
+Host: pagead2.googlesyndication.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://tpc.googlesyndication.com/sodar/6uQTKQJz.html
+Connection: keep-alive
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header GET /pagead/gen_204?id=sodar&v=24&t=2&bgai=Bx0cS4O5uXKDlLcTvhQbj46HoAgAAAAA4AeAEAg&bg=!W1ilWEBENjlQDxo4tEkCAAAANVIAAAADCgAC3_iZASdd6TbZzgdqwFCwcd1bO0ytuyKR6vUdAMmhPZ_yMHTsqdiuC57T3b7Yo_2BA9Ci-qjzyxNg-4H-yci2vbSzxzEe5Dafy459MRFRvxlZCye2o0Kgo5jnIsZ5-cInuwzk_zeP4VvyuHdC9JZlzLR5OtYuFq8SvwtaAOe6qaq_gAf8frCTPTvHGzJIdu39luRt8gvt7BW5NrFe9IIABorSFvMBYzW3vHX3U40o2DvaYJ_xpt7fhnMZuY1P-ZT0f4xpYCmyIna3WwdFoML8RSSt_aqhoGNCy98ml0lIZNN4iJoWiUirZ0NASKLvxaBx0HJqdZ2hDo8koZ78NmLVQu8vZIsx2UCkQvHYAG9-pEt2efb3teqigYBhKM-LNngW-oES5qkbS5R3yB2t HTTP/1.1
+Connection: close
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: pagead2.googlesyndication.com
+Referer: http://tpc.googlesyndication.com/sodar/6uQTKQJz.html
+Accept: image/webp,*/*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+
+[DEBUG] HOST pagead2.googlesyndication.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] GET
+[INFO] successfully send 840
+[DEBUG] send to server successfully
+[DEBUG] client to server
+[INFO] client 41sent 517
+[INFO] proxy sent 517 to 51
+[INFO] CONNECT
+[DEBUG] RESPONSE 32
+HTTP/1.1 204 No Content
+P3P: policyref="http://www.googleadservices.com/pagead/p3p.xml", CP="NOI DEV PSA PSD IVA IVD OTP OUR OTR IND OTC"
+Timing-Allow-Origin: *
+Date: Thu, 21 Feb 2019 18:33:05 GMT
+Pragma: no-cache
+Expires: Fri, 01 Jan 1990 00:00:00 GMT
+Cache-Control: no-cache, must-revalidate
+Content-Type: image/gif
+X-Content-Type-Options: nosniff
+Server: cafe
+Content-Length: 0
+X-XSS-Protection: 1; mode=block
+Connection: close
+
+
+[DEBUG] parse successfully
+[DEBUG] Content-Lenght 0
+[DEBUG] body received successfully
+[DEBUG] reconstruct header 
+[INFO] successfully send 446
+[DEBUG] send header successfully
+[INFO] successfully send 0
+[DEBUG] send body successfully
+[DEBUG] client to server
+[INFO] client 29sent 446
+[INFO] proxy sent 446 to 31
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 84
+[INFO] proxy sent 84 to 29
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 119
+[INFO] proxy sent 119 to 29
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 29sent 46
+[INFO] proxy sent 46 to 31
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 835
+[INFO] proxy sent 835 to 10
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 51sent 1448
+[INFO] proxy sent 1448 to 41
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 51sent 1448
+[INFO] proxy sent 1448 to 41
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 51sent 1266
+[INFO] proxy sent 1266 to 41
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 41sent 126
+[INFO] proxy sent 126 to 51
+[INFO] CONNECT
+[DEBUG] REQUEST 42
+POST http://ocsp.digicert.com/ HTTP/1.1
+Host: ocsp.digicert.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+Content-Length: 83
+Connection: keep-alive
+
+0Q0O0M0K0I0	+
+[DEBUG] parse successfully
+[DEBUG] parsed header POST / HTTP/1.1
+Connection: close
+Content-Length: 83
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: ocsp.digicert.com
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+
+
+[DEBUG] HOST ocsp.digicert.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] POST
+[DEBUG] Request Content-Lenght 83
+[DEBUG] server to client
+[INFO] client 51sent 51
+[INFO] proxy sent 51 to 41
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1499
+[INFO] proxy sent 1499 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 2836
+[INFO] proxy sent 2836 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 2836
+[INFO] proxy sent 2836 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 2836
+[INFO] proxy sent 2836 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 2836
+[INFO] proxy sent 2836 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 2836
+[INFO] proxy sent 2836 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1418
+[INFO] proxy sent 1418 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 1168
+[INFO] proxy sent 1168 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 46
+[INFO] proxy sent 46 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 913
+[INFO] proxy sent 913 to 27
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 67
+[INFO] proxy sent 67 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 31
+[INFO] proxy sent 31 to 25
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 27sent 39
+[INFO] proxy sent 39 to 25
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 25sent 39
+[INFO] proxy sent 39 to 27
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 30sent 862
+[INFO] proxy sent 862 to 53
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 1238
+[INFO] proxy sent 1238 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 69
+[INFO] proxy sent 69 to 10
+[INFO] CONNECT
+[DEBUG] REQUEST 43
+CONNECT sync.mookie1.cn:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: sync.mookie1.cn:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: sync.mookie1.cn:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST sync.mookie1.cn
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] server to client
+[INFO] client 53sent 301
+[INFO] proxy sent 301 to 30
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 53sent 1418
+[INFO] proxy sent 1418 to 30
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 53sent 604
+[INFO] proxy sent 604 to 30
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 53sent 46
+[INFO] proxy sent 46 to 30
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 30sent 46
+[INFO] proxy sent 46 to 53
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 75
+[INFO] proxy sent 75 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 38
+[INFO] proxy sent 38 to 7
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 10sent 46
+[INFO] proxy sent 46 to 7
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 7sent 46
+[INFO] proxy sent 46 to 10
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 34sent 126
+[INFO] proxy sent 126 to 43
+[INFO] CONNECT
+[DEBUG] REQUEST 44
+CONNECT d.agkn.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: d.agkn.com:443
+
+
+[DEBUG] parse successfully
+[DEBUG] parsed header C HTTP/1.1
+Host: d.agkn.com:443
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Connection: close
+Proxy-Connection: keep-alive
+
+
+[DEBUG] HOST d.agkn.com
+[DEBUG] PORT 443
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] server to client
+[INFO] client 43sent 89
+[INFO] proxy sent 89 to 34
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 34sent 46
+[INFO] proxy sent 46 to 43
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 38sent 517
+[INFO] proxy sent 517 to 66
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 66sent 1448
+[INFO] proxy sent 1448 to 38
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 66sent 1448
+[INFO] proxy sent 1448 to 38
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 66sent 1295
+[INFO] proxy sent 1295 to 38
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 38sent 126
+[INFO] proxy sent 126 to 66
+[INFO] CONNECT
+[DEBUG] REQUEST 45
+POST http://status.rapidssl.com/ HTTP/1.1
+Host: status.rapidssl.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+Content-Length: 83
+Connection: keep-alive
+
+0Q0O0M0K0I0	+
+[DEBUG] parse successfully
+[DEBUG] parsed header POST / HTTP/1.1
+Connection: close
+Content-Length: 83
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: status.rapidssl.com
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+
+
+[DEBUG] HOST status.rapidssl.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] server to client
+[INFO] client 66sent 51
+[INFO] proxy sent 51 to 38
+[INFO] CONNECT
+[DEBUG] connect successfully
+[INFO] POST
+[DEBUG] Request Content-Lenght 83
+[DEBUG] connect successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 63sent 517
+[INFO] proxy sent 517 to 42
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 42sent 1448
+[INFO] proxy sent 1448 to 63
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 42sent 1448
+[INFO] proxy sent 1448 to 63
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 42sent 1266
+[INFO] proxy sent 1266 to 63
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 63sent 126
+[INFO] proxy sent 126 to 42
+[INFO] CONNECT
+[DEBUG] REQUEST 46
+POST http://ocsp.digicert.com/ HTTP/1.1
+Host: ocsp.digicert.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+Content-Length: 83
+Connection: keep-alive
+
+0Q0O0M0K0I0	+
+[DEBUG] parse successfully
+[DEBUG] parsed header POST / HTTP/1.1
+Connection: close
+Content-Length: 83
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0
+Host: ocsp.digicert.com
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/ocsp-request
+
+
+[DEBUG] HOST ocsp.digicert.com
+[DEBUG] PORT 80
+[INFO] CONNECTING SERVER
+[DEBUG] setup successfully
+[DEBUG] connect successfully
+[INFO] POST
+[DEBUG] Request Content-Lenght 83
+[DEBUG] client to server
+[INFO] client 29sent 1581
+[INFO] proxy sent 1581 to 31
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 29sent 1050
+[INFO] proxy sent 1050 to 31
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 99
+[INFO] proxy sent 99 to 29
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 111
+[INFO] proxy sent 111 to 29
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 31sent 46
+[INFO] proxy sent 46 to 29
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 29sent 46
+[INFO] proxy sent 46 to 31
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 42sent 51
+[INFO] proxy sent 51 to 63
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 55sent 564
+[INFO] proxy sent 564 to 59
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 59sent 580
+[INFO] proxy sent 580 to 55
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 41sent 492
+[INFO] proxy sent 492 to 51
+[INFO] CONNECT
