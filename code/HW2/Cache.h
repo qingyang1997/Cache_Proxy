@@ -15,8 +15,8 @@ public:
 private:
   bool checkControlHeader(Http &http);
   bool checkNoCacheField(Http &http);
-  bool findCache(string &url);
-  void getCache(string &url, Response &cache_response);
+  bool findCache(std::string &url);
+  void getCache(std::string &url, Response &cache_response);
   bool checkExpireHeader(Request &request);
   bool checkFresh(const Request &request, const Response &response);
   void writeLog(const char *info);
@@ -27,34 +27,24 @@ Cache::Cache() {}
 
 /*
  Cache Validate
+if (cache_response.receive_time + cache_response.max_age > current_time
  */
 bool Cache::validate(Request &request, Response &cache_response,
-                     string &message) {
+                     std::string &message) {
 
   /* ----Request Level----- */
   // Step.1 Check Request Cache Control Headers
   if (checkControlHeader(request) == false) {
     // Step.2 Find Cache
-    if (findcache(request.get_host()==false) {
+    if (findcache(request.get_host()) == false) {
       message = "request contains no_cache, request server for fresh data";
-      return false;
     } else {
-
-      return false;
-      } else {
-      if (cache_response.receive_time + cache_response.max_age > current_time) {
-        message = "in cache, requires validation";
-        return false;
-      } else {
-        return true;
-      }
-      }
+    }
+  } else {
     message = "Request no-cache";
     return false;
-  } else {
   }
-}
-return true;
+  return true;
 }
 
 bool Cache::findCache(string &url) {
