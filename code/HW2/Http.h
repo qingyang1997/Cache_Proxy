@@ -19,7 +19,8 @@ public:
   void parseHeader(std::string &message);
   void reconstructHeader(std::string &destination);
   void parseByLine(std::string &message);
-  void update_body(char *buff, int length) {
+  void updateBody(char *buff, int length) {
+
     for (int i = 0; i < length; ++i) {
       body.push_back(buff[i]);
     }
@@ -31,6 +32,9 @@ public:
   int getUid() { return uid; }
   std::string getFirstLine() { return first_line; }
   std::string &getBody() { return body; }
+
+  std::string getCacheControlValue(std::string key);
+
   bool checkExistsHeader(const char *header_name);
   bool checkExistsControlHeader(std::string header_name);
   void addHeaderPair(std::string &key, std::string &value);
@@ -38,7 +42,9 @@ public:
 
 void Http::addHeaderPair(std::string &key, std::string &value) {
   // what if the key is already there?
-  // does it support update?
+
+  // should this function support update?
+
   header_pair[key] = value;
 }
 void Http::parseByLine(std::string &message) {
@@ -46,8 +52,16 @@ void Http::parseByLine(std::string &message) {
   size_t end = message.find("\r\n");
   while (1) {
     size_t space = message.find(' ', start);
+
+    if (space == message.npos) {
+      throw ErrorException("Invalid request header");
+    }
     std::string key = message.substr(start, space - start - 1);
     std::string value = message.substr(space + 1, end - space - 1);
+    if (key.empty() || value.empty()) {
+      throw ErrorException("Invalid request header");
+    }
+
     header_pair[key] = value;
     start = end + 2;
     if (start >= message.size()) {
@@ -67,7 +81,7 @@ void Http::parseHeader(std::string &message) {
   std::string remain = message.substr(end_pos + 2);
   end_pos = remain.find("\r\n\r\n");
   if (end_pos == remain.npos) {
-    throw ErrorException("missing end");
+    throw ErrorException("Invalid request header");
   }
   remain = remain.substr(0, end_pos + 2);
   parseByLine(remain);
@@ -76,7 +90,8 @@ void Http::parseHeader(std::string &message) {
   // error check?
 }
 
-void Http::reconstructHeader(std::string &destination) {
+void Http::reconstructHeader(std::string &destination) { // no exception
+
   std::string tmp = first_line;
   std::map<std::string, std::string>::iterator it = header_pair.begin();
   while (it != header_pair.end()) {
@@ -135,8 +150,15 @@ void Http::parseCacheControl() {
     if (comma != tmp.npos) {
       Cache_Control[tmp.substr(0, comma)] = tmp.substr(comma + 1);
     } else {
-      Cache_Control[tmp] = "TRUE";
+      Cache_Control[tmp] = "";
     }
   }
+}
+std::string Http::getCacheControlValue(std::string key) {
+  std::map<std::string, std::string>::iterator it = Cache_Control.find(key);
+  if (it == Cache_Control.end()) {
+    return "";
+  }
+  return it->second;
 }
 #endif // PROXY_HTTP_H

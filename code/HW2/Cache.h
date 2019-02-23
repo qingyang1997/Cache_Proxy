@@ -10,23 +10,27 @@ typedef unordered_map<string, Response> cachemap;
 class Cache {
 public:
   Cache();
-  int validate(Request &request, Response &cache_response, string &message);
-  int update(Request &request, Response &response, string &message);
+
+  int validate(Request &request, Response &cache_response,
+               std::string &message);
+  int update(Request &request, Response &response, std::string &message);
 
 private:
   bool checkControlHeader(Http &http);
   bool checkNoCacheField(Http &http);
+
   bool checkReValidateField(Http &http);
   bool checkMaxAgeField(Http &http);
   bool findCache(std::string &url);
   bool checkExpireHeader(Response &response);
   bool checkFresh(const Request &request, const Response &response);
   bool timeCompare(time_t t1, time_t t2);
-  void getCache(string &url, Response &cache_response);
+  void getCache(std::string &url, Response &cache_response);
   void replaceCache(Response &response);
   time_t getUTCTime(std::string time);
-  time_t addTime(time_t time, string value);
+  time_t addTime(time_t time, std::string value);
   void eraseAllSubStr(std::string &mainStr, const std::string &toErase);
+
   void writeLog(const char *info);
   cachemap caches;
 };
@@ -37,6 +41,7 @@ Cache::Cache() {}
  Cache Validate
 if (cache_response.receive_time + cache_response.max_age > current_time
  */
+
 int Cache::validate(Request &request, Response &cache_response,
                     std::string &message) {
 
@@ -107,7 +112,7 @@ int Cache::validate(Request &request, Response &cache_response,
   return signal;
 }
 
-int Cache::update(Request &request, Response &response, string &message) {
+int Cache::update(Request &request, Response &response, std::string &message) {
   int signal = 0;
   if (checkControlHeader(request) == true) {
     if (checkNoCacheField(request) == true) {
@@ -128,7 +133,7 @@ int Cache::update(Request &request, Response &response, string &message) {
     }
 
   } else if (checkExpireHeader(response) == true) {
-    string expire_header = "expires";
+    std::string expire_header = "expires";
     string expire_string = response.getValue(expire_header);
     message = "cached, expires at " + expire_string;
     signal = 3;
@@ -137,9 +142,10 @@ int Cache::update(Request &request, Response &response, string &message) {
   return signal;
 }
 
-bool Cache::findCache(string &url) {
+bool Cache::findCache(std::string &url) {
   auto iter = caches.find(url);
   return iter == caches.end() ? false : true;
+
   if (iter == caches.end()) {
     return false;
   } else {
@@ -147,7 +153,7 @@ bool Cache::findCache(string &url) {
   }
 }
 
-void Cache::getCache(string &url, Response &cache_response) {
+void Cache::getCache(std::string &url, Response &cache_response) {
   auto iter = caches.find(url);
   cache_response = *iter;
 }
