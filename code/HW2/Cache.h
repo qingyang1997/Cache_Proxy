@@ -1,5 +1,6 @@
 #include "Request.h"
 #include "Response.h"
+#include <ctime>
 #include <list>
 #include <string>
 #include <unordered_map>
@@ -10,16 +11,18 @@ class Cache {
 public:
   Cache();
   bool validate(Request &request, Response &cache_response, string &message);
-  void update_block(const Response &server_response);
+  int update(const Response &response);
 
 private:
   bool checkControlHeader(Http &http);
   bool checkNoCacheField(Http &http);
   bool findCache(std::string &url);
-  void getCache(std::string &url, Response &cache_response);
   bool checkExpireHeader(Response &response);
   bool checkFresh(const Request &request, const Response &response);
-  bool timeComparision(
+  bool timeCompare(time_t t1, time_t t2);
+  time_t getUTCTime(std::string time);
+  time_t addTime(time_t time, string value);
+  void eraseAllSubStr(std::string &mainStr, const std::string &toErase);
   void writeLog(const char *info);
   cachemap caches;
 };
@@ -117,7 +120,39 @@ bool Cache::checkExpireHeader(Response &response) {
 }
 
 void Cache::writeLog(const char *info) { return; }
-void Cache::update_block(const Response &server_response) {
+
+bool Cache::timeCompare(time_t t1, time_t t2) {
+  float tinterval = difftime(t1, t2);
+  if (tinterval > 0)
+    return true;
+  else
+    return false;
+}
+
+void Cache::eraseAllSubStr(std::string &mainStr, const std::string &toErase) {
+  size_t pos = std::string::npos;
+
+  // Search for the substring in string in a loop untill nothing is found
+  while ((pos = mainStr.find(toErase)) != std::string::npos) {
+    // If found then erase it from string
+    mainStr.erase(pos, toErase.length());
+  }
+}
+
+time_t Cache::getUTCTime(std::string time) {
+  struct tm tm;
+  eraseAllSubStr(time, " GMT");
+  strptime(time.c_str(), "%a, %d %b %Y %H:%M:%S", &tm);
+  time_t t = mktime(&tm);
+  return t;
+}
+
+time_t Cache::addTime(time_t time, std::string value) {
+  int add_value = stoi(value);
+  return time + add_value;
+}
+int Cache::update(const Response &response) {
+
   if (server_response.isContained("no_store")) {
     return;
   } else {
