@@ -34,6 +34,8 @@ public:
   int get_uid() { return uid; }
   string get_first_line() { return first_line; }
   string &get_body() { return body; }
+  bool checkExistsHeader(const char *header_name);
+  bool checkExistsControlHeader(string header_name);
 };
 
 void Http::parse_by_line(string &message,
@@ -103,6 +105,22 @@ string Http::get_value(string &key) {
   return it == header_pair.end() ? "" : it->second;
 }
 
+bool Http::checkExistsHeader(const char *header_name) {
+  string header = header_name;
+  string header_value = get_value(header);
+  if (header_value == "")
+    return false;
+  else
+    return true;
+}
+
+bool Http::checkExistsControlHeader(string header_name) {
+  unordered_map<string, string>::iterator it = Cache_Control.find(header_name);
+  if (it == Cache_Control.end())
+    return false;
+  else
+    return true;
+}
 void Http::parse_cache_control() {
   unordered_map<string, string>::iterator it =
       header_pair.find("Cache-Control");
