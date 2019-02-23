@@ -17,8 +17,9 @@ private:
   bool checkNoCacheField(Http &http);
   bool findCache(std::string &url);
   void getCache(std::string &url, Response &cache_response);
-  bool checkExpireHeader(Request &request);
+  bool checkExpireHeader(Response &response);
   bool checkFresh(const Request &request, const Response &response);
+  bool timeComparision(
   void writeLog(const char *info);
   cachemap caches;
 };
@@ -34,14 +35,38 @@ bool Cache::validate(Request &request, Response &cache_response,
 
   /* ----Request Level----- */
   // Step.1 Check Request Cache Control Headers
-  if (checkControlHeader(request) == false) {
-    // Step.2 Find Cache
-    if (findcache(request.get_host()) == false) {
-      message = "request contains no_cache, request server for fresh data";
-    } else {
+  if (checkControlHeader(request) == true) {
+    // Maybe Useful
+    // Step 1.1 no-cache header
+    if (checkNoCacheField(request) == true) {
+      message = "Request no-cache";
+      return false;
     }
+  }
+
+  // Step.2 Find Cache
+  if (findCache(request.getHost()) == true) {
+    getCache(request.getHost(), cache_response);
+
+    /* ----Cache Level----- */
+    // Step.3 Cache Control in cache repsonse
+    if (checkControlHeader(cache_response) == true) {
+      if (checkNoCacheField(cache_response) == true) {
+        message = "in cache, no-cache";
+        return false;
+      }
+      // Step.4 Check Freshness
+
+    }
+    // Step.3 Expire in cache repsonse
+    else if (checkExpireHeader(cache_response) == true) {
+
+    } else {
+      // Maybe useful
+    }
+
   } else {
-    message = "Request no-cache";
+    message = "not in cache";
     return false;
   }
   return true;
@@ -53,15 +78,7 @@ bool Cache::findCache(string &url) {
   if (iter == caches.end()) {
     return false;
   } else {
-    auto &block_list = iter->second;
-    auto list_iter = std::find(block_list.begin(), block_list.end(),
-                               client_request.get_sub_url());
-    if (list_iter == block_list.end()) {
-      return false;
-    } else {
-      cache_response = *list_iter;
-      return true;
-    }
+    return true;
   }
 }
 
@@ -90,8 +107,13 @@ bool Cache::checkControlHeader(Http &http) {
   return http.checkExistsHeader("Cache-Control");
 }
 
-bool Cache::checkExpireHeader(Request &request) {
-  return request.checkExistsHeader("Expires");
+bool Cache::checkNoCacheField(Http &http) {
+  std::string header = "no-cache";
+  return http.checkExistsControlHeader(header);
+}
+
+bool Cache::checkExpireHeader(Response &response) {
+  return response.checkExistsHeader("Expires");
 }
 
 void Cache::writeLog(const char *info) { return; }
