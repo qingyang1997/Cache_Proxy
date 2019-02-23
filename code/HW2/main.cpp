@@ -133,7 +133,7 @@ void handler(int client_fd) {
 
   response.setUid(request.getUid());
 
-  socket_info_t server_socket_info;
+  SocketInfo server_socket_info;
   std::string hostname = request.getHost();
   server_socket_info.hostname = hostname.c_str();
   std::string port = request.getPort();
@@ -141,19 +141,19 @@ void handler(int client_fd) {
 
   std::cout << "[INFO] CONNECTING SERVER" << std::endl;
   try {
-    client_setup(&server_socket_info);
+    server_socket_info.clientSetup();
   } catch (ErrorException &e) {
     std::cout << e.what() << std::endl;
-    close(client_fd);
+    //    close(client_fd);
     return;
   }
 
   std::cout << "[DEBUG] setup successfully" << std::endl;
   try {
-    connect_socket(&server_socket_info);
+    server_socket_info.connectSocket();
   } catch (ErrorException &e) {
     std::cout << e.what() << std::endl;
-    close(client_fd);
+    //    close(client_fd);
     return;
   }
   std::cout << "[DEBUG] connect successfully" << std::endl;
@@ -354,19 +354,18 @@ int main(int argc, char **argv) {
     std::cout << e.what() << std::endl;
     return EXIT_FAILURE;
   }
-  socket_info_t socket_info;
+  SocketInfo socket_info;
   socket_info.hostname = nullptr;
   socket_info.port = "12345";
 
   try {
-    setup(&socket_info); // Create Socket
+    socket_info.setup(); // Create Socket
   } catch (ErrorException &e) {
     std::cout << e.what() << std::endl;
-
     return EXIT_FAILURE;
   }
   try {
-    wait(&socket_info);
+    socket_info.wait();
   } // Bind & Listen
   catch (ErrorException &e) {
     std::cout << e.what() << std::endl;
@@ -377,7 +376,7 @@ int main(int argc, char **argv) {
     int client_fd;
 
     try {
-      acc(&socket_info, &client_fd);
+      socket_info.acc(&client_fd);
     } // Bind & Listen
     catch (ErrorException &e) {
       std::cout << "exit main" << std::endl;

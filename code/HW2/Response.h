@@ -34,6 +34,8 @@ public:
     first_line_msg.status_num = value;
     first_line_msg.status_char = getFirstLine().substr(space1 + 1);
   }
+  std::string getStatusNum() { return first_line_msg.status_num; }
+  std::string getStatusChar() { return first_line_msg.status_char; }
 };
 
 #endif // PROXY_RESPONSE_H

@@ -31,6 +31,7 @@ public:
   int getUid() { return uid; }
   std::string getFirstLine() { return first_line; }
   std::string &getBody() { return body; }
+  std::string getCacheControlValue(std::string key);
   bool checkExistsHeader(const char *header_name);
   bool checkExistsControlHeader(std::string header_name);
   void addHeaderPair(std::string &key, std::string &value);
@@ -127,7 +128,6 @@ bool Http::checkExistsControlHeader(std::string header_name) {
 
 void Http::parseCacheControl() {
   std::map<std::string, std::string>::iterator it =
-
       header_pair.find("Cache-Control");
   if (it == header_pair.end()) {
     return;
@@ -141,8 +141,15 @@ void Http::parseCacheControl() {
     if (comma != tmp.npos) {
       Cache_Control[tmp.substr(0, comma)] = tmp.substr(comma + 1);
     } else {
-      Cache_Control[tmp] = "TRUE";
+      Cache_Control[tmp] = "";
     }
   }
+}
+std::string Http::getCacheControlValue(std::string key) {
+  std::map<std::string, std::string>::iterator it = Cache_Control.find(key);
+  if (it == Cache_Control.end()) {
+    return "";
+  }
+  return it->second;
 }
 #endif // PROXY_HTTP_H
