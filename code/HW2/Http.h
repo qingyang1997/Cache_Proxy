@@ -80,7 +80,8 @@ void Http::reconstructHeader(std::string &destination) {
     if (it->first == "Host") {
       size_t cut = first_line.find(it->second);
       if (cut != first_line.npos) {
-        tmp = tmp.substr(0, cut - 7) + tmp.substr(cut + it->second.size());
+        size_t space = first_line.find(' ');
+        tmp = tmp.substr(0, space + 1) + tmp.substr(cut + it->second.size());
       }
     }
     tmp += "\r\n";
