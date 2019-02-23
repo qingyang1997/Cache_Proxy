@@ -64,10 +64,10 @@ public:
     first_line_msg.host = value;
     first_line_msg.port = port;
   }
-  std::string get_method() { return first_line_msg.method; }
-  std::string get_protocol() { return first_line_msg.protocol; }
-  std::string get_host() { return first_line_msg.host; }
-  std::string get_port() { return first_line_msg.port; }
+  std::string getMethod() { return first_line_msg.method; }
+  std::string getProtocol() { return first_line_msg.protocol; }
+  std::string getHost() { return first_line_msg.host; }
+  std::string getPort() { return first_line_msg.port; }
 
   // for testing
   // void display() {

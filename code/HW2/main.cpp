@@ -7,10 +7,12 @@
 #define RECV_LENGTH 2048
 #define SEND_LENGTH 2048
 #define HEADER_LENGTH 8192
+
 std::mutex mtx;
 int uid = 0;
 std::ifstream log;
-void read_header(int read_fd, Http &http) {
+
+void readHeader(int read_fd, Http &http) {
   char message[HEADER_LENGTH];
   memset(message, 0, sizeof(message));
   ssize_t recv_bytes = recv(read_fd, &message, sizeof(message), 0);
@@ -21,6 +23,7 @@ void read_header(int read_fd, Http &http) {
     throw ErrorException("client close socket");
   }
 
+  // only for debugging, so there is no try and catch
   std::string temp(message);
   const std::type_info &type_info = typeid(http);
   if (type_info == typeid(Request)) {
@@ -29,13 +32,21 @@ void read_header(int read_fd, Http &http) {
     std::cout << "[DEBUG] RESPONSE " << http.getUid() << std::endl;
   }
   std::cout << temp << std::endl;
+
+  // only for debugging, so there is no try and catch
   http.parseHeader(temp);
   std::cout << "[DEBUG] parse successfully" << std::endl;
+  //
+
   size_t end_of_header = temp.find("\r\n\r\n") + 4;
-  http.update_body(&message[end_of_header], recv_bytes - end_of_header);
+  try {
+    http.updateBody(&message[end_of_header], recv_bytes - end_of_header);
+  } catch (...) {
+    throw ErrorException("update failed");
+  }
 }
 
-void read_multi(int read_fd, std::string &body, int content_length) {
+void readMulti(int read_fd, std::string &body, int content_length) {
   int total_bytes = body.size();
   while (1) {
     body.resize(total_bytes + RECV_LENGTH);
@@ -75,22 +86,29 @@ void read_multi(int read_fd, std::string &body, int content_length) {
 //   std::cout << "[INFO] successfully send " << total_bytes << std::endl;
 // }
 
-int exchange_data(int client_fd, int destination_fd) {
+void exchangeData(int client_fd, int destination_fd) {
   std::string temp;
-  read_multi(client_fd, temp, 0);
+  readMulti(client_fd, temp, 0);
   std::cout << "[INFO] client " << client_fd << "sent " << temp.size()
             << std::endl;
   if (temp.size() == 0) {
-    return -1;
+    throw ErrorException("read nothing");
   }
-  send(destination_fd, &temp[0], temp.size(), 0);
+  int status = send(destination_fd, &temp[0], temp.size(), 0);
+  if (status == -1) {
+    throw ErrorException("send return -1");
+  }
   std::cout << "[INFO] proxy sent " << temp.size() << " to " << destination_fd
             << std::endl;
-  return 0;
 }
 
 void handler(int client_fd) {
   Request request;
+  Response response;
+  std::string request_header = "";
+  std::string response_header = "";
+  int status = 0;
+
   try {
     std::lock_guard<std::mutex> lck(mtx);
     request.setUid(uid);
@@ -101,26 +119,26 @@ void handler(int client_fd) {
   }
 
   try {
-    read_header(client_fd, request);
+    readHeader(client_fd, request);
   } catch (ErrorException &e) {
     std::cout << e.what() << std::endl;
+    return;
   }
 
-  std::string header = "";
-  request.reconstructHeader(header);
-  std::cout << "[DEBUG] parsed header " << header << std::endl;
-  Response response;
+  request.reconstructHeader(request_header); // no exception
+
+  // only for dubugging
+  std::cout << "[DEBUG] parsed header " << request_header << std::endl;
+  //
+
   response.setUid(request.getUid());
 
   socket_info_t server_socket_info;
-  std::string hostname = request.get_host();
-  // std::cout << "[DEBUG] HOST " << hostname << std::endl;
+  std::string hostname = request.getHost();
   server_socket_info.hostname = hostname.c_str();
-  std::string port = request.get_port();
-  // std::cout << "[DEBUG] PORT " << port << std::endl;
+  std::string port = request.getPort();
   server_socket_info.port = port.c_str();
 
-  // socket
   std::cout << "[INFO] CONNECTING SERVER" << std::endl;
   try {
     client_setup(&server_socket_info);
@@ -133,135 +151,200 @@ void handler(int client_fd) {
   std::cout << "[DEBUG] setup successfully" << std::endl;
   try {
     connect_socket(&server_socket_info);
-    std::cout << "[DEBUG] connect successfully" << std::endl;
   } catch (ErrorException &e) {
     std::cout << e.what() << std::endl;
     close(client_fd);
     return;
   }
+  std::cout << "[DEBUG] connect successfully" << std::endl;
 
-  try {
-    if (request.get_method() == "GET") {
-      std::cout << "[INFO] GET" << std::endl;
-      //     send_multi(server_socket_info.socket_fd, header);
-      send(server_socket_info.socket_fd, &header[0], header.size(), 0);
-      std::cout << "[DEBUG] send to server successfully" << std::endl;
-      read_header(server_socket_info.socket_fd, response);
-      std::string key = "Content-Length";
-      std::cout << "[DEBUG] Content-Lenght " << response.getValue(key)
-                << std::endl;
-      if (response.getBody().size() != 0) {
-        read_multi(server_socket_info.socket_fd, response.getBody(),
-                   atoi(response.getValue(key).c_str()));
+  if (request.getMethod() == "GET") {
+    std::cout << "[INFO] GET" << std::endl;
+    // send_multi(server_socket_info.socket_fd, header);
+    send(server_socket_info.socket_fd, &request_header[0],
+         request_header.size(), 0);
+    std::cout << "[DEBUG] send to server successfully" << std::endl;
+    try {
+      readHeader(server_socket_info.socket_fd, response);
+    } catch (ErrorException &e) {
+      std::cout << "[ERROR] invalid resposne" << std::endl;
+      std::cout << e.what() << std::endl;
+      return;
+    }
+
+    // only for dubugging
+    std::string key = "Content-Length";
+    std::cout << "[DEBUG] Content-Lenght " << response.getValue(key)
+              << std::endl;
+
+    if (response.getBody().size() != 0) { // check other readMulti !!!!!!!!!
+      try {
+        readMulti(server_socket_info.socket_fd, response.getBody(),
+                  atoi(response.getValue(key).c_str()));
+
+      } catch (ErrorException &e) {
+        std::cout << "[ERROR] reading response body failed" << std::endl;
+        std::cout << e.what() << std::endl;
+        return;
+      }
+    }
+
+    // only for dubbging, no try and catch
+    std::cout << "[DEBUG] body received successfully" << std::endl;
+    response.reconstructHeader(response_header); // no exception
+    std::cout << "[DEBUG] reconstruct header " << response_header << std::endl;
+
+    // send_multi(client_fd, header);
+    status = send(client_fd, &response_header[0], response_header.size(), 0);
+    if (status == -1) {
+      std::cout << "[ERROR] send to client failed" << std::endl;
+      return;
+    }
+    std::cout << "[DEBUG] send header successfully" << std::endl;
+    //      send_multi(client_fd, response.get_body());
+
+    std::string body = response.getBody();
+    status = send(client_fd, &body[0], body.size(), 0);
+    if (status == -1) {
+      std::cout << "[ERROR] send to client failed" << std::endl;
+      return;
+    }
+    std::cout << "[DEBUG] send body successfully" << std::endl;
+  } // if method == GET
+  else if (request.getMethod() == "POST") {
+    std::cout << "[INFO] POST" << std::endl;
+
+    // only for debugging
+    std::string key = "Content-Length";
+    std::cout << "[DEBUG] Request Content-Lenght " << request.getValue(key)
+              << std::endl;
+
+    if (atoi(request.getValue(key).c_str()) > (int)request.getBody().size()) {
+      try {
+        readMulti(client_fd, request.getBody(),
+                  atoi(request.getValue(key).c_str()));
+      } catch (ErrorException &e) {
+        std::cout << "[ERROR] reading request body failed" << std::endl;
+        std::cout << e.what() << std::endl;
+        return;
+      }
+    }
+
+    std::cout << "[DEBUG] send to server successfully" << std::endl;
+    //      send_multi(server_socket_info.socket_fd, header);
+    status = send(server_socket_info.socket_fd, &request_header[0],
+                  request_header.size(), 0);
+    if (status == -1) {
+      std::cout << "[ERROR] send to server failed" << std::endl;
+      return;
+    }
+
+    // send_multi(server_socket_info.socket_fd, request.get_body());
+
+    std::string body = request.getBody();
+    status = send(server_socket_info.socket_fd, &body[0], body.size(), 0);
+    if (status == -1) {
+      std::cout << "[ERROR] send to server failed" << std::endl;
+      return;
+    }
+
+    std::cout << "[DEBUG] waiting for response" << std::endl;
+    try {
+      readHeader(server_socket_info.socket_fd, response);
+    } catch (ErrorException &e) {
+      std::cout << "[ERROR] recv response header failed" << std::endl;
+      std::cout << e.what() << std::endl;
+      return;
+    }
+
+    std::cout << "[DEBUG] Response Content-Lenght " << response.getValue(key)
+              << std::endl;
+
+    if (response.getBody().size() != 0) {
+      try {
+        readMulti(server_socket_info.socket_fd, response.getBody(),
+                  atoi(response.getValue(key).c_str()));
+      } catch (ErrorException &e) {
+        std::cout << "[ERROR] reading response body failed" << std::endl;
+        std::cout << e.what() << std::endl;
+        return;
+      }
+    }
+
+    std::cout << "[DEBUG] body received successfully" << std::endl;
+
+    std::string response_header = "";
+    response.reconstructHeader(response_header);
+    std::cout << "[DEBUG] reconstruct header " << response_header << std::endl;
+    // send_multi(client_fd, header);
+
+    status = send(client_fd, &response_header[0], response_header.size(), 0);
+    if (status == -1) {
+      std::cout << "[ERROR] send to client failed" << std::endl;
+      return;
+    }
+    std::cout << "[DEBUG] send header successfully" << std::endl;
+    //      send_multi(client_fd, response.get_body());
+    body = response.getBody();
+    status = send(client_fd, &body[0], body.size(), 0);
+    if (status == -1) {
+      std::cout << "[ERROR] send to client failed" << std::endl;
+      return;
+    }
+
+    std::cout << "[DEBUG] send body successfully" << std::endl;
+  } else if (request.getMethod() == "CONNECT") {
+    std::string message = "HTTP/1.1 200 OK\r\n\r\n";
+    send(client_fd, message.c_str(), message.size(), 0);
+    std::cout << "[INFO] CONNECT RESPONSE TO CLIENT" << std::endl;
+    while (1) {
+      std::cout << "[INFO] CONNECT" << std::endl;
+      fd_set sockset;
+      FD_ZERO(&sockset);
+      int maxfd = client_fd > server_socket_info.socket_fd
+                      ? client_fd
+                      : server_socket_info.socket_fd;
+      FD_SET(client_fd, &sockset);
+      FD_SET(server_socket_info.socket_fd, &sockset);
+      struct timeval time;
+      time.tv_sec = 0;
+      time.tv_usec = 10000000;
+
+      int ret = select(maxfd + 1, &sockset, nullptr, nullptr, &time);
+
+      if (ret == -1) {
+        std::cout << "select error" << std::endl;
+        break;
+      }
+      if (ret == 0) {
+        break;
       }
 
-      std::cout << "[DEBUG] body received successfully" << std::endl;
-      std::string response_header = "";
-      response.reconstructHeader(header);
-      std::cout << "[DEBUG] reconstruct header " << response_header
-                << std::endl;
-      // send_multi(client_fd, header);
-      send(client_fd, &header[0], header.size(), 0);
-      std::cout << "[DEBUG] send header successfully" << std::endl;
-      //      send_multi(client_fd, response.get_body());
-      std::string body = response.getBody();
-      send(client_fd, &body[0], body.size(), 0);
-      std::cout << "[DEBUG] send body successfully" << std::endl;
-    } // if method == GET
-    else if (request.get_method() == "POST") {
-      std::cout << "[INFO] POST" << std::endl;
-      std::string key = "Content-Length";
-      std::cout << "[DEBUG] Request Content-Lenght " << request.getValue(key)
-                << std::endl;
-      if (atoi(request.getValue(key).c_str()) > (int)request.getBody().size()) {
-        read_multi(client_fd, request.getBody(),
-                   atoi(request.getValue(key).c_str()));
-      }
-      std::cout << "[DEBUG] send to server successfully" << std::endl;
-      //      send_multi(server_socket_info.socket_fd, header);
-      send(server_socket_info.socket_fd, &header[0], header.size(), 0);
-      // send_multi(server_socket_info.socket_fd, request.get_body());
-      std::string body = request.getBody();
-      send(server_socket_info.socket_fd, &body[0], body.size(), 0);
-      std::cout << "[DEBUG] waiting for response" << std::endl;
-      read_header(server_socket_info.socket_fd, response);
+      if (FD_ISSET(client_fd, &sockset)) {
+        std::cout << "[DEBUG] client to server" << std::endl;
 
-      std::cout << "[DEBUG] Response Content-Lenght " << response.getValue(key)
-                << std::endl;
-      if (response.getBody().size() != 0) {
-        read_multi(server_socket_info.socket_fd, response.getBody(),
-                   atoi(response.getValue(key).c_str()));
-      }
-
-      std::cout << "[DEBUG] body received successfully" << std::endl;
-
-      std::string response_header = "";
-      response.reconstructHeader(header);
-      std::cout << "[DEBUG] reconstruct header " << response_header
-                << std::endl;
-      // send_multi(client_fd, header);
-
-      send(client_fd, &header[0], header.size(), 0);
-
-      std::cout << "[DEBUG] send header successfully" << std::endl;
-      //      send_multi(client_fd, response.get_body());
-      body = response.getBody();
-      send(client_fd, &body[0], body.size(), 0);
-
-      std::cout << "[DEBUG] send body successfully" << std::endl;
-    } else if (request.get_method() == "CONNECT") {
-      std::string message = "HTTP/1.1 200 OK\r\n\r\n";
-      send(client_fd, message.c_str(), message.size(), 0);
-      std::cout << "[INFO] CONNECT RESPONSE TO CLIENT" << std::endl;
-      while (1) {
-        std::cout << "[INFO] CONNECT" << std::endl;
-        fd_set sockset;
-        FD_ZERO(&sockset);
-        int maxfd = client_fd > server_socket_info.socket_fd
-                        ? client_fd
-                        : server_socket_info.socket_fd;
-        FD_SET(client_fd, &sockset);
-        FD_SET(server_socket_info.socket_fd, &sockset);
-        struct timeval time;
-        time.tv_sec = 0;
-        time.tv_usec = 10000000;
-
-        int ret = select(maxfd + 1, &sockset, nullptr, nullptr, &time);
-
-        if (ret == -1) {
-          std::cout << "select error" << std::endl;
-          break;
-        }
-        if (ret == 0) {
-          break;
-        }
         try {
-          if (FD_ISSET(client_fd, &sockset)) {
-            std::cout << "[DEBUG] client to server" << std::endl;
-            if (exchange_data(client_fd, server_socket_info.socket_fd) == -1) {
-              break;
-            }
-          } else {
-            std::cout << "[DEBUG] server to client" << std::endl;
-            if (exchange_data(server_socket_info.socket_fd, client_fd) == -1) {
-              break;
-            }
-          }
+          exchangeData(client_fd, server_socket_info.socket_fd);
         } catch (ErrorException &e) {
-          std::cout << "catched" << std::endl;
+          std::cout << "[ERROR] exchange data failed" << std::endl;
+          std::cout << e.what() << std::endl;
+          break;
+        }
+      } else {
+        std::cout << "[DEBUG] server to client" << std::endl;
+
+        try {
+          exchangeData(server_socket_info.socket_fd, client_fd);
+        } catch (ErrorException &e) {
+          std::cout << "[ERROR] exchange data failed" << std::endl;
           std::cout << e.what() << std::endl;
           break;
         }
       }
-      close(client_fd);
-      close(server_socket_info.socket_fd);
-    }
+    } // while
     close(client_fd);
-  } catch (ErrorException &e) {
-    std::cout << e.what() << std::endl;
-    close(client_fd);
-    return;
-  }
+    close(server_socket_info.socket_fd);
+  } // if CONNECT
 }
 
 int main(int argc, char **argv) {
@@ -301,8 +384,12 @@ int main(int argc, char **argv) {
       std::cout << e.what() << std::endl;
       return EXIT_FAILURE;
     }
-    std::thread th(handler, client_fd);
-    th.detach();
+    try { // delete after finish
+      std::thread th(handler, client_fd);
+      th.detach();
+    } catch (...) {
+      std::cout << "[NOOOOOOOOOO]" << std::endl;
+    }
   }
 
   return EXIT_SUCCESS;
