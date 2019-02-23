@@ -4,17 +4,22 @@
 #include <string>
 #include <unordered_map>
 
-typedef unordered_map<string, list<Response>> cachemap;
+typedef unordered_map<string, Response> cachemap;
 
 class Cache {
 public:
   Cache();
-  bool validate(const Request &client_request, Response &cache_response,
-                string &message);
+  bool validate(Request &request, Response &cache_response, string &message);
   void update_block(const Response &server_response);
 
 private:
-  bool find_block(const Request &client_request, Response &cache_response);
+  bool checkControlHeader(Http &http);
+  bool checkNoCacheField(Http &http);
+  bool findCache(string &url);
+  void getCache(string &url, Response &cache_response);
+  bool checkExpireHeader(Request &request);
+  bool checkFresh(const Request &request, const Response &response);
+  void writeLog(const char *info);
   cachemap caches;
 };
 
@@ -23,39 +28,38 @@ Cache::Cache() {}
 /*
  Cache Validate
  */
-bool Cache::validate(const Request &client_request, Response &cache_response,
+bool Cache::validate(Request &request, Response &cache_response,
                      string &message) {
 
-  // Step1
-  if (!find_block(client_request, cache_response)) {
-    message = "not in cache";
-    return false;
-  } else {
-    if (client_request.isContained("no_cache")) {
+  /* ----Request Level----- */
+  // Step.1 Check Request Cache Control Headers
+  if (checkControlHeader(request) == false) {
+    // Step.2 Find Cache
+    if (findcache(request.get_host()==false) {
       message = "request contains no_cache, request server for fresh data";
       return false;
     } else {
-      if (cache_response.receive_time < cache_response.expire) {
-        message = "in cache, but expired at EXPIREDTIME";
+
+      return false;
+      } else {
+      if (cache_response.receive_time + cache_response.max_age > current_time) {
+        message = "in cache, requires validation";
         return false;
       } else {
-        if (cache_response.receive_time + cache_response.max_age >
-            current_time) {
-          message = "in cache, requires validation";
-          return false;
-        } else {
-          return true;
-        }
+        return true;
       }
-    }
+      }
+    message = "Request no-cache";
+    return false;
+  } else {
   }
-  return true;
+}
+return true;
 }
 
-bool Cache::find_block(const Request &client_request,
-                       Response &cache_response) {
-  const string &host = client_request.get_host();
-  auto = caches.find(host);
+bool Cache::findCache(string &url) {
+  auto iter = caches.find(url);
+  return iter == caches.end() ? false : true;
   if (iter == caches.end()) {
     return false;
   } else {
@@ -69,6 +73,11 @@ bool Cache::find_block(const Request &client_request,
       return true;
     }
   }
+}
+
+void Cache::getCache(string &url, Response &cache_response) {
+  auto iter = caches.find(url);
+  cache_response = *iter;
 }
 
 bool Cache::find_block(const Response &server_response) {
@@ -87,6 +96,15 @@ bool Cache::find_block(const Response &server_response) {
   }
 }
 
+bool Cache::checkControlHeader(Http &http) {
+  return http.checkExistsHeader("Cache-Control");
+}
+
+bool Cache::checkExpireHeader(Request &request) {
+  return request.checkExistsHeader("Expires");
+}
+
+void Cache::writeLog(const char *info) { return; }
 void Cache::update_block(const Response &server_response) {
   if (server_response.isContained("no_store")) {
     return;
