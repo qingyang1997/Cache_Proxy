@@ -10,7 +10,7 @@
 #include <netdb.h>
 #include <sys/socket.h>
 #include <unistd.h>
-// using namespace std;
+
 struct Socket_Info {
   int socket_fd;
   struct addrinfo host_info;
