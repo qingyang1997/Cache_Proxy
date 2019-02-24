@@ -162,8 +162,9 @@ void handler(int client_fd, Cache *cache) {
     std::cout << "[INFO] GET" << std::endl;
     // send_multi(server_socket_info.socket_fd, header);
     std::string log_message = "";
-    int result_cache = cache->validate(request, response, log_message);
-    if (result_cache == 0) { // response to client directly
+    bool result_cache = cache->validate(request, response, log_message);
+    std::cout << "[LOG] request " << log_message << std::endl;
+    if (result_cache == true) { // response to client directly
       // only for dubbging, no try and catch
       std::cout << "[DEBUG] body received successfully" << std::endl;
       response.reconstructHeader(response_header); // no exception
@@ -217,7 +218,7 @@ void handler(int client_fd, Cache *cache) {
       std::cout << "[DEBUG] body received successfully" << std::endl;
       cache->update(request, response,
                     log_message); // only for dubbging, no try and catch
-
+      std::cout << "[LOG] response " << log_message << std::endl;
       response.reconstructHeader(response_header); // no exception
       std::cout << "[DEBUG] reconstruct header " << response_header
                 << std::endl;
