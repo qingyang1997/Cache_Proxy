@@ -11,9 +11,9 @@ class Cache {
 public:
   Cache();
 
-  int validate(Request &request, Response &cache_response,
-               std::string &message);
-  int update(Request &request, Response &response, std::string &message);
+  bool validate(Request &request, Response &cache_response,
+                std::string &message);
+  void update(Request &request, Response &response, std::string &message);
 
 private:
   bool checkControlHeader(Http &http);
@@ -42,10 +42,9 @@ Cache::Cache() {}
 if (cache_response.receive_time + cache_response.max_age > current_time
  */
 
-int Cache::validate(Request &request, Response &cache_response,
-                    std::string &message) {
+bool Cache::validate(Request &request, Response &cache_response,
+                     std::string &message) {
 
-  int signal = 0;
   /* ----Request Level----- */
   // Step.1 Check Request Cache Control Headers
   if (checkControlHeader(request) == true) {
@@ -53,8 +52,8 @@ int Cache::validate(Request &request, Response &cache_response,
     // Step 1.1 no-cache header
     if (checkNoCacheField(request) == true) {
       message = "Request no-cache";
-      signal = 1;
-      return signal;
+
+      return false;
     }
   }
 
@@ -68,8 +67,8 @@ int Cache::validate(Request &request, Response &cache_response,
     if (checkControlHeader(cache_response) == true) {
       if (checkNoCacheField(cache_response) == true) {
         message = "in cache, no-cache";
-        signal = 2;
-        return signal;
+
+        return false;
       }
       // Step.4 Check Freshness
       if (checkMaxAgeField(cache_response) == true) {
@@ -80,8 +79,8 @@ int Cache::validate(Request &request, Response &cache_response,
         time_t cache_time = getUTCTime(cache_response.getValue(date_header));
         if (timeCompare(expire_time, cache_time) == false) {
           message = "not fresh";
-          signal = 3;
-          return signal;
+
+          return false;
         }
       }
 
@@ -94,54 +93,54 @@ int Cache::validate(Request &request, Response &cache_response,
       time_t request_time = getUTCTime(request.getValue(date_header));
       if (timeCompare(request_time, expire_time) == true) {
         message = "expire";
-        signal = 4;
-        return signal;
+
+        return false;
       }
     } else {
       // Maybe useful
     }
 
     message = "in cache, valid";
-    signal = 0;
-    return signal;
+
+    return true;
 
   } else {
     message = "not in cache";
-    signal = 5;
-    return signal;
+    return false;
   }
-  return signal;
+  return false;
 }
 
-int Cache::update(Request &request, Response &response, std::string &message) {
-  int signal = 0;
-  if (checkControlHeader(request) == true) {
-    if (checkNoCacheField(request) == true) {
-      message = "not cache because request contains \"no-cache\" field";
-      signal = 1;
-      return signal;
-    }
-  }
-
-  if (checkControlHeader(response) == true) {
-    if (checkNoCacheField(response) == true) {
-      message = "not cache because response contains \"no-cache\" field";
-      signal = 2;
-      return signal;
-    } else if (checkReValidateField(response) == true) {
-      message = "cached, but requires re-validation";
-      signal = 4;
+void Cache::update(Request &request, Response &response, std::string &message) {
+  int status_num = std::stoi(response.getStatusNum());
+  if (status_num == 304) {
+    std::string host_name = request.getHost();
+    getCache(host_name, response);
+  } else {
+    if (checkControlHeader(request) == true) {
+      if (checkNoCacheField(request) == true) {
+        message = "not cache because request contains \"no-cache\" field";
+        return;
+      }
     }
 
-  } else if (checkExpireHeader(response) == true) {
-    std::string expire_header = "expires";
-    std::string expire_string = response.getValue(expire_header);
-    message = "cached, expires at " + expire_string;
-    signal = 3;
-  }
+    if (checkControlHeader(response) == true) {
+      if (checkNoCacheField(response) == true) {
+        message = "not cache because response contains \"no-cache\" field";
+        return;
+      } else if (checkReValidateField(response) == true) {
+        message = "cached, but requires re-validation";
+      }
 
-  replaceCache(request, response);
-  return signal;
+    } else if (checkExpireHeader(response) == true) {
+      std::string expire_header = "expires";
+      std::string expire_string = response.getValue(expire_header);
+      message = "cached, expires at " + expire_string;
+    }
+
+    replaceCache(request, response);
+    return;
+  }
 }
 
 bool Cache::findCache(std::string &url) {
