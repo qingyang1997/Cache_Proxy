@@ -1,4 +1,4 @@
-//#include "Cache.h"
+#include "Cache.h"
 #include "Mysocket.h"
 #include "Request.h"
 #include "Response.h"
@@ -102,7 +102,7 @@ void exchangeData(int client_fd, int destination_fd) {
             << std::endl;
 }
 
-void handler(int client_fd) {
+void handler(int client_fd, Cache &cache) {
   Request request;
   Response response;
   std::string request_header = "";
@@ -161,6 +161,7 @@ void handler(int client_fd) {
   if (request.getMethod() == "GET") {
     std::cout << "[INFO] GET" << std::endl;
     // send_multi(server_socket_info.socket_fd, header);
+
     send(server_socket_info.socket_fd, &request_header[0],
          request_header.size(), 0);
     std::cout << "[DEBUG] send to server successfully" << std::endl;
@@ -354,6 +355,8 @@ int main(int argc, char **argv) {
     std::cout << e.what() << std::endl;
     return EXIT_FAILURE;
   }
+
+  Cache cache;
   SocketInfo socket_info;
   socket_info.hostname = nullptr;
   socket_info.port = "12345";
@@ -383,8 +386,9 @@ int main(int argc, char **argv) {
       std::cout << e.what() << std::endl;
       return EXIT_FAILURE;
     }
+
     try { // delete after finish
-      std::thread th(handler, client_fd);
+      std::thread th(handler, client_fd, cache);
       th.detach();
     } catch (...) {
       std::cout << "[NOOOOOOOOOO]" << std::endl;
