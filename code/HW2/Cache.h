@@ -24,6 +24,8 @@ private:
   bool findCache(std::string &url);
   bool checkExpireHeader(Response &response);
   bool checkFresh(const Request &request, const Response &response);
+  bool checkEtag(Response &response);
+  bool checkLastModified(Response &respone);
   bool timeCompare(time_t t1, time_t t2);
   void getCache(std::string &url, Response &cache_response);
   void replaceCache(Request &request, Response &response);
@@ -79,7 +81,19 @@ bool Cache::validate(Request &request, Response &cache_response,
         time_t cache_time = getUTCTime(cache_response.getValue(date_header));
         if (timeCompare(expire_time, cache_time) == false) {
           message = "not fresh";
+          if (cache_response.checkExistsHeader("Etag") == true) {
+            std::string key = "If-None-Match";
+            std::string header = "Etag";
+            std::string value = request.getValue(header);
+            request.addHeaderPair(key, value);
+          }
 
+          if (cache_response.checkExistsHeader("Last-modified") == true) {
+            std::string key = "If-Modified-Since";
+            std::string header = "Date";
+            std::string value = request.getValue(header);
+            request.addHeaderPair(key, value);
+          }
           return false;
         }
       }
