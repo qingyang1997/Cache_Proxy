@@ -93,11 +93,10 @@ void read_multi(int read_fd, std::string &body, int content_length) {
 
 int exchange_data(int client_fd, int destination_fd) {
   std::string temp;
-  // temp.resize(32768);
-  // ssize_t recv_bytes;
-  // recv_bytes = recv(client_fd, &temp.data()[0], 8192, 0);
-  // temp.resize(recv_bytes);
-  read_multi(client_fd, temp, 0);
+  temp.resize(8192);
+  ssize_t recv_bytes;
+  recv_bytes = recv(client_fd, &temp[0], 8192, 0);
+  temp.resize(recv_bytes);
   std::cout << "[INFO] client " << client_fd << "sent " << temp.size()
             << std::endl;
   if (temp.size() == 0) {
