@@ -59,8 +59,9 @@ int Cache::validate(Request &request, Response &cache_response,
   }
 
   // Step.2 Find Cache
-  if (findCache(request.getHost()) == true) {
-    getCache(request.getHost(), cache_response);
+  std::string host_name = request.getHost();
+  if (findCache(host_name) == true) {
+    getCache(host_name, cache_response);
 
     /* ----Cache Level----- */
     // Step.3 Cache Control in cache repsonse
@@ -72,9 +73,9 @@ int Cache::validate(Request &request, Response &cache_response,
       }
       // Step.4 Check Freshness
       if (checkMaxAgeField(cache_response) == true) {
-        string date_header = "date";
+        std::string date_header = "date";
         time_t request_time = getUTCTime(request.getValue(date_header));
-        string max_age = cache_response.getControlValue("max-age");
+        std::string max_age = cache_response.getCacheControlValue("max-age");
         time_t expire_time = addTime(request_time, max_age);
         time_t cache_time = getUTCTime(cache_response.getValue(date_header));
         if (timeCompare(expire_time, cache_time) == false) {
@@ -87,9 +88,9 @@ int Cache::validate(Request &request, Response &cache_response,
     }
     // Step.3 Expire in cache repsonse
     else if (checkExpireHeader(cache_response) == true) {
-      string expire_header = "expires";
+      std::string expire_header = "expires";
       time_t expire_time = getUTCTime(cache_response.getValue(expire_header));
-      string date_header = "date";
+      std::string date_header = "date";
       time_t request_time = getUTCTime(request.getValue(date_header));
       if (timeCompare(request_time, expire_time) == true) {
         message = "expire";
@@ -134,7 +135,7 @@ int Cache::update(Request &request, Response &response, std::string &message) {
 
   } else if (checkExpireHeader(response) == true) {
     std::string expire_header = "expires";
-    string expire_string = response.getValue(expire_header);
+    std::string expire_string = response.getValue(expire_header);
     message = "cached, expires at " + expire_string;
     signal = 3;
   }
