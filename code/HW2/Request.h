@@ -23,7 +23,7 @@ private:
 public:
   Request() {}
   virtual ~Request(){};
-  virtual void parse_first_line() {
+  virtual void parseFirstLine() {
     size_t space = first_line.find(' ');
     string value = first_line.substr(0, space);
     // if (value != "GET" && value != "POST" && value != "CONNECT") {
@@ -55,7 +55,7 @@ public:
       port = "443";
     }
     std::string key = "Host";
-    value = get_value(key);
+    value = getValue(key);
     colon = value.find(':');
     if (colon != value.npos) {
       value = value.substr(0, colon);
@@ -63,10 +63,10 @@ public:
     first_line_msg.host = value;
     first_line_msg.port = port;
   }
-  string get_method() { return first_line_msg.method; }
-  string get_protocol() { return first_line_msg.protocol; }
-  string get_host() { return first_line_msg.host; }
-  string get_port() { return first_line_msg.port; }
+  string getMethod() { return first_line_msg.method; }
+  string getProtocol() { return first_line_msg.protocol; }
+  string getHost() { return first_line_msg.host; }
+  string getPort() { return first_line_msg.port; }
   // string get_Host() { return header_pair["Host"]; }
   // string get_Port() { return header_pair["Port"]; }
 

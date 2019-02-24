@@ -19,7 +19,7 @@ private:
 public:
   Response() {}
   virtual ~Response() {}
-  virtual void parse_first_line() { // HTTP/1.1 200 OK
+  virtual void parseFirstLine() { // HTTP/1.1 200 OK
     size_t space0 = first_line.find(' ');
     if (space0 == first_line.npos) {
       throw ErrorException("invalid response first line");
