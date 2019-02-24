@@ -137,7 +137,7 @@ void Cache::update(Request &request, Response &response, std::string &message) {
       std::string expire_string = response.getValue(expire_header);
       message = "cached, expires at " + expire_string;
     }
-
+    message = "cache stores successfully";
     replaceCache(request, response);
     return;
   }
