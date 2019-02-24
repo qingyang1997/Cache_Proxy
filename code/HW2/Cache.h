@@ -5,7 +5,7 @@
 #include <string>
 #include <unordered_map>
 
-typedef unordered_map<string, Response> cachemap;
+typedef std::unordered_map<std::string, Response> cachemap;
 
 class Cache {
 public:
@@ -26,7 +26,7 @@ private:
   bool checkFresh(const Request &request, const Response &response);
   bool timeCompare(time_t t1, time_t t2);
   void getCache(std::string &url, Response &cache_response);
-  void replaceCache(Response &response);
+  void replaceCache(Request &request, Response &response);
   time_t getUTCTime(std::string time);
   time_t addTime(time_t time, std::string value);
   void eraseAllSubStr(std::string &mainStr, const std::string &toErase);
@@ -140,6 +140,7 @@ int Cache::update(Request &request, Response &response, std::string &message) {
     signal = 3;
   }
 
+  replaceCache(request, response);
   return signal;
 }
 
@@ -156,11 +157,12 @@ bool Cache::findCache(std::string &url) {
 
 void Cache::getCache(std::string &url, Response &cache_response) {
   auto iter = caches.find(url);
-  cache_response = *iter;
+  cache_response = iter->second;
 }
 
-void Cache::replaceCache(Response &response) {
-  caches[response.getHost()] = response;
+void Cache::replaceCache(Request &request, Response &response) {
+  std::string host_name = request.getHost();
+  caches[host_name] = response;
 }
 
 bool Cache::checkControlHeader(Http &http) {
