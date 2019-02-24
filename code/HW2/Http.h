@@ -18,26 +18,25 @@ public:
   string body;
   Http() {}
   virtual ~Http(){};
-  virtual void parse_first_line(){};
-  void parse_head(string &message);
-  void reconstruct_header(string &destination);
-  void parse_by_line(string &message,
-                     unordered_map<string, string> &header_pair);
-  void update_body(char *buff, int length) {
+  virtual void parseFirstLine(){};
+  void parseHeader(string &message);
+  void reconstructHeader(string &destination);
+  void parseByLine(string &message, unordered_map<string, string> &header_pair);
+  void updateBody(char *buff, int length) {
     for (int i = 0; i < length; ++i) {
       body.push_back(buff[i]);
     }
   }
-  string get_value(string &key);
-  void parse_cache_control();
-  void set_uid(int s_uid) { uid = s_uid; }
-  int get_uid() { return uid; }
-  string get_first_line() { return first_line; }
-  string &get_body() { return body; }
+  string getValue(string &key);
+  void parseCacheControl();
+  void setUid(int s_uid) { uid = s_uid; }
+  int getUid() { return uid; }
+  string getFirstLine() { return first_line; }
+  string &getBody() { return body; }
 };
 
-void Http::parse_by_line(string &message,
-                         unordered_map<string, string> &header_pair) {
+void Http::parseByLine(string &message,
+                       unordered_map<string, string> &header_pair) {
   size_t start = 0;
   size_t end = message.find("\r\n");
   while (1) {
@@ -60,7 +59,7 @@ void Http::parse_by_line(string &message,
   }
 }
 
-void Http::parse_head(string &message) {
+void Http::parseHeader(string &message) {
   size_t end_pos = message.find("\r\n");
   if (end_pos == message.npos) {
     throw ErrorException("Invalid request header");
@@ -73,13 +72,13 @@ void Http::parse_head(string &message) {
     throw ErrorException("missing end");
   }
   remain = remain.substr(0, end_pos + 2);
-  parse_by_line(remain, header_pair);
-  parse_cache_control();
-  parse_first_line();
+  parseByLine(remain, header_pair);
+  parseCacheControl();
+  parseFirstLine();
   // error check?
 }
 
-void Http::reconstruct_header(string &destination) {
+void Http::reconstructHeader(string &destination) {
   string tmp = first_line;
   unordered_map<string, string>::iterator it = header_pair.begin();
   while (it != header_pair.end()) {
@@ -98,12 +97,12 @@ void Http::reconstruct_header(string &destination) {
   destination = tmp;
 }
 
-string Http::get_value(string &key) {
+string Http::getValue(string &key) {
   unordered_map<string, string>::iterator it = header_pair.find(key);
   return it == header_pair.end() ? "" : it->second;
 }
 
-void Http::parse_cache_control() {
+void Http::parseCacheControl() {
   unordered_map<string, string>::iterator it =
       header_pair.find("Cache-Control");
   if (it == header_pair.end()) {

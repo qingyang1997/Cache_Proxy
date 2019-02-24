@@ -11,90 +11,95 @@
 #include <sys/socket.h>
 #include <unistd.h>
 // using namespace std;
-struct Socket_Info {
+class SocketInfo {
+public:
   int socket_fd;
   struct addrinfo host_info;
   struct addrinfo *host_info_list;
   const char *hostname;
   const char *port;
+  void setup();
+  void wait();
+  void acc(int *client_connection_fd);
+  void connect_socket();
+  void client_setup();
+  SocketInfo() {}
+  ~SocketInfo() {
+    if (socket_fd == 0) {
+      close(socket_fd);
+    }
+    if (host_info_list != nullptr) {
+      free(host_info_list);
+    }
+  }
 };
 
-typedef struct Socket_Info socket_info_t;
+void SocketInfo::setup() {
+  memset(&host_info, 0, sizeof(host_info));
 
-void setup(socket_info_t *socket_info) {
-  memset(&socket_info->host_info, 0, sizeof(socket_info->host_info));
+  host_info.ai_family = AF_UNSPEC;
+  host_info.ai_socktype = SOCK_STREAM;
+  host_info.ai_flags = AI_PASSIVE;
 
-  socket_info->host_info.ai_family = AF_UNSPEC;
-  socket_info->host_info.ai_socktype = SOCK_STREAM;
-  socket_info->host_info.ai_flags = AI_PASSIVE;
-
-  int status =
-      getaddrinfo(socket_info->hostname, socket_info->port,
-                  &(socket_info->host_info), &(socket_info->host_info_list));
+  int status = getaddrinfo(hostname, port, &(host_info), &(host_info_list));
   if (status != 0) {
     throw ErrorException("getaddrinfo failure");
   } // if
 
-  socket_info->socket_fd = socket(socket_info->host_info_list->ai_family,
-                                  socket_info->host_info_list->ai_socktype,
-                                  socket_info->host_info_list->ai_protocol);
-  if (socket_info->socket_fd == -1) {
+  socket_fd = socket(host_info_list->ai_family, host_info_list->ai_socktype,
+                     host_info_list->ai_protocol);
+  if (socket_fd == -1) {
     throw ErrorException("socket() failure");
   } // if
 }
 
-void wait(socket_info_t *socket_info) {
+void SocketInfo::wait() {
   int yes = 1;
-  int status = setsockopt(socket_info->socket_fd, SOL_SOCKET, SO_REUSEADDR,
-                          &yes, sizeof(int));
-  status = ::bind(socket_info->socket_fd, socket_info->host_info_list->ai_addr,
-                  socket_info->host_info_list->ai_addrlen);
+  int status =
+      setsockopt(socket_fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int));
+  status =
+      ::bind(socket_fd, host_info_list->ai_addr, host_info_list->ai_addrlen);
   if (status == -1) {
     throw ErrorException("bind failure");
   } // if
-  status = listen(socket_info->socket_fd, 100);
+  status = listen(socket_fd, 100);
   if (status == -1) {
     throw ErrorException("listen failure");
   } // if
 }
 
-void acc(socket_info_t *socket_info, int *client_connection_fd) {
+void SocketInfo::acc(int *client_connection_fd) {
   struct sockaddr_storage socket_addr;
   socklen_t socket_addr_len = sizeof(socket_addr);
   *client_connection_fd =
-      accept(socket_info->socket_fd, (struct sockaddr *)&socket_addr,
-             &socket_addr_len);
+      accept(socket_fd, (struct sockaddr *)&socket_addr, &socket_addr_len);
   if (*client_connection_fd == -1) {
     throw ErrorException("accept failure");
   } // if
 }
 
-void connect_socket(socket_info_t *socket_info) {
+void SocketInfo::connect_socket() {
   int status =
-      connect(socket_info->socket_fd, socket_info->host_info_list->ai_addr,
-              socket_info->host_info_list->ai_addrlen);
+      connect(socket_fd, host_info_list->ai_addr, host_info_list->ai_addrlen);
   if (status != 0) {
     throw ErrorException("connect failure");
   }
 }
 
-void client_setup(socket_info_t *socket_info) {
-  memset(&socket_info->host_info, 0, sizeof(socket_info->host_info));
+void SocketInfo::client_setup() {
+  memset(&host_info, 0, sizeof(host_info));
 
-  socket_info->host_info.ai_family = AF_UNSPEC;
-  socket_info->host_info.ai_socktype = SOCK_STREAM;
+  host_info.ai_family = AF_UNSPEC;
+  host_info.ai_socktype = SOCK_STREAM;
 
-  int status =
-      getaddrinfo(socket_info->hostname, socket_info->port,
-                  &(socket_info->host_info), &(socket_info->host_info_list));
+  int status = getaddrinfo(hostname, port, &(host_info), &(host_info_list));
   if (status != 0) {
     throw ErrorException("getaddrinfo failure");
   } // if
 
-  socket_info->socket_fd = socket(socket_info->host_info_list->ai_family,
-                                  socket_info->host_info_list->ai_socktype,
-                                  socket_info->host_info_list->ai_protocol);
-  if (socket_info->socket_fd == -1) {
+  socket_fd = socket(host_info_list->ai_family, host_info_list->ai_socktype,
+                     host_info_list->ai_protocol);
+  if (socket_fd == -1) {
     throw ErrorException("socket() failure");
   } // if
 }
