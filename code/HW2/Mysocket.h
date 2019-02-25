@@ -23,7 +23,9 @@ public:
   void acc(int *client_connection_fd);
   void connect_socket();
   void client_setup();
-  SocketInfo() {}
+  SocketInfo()
+      : socket_fd(0), host_info_list(nullptr), hostname(nullptr),
+        port(nullptr) {}
   ~SocketInfo() {
     if (socket_fd == 0) {
       close(socket_fd);

@@ -218,7 +218,7 @@ void handler(int client_fd) {
         FD_SET(server_socket_info.socket_fd, &sockset);
         struct timeval time;
         time.tv_sec = 0;
-        time.tv_usec = 10000000;
+        time.tv_usec = 10000000000;
 
         int ret = select(maxfd + 1, &sockset, nullptr, nullptr, &time);
 
