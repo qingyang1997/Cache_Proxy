@@ -21,8 +21,8 @@ public:
   void setup();
   void wait();
   void acc(int *client_connection_fd);
-  void connect_socket();
-  void client_setup();
+  void connectSocket();
+  void clientSetup();
   SocketInfo()
       : socket_fd(0), host_info_list(nullptr), hostname(nullptr),
         port(nullptr) {}
@@ -80,7 +80,7 @@ void SocketInfo::acc(int *client_connection_fd) {
   } // if
 }
 
-void SocketInfo::connect_socket() {
+void SocketInfo::connectSocket() {
   int status =
       connect(socket_fd, host_info_list->ai_addr, host_info_list->ai_addrlen);
   if (status != 0) {
@@ -88,7 +88,7 @@ void SocketInfo::connect_socket() {
   }
 }
 
-void SocketInfo::client_setup() {
+void SocketInfo::clientSetup() {
   memset(&host_info, 0, sizeof(host_info));
 
   host_info.ai_family = AF_UNSPEC;
