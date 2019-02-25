@@ -1,4 +1,4 @@
-#include "Cache.h"
+//#include "Cache.h"
 #include "Mysocket.h"
 #include "Request.h"
 #include "Response.h"
@@ -51,21 +51,21 @@ void readMulti(int read_fd, std::string &body, int content_length) {
   while (1) {
     body.resize(total_bytes + RECV_LENGTH);
     ssize_t recv_bytes = recv(read_fd, &body[total_bytes], RECV_LENGTH, 0);
+    if (recv_bytes == -1) {
+      throw ErrorException("recv error");
+    }
     total_bytes += recv_bytes;
     body.resize(total_bytes);
     std::cout << "[DEBUG] read size " << total_bytes << std::endl;
     if (recv_bytes == 0) {
       if (errno == EINTR) {
-        // client exits
         throw ErrorException("client exit");
       }
-    } // else if (recv_bytes < RECV_LENGTH) {
-    //   // didn't get enough data
-    //   body.resize(total_bytes);
-    // }
-    if ((content_length > 0 && total_bytes >= content_length) ||
+    }
+    if ((content_length == 0 && recv_bytes < RECV_LENGTH) ||
+        (content_length > 0 && total_bytes >= content_length) ||
         (recv_bytes == 0)) {
-      // finished receiving
+      // may need to throw an exception not finish reading
       break;
     }
   }
@@ -103,7 +103,7 @@ void readMulti(int read_fd, std::string &body, int content_length) {
 //             << std::endl;
 // }
 
-void exchangeData(int client_fd, int destination_fd) {
+int exchange_data(int client_fd, int destination_fd) {
   std::string temp;
   temp.resize(8192);
   ssize_t recv_bytes;
@@ -112,11 +112,12 @@ void exchangeData(int client_fd, int destination_fd) {
   std::cout << "[INFO] client " << client_fd << "sent " << temp.size()
             << std::endl;
   if (temp.size() == 0) {
-    throw ErrorException("read nothing");
+    return -1;
   }
   send(destination_fd, &temp.data()[0], temp.size(), 0);
   std::cout << "[INFO] proxy sent " << temp.size() << " to " << destination_fd
             << std::endl;
+  return 0;
 }
 
 void handler(int client_fd, Cache *cache) {
@@ -182,7 +183,7 @@ void handler(int client_fd, Cache *cache) {
     bool result_cache = cache->validate(request, response, log_message);
     std::cout << "[LOG] request " << log_message << std::endl;
     if (result_cache == true) { // response to client directly
-      //    only for dubbging, no tryand catch
+      // only for dubbging, no try and catch
       std::cout << "[DEBUG] body received successfully" << std::endl;
       response.reconstructHeader(response_header); // no exception
       std::cout << "[DEBUG] reconstruct header " << response_header
@@ -355,7 +356,7 @@ void handler(int client_fd, Cache *cache) {
       FD_SET(server_socket_info.socket_fd, &sockset);
       struct timeval time;
       time.tv_sec = 0;
-      time.tv_usec = 1000000000;
+      time.tv_usec = 10000000;
 
       int ret = select(maxfd + 1, &sockset, nullptr, nullptr, &time);
 
@@ -366,43 +367,54 @@ void handler(int client_fd, Cache *cache) {
       if (ret == 0) {
         break;
       }
-
       if (FD_ISSET(client_fd, &sockset)) {
         std::cout << "[DEBUG] client to server" << std::endl;
-
-        try {
-          exchangeData(client_fd, server_socket_info.socket_fd);
-        } catch (ErrorException &e) {
-          std::cout << "[ERROR] exchange data failed" << std::endl;
-          std::cout << e.what() << std::endl;
+        if (exchange_data(client_fd, server_socket_info.socket_fd) == -1) {
+          std::cout << "[DEBUG] transfer failure" << std::endl;
           break;
         }
-
       } else {
         std::cout << "[DEBUG] server to client" << std::endl;
-
-        try {
-          exchangeData(server_socket_info.socket_fd, client_fd);
-        } catch (ErrorException &e) {
-          std::cout << "[ERROR] exchange data failed" << std::endl;
-          std::cout << e.what() << std::endl;
+        if (exchange_data(server_socket_info.socket_fd, client_fd) == -1) {
+          std::cout << "[DEBUG] transfer failure" << std::endl;
           break;
         }
       }
 
-    } // while
-    // close(client_fd);
-    // close(server_socket_info.socket_fd);
-  } // if CONNECT
+      // if (FD_ISSET(client_fd, &sockset)) {
+      //   std::cout << "[DEBUG] client to server" << std::endl;
+
+      //   try {
+      //     exchangeData(client_fd, server_socket_info.socket_fd);
+      //   } catch (ErrorException &e) {
+      //     std::cout << "[ERROR] exchange data failed" << std::endl;
+      //     std::cout << e.what() << std::endl;
+      //     break;
+      //   }
+      // } else {
+      //   std::cout << "[DEBUG] server to client" << std::endl;
+
+      //   try {
+      //     exchangeData(server_socket_info.socket_fd, client_fd);
+      //   } catch (ErrorException &e) {
+      //     std::cout << "[ERROR] exchange data failed" << std::endl;
+      //     std::cout << e.what() << std::endl;
+      //     break;
+      //   }
+    }
+  } // while
+  close(client_fd);
+  close(server_socket_info.socket_fd);
+} // if CONNECT
 }
 
 int main(int argc, char **argv) {
-  // try {
-  //   log.open("/var/log/erss/proxy.log", std::ifstream::in);
-  // } catch (std::exception &e) {
-  //   std::cout << e.what() << std::endl;
-  //   return EXIT_FAILURE;
-  // }
+  try {
+    log.open("/var/log/erss/proxy.log", std::ifstream::in);
+  } catch (std::exception &e) {
+    std::cout << e.what() << std::endl;
+    return EXIT_FAILURE;
+  }
 
   Cache cache;
   SocketInfo socket_info;
