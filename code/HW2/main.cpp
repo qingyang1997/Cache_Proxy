@@ -13,12 +13,9 @@ int uid = 0;
 void read_header(int read_fd, Http &http) {
   char message[HEADER_LENGTH];
   memset(message, 0, sizeof(message));
-  std::cout << "[DEBUG] blocked?" << std::endl;
   ssize_t recv_bytes = recv(read_fd, &message, sizeof(message), 0);
-  std::cout << "[DEBUG] blocked?" << std::endl;
   if (recv_bytes == 0) {
-    std::string temp("client close socket");
-    throw ErrorException(temp);
+    throw ErrorException("recv returns 0");
   }
   std::string temp(message);
   const std::type_info &type_info = typeid(http);
@@ -83,7 +80,7 @@ void handler(int client_fd) {
     request.setUid(uid);
     ++uid;
   } catch (...) {
-    cout << "[DEBUG] LOCK ERROR" << endl;
+    std::cout << "[DEBUG] LOCK ERROR" << std::endl;
     return;
   }
 
@@ -113,7 +110,6 @@ void handler(int client_fd) {
     server_socket_info.client_setup();
   } catch (ErrorException &e) {
     std::cout << e.what() << std::endl;
-    // close(client_fd);
     return;
   }
 
@@ -142,7 +138,8 @@ void handler(int client_fd) {
       read_header(server_socket_info.socket_fd, response);
 
       std::string key = "Content-Length";
-      cout << "[DEBUG] Content-Lenght " << response.getValue(key) << endl;
+      std::cout << "[DEBUG] Content-Lenght " << response.getValue(key)
+                << std::endl;
       if (response.getBody().size() != 0) {
         read_multi(server_socket_info.socket_fd, response.getBody(),
                    atoi(response.getValue(key).c_str()));
@@ -182,8 +179,8 @@ void handler(int client_fd) {
       std::cout << "[DEBUG] waiting for response" << std::endl;
       read_header(server_socket_info.socket_fd, response);
 
-      cout << "[DEBUG] Response Content-Lenght " << response.getValue(key)
-           << endl;
+      std::cout << "[DEBUG] Response Content-Lenght " << response.getValue(key)
+                << std::endl;
       if (response.getBody().size() != 0) {
         read_multi(server_socket_info.socket_fd, response.getBody(),
                    atoi(response.getValue(key).c_str()));
