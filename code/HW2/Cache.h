@@ -48,7 +48,7 @@ bool Cache::validate(Request &request, Response &cache_response,
                      std::string &message) {
 
   //  Find Cache
-  std::string host_name = request.getHost();
+  std::string host_name = request.getUrl();
   if (findCache(host_name) == true) {
     std::cout << "[CACHE] Host name is: " << host_name << std::endl;
     getCache(host_name, cache_response);
@@ -162,7 +162,7 @@ bool Cache::validate(Request &request, Response &cache_response,
 void Cache::update(Request &request, Response &response, std::string &message) {
   int status_num = std::stoi(response.getStatusNum());
   if (status_num == 304) {
-    std::string host_name = request.getHost();
+    std::string host_name = request.getUrl();
     std::cout << "[DEBUG] Receive 304 Use Cache" << std::endl;
     getCache(host_name, response);
   } else {
