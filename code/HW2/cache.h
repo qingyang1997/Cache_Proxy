@@ -22,10 +22,13 @@ private:
   bool findCache(std::string &url);
   bool checkExpireHeader(Response &response);
   bool checkPragmaHeader(Http &http);
-  int checkFresh(Response &cache_response, int max_age);
+  double checkFresh(Response &cache_response, int max_age, int extra_age);
   bool timeCompare(time_t t1, time_t t2);
+
   void getCache(std::string &url, Response &cache_response);
   void replaceCache(Request &request, Response &response);
+
+  time_t getExpireTime(Response &cache_response, int max_age, int extra_age);
   time_t getUTCTime(std::string time);
   time_t addTime(time_t time, int value);
   void eraseAllSubStr(std::string &mainStr, const std::string &toErase);
@@ -88,15 +91,29 @@ bool Cache::validate(Request &request, Response &cache_response,
         max_age = std::min(
             max_age, std::stoi(cache_response.getCacheControlValue("max-age")));
       }
-      std::string date_header = "date";
-      time_t request_time = time(0);
 
-      time_t expire_time = addTime(request_time, max_age);
-      time_t cache_time = getUTCTime(cache_response.getValue(date_header));
-      if (timeCompare(expire_time, cache_time) == false) {
-        message = "not fresh";
-        return false;
+      double fresh_diff = checkFresh(cache_response, max_age, extra_age);
+      if (fresh_diff > 0) {
+        time_t expire_time = getExpireTime(cache_response, max_age, extra_age);
+        tm *gmtm = gmtime(&expire_time);
+        char *dt = asctime(gmtm);
+        message = "in cache, but expired at " + std::string(dt);
+        if (checkControlField(cache_response, "must-revalidate") == true) {
+          // addheader
+          return false;
+        } else {
+          if (fresh_diff < stale_age) {
+            return true;
+          } else {
+            // addheader
+          }
+        }
+
+      } else {
+        message = "in cache, valid";
+        return true;
       }
+
     }
 
     // Step.3 Expire in cache repsonse
@@ -201,13 +218,24 @@ bool Cache::checkPragmaHeader(Http &http) {
 
 void Cache::writeLog(const char *info) { return; }
 
-bool Cache::timeCompare(time_t t1, time_t t2) {
-  float tinterval = difftime(t1, t2);
-  if (tinterval > 0)
-    return true;
-  else
-    return false;
+time_t Cache::getExpireTime(Response &cache_response, int max_age,
+                            int extra_age) {
+  std::string date_header = "Date";
+  time_t cache_time = getUTCTime(cache_response.getValue(date_header));
+  time_t expire_time = addTime(cache_time, max_age - extra_age);
+  return expire_time;
 }
+
+double Cache::checkFresh(Response &cache_response, int max_age, int extra_age) {
+  std::string date_header = "Date";
+  time_t request_time = time(0);
+  time_t cache_time = getUTCTime(cache_response.getValue(date_header));
+  time_t expire_time = addTime(cache_time, max_age - extra_age);
+  double tinterval = difftime(request_time, expire_time);
+  return tinterval;
+}
+
+bool Cache::timeCompare(time_t t1, time_t t2) {}
 
 void Cache::eraseAllSubStr(std::string &mainStr, const std::string &toErase) {
   size_t pos = std::string::npos;
