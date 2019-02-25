@@ -7,6 +7,7 @@
 #define RECV_LENGTH 2048
 #define SEND_LENGTH 2048
 #define HEADER_LENGTH 8192
+#define DEBUG 1
 
 std::mutex mtx;
 int uid = 0;
@@ -26,16 +27,17 @@ void readHeader(int read_fd, Http &http) {
   // only for debugging, so there is no try and catch
   std::string temp(message);
   const std::type_info &type_info = typeid(http);
-  if (type_info == typeid(Request)) {
-    std::cout << "[DEBUG] REQUEST " << http.getUid() << std::endl;
-  } else {
-    std::cout << "[DEBUG] RESPONSE " << http.getUid() << std::endl;
+  if (DEBUG == 1) {
+    if (type_info == typeid(Request)) {
+      std::cout << "[DEBUG] REQUEST " << http.getUid() << std::endl;
+    } else {
+      std::cout << "[DEBUG] RESPONSE " << http.getUid() << std::endl;
+    }
   }
   std::cout << temp << std::endl;
 
   // only for debugging, so there is no try and catch
   http.parseHeader(temp);
-  std::cout << "[DEBUG] parse successfully" << std::endl;
   //
 
   size_t end_of_header = temp.find("\r\n\r\n") + 4;
@@ -53,7 +55,7 @@ void readMulti(int read_fd, std::string &body, int content_length) {
     ssize_t recv_bytes = recv(read_fd, &body[total_bytes], RECV_LENGTH, 0);
     total_bytes += recv_bytes;
     body.resize(total_bytes);
-    std::cout << "[DEBUG] read size " << total_bytes << std::endl;
+    //    std::cout << "[DEBUG] read size " << total_bytes << std::endl;
     if (recv_bytes == 0) {
       if (errno == EINTR) {
         // client exits
@@ -70,21 +72,6 @@ void readMulti(int read_fd, std::string &body, int content_length) {
     }
   }
 }
-
-// void send_multi(int send_fd, std::string &body) {
-//   size_t total_bytes = 0;
-//   while (1) {
-//     size_t send_size = (total_bytes + SEND_LENGTH > body.size())
-//                            ? body.size() - total_bytes
-//                            : SEND_LENGTH;
-//     send(send_fd, &body[total_bytes], send_size, 0);
-//     total_bytes += send_size;
-//     if (total_bytes >= body.size()) {
-//       break;
-//     }
-//   }
-//   std::cout << "[INFO] successfully send " << total_bytes << std::endl;
-// }
 
 // void exchangeData(int client_fd, int destination_fd) {
 //   std::string temp;
@@ -109,14 +96,18 @@ void exchangeData(int client_fd, int destination_fd) {
   ssize_t recv_bytes;
   recv_bytes = recv(client_fd, &temp[0], 8192, 0);
   temp.resize(recv_bytes);
-  std::cout << "[INFO] client " << client_fd << "sent " << temp.size()
-            << std::endl;
+  if (DEBUG == 1) {
+    std::cout << "[INFO] client " << client_fd << "sent " << temp.size()
+              << std::endl;
+  }
   if (temp.size() == 0) {
     throw ErrorException("read nothing");
   }
   send(destination_fd, &temp.data()[0], temp.size(), 0);
-  std::cout << "[INFO] proxy sent " << temp.size() << " to " << destination_fd
-            << std::endl;
+  if (DEBUG == 1) {
+    std::cout << "[INFO] proxy sent " << temp.size() << " to " << destination_fd
+              << std::endl;
+  }
 }
 
 void handler(int client_fd, Cache *cache) {
@@ -143,9 +134,12 @@ void handler(int client_fd, Cache *cache) {
   }
 
   request.reconstructHeader(request_header); // no exception
-
+  std::cout << "[LOG] " << request.getFirstLine() << " @ current time"
+            << std::endl;
   // only for dubugging
-  std::cout << "[DEBUG] parsed header " << request_header << std::endl;
+  if (DEBUG == 1) {
+    std::cout << "[DEBUG] parsed header " << request_header << std::endl;
+  }
   //
 
   response.setUid(request.getUid());
@@ -156,7 +150,7 @@ void handler(int client_fd, Cache *cache) {
   std::string port = request.getPort();
   server_socket_info.port = port.c_str();
 
-  std::cout << "[INFO] CONNECTING SERVER" << std::endl;
+  // std::cout << "[INFO] CONNECTING SERVER" << std::endl;
   try {
     server_socket_info.clientSetup();
   } catch (ErrorException &e) {
@@ -165,7 +159,7 @@ void handler(int client_fd, Cache *cache) {
     return;
   }
 
-  std::cout << "[DEBUG] setup successfully" << std::endl;
+  // std::cout << "[DEBUG] setup successfully" << std::endl;
   try {
     server_socket_info.connectSocket();
   } catch (ErrorException &e) {
@@ -173,7 +167,7 @@ void handler(int client_fd, Cache *cache) {
     //    close(client_fd);
     return;
   }
-  std::cout << "[DEBUG] connect successfully" << std::endl;
+  //  std::cout << "[DEBUG] connect successfully" << std::endl;
 
   if (request.getMethod() == "GET") {
     std::cout << "[INFO] GET" << std::endl;
@@ -182,11 +176,13 @@ void handler(int client_fd, Cache *cache) {
     bool result_cache = cache->validate(request, response, log_message);
     std::cout << "[LOG] request " << log_message << std::endl;
     if (result_cache == true) { // response to client directly
-      //    only for dubbging, no tryand catch
-      std::cout << "[DEBUG] body received successfully" << std::endl;
+                                //    only for dubbging, no tryand catch
       response.reconstructHeader(response_header); // no exception
-      std::cout << "[DEBUG] reconstruct header " << response_header
-                << std::endl;
+      if (DEBUG == 1) {
+        std::cout << "[DEBUG] body received successfully" << std::endl;
+        std::cout << "[DEBUG] reconstruct header " << response_header
+                  << std::endl;
+      }
 
       // send_multi(client_fd, header);
       status = send(client_fd, &response_header[0], response_header.size(), 0);
