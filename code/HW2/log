@@ -1,3 +1,0 @@
-error handling:
-      close fd, when catched exception
-      where to use try and catch
