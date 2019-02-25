@@ -17,22 +17,21 @@ public:
 
 private:
   bool checkControlHeader(Http &http);
-  bool checkNoCacheField(Http &http);
+  bool checkControlField(Http &http, const char *header);
 
   bool checkReValidateField(Http &http);
-  bool checkMaxAgeField(Http &http);
+
   bool findCache(std::string &url);
   bool checkExpireHeader(Response &response);
+  bool checkPragmaHeader(Http &http);
   bool checkFresh(const Request &request, const Response &response);
-  bool checkEtag(Response &response);
-  bool checkLastModified(Response &respone);
   bool timeCompare(time_t t1, time_t t2);
   void getCache(std::string &url, Response &cache_response);
   void replaceCache(Request &request, Response &response);
   time_t getUTCTime(std::string time);
   time_t addTime(time_t time, std::string value);
   void eraseAllSubStr(std::string &mainStr, const std::string &toErase);
-
+  void addValidateHeader(Request &request, Response &response);
   void writeLog(const char *info);
   cachemap caches;
 };
@@ -47,33 +46,49 @@ if (cache_response.receive_time + cache_response.max_age > current_time
 bool Cache::validate(Request &request, Response &cache_response,
                      std::string &message) {
 
-  /* ----Request Level----- */
-  // Step.1 Check Request Cache Control Headers
-  if (checkControlHeader(request) == true) {
-    // Maybe Useful
-    // Step 1.1 no-cache header
-    if (checkNoCacheField(request) == true) {
-      message = "Request no-cache";
-
-      return false;
-    }
-  }
-
-  // Step.2 Find Cache
+  //  Find Cache
   std::string host_name = request.getHost();
   if (findCache(host_name) == true) {
     getCache(host_name, cache_response);
 
-    /* ----Cache Level----- */
-    // Step.3 Cache Control in cache repsonse
-    if (checkControlHeader(cache_response) == true) {
-      if (checkNoCacheField(cache_response) == true) {
-        message = "in cache, no-cache";
+    int max_age = 0;
+    int stale_age = 0;
+    int extra_age = 0;
 
+    //  Check Request Cache Control Headers
+    if (checkControlHeader(request) == true) {
+      if (checkControlField(request, "no-cache") == true) {
+        message = "in cache, requires validation";
+        return false;
+      } else {
+        if (checkControlField(request, "max-age") == true) {
+          max_age = std::stoi(request.getCacheControlValue("max-age"));
+        }
+        if (checkControlField(request, "max-stale") == true) {
+          stale_age = std::stoi(request.getCacheControlValue("max-stale"));
+        } else if (checkControlField(request, "min-fresh") == true) {
+          extra_age = std::stoi(request.getCacheControlValue("min-fresh"));
+        }
+      }
+    } else if (checkPragmaHeader(request) == true) {
+      std::string pragma_header = "Pragma";
+      std::string pragma = request.getValue(pragma_header);
+      if (pragma.find("no-cache") != std::string::npos) {
+        message = "in cache, requires validation";
         return false;
       }
-      // Step.4 Check Freshness
-      if (checkMaxAgeField(cache_response) == true) {
+    }
+
+    // Cache Control in cache repsonse
+    if (checkControlHeader(cache_response) == true) {
+      if (checkControlField(cache_response, "no-cache") == true) {
+        message = "in cache, requires validation";
+        return false;
+      }
+      // Check Freshness
+      if (checkControlField(cache_response, "max-age") == true) {
+        max_age = std::max(
+            max_age, std::stoi(cache_response.getCacheControlValue("max-age")));
         std::string date_header = "date";
         time_t request_time = getUTCTime(request.getValue(date_header));
         std::string max_age = cache_response.getCacheControlValue("max-age");
@@ -81,19 +96,6 @@ bool Cache::validate(Request &request, Response &cache_response,
         time_t cache_time = getUTCTime(cache_response.getValue(date_header));
         if (timeCompare(expire_time, cache_time) == false) {
           message = "not fresh";
-          if (cache_response.checkExistsHeader("Etag") == true) {
-            std::string key = "If-None-Match";
-            std::string header = "Etag";
-            std::string value = request.getValue(header);
-            request.addHeaderPair(key, value);
-          }
-
-          if (cache_response.checkExistsHeader("Last-modified") == true) {
-            std::string key = "If-Modified-Since";
-            std::string header = "Date";
-            std::string value = request.getValue(header);
-            request.addHeaderPair(key, value);
-          }
           return false;
         }
       }
@@ -182,8 +184,8 @@ bool Cache::checkControlHeader(Http &http) {
   return http.checkExistsHeader("Cache-Control");
 }
 
-bool Cache::checkNoCacheField(Http &http) {
-  std::string header = "no-cache";
+bool Cache::checkControlField(Http &http, const char *header) {
+  std::string header = header;
   return http.checkExistsControlHeader(header);
 }
 
@@ -192,13 +194,12 @@ bool Cache::checkReValidateField(Http &http) {
   return http.checkExistsControlHeader(header);
 }
 
-bool Cache::checkMaxAgeField(Http &http) {
-  std::string header = "max-age";
-  return http.checkExistsControlHeader(header);
-}
-
 bool Cache::checkExpireHeader(Response &response) {
   return response.checkExistsHeader("Expires");
+}
+
+bool Cache::checkPragmaHeader(Http &http) {
+  return http.checkExistsHeader("Pragma");
 }
 
 void Cache::writeLog(const char *info) { return; }
@@ -233,3 +234,5 @@ time_t Cache::addTime(time_t time, std::string value) {
   int add_value = stoi(value);
   return time + add_value;
 }
+
+void addValidateHeader(Request &request, Response &response) {}
