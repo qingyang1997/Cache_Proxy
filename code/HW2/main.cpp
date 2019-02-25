@@ -1,4 +1,4 @@
-//#include "Cache.h"
+#include "Cache.h"
 #include "Mysocket.h"
 #include "Request.h"
 #include "Response.h"
