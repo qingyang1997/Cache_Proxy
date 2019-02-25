@@ -15,7 +15,7 @@ private:
     std::string method;
     std::string host;
     std::string port;
-    // string url;
+    std::string url;
     std::string protocol; // may not need this
   };
   First_line_msg first_line_msg;
@@ -63,7 +63,19 @@ public:
     }
     first_line_msg.host = value;
     first_line_msg.port = port;
+    std::string first_line = getFirstLine();
+    std::string url = "";
+    space = first_line.find(' ');
+    url = first_line.substr(space + 1);
+    space = url.find(' ');
+    url = url.substr(0, space);
+    size_t cut = url.find(first_line_msg.host);
+    if (cut == url.npos) {
+      url = first_line_msg.host + url;
+    }
+    first_line_msg.url = url;
   }
+  std::string getUrl() { return first_line_msg.url; }
   std::string getMethod() { return first_line_msg.method; }
   std::string getProtocol() { return first_line_msg.protocol; }
   std::string getHost() { return first_line_msg.host; }

@@ -97,7 +97,7 @@ void exchangeData(int client_fd, int destination_fd) {
   recv_bytes = recv(client_fd, &temp[0], 8192, 0);
   temp.resize(recv_bytes);
   if (DEBUG == 1) {
-    std::cout << "[INFO] client " << client_fd << "sent " << temp.size()
+    std::cout << "[INFO] client " << client_fd << " sent " << temp.size()
               << std::endl;
   }
   if (temp.size() == 0) {
@@ -132,7 +132,7 @@ void handler(int client_fd, Cache *cache) {
     std::cout << e.what() << std::endl;
     return;
   }
-
+  std::cout << "[DEBUG] url " << request.getUrl() << std::endl;
   request.reconstructHeader(request_header); // no exception
   std::cout << "[LOG] " << request.getFirstLine() << " @ current time"
             << std::endl;
