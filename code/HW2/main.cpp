@@ -59,38 +59,6 @@ void read_multi(int read_fd, std::string &body, int content_length) {
   }
 }
 
-// void send_multi(int send_fd, std::string &body) {
-//   size_t total_bytes = 0;
-//   while (1) {
-//     size_t send_size = (total_bytes + SEND_LENGTH > body.size())
-//                            ? body.size() - total_bytes
-//                            : SEND_LENGTH;
-//     send(send_fd, &body[total_bytes], send_size, 0);
-//     total_bytes += send_size;
-//     if (total_bytes >= body.size()) {
-//       break;
-//     }
-//   }
-//   std::cout << "[INFO] successfully send " << total_bytes << std::endl;
-// }
-
-// int exchange_data(int client_fd, int destination_fd) {
-//   std::vector<char> temp;
-//   temp.resize(32768);
-//   ssize_t recv_bytes;
-//   recv_bytes = recv(client_fd, &temp.data()[0], 8192, 0);
-//   temp.resize(recv_bytes);
-//   std::cout << "[INFO] client " << client_fd << "sent " << recv_bytes
-//             << std::endl;
-//   if (recv_bytes == 0) {
-//     return -1;
-//   }
-//   send(destination_fd, &temp.data()[0], recv_bytes, 0);
-//   std::cout << "[INFO] proxy sent " << recv_bytes << " to " << destination_fd
-//             << std::endl;
-//   return 0;
-// }
-
 int exchange_data(int client_fd, int destination_fd) {
   std::string temp;
   temp.resize(8192);
@@ -167,7 +135,6 @@ void handler(int client_fd) {
     if (request.getMethod() == "GET") {
       // send request
       std::cout << "[INFO] GET" << std::endl;
-      // send_multi(server_socket_info.socket_fd, header);
       send(server_socket_info.socket_fd, &header[0], header.size(), 0);
       std::cout << "[DEBUG] send to server successfully" << std::endl;
 
@@ -186,11 +153,13 @@ void handler(int client_fd) {
       response.reconstructHeader(header);
       std::cout << "[DEBUG] reconstruct header " << response_header
                 << std::endl;
-      // send_multi(client_fd, header);
+      //      send_multi(client_fd, header);
       send(client_fd, &header[0], header.size(), 0);
       std::cout << "[DEBUG] send header successfully" << std::endl;
-      // send_multi(client_fd, response.getBody());
-      send(client_fd, &response.getBody()[0], response.getBody().size(), 0);
+      //      send_multi(client_fd, response.getBody());
+      std::string response_body = response.getBody();
+      send(client_fd, &response_body[0], response_body.size(), 0);
+
       std::cout << "[DEBUG] send body successfully" << std::endl;
     } // if method == GET
     else if (request.getMethod() == "POST") {
@@ -203,10 +172,12 @@ void handler(int client_fd) {
                    atoi(request.getValue(key).c_str()));
       }
       std::cout << "[DEBUG] send to server successfully" << std::endl;
-      // send_multi(server_socket_info.socket_fd, header);
+      //      send_multi(server_socket_info.socket_fd, header);
       // send_multi(server_socket_info.socket_fd, request.getBody());
-      send(client_fd, &header[0], header.size(), 0);
-      send(client_fd, &request.getBody()[0], request.getBody().size(), 0);
+      send(server_socket_info.socket_fd, &header[0], header.size(), 0);
+      std::string request_body = request.getBody();
+      send(server_socket_info.socket_fd, &request_body[0], request_body.size(),
+           0);
 
       std::cout << "[DEBUG] waiting for response" << std::endl;
       read_header(server_socket_info.socket_fd, response);
@@ -227,8 +198,10 @@ void handler(int client_fd) {
       //      send_multi(client_fd, header);
       send(client_fd, &header[0], header.size(), 0);
       std::cout << "[DEBUG] send header successfully" << std::endl;
-      // send_multi(client_fd, response.getBody());
-      send(client_fd, &response.getBody()[0], response.getBody().size(), 0);
+      //      send_multi(client_fd, response.getBody());
+      std::string response_body = response.getBody();
+      send(client_fd, &response_body[0], response_body.size(), 0);
+
       std::cout << "[DEBUG] send body successfully" << std::endl;
     } else if (request.getMethod() == "CONNECT") {
       std::string message = "HTTP/1.1 200 OK\r\n\r\n";
