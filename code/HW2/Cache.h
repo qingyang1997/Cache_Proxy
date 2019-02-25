@@ -18,18 +18,19 @@ public:
 private:
   bool checkControlHeader(Http &http);
   bool checkControlField(Http &http, const char *header);
-
   bool checkReValidateField(Http &http);
-
   bool findCache(std::string &url);
   bool checkExpireHeader(Response &response);
   bool checkPragmaHeader(Http &http);
-  bool checkFresh(const Request &request, const Response &response);
+  double checkFresh(Response &cache_response, int max_age, int extra_age);
   bool timeCompare(time_t t1, time_t t2);
+
   void getCache(std::string &url, Response &cache_response);
   void replaceCache(Request &request, Response &response);
+
+  time_t getExpireTime(Response &cache_response, int max_age, int extra_age);
   time_t getUTCTime(std::string time);
-  time_t addTime(time_t time, std::string value);
+  time_t addTime(time_t time, int value);
   void eraseAllSubStr(std::string &mainStr, const std::string &toErase);
   void addValidateHeader(Request &request, Response &response);
   void writeLog(const char *info);
@@ -49,9 +50,9 @@ bool Cache::validate(Request &request, Response &cache_response,
   //  Find Cache
   std::string host_name = request.getHost();
   if (findCache(host_name) == true) {
+    std::cout << "[CACHE] Host name is: " << host_name << std::endl;
     getCache(host_name, cache_response);
-
-    int max_age = 0;
+    int max_age = 999999999;
     int stale_age = 0;
     int extra_age = 0;
 
@@ -59,6 +60,7 @@ bool Cache::validate(Request &request, Response &cache_response,
     if (checkControlHeader(request) == true) {
       if (checkControlField(request, "no-cache") == true) {
         message = "in cache, requires validation";
+        addValidateHeader(request, cache_response);
         return false;
       } else {
         if (checkControlField(request, "max-age") == true) {
@@ -75,6 +77,7 @@ bool Cache::validate(Request &request, Response &cache_response,
       std::string pragma = request.getValue(pragma_header);
       if (pragma.find("no-cache") != std::string::npos) {
         message = "in cache, requires validation";
+        addValidateHeader(request, cache_response);
         return false;
       }
     }
@@ -83,43 +86,72 @@ bool Cache::validate(Request &request, Response &cache_response,
     if (checkControlHeader(cache_response) == true) {
       if (checkControlField(cache_response, "no-cache") == true) {
         message = "in cache, requires validation";
+        addValidateHeader(request, cache_response);
         return false;
       }
       // Check Freshness
       if (checkControlField(cache_response, "max-age") == true) {
-        max_age = std::max(
+        max_age = std::min(
             max_age, std::stoi(cache_response.getCacheControlValue("max-age")));
-        std::string date_header = "date";
-        time_t request_time = getUTCTime(request.getValue(date_header));
-        std::string max_age = cache_response.getCacheControlValue("max-age");
-        time_t expire_time = addTime(request_time, max_age);
-        time_t cache_time = getUTCTime(cache_response.getValue(date_header));
-        if (timeCompare(expire_time, cache_time) == false) {
-          message = "not fresh";
-          return false;
-        }
       }
 
+      double fresh_diff = checkFresh(cache_response, max_age, extra_age);
+      if (fresh_diff > 0) {
+        time_t expire_time = getExpireTime(cache_response, max_age, extra_age);
+        tm *gmtm = gmtime(&expire_time);
+        char *dt = asctime(gmtm);
+        message = "in cache, but expired at " + std::string(dt);
+        if (checkControlField(cache_response, "must-revalidate") == true) {
+          addValidateHeader(request, cache_response);
+          return false;
+        } else {
+          if (fresh_diff < stale_age) {
+            return true;
+          } else {
+            addValidateHeader(request, cache_response);
+            return false;
+          }
+        }
+
+      } else {
+        message = "in cache, valid";
+        return true;
+      }
     }
+
     // Step.3 Expire in cache repsonse
     else if (checkExpireHeader(cache_response) == true) {
-      std::string expire_header = "expires";
-      time_t expire_time = getUTCTime(cache_response.getValue(expire_header));
-      std::string date_header = "date";
-      time_t request_time = getUTCTime(request.getValue(date_header));
-      if (timeCompare(request_time, expire_time) == true) {
-        message = "expire";
-
+      std::string expire_header = "Expires";
+      time_t expire_time_response =
+          getUTCTime(cache_response.getValue(expire_header));
+      time_t expire_time_request =
+          getExpireTime(cache_response, max_age, extra_age);
+      time_t expire_time = std::min(expire_time_response, expire_time_request);
+      time_t request_time = time(0);
+      double fresh_diff = difftime(request_time, expire_time);
+      if (fresh_diff > 0) {
+        tm *gmtm = gmtime(&expire_time);
+        char *dt = asctime(gmtm);
+        message = "in cache, but expired at " + std::string(dt);
+        addValidateHeader(request, cache_response);
         return false;
+      } else {
+        message = "in cache, valid";
+        return true;
       }
     } else {
-      // Maybe useful
+      double fresh_diff = checkFresh(cache_response, max_age, extra_age);
+      if (fresh_diff > 0) {
+        time_t expire_time = getExpireTime(cache_response, max_age, extra_age);
+        tm *gmtm = gmtime(&expire_time);
+        char *dt = asctime(gmtm);
+        message = "in cache, but expired at " + std::string(dt);
+        return false;
+      } else {
+        message = "in cache, valid";
+        return true;
+      }
     }
-
-    message = "in cache, valid";
-
-    return true;
-
   } else {
     message = "not in cache";
     return false;
@@ -131,23 +163,41 @@ void Cache::update(Request &request, Response &response, std::string &message) {
   int status_num = std::stoi(response.getStatusNum());
   if (status_num == 304) {
     std::string host_name = request.getHost();
+    std::cout << "[DEBUG] Receive 304 Use Cache" << std::endl;
     getCache(host_name, response);
   } else {
     if (checkControlHeader(request) == true) {
-      if (checkNoCacheField(request) == true) {
-        message = "not cache because request contains \"no-cache\" field";
+      if (checkControlField(request, "no-store") == true) {
+        message = "not cacheable because request contains \"no-store\" field";
         return;
       }
     }
 
     if (checkControlHeader(response) == true) {
-      if (checkNoCacheField(response) == true) {
-        message = "not cache because response contains \"no-cache\" field";
+      if (checkControlField(response, "no-store") == true) {
+        message = "not cacheable because response contains \"no-cache\" field";
         return;
-      } else if (checkReValidateField(response) == true) {
-        message = "cached, but requires re-validation";
       }
-
+      if (checkControlField(response, "no-cache") == true) {
+        message = "cached, but requires validation";
+        replaceCache(request, response);
+        return;
+      }
+      if (checkControlField(request, "max-age") == true) {
+        int max_age = std::stoi(request.getCacheControlValue("max-age"));
+        if (max_age == 0) {
+          message = "cached, but requires validation";
+          replaceCache(request, response);
+          return;
+        } else {
+          time_t expire_time = getExpireTime(response, max_age, 0);
+          tm *gmtm = gmtime(&expire_time);
+          char *dt = asctime(gmtm);
+          message = "cached, expires at " + std::string(dt);
+          replaceCache(request, response);
+          return;
+        }
+      }
     } else if (checkExpireHeader(response) == true) {
       std::string expire_header = "expires";
       std::string expire_string = response.getValue(expire_header);
@@ -185,8 +235,8 @@ bool Cache::checkControlHeader(Http &http) {
 }
 
 bool Cache::checkControlField(Http &http, const char *header) {
-  std::string header = header;
-  return http.checkExistsControlHeader(header);
+  std::string header_str = header;
+  return http.checkExistsControlHeader(header_str);
 }
 
 bool Cache::checkReValidateField(Http &http) {
@@ -204,13 +254,24 @@ bool Cache::checkPragmaHeader(Http &http) {
 
 void Cache::writeLog(const char *info) { return; }
 
-bool Cache::timeCompare(time_t t1, time_t t2) {
-  float tinterval = difftime(t1, t2);
-  if (tinterval > 0)
-    return true;
-  else
-    return false;
+time_t Cache::getExpireTime(Response &cache_response, int max_age,
+                            int extra_age) {
+  std::string date_header = "Date";
+  time_t cache_time = getUTCTime(cache_response.getValue(date_header));
+  time_t expire_time = addTime(cache_time, max_age - extra_age);
+  return expire_time;
 }
+
+double Cache::checkFresh(Response &cache_response, int max_age, int extra_age) {
+  std::string date_header = "Date";
+  time_t request_time = time(0);
+  time_t cache_time = getUTCTime(cache_response.getValue(date_header));
+  time_t expire_time = addTime(cache_time, max_age - extra_age);
+  double tinterval = difftime(request_time, expire_time);
+  return tinterval;
+}
+
+bool Cache::timeCompare(time_t t1, time_t t2) {}
 
 void Cache::eraseAllSubStr(std::string &mainStr, const std::string &toErase) {
   size_t pos = std::string::npos;
@@ -230,9 +291,18 @@ time_t Cache::getUTCTime(std::string time) {
   return t;
 }
 
-time_t Cache::addTime(time_t time, std::string value) {
-  int add_value = stoi(value);
-  return time + add_value;
-}
+time_t Cache::addTime(time_t time, int value) { return time + value; }
 
-void addValidateHeader(Request &request, Response &response) {}
+void Cache::addValidateHeader(Request &request, Response &cache_response) {
+  if (cache_response.checkExistsHeader("Etag")) {
+    std::string header = "If-None-Match";
+    std::string etag = cache_response.getValue(header);
+    request.addHeaderPair(header, etag);
+  }
+  if (cache_response.checkExistsHeader("Last-Modified")) {
+    std::string header = "If-Modified-Since";
+    std::string modified = cache_response.getValue(header);
+    request.addHeaderPair(header, modified);
+  }
+  return;
+}
