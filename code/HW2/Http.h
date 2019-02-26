@@ -14,16 +14,13 @@ private:
 
 public:
   Http() {}
-  virtual ~Http() {
-    first_line = "";
-    body = "";
-  };
+  virtual ~Http(){};
   Http(const Http &rhs) { // strong guarantee
-    uid = rhs.uid;
-    first_line = rhs.first_line;
-    header_pair = rhs.header_pair;
-    Cache_Control = rhs.Cache_Control;
-    body = rhs.body;
+    // uid = rhs.uid;
+    // first_line = rhs.first_line;
+    // header_pair = rhs.header_pair;
+    // Cache_Control = rhs.Cache_Control;
+    // body = rhs.body;
   }
 
   // Http &operator=(const Http &rhs) { // strong guarantee
@@ -44,23 +41,23 @@ public:
   //   return *this;
   // }
 
-  Http &operator=(const Http &rhs) { // strong guarantee
-    if (this == &rhs) {
-      return *this;
-    }
-    //    Http temp;
-    try {
-      uid = rhs.uid;
-      first_line = rhs.first_line;
-      header_pair = rhs.header_pair;
-      Cache_Control = rhs.Cache_Control;
-      body = rhs.body;
-    } catch (...) {
-      throw ErrorException("Http = failed");
-    }
-    // std::swap(temp, *this);
-    return *this;
-  }
+  // Http &operator=(const Http &rhs) { // strong guarantee
+  //   if (this == &rhs) {
+  //     return *this;
+  //   }
+  //   //    Http temp;
+  //   try {
+  //     uid = rhs.uid;
+  //     first_line = rhs.first_line;
+  //     header_pair = rhs.header_pair;
+  //     Cache_Control = rhs.Cache_Control;
+  //     body = rhs.body;
+  //   } catch (...) {
+  //     throw ErrorException("Http = failed");
+  //   }
+  //   // std::swap(temp, *this);
+  //   return *this;
+  // }
 
   virtual void parseFirstLine(){};
   void parseHeader(std::string &message);

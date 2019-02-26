@@ -14,15 +14,8 @@ private:
 
 public:
   Response() {}
-  virtual ~Response() {
-    first_line_msg.status_num = "";
-    first_line_msg.status_char = "";
-    first_line_msg.protocol = "";
-  }
+  virtual ~Response() {}
   Response(const Response &rhs) : Http(rhs) { // strong guarantee
-    first_line_msg.status_num = rhs.first_line_msg.status_num;
-    first_line_msg.status_char = rhs.first_line_msg.status_char;
-    first_line_msg.protocol = rhs.first_line_msg.protocol;
   }
 
   Response &operator=(const Response &rhs) { // strong guarantee
@@ -35,14 +28,14 @@ public:
 
     try {
       temp.Http::operator=(rhs);
-      temp.first_line_msg.status_num = rhs.first_line_msg.status_num;
-      temp.first_line_msg.status_char = rhs.first_line_msg.status_char;
-      temp.first_line_msg.protocol = rhs.first_line_msg.protocol;
+      // temp.first_line_msg.status_num = rhs.first_line_msg.status_num;
+      // temp.first_line_msg.status_char = rhs.first_line_msg.status_char;
+      // temp.first_line_msg.protocol = rhs.first_line_msg.protocol;
     } catch (...) {
       throw ErrorException("Response = failed");
     }
-    std::swap(*this, temp);
-    // this->Http::operator=(rhs);
+    //    std::swap(*this, temp);
+    this->Http::operator=(rhs);
     // first_line_msg.status_num = rhs.first_line_msg.status_num;
     // first_line_msg.status_char = rhs.first_line_msg.status_char;
     // first_line_msg.protocol = rhs.first_line_msg.protocol;
