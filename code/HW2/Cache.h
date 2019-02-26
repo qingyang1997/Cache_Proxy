@@ -172,6 +172,11 @@ void Cache::update(Request &request, Response &response, std::string &message) {
     Response response_return = getCache(host_name);
     response = response_return;
   } else {
+    std::cout << "[LOG] Response for Request UID" << request.getUid()
+              << std::endl;
+    std::string response_entity = "";
+    response.reconstructHeader(response_entity);
+    std::cout << response_entity << std::endl;
     if (checkControlHeader(request) == true) {
       if (checkControlField(request, "no-store") == true) {
         message = "not cacheable because request contains \"no-store\" field";
@@ -239,7 +244,7 @@ void Cache::getCache(std::string &url, Response &cache_response) {
 }
 
 void Cache::replaceCache(Request &request, Response &response) {
-  std::string host_name = request.getHost();
+  std::string host_name = request.getUrl();
   caches[host_name] = response;
 }
 
