@@ -199,6 +199,7 @@ void handler(int client_fd, Cache *cache) {
       }
       std::cout << "[DEBUG] send body successfully" << std::endl;
     } else { // send to server
+      request.reconstructHeader(request_header);
       std::cout << "[DASHABI] Uid " << request.getUid()
                 << " request before send " << request_header << std::endl;
       send(server_socket_info.socket_fd, &request_header[0],
