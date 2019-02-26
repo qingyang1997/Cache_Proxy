@@ -22,23 +22,43 @@ public:
     Cache_Control = rhs.Cache_Control;
     body = rhs.body;
   }
+
+  // Http &operator=(const Http &rhs) { // strong guarantee
+  //   if (this == &rhs) {
+  //     return *this;
+  //   }
+  //   Http temp;
+  //   try {
+  //     temp.uid = rhs.uid;
+  //     temp.first_line = rhs.first_line;
+  //     temp.header_pair = rhs.header_pair;
+  //     temp.Cache_Control = rhs.Cache_Control;
+  //     temp.body = rhs.body;
+  //   } catch (...) {
+  //     throw ErrorException("Http = failed");
+  //   }
+  //   std::swap(temp, *this);
+  //   return *this;
+  // }
+
   Http &operator=(const Http &rhs) { // strong guarantee
     if (this == &rhs) {
       return *this;
     }
-    Http temp;
+    //    Http temp;
     try {
-      temp.uid = rhs.uid;
-      temp.first_line = rhs.first_line;
-      temp.header_pair = rhs.header_pair;
-      temp.Cache_Control = rhs.Cache_Control;
-      temp.body = rhs.body;
+      uid = rhs.uid;
+      first_line = rhs.first_line;
+      header_pair = rhs.header_pair;
+      Cache_Control = rhs.Cache_Control;
+      body = rhs.body;
     } catch (...) {
       throw ErrorException("Http = failed");
     }
-    std::swap(temp, *this);
+    // std::swap(temp, *this);
     return *this;
   }
+
   virtual void parseFirstLine(){};
   void parseHeader(std::string &message);
   void reconstructHeader(std::string &destination);

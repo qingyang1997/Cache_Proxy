@@ -53,7 +53,7 @@ std::string getCurrentTime() { // strong guarantee
 }
 void readMulti(int read_fd, std::string &body, int content_length) {
   int total_bytes = body.size();
-  std::string temp = body;
+  //  std::string temp = body;
   while (1) {
     body.resize(total_bytes + RECV_LENGTH);
     ssize_t recv_bytes = recv(read_fd, &body[total_bytes], RECV_LENGTH, 0);
