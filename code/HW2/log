@@ -1,26 +1,23 @@
 [DEBUG] REQUEST 0
-GET http://rabihyounes.com/ HTTP/1.1
-Host: rabihyounes.com
+GET http://www.cplusplus.com/ HTTP/1.1
+Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Accept-Encoding: gzip, deflate
 Connection: keep-alive
 Upgrade-Insecure-Requests: 1
-Pragma: no-cache
-Cache-Control: no-cache
 
 
-[DEBUG] url http://rabihyounes.com/
-[LOG] GET http://rabihyounes.com/ HTTP/1.1 @ current time
+[DEBUG] url http://www.cplusplus.com/
+[LOG ID: 0] GET http://www.cplusplus.com/ HTTP/1.1 @ Tue Feb 26 01:57:05 2019
+
 [DEBUG] parsed header GET / HTTP/1.1
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
+Host: www.cplusplus.com
 Upgrade-Insecure-Requests: 1
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
@@ -30,334 +27,267 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 [DEBUG] send to server successfully
 [DEBUG] RESPONSE 0
 HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:24 GMT
-Content-Type: text/html
-Content-Length: 9403
-Connection: close
-Last-Modified: Mon, 06 Aug 2018 04:43:45 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=86400
-Expires: Tue, 26 Feb 2019 23:46:24 GMT
+Date: Tue, 26 Feb 2019 01:58:22 GMT
+Server: Apache/2.2.22
+X-Powered-By: PHP/5.4.38-0+deb7u1
 Vary: Accept-Encoding
 Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
+Content-Length: 3250
+Connection: close
+Content-Type: text/html
 
 ‹
-[DEBUG] Content-Lenght 9403
+[DEBUG] Content-Lenght 3250
 [DEBUG] body received successfully
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=86400
 Connection: close
 Content-Encoding: gzip
-Content-Length: 9403
+Content-Length: 3250
 Content-Type: text/html
-Date: Mon, 25 Feb 2019 23:46:24 GMT
-Expires: Tue, 26 Feb 2019 23:46:24 GMT
-Last-Modified: Mon, 06 Aug 2018 04:43:45 GMT
-Server: nginx/1.14.1
+Date: Tue, 26 Feb 2019 01:58:22 GMT
+Server: Apache/2.2.22
 Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
+X-Powered-By: PHP/5.4.38-0+deb7u1
 
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] REQUEST 1
-GET http://rabihyounes.com/css/style.css HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: text/css,*/*;q=0.1
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/css/style.css
-[LOG] GET http://rabihyounes.com/css/style.css HTTP/1.1 @ current time
-[DEBUG] parsed header GET /css/style.css HTTP/1.1
-Accept: text/css,*/*;q=0.1
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
-Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-
-
 [DEBUG] REQUEST 2
-GET http://rabihyounes.com/scripts/jquery.js HTTP/1.1
-Host: rabihyounes.com
+GET http://www.cplusplus.com/v321/main.css HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/
+Connection: keep-alive
+
+
+[DEBUG] url http://www.cplusplus.com/v321/main.css
+[LOG ID: 2] GET http://www.cplusplus.com/v321/main.css HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+
+[DEBUG] parsed header GET /v321/main.css HTTP/1.1
+Accept: text/css,*/*;q=0.1
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Connection: close
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+
+
+[DEBUG] REQUEST 1
+GET http://www.cplusplus.com/v321/main.js HTTP/1.1
+Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 Accept: */*
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
+Referer: http://www.cplusplus.com/
 Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
 
 
-[DEBUG] url http://rabihyounes.com/scripts/jquery.js
-[LOG] GET http://rabihyounes.com/scripts/jquery.js HTTP/1.1 @ current time
-[DEBUG] parsed header GET /scripts/jquery.js HTTP/1.1
+[DEBUG] url http://www.cplusplus.com/v321/main.js
+[LOG ID: 1] GET http://www.cplusplus.com/v321/main.js HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+
+[DEBUG] parsed header GET /v321/main.js HTTP/1.1
 Accept: */*
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+
+
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[DEBUG] RESPONSE 2
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Fri, 05 Sep 2014 14:40:49 GMT
+ETag: "7080b16-5930-502527484fe40"
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 5017
+Connection: close
+Content-Type: text/css
+
+‹
+[DEBUG] Content-Lenght 5017
+[DEBUG] body received successfully
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Encoding: gzip
+Content-Length: 5017
+Content-Type: text/css
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080b16-5930-502527484fe40"
+Last-Modified: Fri, 05 Sep 2014 14:40:49 GMT
+Server: Apache/2.2.22
+Vary: Accept-Encoding
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
+[DEBUG] RESPONSE 1
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Tue, 17 Jun 2014 16:00:40 GMT
+ETag: "7080b17-9f14-4fc0a3ec7da00"
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 11196
+Connection: close
+Content-Type: application/javascript
+
+‹
+[DEBUG] Content-Lenght 11196
+[DEBUG] body received successfully
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Encoding: gzip
+Content-Length: 11196
+Content-Type: application/javascript
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080b17-9f14-4fc0a3ec7da00"
+Last-Modified: Tue, 17 Jun 2014 16:00:40 GMT
+Server: Apache/2.2.22
+Vary: Accept-Encoding
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
+[DEBUG] REQUEST 6
+GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/
+Connection: keep-alive
+
+
+[DEBUG] url http://www.cplusplus.com/img/welcometo.gif
+[LOG ID: 6] GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+
+[DEBUG] parsed header GET /img/welcometo.gif HTTP/1.1
+Accept: image/webp,*/*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Connection: close
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
 [DEBUG] REQUEST 3
-GET http://rabihyounes.com/scripts/jquery.min.js HTTP/1.1
-Host: rabihyounes.com
+GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1
+Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: */*
+Accept: image/webp,*/*
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
+Referer: http://www.cplusplus.com/
 Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
 
 
-[DEBUG] url http://rabihyounes.com/scripts/jquery.min.js
-[LOG] GET http://rabihyounes.com/scripts/jquery.min.js HTTP/1.1 @ current time
-[DEBUG] parsed header GET /scripts/jquery.min.js HTTP/1.1
-Accept: */*
+[DEBUG] url http://www.cplusplus.com/ico/social_googleplus.png
+[LOG ID: 3] GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+
+[DEBUG] parsed header GET /ico/social_googleplus.png HTTP/1.1
+Accept: image/webp,*/*
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-
-
-[DEBUG] REQUEST 4
-GET http://rabihyounes.com/scripts/cycle.js HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: */*
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/scripts/cycle.js
-[LOG] GET http://rabihyounes.com/scripts/cycle.js HTTP/1.1 @ current time
-[DEBUG] parsed header GET /scripts/cycle.js HTTP/1.1
-Accept: */*
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
-Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
 [DEBUG] REQUEST 5
-GET http://rabihyounes.com/scripts/jquery.prettyPhoto.js HTTP/1.1
-Host: rabihyounes.com
+GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1
+Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: */*
+Accept: image/webp,*/*
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
+Referer: http://www.cplusplus.com/
 Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
 
 
-[DEBUG] url http://rabihyounes.com/scripts/jquery.prettyPhoto.js
-[LOG] GET http://rabihyounes.com/scripts/jquery.prettyPhoto.js HTTP/1.1 @ current time
-[DEBUG] parsed header GET /scripts/jquery.prettyPhoto.js HTTP/1.1
-Accept: */*
+[DEBUG] url http://www.cplusplus.com/ico/social_facebook.png
+[LOG ID: 5] GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+
+[DEBUG] parsed header GET /ico/social_facebook.png HTTP/1.1
+Accept: image/webp,*/*
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
-[DEBUG] REQUEST 6
-GET http://rabihyounes.com/scripts/custom.js HTTP/1.1
-Host: rabihyounes.com
+[DEBUG] REQUEST 4
+GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1
+Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: */*
+Accept: image/webp,*/*
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
+Referer: http://www.cplusplus.com/
 Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
 
 
-[DEBUG] url http://rabihyounes.com/scripts/custom.js
-[LOG] GET http://rabihyounes.com/scripts/custom.js HTTP/1.1 @ current time
-[DEBUG] parsed header GET /scripts/custom.js HTTP/1.1
-Accept: */*
+[DEBUG] url http://www.cplusplus.com/ico/social_twitter.png
+[LOG ID: 4] GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+
+[DEBUG] parsed header GET /ico/social_twitter.png HTTP/1.1
+Accept: image/webp,*/*
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-
-
-[DEBUG] REQUEST 10
-GET http://rabihyounes.com/css/pop.css HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: text/css,*/*;q=0.1
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/css/pop.css
-[LOG] GET http://rabihyounes.com/css/pop.css HTTP/1.1 @ current time
-[DEBUG] parsed header GET /css/pop.css HTTP/1.1
-Accept: text/css,*/*;q=0.1
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
-Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-
-
-[DEBUG] REQUEST 11
-GET http://rabihyounes.com/css/prettyPhoto.css HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: text/css,*/*;q=0.1
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/css/prettyPhoto.css
-[LOG] GET http://rabihyounes.com/css/prettyPhoto.css HTTP/1.1 @ current time
-[DEBUG] parsed header GET /css/prettyPhoto.css HTTP/1.1
-Accept: text/css,*/*;q=0.1
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
-Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-
-
-[DEBUG] REQUEST 9
-GET http://rabihyounes.com/scripts/vcard.packed.js HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: */*
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/scripts/vcard.packed.js
-[LOG] GET http://rabihyounes.com/scripts/vcard.packed.js HTTP/1.1 @ current time
-[DEBUG] parsed header GET /scripts/vcard.packed.js HTTP/1.1
-Accept: */*
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
-Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-
-
-[DEBUG] REQUEST 8
-GET http://rabihyounes.com/scripts/cufon.font.js HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: */*
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/scripts/cufon.font.js
-[LOG] GET http://rabihyounes.com/scripts/cufon.font.js HTTP/1.1 @ current time
-[DEBUG] parsed header GET /scripts/cufon.font.js HTTP/1.1
-Accept: */*
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
-Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
 [DEBUG] REQUEST 7
-GET http://rabihyounes.com/scripts/cufon.js HTTP/1.1
-Host: rabihyounes.com
+GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1
+Host: www.googletagservices.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 Accept: */*
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
+Referer: http://www.cplusplus.com/
 Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
 
 
-[DEBUG] url http://rabihyounes.com/scripts/cufon.js
-[LOG] GET http://rabihyounes.com/scripts/cufon.js HTTP/1.1 @ current time
-[DEBUG] parsed header GET /scripts/cufon.js HTTP/1.1
+[DEBUG] url http://www.googletagservices.com/tag/js/gpt.js
+[LOG ID: 7] GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+
+[DEBUG] parsed header GET /tag/js/gpt.js HTTP/1.1
 Accept: */*
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
+Host: www.googletagservices.com
+Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
@@ -376,1279 +306,944 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 [INFO] GET
 [LOG] request not in cache
 [DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[DEBUG] RESPONSE 1
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: text/css
-Content-Length: 2772
-Connection: close
-Last-Modified: Tue, 24 Jul 2018 02:44:38 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] Content-Lenght 2772
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Length: 2772
-Content-Type: text/css
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Tue, 24 Jul 2018 02:44:38 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
 [DEBUG] RESPONSE 6
 HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: text/javascript
-Content-Length: 1125
-Connection: close
-Last-Modified: Tue, 24 May 2011 10:38:56 GMT
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Fri, 18 Jan 2019 09:43:21 GMT
+ETag: "7080aef-4607-57fb8577189c6"
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
+Content-Length: 17927
+Connection: close
+Content-Type: image/gif
+
+GIF89aØ2
+[DEBUG] Content-Lenght 17927
+[DEBUG] RESPONSE 7
+HTTP/1.1 200 OK
 Vary: Accept-Encoding
 Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
+Content-Type: text/javascript
+Timing-Allow-Origin: *
+Content-Length: 10682
+Date: Tue, 26 Feb 2019 01:57:06 GMT
+Expires: Tue, 26 Feb 2019 01:57:06 GMT
+Cache-Control: private, max-age=900, stale-while-revalidate=3600
+ETag: "94 / 629 of 1000 / last-modified: 1551137135"
+X-Content-Type-Options: nosniff
+Server: sffe
+X-XSS-Protection: 1; mode=block
+Connection: close
 
 ‹
-[DEBUG] Content-Lenght 1125
+[DEBUG] Content-Lenght 10682
 [DEBUG] body received successfully
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
+Cache-Control: private, max-age=900, stale-while-revalidate=3600
 Connection: close
 Content-Encoding: gzip
-Content-Length: 1125
+Content-Length: 10682
 Content-Type: text/javascript
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Tue, 24 May 2011 10:38:56 GMT
-Server: nginx/1.14.1
+Date: Tue, 26 Feb 2019 01:57:06 GMT
+ETag: "94 / 629 of 1000 / last-modified: 1551137135"
+Expires: Tue, 26 Feb 2019 01:57:06 GMT
+Server: sffe
+Timing-Allow-Origin: *
 Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] RESPONSE 5
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: text/javascript
-Content-Length: 6589
-Connection: close
-Last-Modified: Mon, 16 May 2011 23:38:32 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] Content-Lenght 6589
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Length: 6589
-Content-Type: text/javascript
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Mon, 16 May 2011 23:38:32 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] RESPONSE 2
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: text/javascript
-Content-Length: 34888
-Connection: close
-Last-Modified: Fri, 06 May 2011 17:05:58 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] Content-Lenght 34888
-[DEBUG] RESPONSE 4
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: text/javascript
-Content-Length: 11693
-Connection: close
-Last-Modified: Mon, 16 May 2011 23:38:30 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] Content-Lenght 11693
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Length: 11693
-Content-Type: text/javascript
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Mon, 16 May 2011 23:38:30 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
 
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
 [DEBUG] RESPONSE 3
 HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: text/javascript
-Content-Length: 36700
-Connection: close
-Last-Modified: Mon, 16 May 2011 23:38:32 GMT
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+ETag: "7080ac5-8c6-4ef4823d9c240"
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] Content-Lenght 36700
-[DEBUG] RESPONSE 11
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: text/css
-Content-Length: 3414
+Content-Length: 2246
 Connection: close
-Last-Modified: Mon, 16 May 2011 23:38:30 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
+Content-Type: image/png
 
-‹
-[DEBUG] Content-Lenght 3414
+‰PNG
+
+
+[DEBUG] Content-Lenght 2246
 [DEBUG] body received successfully
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
 Connection: close
-Content-Encoding: gzip
-Content-Length: 3414
-Content-Type: text/css
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Mon, 16 May 2011 23:38:30 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
+Content-Length: 2246
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080ac5-8c6-4ef4823d9c240"
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+Server: Apache/2.2.22
 
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] RESPONSE 8
+[DEBUG] RESPONSE 4
 HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: text/javascript
-Content-Length: 12385
-Connection: close
-Last-Modified: Fri, 06 May 2011 17:09:04 GMT
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+ETag: "7080ac6-7ca-4ef4823d9c240"
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
+Content-Length: 1994
+Connection: close
+Content-Type: image/png
 
-‹
-[DEBUG] Content-Lenght 12385
+‰PNG
+
+
+[DEBUG] Content-Lenght 1994
 [DEBUG] body received successfully
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
 Connection: close
-Content-Encoding: gzip
-Content-Length: 12385
-Content-Type: text/javascript
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Fri, 06 May 2011 17:09:04 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
+Content-Length: 1994
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080ac6-7ca-4ef4823d9c240"
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+Server: Apache/2.2.22
 
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] RESPONSE 7
+[DEBUG] RESPONSE 5
 HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: text/javascript
-Content-Length: 8143
-Connection: close
-Last-Modified: Fri, 06 May 2011 17:08:18 GMT
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+ETag: "7080ac4-6fa-4ef4823d9c240"
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
+Content-Length: 1786
+Connection: close
+Content-Type: image/png
 
-‹
-[DEBUG] Content-Lenght 8143
+‰PNG
+
+
+[DEBUG] Content-Lenght 1786
 [DEBUG] body received successfully
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
 Connection: close
-Content-Encoding: gzip
-Content-Length: 8143
-Content-Type: text/javascript
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Fri, 06 May 2011 17:08:18 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
+Content-Length: 1786
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080ac4-6fa-4ef4823d9c240"
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+Server: Apache/2.2.22
 
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] RESPONSE 10
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: text/css
-Content-Length: 676
-Connection: close
-Last-Modified: Sat, 21 May 2016 14:29:54 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] Content-Lenght 676
 [DEBUG] body received successfully
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
 Connection: close
-Content-Encoding: gzip
-Content-Length: 676
-Content-Type: text/css
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Sat, 21 May 2016 14:29:54 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
+Content-Length: 17927
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080aef-4607-57fb8577189c6"
+Last-Modified: Fri, 18 Jan 2019 09:43:21 GMT
+Server: Apache/2.2.22
 
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] RESPONSE 9
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: text/javascript
-Content-Length: 2059
+[DEBUG] REQUEST 8
+CONNECT securepubads.g.doubleclick.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: securepubads.g.doubleclick.net:443
+
+
+[DEBUG] url securepubads.g.doubleclick.net:443
+[LOG ID: 8] CONNECT securepubads.g.doubleclick.net:443 HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+
+[DEBUG] parsed header CONNECT  HTTP/1.1
 Connection: close
-Last-Modified: Fri, 06 May 2011 17:10:18 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
+Host: securepubads.g.doubleclick.net:443
+Proxy-Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
-‹
-[DEBUG] Content-Lenght 2059
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
+
+[DEBUG] REQUEST 9
+CONNECT adservice.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: adservice.google.com:443
+
+
+[DEBUG] url adservice.google.com:443
+[LOG ID: 9] CONNECT adservice.google.com:443 HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+
+[DEBUG] parsed header CONNECT  HTTP/1.1
 Connection: close
-Content-Encoding: gzip
-Content-Length: 2059
-Content-Type: text/javascript
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Fri, 06 May 2011 17:10:18 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
+Host: adservice.google.com:443
+Proxy-Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
-[DEBUG] send header successfully
-[DEBUG] send body successfully
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 19 sent 646
+[INFO] proxy sent 646 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 21 sent 636
+[INFO] proxy sent 636 to 24
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 24 sent 212
+[INFO] proxy sent 212 to 21
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 212
+[INFO] proxy sent 212 to 19
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 21 sent 64
+[INFO] proxy sent 64 to 24
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 19 sent 64
+[INFO] proxy sent 64 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 21 sent 170
+[INFO] proxy sent 170 to 24
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 21 sent 259
+[INFO] proxy sent 259 to 24
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 19 sent 170
+[INFO] proxy sent 170 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 19 sent 246
+[INFO] proxy sent 246 to 22
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 24 sent 502
+[INFO] proxy sent 502 to 21
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 24 sent 62
+[INFO] proxy sent 62 to 21
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 502
+[INFO] proxy sent 502 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 62
+[INFO] proxy sent 62 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 24 sent 31
+[INFO] proxy sent 31 to 21
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 24 sent 385
+[INFO] proxy sent 385 to 21
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 24 sent 278
+[INFO] proxy sent 278 to 21
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 31
+[INFO] proxy sent 31 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 293
+[INFO] proxy sent 293 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 19 sent 31
+[INFO] proxy sent 31 to 22
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 155
+[INFO] proxy sent 155 to 19
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 19 sent 39
+[INFO] proxy sent 39 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 21 sent 31
+[INFO] proxy sent 31 to 24
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 21 sent 39
+[INFO] proxy sent 39 to 24
+[INFO] CONNECT
+[DEBUG] REQUEST 10
+GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/v321/main.css
+Connection: keep-alive
+
+
+[DEBUG] url http://www.cplusplus.com/v321/bgv.png
+[LOG ID: 10] GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+
+[DEBUG] parsed header GET /v321/bgv.png HTTP/1.1
+Accept: image/webp,*/*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Connection: close
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/v321/main.css
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+
+
+[DEBUG] REQUEST 11
+GET http://www.cplusplus.com/v321/bg.png HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/v321/main.css
+Connection: keep-alive
+
+
+[DEBUG] url http://www.cplusplus.com/v321/bg.png
+[LOG ID: 11] GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+
+[DEBUG] parsed header GET /v321/bg.png HTTP/1.1
+Accept: image/webp,*/*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Connection: close
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/v321/main.css
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+
+
 [DEBUG] REQUEST 12
-GET http://rabihyounes.com/css/reset.css HTTP/1.1
-Host: rabihyounes.com
+GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1
+Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: text/css,*/*;q=0.1
+Accept: image/webp,*/*
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/css/style.css
+Referer: http://www.cplusplus.com/v321/main.css
 Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
 
 
-[DEBUG] url http://rabihyounes.com/css/reset.css
-[LOG] GET http://rabihyounes.com/css/reset.css HTTP/1.1 @ current time
-[DEBUG] parsed header GET /css/reset.css HTTP/1.1
-Accept: text/css,*/*;q=0.1
+[DEBUG] url http://www.cplusplus.com/v321/bgh.png
+[LOG ID: 12] GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+
+[DEBUG] parsed header GET /v321/bgh.png HTTP/1.1
+Accept: image/webp,*/*
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/css/style.css
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/v321/main.css
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Length: 34888
-Content-Type: text/javascript
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Fri, 06 May 2011 17:05:58 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Length: 36700
-Content-Type: text/javascript
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Mon, 16 May 2011 23:38:32 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[DEBUG] RESPONSE 12
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: text/css
-Content-Length: 637
-Connection: close
-Last-Modified: Fri, 30 Nov 2012 16:01:35 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] Content-Lenght 637
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Length: 637
-Content-Type: text/css
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Fri, 30 Nov 2012 16:01:35 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
 [DEBUG] REQUEST 13
-GET http://rabihyounes.com/images/vcard/my-pic.jpg HTTP/1.1
-Host: rabihyounes.com
+GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1
+Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 Accept: image/webp,*/*
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
+Referer: http://www.cplusplus.com/
 Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
 
 
-[DEBUG] url http://rabihyounes.com/images/vcard/my-pic.jpg
-[LOG] GET http://rabihyounes.com/images/vcard/my-pic.jpg HTTP/1.1 @ current time
-[DEBUG] parsed header GET /images/vcard/my-pic.jpg HTTP/1.1
+[DEBUG] url http://www.cplusplus.com/img/bg_info.gif
+[LOG ID: 13] GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+
+[DEBUG] parsed header GET /img/bg_info.gif HTTP/1.1
 Accept: image/webp,*/*
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-
-
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[DEBUG] RESPONSE 13
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: image/jpeg
-Content-Length: 23704
-Connection: close
-Last-Modified: Sat, 21 Jul 2018 17:13:39 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] Content-Lenght 23704
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Length: 23704
-Content-Type: image/jpeg
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Sat, 21 Jul 2018 17:13:39 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] REQUEST 16
-GET http://rabihyounes.com/images/networks/gscholar.png HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: image/webp,*/*
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/images/networks/gscholar.png
-[LOG] GET http://rabihyounes.com/images/networks/gscholar.png HTTP/1.1 @ current time
-[DEBUG] parsed header GET /images/networks/gscholar.png HTTP/1.1
-Accept: image/webp,*/*
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
-Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-
-
-[DEBUG] REQUEST 15
-GET http://rabihyounes.com/images/networks/linkedin.png HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: image/webp,*/*
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/images/networks/linkedin.png
-[LOG] GET http://rabihyounes.com/images/networks/linkedin.png HTTP/1.1 @ current time
-[DEBUG] parsed header GET /images/networks/linkedin.png HTTP/1.1
-Accept: image/webp,*/*
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
-Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
 [DEBUG] REQUEST 14
-GET http://rabihyounes.com/images/networks/facebook.png HTTP/1.1
-Host: rabihyounes.com
+GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1
+Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 Accept: image/webp,*/*
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
+Referer: http://www.cplusplus.com/
 Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
 
 
-[DEBUG] url http://rabihyounes.com/images/networks/facebook.png
-[LOG] GET http://rabihyounes.com/images/networks/facebook.png HTTP/1.1 @ current time
-[DEBUG] parsed header GET /images/networks/facebook.png HTTP/1.1
+[DEBUG] url http://www.cplusplus.com/img/bg_src.gif
+[LOG ID: 14] GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+
+[DEBUG] parsed header GET /img/bg_src.gif HTTP/1.1
 Accept: image/webp,*/*
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+
+
+[DEBUG] REQUEST 15
+GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/
+Connection: keep-alive
+
+
+[DEBUG] url http://www.cplusplus.com/img/bg_ref.gif
+[LOG ID: 15] GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+
+[DEBUG] parsed header GET /img/bg_ref.gif HTTP/1.1
+Accept: image/webp,*/*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Connection: close
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+
+
+[DEBUG] REQUEST 16
+GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: image/webp,*/*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/
+Connection: keep-alive
+
+
+[DEBUG] url http://www.cplusplus.com/img/bg_doc.gif
+[LOG ID: 16] GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+
+[DEBUG] parsed header GET /img/bg_doc.gif HTTP/1.1
+Accept: image/webp,*/*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Connection: close
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
 [DEBUG] REQUEST 17
-GET http://rabihyounes.com/images/networks/twitter.png HTTP/1.1
-Host: rabihyounes.com
+GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1
+Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 Accept: image/webp,*/*
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/
+Referer: http://www.cplusplus.com/
 Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
 
 
-[DEBUG] url http://rabihyounes.com/images/networks/twitter.png
-[LOG] GET http://rabihyounes.com/images/networks/twitter.png HTTP/1.1 @ current time
-[DEBUG] parsed header GET /images/networks/twitter.png HTTP/1.1
+[DEBUG] url http://www.cplusplus.com/img/bg_art.gif
+[LOG ID: 17] GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+
+[DEBUG] parsed header GET /img/bg_art.gif HTTP/1.1
 Accept: image/webp,*/*
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
 [DEBUG] REQUEST 18
-GET http://rabihyounes.com/images/vcard/wrapper.jpg HTTP/1.1
-Host: rabihyounes.com
+GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1
+Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 Accept: image/webp,*/*
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/css/style.css
+Referer: http://www.cplusplus.com/
 Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
 
 
-[DEBUG] url http://rabihyounes.com/images/vcard/wrapper.jpg
-[LOG] GET http://rabihyounes.com/images/vcard/wrapper.jpg HTTP/1.1 @ current time
-[DEBUG] parsed header GET /images/vcard/wrapper.jpg HTTP/1.1
+[DEBUG] url http://www.cplusplus.com/img/bg_sch.gif
+[LOG ID: 18] GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+
+[DEBUG] parsed header GET /img/bg_sch.gif HTTP/1.1
 Accept: image/webp,*/*
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/css/style.css
+Host: www.cplusplus.com
+Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
-[DEBUG] REQUEST 19
-GET http://rabihyounes.com/images/vcard/wrapper.png HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: image/webp,*/*
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/css/style.css
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/images/vcard/wrapper.png
-[LOG] GET http://rabihyounes.com/images/vcard/wrapper.png HTTP/1.1 @ current time
-[DEBUG] parsed header GET /images/vcard/wrapper.png HTTP/1.1
-Accept: image/webp,*/*
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[DEBUG] RESPONSE 10
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Tue, 17 Jun 2014 15:49:18 GMT
+ETag: "7080b11-41f-4fc0a16215b80"
+Accept-Ranges: bytes
+Content-Length: 1055
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/css/style.css
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Content-Type: image/png
 
+‰PNG
+
 
-[DEBUG] REQUEST 20
-GET http://rabihyounes.com/images/vcard/logo.png HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: image/webp,*/*
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/css/style.css
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/images/vcard/logo.png
-[LOG] GET http://rabihyounes.com/images/vcard/logo.png HTTP/1.1 @ current time
-[DEBUG] parsed header GET /images/vcard/logo.png HTTP/1.1
-Accept: image/webp,*/*
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
+[DEBUG] Content-Lenght 1055
+[DEBUG] body received successfully
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/css/style.css
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Content-Length: 1055
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080b11-41f-4fc0a16215b80"
+Last-Modified: Tue, 17 Jun 2014 15:49:18 GMT
+Server: Apache/2.2.22
 
 
-[DEBUG] REQUEST 21
-GET http://rabihyounes.com/images/vcard/hr.gif HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: image/webp,*/*
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/css/style.css
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/images/vcard/hr.gif
-[LOG] GET http://rabihyounes.com/images/vcard/hr.gif HTTP/1.1 @ current time
-[DEBUG] parsed header GET /images/vcard/hr.gif HTTP/1.1
-Accept: image/webp,*/*
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
+[DEBUG] send header successfully
+[DEBUG] send body successfully
+[DEBUG] RESPONSE 11
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Tue, 17 Jun 2014 15:49:20 GMT
+ETag: "7080b0f-18785-4fc0a163fe000"
+Accept-Ranges: bytes
+Content-Length: 100229
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/css/style.css
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Content-Type: image/png
 
+‰PNG
+
 
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[DEBUG] REQUEST 22
-GET http://rabihyounes.com/images/vcard/sidebar.png HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: image/webp,*/*
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/css/style.css
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/images/vcard/sidebar.png
-[LOG] GET http://rabihyounes.com/images/vcard/sidebar.png HTTP/1.1 @ current time
-[DEBUG] parsed header GET /images/vcard/sidebar.png HTTP/1.1
-Accept: image/webp,*/*
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
+[DEBUG] Content-Lenght 100229
+[DEBUG] RESPONSE 12
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Tue, 17 Jun 2014 15:49:17 GMT
+ETag: "7080b10-76-4fc0a16121940"
+Accept-Ranges: bytes
+Content-Length: 118
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/css/style.css
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Content-Type: image/png
 
+‰PNG
+
 
-[DEBUG] REQUEST 23
-GET http://rabihyounes.com/images/vcard/button.gif HTTP/1.1
-Host: rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: image/webp,*/*
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://rabihyounes.com/css/style.css
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://rabihyounes.com/images/vcard/button.gif
-[LOG] GET http://rabihyounes.com/images/vcard/button.gif HTTP/1.1 @ current time
-[DEBUG] parsed header GET /images/vcard/button.gif HTTP/1.1
-Accept: image/webp,*/*
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
+[DEBUG] Content-Lenght 118
+[DEBUG] body received successfully
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
 Connection: close
-Host: rabihyounes.com
-Pragma: no-cache
-Referer: http://rabihyounes.com/css/style.css
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Content-Length: 118
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080b10-76-4fc0a16121940"
+Last-Modified: Tue, 17 Jun 2014 15:49:17 GMT
+Server: Apache/2.2.22
 
 
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
+[DEBUG] send header successfully
+[DEBUG] send body successfully
+[DEBUG] RESPONSE 13
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
+ETag: "7080ad7-e1e-4ef4824449200"
+Accept-Ranges: bytes
+Content-Length: 3614
+Connection: close
+Content-Type: image/gif
+
+GIF89al
+[DEBUG] Content-Lenght 3614
+[DEBUG] body received successfully
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 3614
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080ad7-e1e-4ef4824449200"
+Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
+Server: Apache/2.2.22
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
+[DEBUG] RESPONSE 14
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:53 GMT
+ETag: "7080ada-1514-4ef482453d440"
+Accept-Ranges: bytes
+Content-Length: 5396
+Connection: close
+Content-Type: image/gif
+
+GIF89a¼
+[DEBUG] Content-Lenght 5396
+[DEBUG] body received successfully
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 5396
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080ada-1514-4ef482453d440"
+Last-Modified: Mon, 06 Jan 2014 07:23:53 GMT
+Server: Apache/2.2.22
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
 [DEBUG] RESPONSE 16
 HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: image/png
-Content-Length: 3511
-Connection: close
-Last-Modified: Sun, 29 Nov 2015 01:58:19 GMT
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:51 GMT
+ETag: "7080ad6-c4e-4ef4824354fc0"
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
+Content-Length: 3150
+Connection: close
+Content-Type: image/gif
 
-‹
-[DEBUG] Content-Lenght 3511
+GIF89az
+[DEBUG] Content-Lenght 3150
 [DEBUG] body received successfully
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
 Connection: close
-Content-Encoding: gzip
-Content-Length: 3511
-Content-Type: image/png
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Sun, 29 Nov 2015 01:58:19 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] RESPONSE 15
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: image/png
-Content-Length: 1080
-Connection: close
-Last-Modified: Fri, 06 May 2011 17:26:56 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] Content-Lenght 1080
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Length: 1080
-Content-Type: image/png
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Fri, 06 May 2011 17:26:56 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] RESPONSE 17
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: image/png
-Content-Length: 1112
-Connection: close
-Last-Modified: Fri, 06 May 2011 17:26:06 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] Content-Lenght 1112
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Length: 1112
-Content-Type: image/png
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Fri, 06 May 2011 17:26:06 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
+Content-Length: 3150
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080ad6-c4e-4ef4824354fc0"
+Last-Modified: Mon, 06 Jan 2014 07:23:51 GMT
+Server: Apache/2.2.22
 
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
 [DEBUG] RESPONSE 18
 HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: image/jpeg
-Transfer-Encoding: chunked
-Connection: close
-Last-Modified: Mon, 06 Jul 2015 18:32:58 GMT
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
+ETag: "7080ad9-1582-4ef4824449200"
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-5eea
-‹
-[DEBUG] Content-Lenght 
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[DEBUG] RESPONSE 14
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Content-Type: image/png
-Content-Length: 911
+Content-Length: 5506
 Connection: close
-Last-Modified: Fri, 06 May 2011 17:24:50 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] RESPONSE 21
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:26 GMT
 Content-Type: image/gif
-Content-Length: 52
-Connection: close
-Last-Modified: Mon, 23 May 2011 20:19:12 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:26 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
 
-‹
-[DEBUG] Content-Lenght 911
+GIF89a©
+[DEBUG] Content-Lenght 5506
 [DEBUG] body received successfully
-[DEBUG] Content-Lenght 52
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
 Connection: close
-Content-Encoding: gzip
-Content-Length: 911
-Content-Type: image/png
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Fri, 06 May 2011 17:24:50 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] send header successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Length: 52
+Content-Length: 5506
 Content-Type: image/gif
-Date: Mon, 25 Feb 2019 23:46:26 GMT
-Expires: Tue, 25 Feb 2020 23:46:26 GMT
-Last-Modified: Mon, 23 May 2011 20:19:12 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send body successfully
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] RESPONSE 19
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:26 GMT
-Content-Type: image/png
-Transfer-Encoding: chunked
-Connection: close
-Last-Modified: Thu, 02 Jun 2011 12:55:40 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:26 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-1faa
-‹
-[DEBUG] Content-Lenght 
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[DEBUG] RESPONSE 20
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:26 GMT
-Content-Type: image/png
-Content-Length: 3934
-Connection: close
-Last-Modified: Fri, 25 May 2018 06:44:47 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:26 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] Content-Lenght 3934
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Length: 3934
-Content-Type: image/png
-Date: Mon, 25 Feb 2019 23:46:26 GMT
-Expires: Tue, 25 Feb 2020 23:46:26 GMT
-Last-Modified: Fri, 25 May 2018 06:44:47 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080ad9-1582-4ef4824449200"
+Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
+Server: Apache/2.2.22
 
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] RESPONSE 22
+[DEBUG] RESPONSE 17
 HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:26 GMT
-Content-Type: image/png
-Content-Length: 1782
-Connection: close
-Last-Modified: Sun, 22 May 2011 21:42:04 GMT
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:51 GMT
+ETag: "7080ad5-1922-4ef4824354fc0"
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:26 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
-
-‹
-[DEBUG] Content-Lenght 1782
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
+Content-Length: 6434
 Connection: close
-Content-Encoding: gzip
-Content-Length: 1782
-Content-Type: image/png
-Date: Mon, 25 Feb 2019 23:46:26 GMT
-Expires: Tue, 25 Feb 2020 23:46:26 GMT
-Last-Modified: Sun, 22 May 2011 21:42:04 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] RESPONSE 23
-HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:26 GMT
 Content-Type: image/gif
-Content-Length: 304
-Connection: close
-Last-Modified: Mon, 23 May 2011 23:16:20 GMT
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Expires: Tue, 25 Feb 2020 23:46:26 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
 
-‹
-[DEBUG] Content-Lenght 304
+GIF89aˆ
+[DEBUG] Content-Lenght 6434
 [DEBUG] body received successfully
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
-Cache-Control: max-age=31536000
 Connection: close
-Content-Encoding: gzip
-Content-Length: 304
+Content-Length: 6434
 Content-Type: image/gif
-Date: Mon, 25 Feb 2019 23:46:26 GMT
-Expires: Tue, 25 Feb 2020 23:46:26 GMT
-Last-Modified: Mon, 23 May 2011 23:16:20 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080ad5-1922-4ef4824354fc0"
+Last-Modified: Mon, 06 Jan 2014 07:23:51 GMT
+Server: Apache/2.2.22
 
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Type: image/jpeg
-Date: Mon, 25 Feb 2019 23:46:25 GMT
-Expires: Tue, 25 Feb 2020 23:46:25 GMT
-Last-Modified: Mon, 06 Jul 2015 18:32:58 GMT
-Server: nginx/1.14.1
-Transfer-Encoding: chunked
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=31536000
-Connection: close
-Content-Encoding: gzip
-Content-Type: image/png
-Date: Mon, 25 Feb 2019 23:46:26 GMT
-Expires: Tue, 25 Feb 2020 23:46:26 GMT
-Last-Modified: Thu, 02 Jun 2011 12:55:40 GMT
-Server: nginx/1.14.1
-Transfer-Encoding: chunked
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] REQUEST 24
-GET http://www.rabihyounes.com/images/vcard/icon.ico HTTP/1.1
-Host: www.rabihyounes.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Pragma: no-cache
-Cache-Control: no-cache
-
-
-[DEBUG] url http://www.rabihyounes.com/images/vcard/icon.ico
-[LOG] GET http://www.rabihyounes.com/images/vcard/icon.ico HTTP/1.1 @ current time
-[DEBUG] parsed header GET /images/vcard/icon.ico HTTP/1.1
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: no-cache
-Connection: close
-Host: www.rabihyounes.com
-Pragma: no-cache
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-
-
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[DEBUG] RESPONSE 24
+[DEBUG] RESPONSE 15
 HTTP/1.1 200 OK
-Server: nginx/1.14.1
-Date: Mon, 25 Feb 2019 23:46:26 GMT
-Content-Type: image/vnd.microsoft.icon
-Content-Length: 240
-Connection: close
-Last-Modified: Fri, 25 May 2018 06:30:08 GMT
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
+ETag: "7080ad8-13ee-4ef4824449200"
 Accept-Ranges: bytes
-Cache-Control: max-age=604800
-Expires: Mon, 04 Mar 2019 23:46:26 GMT
-Vary: Accept-Encoding
-Content-Encoding: gzip
-X-Endurance-Cache-Level: 4
+Content-Length: 5102
+Connection: close
+Content-Type: image/gif
 
-‹
-[DEBUG] Content-Lenght 240
+GIF89a¤
+[DEBUG] Content-Lenght 5102
 [DEBUG] body received successfully
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
-Cache-Control: max-age=604800
 Connection: close
-Content-Encoding: gzip
-Content-Length: 240
-Content-Type: image/vnd.microsoft.icon
-Date: Mon, 25 Feb 2019 23:46:26 GMT
-Expires: Mon, 04 Mar 2019 23:46:26 GMT
-Last-Modified: Fri, 25 May 2018 06:30:08 GMT
-Server: nginx/1.14.1
-Vary: Accept-Encoding
-X-Endurance-Cache-Level: 4
+Content-Length: 5102
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080ad8-13ee-4ef4824449200"
+Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
+Server: Apache/2.2.22
 
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] REQUEST 25
+[DEBUG] body received successfully
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 100229
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 01:58:23 GMT
+ETag: "7080b0f-18785-4fc0a163fe000"
+Last-Modified: Tue, 17 Jun 2014 15:49:20 GMT
+Server: Apache/2.2.22
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
+[DEBUG] REQUEST 19
 CONNECT www.google-analytics.com:443 HTTP/1.1
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 Proxy-Connection: keep-alive
@@ -1657,7 +1252,8 @@ Host: www.google-analytics.com:443
 
 
 [DEBUG] url www.google-analytics.com:443
-[LOG] CONNECT www.google-analytics.com:443 HTTP/1.1 @ current time
+[LOG ID: 19] CONNECT www.google-analytics.com:443 HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+
 [DEBUG] parsed header CONNECT  HTTP/1.1
 Connection: close
 Host: www.google-analytics.com:443
@@ -1665,109 +1261,458 @@ Proxy-Connection: keep-alive
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
+[DEBUG] REQUEST 20
+GET http://www.cplusplus.com/favicon.ico HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+
+[DEBUG] url http://www.cplusplus.com/favicon.ico
+[LOG ID: 20] GET http://www.cplusplus.com/favicon.ico HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+
+[DEBUG] parsed header GET /favicon.ico HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Connection: close
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+
+
 [INFO] CONNECT RESPONSE TO CLIENT
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 53 sent 517
-[INFO] proxy sent 517 to 56
+[INFO] client 41 sent 640
+[INFO] proxy sent 640 to 44
 [INFO] CONNECT
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
 [DEBUG] server to client
-[INFO] client 56 sent 1418
-[INFO] proxy sent 1418 to 53
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 56 sent 1418
-[INFO] proxy sent 1418 to 53
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 56 sent 73
-[INFO] proxy sent 73 to 53
+[INFO] client 44 sent 212
+[INFO] proxy sent 212 to 41
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 53 sent 93
-[INFO] proxy sent 93 to 56
+[INFO] client 41 sent 64
+[INFO] proxy sent 64 to 44
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 53 sent 177
-[INFO] proxy sent 177 to 56
+[INFO] client 41 sent 170
+[INFO] proxy sent 170 to 44
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 53 sent 258
-[INFO] proxy sent 258 to 56
+[INFO] client 41 sent 231
+[INFO] proxy sent 231 to 44
 [INFO] CONNECT
 [DEBUG] server to client
-[INFO] client 56 sent 120
-[INFO] proxy sent 120 to 53
+[INFO] client 44 sent 502
+[INFO] proxy sent 502 to 41
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 62
+[INFO] proxy sent 62 to 41
+[INFO] CONNECT
+[DEBUG] RESPONSE 20
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 01:58:24 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:12 GMT
+ETag: "7080a6d-57e-4ef4821e23800"
+Accept-Ranges: bytes
+Content-Length: 1406
+Connection: close
+Content-Type: image/vnd.microsoft.icon
+
+
+[DEBUG] Content-Lenght 1406
+[DEBUG] body received successfully
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 1406
+Content-Type: image/vnd.microsoft.icon
+Date: Tue, 26 Feb 2019 01:58:24 GMT
+ETag: "7080a6d-57e-4ef4821e23800"
+Last-Modified: Mon, 06 Jan 2014 07:23:12 GMT
+Server: Apache/2.2.22
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
+[DEBUG] server to client
+[INFO] client 44 sent 301
+[INFO] proxy sent 301 to 41
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 1418
+[INFO] proxy sent 1418 to 41
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 1418
+[INFO] proxy sent 1418 to 41
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 1418
+[INFO] proxy sent 1418 to 41
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 1418
+[INFO] proxy sent 1418 to 41
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 1418
+[INFO] proxy sent 1418 to 41
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 1418
+[INFO] proxy sent 1418 to 41
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 1418
+[INFO] proxy sent 1418 to 41
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 53 sent 38
-[INFO] proxy sent 38 to 56
+[INFO] client 41 sent 31
+[INFO] proxy sent 31 to 44
 [INFO] CONNECT
 [DEBUG] server to client
-[INFO] client 56 sent 308
-[INFO] proxy sent 308 to 53
+[INFO] client 44 sent 1418
+[INFO] proxy sent 1418 to 41
 [INFO] CONNECT
 [DEBUG] server to client
-[INFO] client 56 sent 1418
-[INFO] proxy sent 1418 to 53
+[INFO] client 44 sent 1418
+[INFO] proxy sent 1418 to 41
 [INFO] CONNECT
 [DEBUG] server to client
-[INFO] client 56 sent 1418
-[INFO] proxy sent 1418 to 53
+[INFO] client 44 sent 2836
+[INFO] proxy sent 2836 to 41
 [INFO] CONNECT
 [DEBUG] server to client
-[INFO] client 56 sent 1418
-[INFO] proxy sent 1418 to 53
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 56 sent 1418
-[INFO] proxy sent 1418 to 53
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 56 sent 1418
-[INFO] proxy sent 1418 to 53
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 56 sent 2836
-[INFO] proxy sent 2836 to 53
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 56 sent 1418
-[INFO] proxy sent 1418 to 53
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 56 sent 1418
-[INFO] proxy sent 1418 to 53
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 56 sent 1418
-[INFO] proxy sent 1418 to 53
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 56 sent 1418
-[INFO] proxy sent 1418 to 53
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 56 sent 2011
-[INFO] proxy sent 2011 to 53
+[INFO] client 44 sent 1913
+[INFO] proxy sent 1913 to 41
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 53 sent 46
-[INFO] proxy sent 46 to 56
+[INFO] client 41 sent 39
+[INFO] proxy sent 39 to 44
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 53 sent 443
-[INFO] proxy sent 443 to 56
+[INFO] client 41 sent 461
+[INFO] proxy sent 461 to 44
 [INFO] CONNECT
 [DEBUG] server to client
-[INFO] client 56 sent 175
-[INFO] proxy sent 175 to 53
+[INFO] client 44 sent 291
+[INFO] proxy sent 291 to 41
 [INFO] CONNECT
 [DEBUG] server to client
-[INFO] client 56 sent 157
-[INFO] proxy sent 157 to 53
+[INFO] client 44 sent 428
+[INFO] proxy sent 428 to 41
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 39
+[INFO] proxy sent 39 to 41
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 53 sent 46
-[INFO] proxy sent 46 to 56
+[INFO] client 41 sent 39
+[INFO] proxy sent 39 to 44
 [INFO] CONNECT
+[DEBUG] REQUEST 21
+CONNECT stats.g.doubleclick.net:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: stats.g.doubleclick.net:443
+
+
+[DEBUG] url stats.g.doubleclick.net:443
+[LOG ID: 21] CONNECT stats.g.doubleclick.net:443 HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+
+[DEBUG] parsed header CONNECT  HTTP/1.1
+Connection: close
+Host: stats.g.doubleclick.net:443
+Proxy-Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+
+
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 45 sent 596
+[INFO] proxy sent 596 to 48
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 48 sent 1418
+[INFO] proxy sent 1418 to 45
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 48 sent 1186
+[INFO] proxy sent 1186 to 45
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 45 sent 64
+[INFO] proxy sent 64 to 48
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 45 sent 170
+[INFO] proxy sent 170 to 48
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 45 sent 311
+[INFO] proxy sent 311 to 48
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 48 sent 502
+[INFO] proxy sent 502 to 45
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 48 sent 62
+[INFO] proxy sent 62 to 45
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 48 sent 31
+[INFO] proxy sent 31 to 45
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 48 sent 371
+[INFO] proxy sent 371 to 45
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 48 sent 395
+[INFO] proxy sent 395 to 45
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 48 sent 70
+[INFO] proxy sent 70 to 45
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 45 sent 31
+[INFO] proxy sent 31 to 48
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 45 sent 39
+[INFO] proxy sent 39 to 48
+[INFO] CONNECT
+[DEBUG] REQUEST 22
+CONNECT www.google.com:443 HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Proxy-Connection: keep-alive
+Connection: keep-alive
+Host: www.google.com:443
+
+
+[DEBUG] url www.google.com:443
+[LOG ID: 22] CONNECT www.google.com:443 HTTP/1.1 @ Tue Feb 26 01:57:08 2019
+
+[DEBUG] parsed header CONNECT  HTTP/1.1
+Connection: close
+Host: www.google.com:443
+Proxy-Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+
+
+[INFO] CONNECT RESPONSE TO CLIENT
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 47 sent 630
+[INFO] proxy sent 630 to 50
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 50 sent 1418
+[INFO] proxy sent 1418 to 47
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 50 sent 926
+[INFO] proxy sent 926 to 47
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 47 sent 93
+[INFO] proxy sent 93 to 50
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 47 sent 177
+[INFO] proxy sent 177 to 50
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 47 sent 318
+[INFO] proxy sent 318 to 50
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 50 sent 51
+[INFO] proxy sent 51 to 47
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 50 sent 69
+[INFO] proxy sent 69 to 47
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 50 sent 38
+[INFO] proxy sent 38 to 47
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 50 sent 352
+[INFO] proxy sent 352 to 47
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 50 sent 80
+[INFO] proxy sent 80 to 47
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 50 sent 84
+[INFO] proxy sent 84 to 47
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 47 sent 38
+[INFO] proxy sent 38 to 50
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 47 sent 46
+[INFO] proxy sent 46 to 50
+[INFO] CONNECT
+[DEBUG] REQUEST 23
+GET http://www.cplusplus.com/ HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cookie: __utma=62705790.1919130655.1551146275.1551146275.1551146275.1; __utmb=62705790.1.10.1551146275; __utmc=62705790; __utmz=62705790.1551146275.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
+Upgrade-Insecure-Requests: 1
+Cache-Control: max-age=0
+
+
+[DEBUG] url http://www.cplusplus.com/
+[LOG ID: 23] GET http://www.cplusplus.com/ HTTP/1.1 @ Tue Feb 26 01:57:10 2019
+
+[DEBUG] parsed header GET / HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Cache-Control: max-age=0
+Connection: close
+Cookie: __utma=62705790.1919130655.1551146275.1551146275.1551146275.1; __utmb=62705790.1.10.1551146275; __utmc=62705790; __utmz=62705790.1551146275.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
+Host: www.cplusplus.com
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+
+
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[DEBUG] RESPONSE 23
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 01:58:26 GMT
+Server: Apache/2.2.22
+X-Powered-By: PHP/5.4.38-0+deb7u1
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 3250
+Connection: close
+Content-Type: text/html
+
+‹
+[DEBUG] Content-Lenght 3250
+[DEBUG] body received successfully
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Connection: close
+Content-Encoding: gzip
+Content-Length: 3250
+Content-Type: text/html
+Date: Tue, 26 Feb 2019 01:58:26 GMT
+Server: Apache/2.2.22
+Vary: Accept-Encoding
+X-Powered-By: PHP/5.4.38-0+deb7u1
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
+[DEBUG] REQUEST 24
+GET http://www.cplusplus.com/v321/main.css HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/
+Connection: keep-alive
+Cookie: __utma=62705790.1919130655.1551146275.1551146275.1551146275.1; __utmb=62705790.1.10.1551146275; __utmc=62705790; __utmz=62705790.1551146275.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
+If-Modified-Since: Fri, 05 Sep 2014 14:40:49 GMT
+If-None-Match: "7080b16-5930-502527484fe40"
+Cache-Control: max-age=0
+
+
+[DEBUG] url http://www.cplusplus.com/v321/main.css
+[LOG ID: 24] GET http://www.cplusplus.com/v321/main.css HTTP/1.1 @ Tue Feb 26 01:57:10 2019
+
+[DEBUG] parsed header GET /v321/main.css HTTP/1.1
+Accept: text/css,*/*;q=0.1
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Cache-Control: max-age=0
+Connection: close
+Cookie: __utma=62705790.1919130655.1551146275.1551146275.1551146275.1; __utmb=62705790.1.10.1551146275; __utmc=62705790; __utmz=62705790.1551146275.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
+Host: www.cplusplus.com
+If-Modified-Since: Fri, 05 Sep 2014 14:40:49 GMT
+If-None-Match: "7080b16-5930-502527484fe40"
+Referer: http://www.cplusplus.com/
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+
+
+[DEBUG] REQUEST 25
+GET http://www.cplusplus.com/v321/main.js HTTP/1.1
+Host: www.cplusplus.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Referer: http://www.cplusplus.com/
+Connection: keep-alive
+Cookie: __utma=62705790.1919130655.1551146275.1551146275.1551146275.1; __utmb=62705790.1.10.1551146275; __utmc=62705790; __utmz=62705790.1551146275.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
+If-Modified-Since: Tue, 17 Jun 2014 16:00:40 GMT
+If-None-Match: "7080b17-9f14-4fc0a3ec7da00"
+Cache-Control: max-age=0
+
+
+[DEBUG] url http://www.cplusplus.com/v321/main.js
+[LOG ID: 25] GET http://www.cplusplus.com/v321/main.js HTTP/1.1 @ Tue Feb 26 01:57:10 2019
+
+[DEBUG] parsed header GET /v321/main.js HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Cache-Control: max-age=0
+Connection: close
+Cookie: __utma=62705790.1919130655.1551146275.1551146275.1551146275.1; __utmb=62705790.1.10.1551146275; __utmc=62705790; __utmz=62705790.1551146275.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
+Host: www.cplusplus.com
+If-Modified-Since: Tue, 17 Jun 2014 16:00:40 GMT
+If-None-Match: "7080b17-9f14-4fc0a3ec7da00"
+Referer: http://www.cplusplus.com/
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
+
+
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[INFO] GET
+[LOG] request not in cache
+[DEBUG] send to server successfully
+[DEBUG] RESPONSE 24
+HTTP/1.1 304 Not Modified
+Date: Tue, 26 Feb 2019 01:58:27 GMT
+Server: Apache/2.2.22
+Connection: close
+ETag: "7080b16-5930-502527484fe40"
+Vary: Accept-Encoding
+
+
+[DEBUG] Content-Lenght 
+[DEBUG] body received successfully
+[CACHES] Validate After Request URL http://www.cplusplus.com/v321/main.css
+[CACHES] Validate After Request UID 24
+[DEBUG] Receive 304 Cache Exists0
+[CACHEs] Before second
