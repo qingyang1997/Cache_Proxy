@@ -21,7 +21,7 @@ public:
     first_line_msg.status_char = "";
   }
   virtual ~Response() {}
-  Response(const Response &rhs) {
+  Response(const Response &rhs) : Http(rhs) {
     first_line_msg.status_num = rhs.first_line_msg.status_num;
     first_line_msg.status_char = rhs.first_line_msg.status_char;
     first_line_msg.protocol = rhs.first_line_msg.protocol;
@@ -30,6 +30,7 @@ public:
     if (this == &rhs) {
       return *this;
     }
+    this->Http::operator=(rhs);
     first_line_msg.status_num = rhs.first_line_msg.status_num;
     first_line_msg.status_char = rhs.first_line_msg.status_char;
     first_line_msg.protocol = rhs.first_line_msg.protocol;

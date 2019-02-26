@@ -13,13 +13,7 @@ private:
   std::string body;
 
 public:
-  Http() {
-    uid = -1;
-    first_line = "";
-    header_pair = std::map<std::string, std::string>();
-    Cache_Control = std::map<std::string, std::string>();
-    body = "";
-  }
+  Http() {}
   virtual ~Http(){};
   Http(const Http &rhs) {
     uid = rhs.uid;
