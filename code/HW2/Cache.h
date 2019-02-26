@@ -24,7 +24,7 @@ private:
   bool checkPragmaHeader(Http &http);
   double checkFresh(Response &cache_response, int max_age, int extra_age);
   bool timeCompare(time_t t1, time_t t2);
-
+  Response getCache(std::string &url);
   void getCache(std::string &url, Response &cache_response);
   void replaceCache(Request &request, Response &response);
 
@@ -164,7 +164,8 @@ void Cache::update(Request &request, Response &response, std::string &message) {
   if (status_num == 304) {
     std::string host_name = request.getUrl();
     std::cout << "[DEBUG] Receive 304 Use Cache" << std::endl;
-    getCache(host_name, response);
+
+    response = getCache(host_name);
   } else {
     if (checkControlHeader(request) == true) {
       if (checkControlField(request, "no-store") == true) {
@@ -220,11 +221,16 @@ bool Cache::findCache(std::string &url) {
   }
 }
 
+Response Cache::getCache(std::string &url) {
+  auto iter = caches.find(url);
+  std::cout << "[CACHEs] Before second" << std::endl;
+  return iter->second;
+}
+
 void Cache::getCache(std::string &url, Response &cache_response) {
   auto iter = caches.find(url);
   std::cout << "[CACHEs] Before second" << std::endl;
   cache_response = iter->second;
-  std::cout << "[CACHEs] After second" << std::endl;
 }
 
 void Cache::replaceCache(Request &request, Response &response) {
