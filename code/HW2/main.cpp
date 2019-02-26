@@ -13,7 +13,7 @@ std::mutex mtx;
 int uid = 0;
 // std::ifstream log;
 
-void readHeader(int read_fd, Http &http) {
+void readHeader(int read_fd, Http &http) { // strong guarantee
   char message[HEADER_LENGTH];
   memset(message, 0, sizeof(message));
   ssize_t recv_bytes = recv(read_fd, &message, sizeof(message), 0);
@@ -23,7 +23,6 @@ void readHeader(int read_fd, Http &http) {
   if (recv_bytes == 0) {
     throw ErrorException("client close socket");
   }
-
   // only for debugging, so there is no try and catch
   std::string temp(message);
   const std::type_info &type_info = typeid(http);
@@ -39,7 +38,6 @@ void readHeader(int read_fd, Http &http) {
   // only for debugging, so there is no try and catch
   http.parseHeader(temp);
   //
-
   size_t end_of_header = temp.find("\r\n\r\n") + 4;
   try {
     http.updateBody(&message[end_of_header], recv_bytes - end_of_header);
@@ -47,7 +45,7 @@ void readHeader(int read_fd, Http &http) {
     throw ErrorException("update failed");
   }
 }
-std::string getCurrentTime() {
+std::string getCurrentTime() { // strong guarantee
   time_t current_time = time(0);
   tm *gmtm = gmtime(&current_time);
   char *dt = asctime(gmtm);
@@ -55,6 +53,7 @@ std::string getCurrentTime() {
 }
 void readMulti(int read_fd, std::string &body, int content_length) {
   int total_bytes = body.size();
+  std::string temp = body;
   while (1) {
     body.resize(total_bytes + RECV_LENGTH);
     ssize_t recv_bytes = recv(read_fd, &body[total_bytes], RECV_LENGTH, 0);
@@ -66,10 +65,7 @@ void readMulti(int read_fd, std::string &body, int content_length) {
         // client exits
         throw ErrorException("client exit");
       }
-    } // else if (recv_bytes < RECV_LENGTH) {
-    //   // didn't get enough data
-    //   body.resize(total_bytes);
-    // }
+    }
     if ((content_length > 0 && total_bytes >= content_length) ||
         (recv_bytes == 0)) {
       // finished receiving
@@ -77,23 +73,6 @@ void readMulti(int read_fd, std::string &body, int content_length) {
     }
   }
 }
-
-// void exchangeData(int client_fd, int destination_fd) {
-//   std::string temp;
-//   readMulti(client_fd, temp, 0);
-//   std::cout << "[INFO] client " << client_fd << "sent " << temp.size()
-//             << std::endl;
-//   if (temp.size() == 0) {
-//     throw ErrorException("read nothing");
-//   }
-//   int status = send(destination_fd, &temp[0], temp.size(), 0);
-//   if (status == -1) {
-//     throw ErrorException("send return -1");
-//   }
-//   std::cout << "[INFO] proxy sent " << temp.size() << " to " <<
-//   destination_fd
-//             << std::endl;
-// }
 
 void exchangeData(int client_fd, int destination_fd) {
   std::string temp;

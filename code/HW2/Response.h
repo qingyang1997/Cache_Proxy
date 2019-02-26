@@ -1,5 +1,3 @@
-
-
 #ifndef PROXY_RESPONSE_H
 #define PROXY_RESPONSE_H
 
@@ -15,29 +13,48 @@ private:
   First_line_msg first_line_msg;
 
 public:
-  Response() {
-    first_line_msg.protocol = "";
-    first_line_msg.status_num = "";
-    first_line_msg.status_char = "";
-  }
+  Response() {}
   virtual ~Response() {}
-  Response(const Response &rhs) : Http(rhs) {
+  Response(const Response &rhs) : Http(rhs) { // strong guarantee
     first_line_msg.status_num = rhs.first_line_msg.status_num;
     first_line_msg.status_char = rhs.first_line_msg.status_char;
     first_line_msg.protocol = rhs.first_line_msg.protocol;
   }
-  Response &operator=(const Response &rhs) {
+  // Response &operator=(const Response &rhs) { // strong guarantee
+  //   if (this == &rhs) {
+  //     return *this;
+  //   }
+  //   Response temp;
+  //   try {
+  //     temp.Http::operator=(rhs);
+  //     temp.first_line_msg.status_num = rhs.first_line_msg.status_num;
+  //     temp.first_line_msg.status_char = rhs.first_line_msg.status_char;
+  //     temp.first_line_msg.protocol = rhs.first_line_msg.protocol;
+  //   } catch (...) {
+  //     throw ErrorException("Response = failed");
+  //   }
+  //   std::swap(temp, *this);
+  //   return *this;
+  // }
+  Response &operator=(const Response &rhs) { // strong guarantee
     if (this == &rhs) {
       return *this;
     }
-    this->Http::operator=(rhs);
-    first_line_msg.status_num = rhs.first_line_msg.status_num;
-    first_line_msg.status_char = rhs.first_line_msg.status_char;
-    first_line_msg.protocol = rhs.first_line_msg.protocol;
+    try {
+      this->Http::operator=(rhs);
+      first_line_msg.status_num = rhs.first_line_msg.status_num;
+      first_line_msg.status_char = rhs.first_line_msg.status_char;
+      first_line_msg.protocol = rhs.first_line_msg.protocol;
+    } catch (...) {
+      throw ErrorException("Response = failed");
+    }
+    // std::swap(temp, *this);
     return *this;
   }
-  void setProtocol(std::string value) { first_line_msg.protocol = value; }
-  virtual void parseFirstLine() { // HTTP/1.1 200 OK
+  void setProtocol(std::string value) {
+    first_line_msg.protocol = value;
+  }                               // strong guarantee
+  virtual void parseFirstLine() { // strong guarantee
     std::string first_line = getFirstLine();
     size_t space0 = first_line.find(' ');
     if (space0 == first_line.npos) {
@@ -53,7 +70,9 @@ public:
     first_line_msg.status_num = value;
     first_line_msg.status_char = first_line.substr(space1 + 1);
   }
-  std::string getStatusNum() { return first_line_msg.status_num; }
+  std::string getStatusNum() {
+    return first_line_msg.status_num;
+  } // strong guarantee
 };
 
 #endif // PROXY_RESPONSE_H

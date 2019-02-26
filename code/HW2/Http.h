@@ -15,30 +15,35 @@ private:
 public:
   Http() {}
   virtual ~Http(){};
-  Http(const Http &rhs) {
+  Http(const Http &rhs) { // strong guarantee
     uid = rhs.uid;
     first_line = rhs.first_line;
     header_pair = rhs.header_pair;
     Cache_Control = rhs.Cache_Control;
     body = rhs.body;
   }
-  Http &operator=(const Http &rhs) {
+  Http &operator=(const Http &rhs) { // strong guarantee
     if (this == &rhs) {
       return *this;
     }
-    uid = rhs.uid;
-    first_line = rhs.first_line;
-    header_pair = rhs.header_pair;
-    Cache_Control = rhs.Cache_Control;
-    body = rhs.body;
+    Http temp;
+    try {
+      temp.uid = rhs.uid;
+      temp.first_line = rhs.first_line;
+      temp.header_pair = rhs.header_pair;
+      temp.Cache_Control = rhs.Cache_Control;
+      temp.body = rhs.body;
+    } catch (...) {
+      throw ErrorException("Http = failed");
+    }
+    std::swap(temp, *this);
     return *this;
   }
   virtual void parseFirstLine(){};
   void parseHeader(std::string &message);
   void reconstructHeader(std::string &destination);
   void parseByLine(std::string &message);
-  void updateBody(char *buff, int length) {
-
+  void updateBody(char *buff, int length) { // strong guarantee
     for (int i = 0; i < length; ++i) {
       body.push_back(buff[i]);
     }
@@ -46,10 +51,10 @@ public:
 
   std::string getValue(std::string &key);
   void parseCacheControl();
-  void setUid(int s_uid) { uid = s_uid; }
-  int getUid() { return uid; }
-  std::string getFirstLine() { return first_line; }
-  std::string &getBody() { return body; }
+  void setUid(int s_uid) { uid = s_uid; }           // no throw
+  int getUid() { return uid; }                      // no throw
+  std::string getFirstLine() { return first_line; } // strong guarantee
+  std::string &getBody() { return body; }           // strong guarantee
   std::string getCacheControlValue(std::string key);
 
   bool checkExistsHeader(const char *header_name);
@@ -57,19 +62,17 @@ public:
   void addHeaderPair(std::string &key, std::string &value);
 };
 
-void Http::addHeaderPair(std::string &key, std::string &value) {
+void Http::addHeaderPair(std::string &key,
+                         std::string &value) { // strong guarantee
   // what if the key is already there?
-
   // should this function support update?
-
   header_pair[key] = value;
 }
-void Http::parseByLine(std::string &message) {
+void Http::parseByLine(std::string &message) { // strong guarantee
   size_t start = 0;
   size_t end = message.find("\r\n");
   while (1) {
     size_t space = message.find(' ', start);
-
     if (space == message.npos) {
       throw ErrorException("Invalid request header");
     }
@@ -88,7 +91,7 @@ void Http::parseByLine(std::string &message) {
   }
 }
 
-void Http::parseHeader(std::string &message) {
+void Http::parseHeader(std::string &message) { // strong guarantee
   size_t end_pos = message.find("\r\n");
   if (end_pos == message.npos) {
     throw ErrorException("Invalid request header");
@@ -107,8 +110,7 @@ void Http::parseHeader(std::string &message) {
   // error check?
 }
 
-void Http::reconstructHeader(std::string &destination) { // no exception
-
+void Http::reconstructHeader(std::string &destination) { // strong guarantee
   std::string tmp = first_line;
   std::map<std::string, std::string>::iterator it = header_pair.begin();
   while (it != header_pair.end()) {
@@ -128,12 +130,12 @@ void Http::reconstructHeader(std::string &destination) { // no exception
   destination = tmp;
 }
 
-std::string Http::getValue(std::string &key) {
+std::string Http::getValue(std::string &key) { // strong guarantee
   std::map<std::string, std::string>::iterator it = header_pair.find(key);
   return it == header_pair.end() ? "" : it->second;
 }
 
-bool Http::checkExistsHeader(const char *header_name) {
+bool Http::checkExistsHeader(const char *header_name) { // strong guarantee
   std::string header = header_name;
   std::string header_value = getValue(header);
   if (header_value == "")
@@ -142,7 +144,8 @@ bool Http::checkExistsHeader(const char *header_name) {
     return true;
 }
 
-bool Http::checkExistsControlHeader(std::string header_name) {
+bool Http::checkExistsControlHeader(
+    std::string header_name) { // strong guarantee
   std::map<std::string, std::string>::iterator it =
       Cache_Control.find(header_name);
   if (it == Cache_Control.end())
@@ -151,9 +154,8 @@ bool Http::checkExistsControlHeader(std::string header_name) {
     return true;
 }
 
-void Http::parseCacheControl() {
+void Http::parseCacheControl() { // strong guarantee
   std::map<std::string, std::string>::iterator it =
-
       header_pair.find("Cache-Control");
   if (it == header_pair.end()) {
     return;
@@ -162,7 +164,7 @@ void Http::parseCacheControl() {
   std::stringstream ss;
   ss.str(it->second);
   std::string tmp = "";
-  while (getline(ss, tmp, ',')) {
+  while (getline(ss, tmp, ',')) { // seperate Cache-Control by comma
     size_t comma = tmp.find('=');
     if (comma != tmp.npos) {
       Cache_Control[tmp.substr(0, comma)] = tmp.substr(comma + 1);
@@ -171,7 +173,7 @@ void Http::parseCacheControl() {
     }
   }
 }
-std::string Http::getCacheControlValue(std::string key) {
+std::string Http::getCacheControlValue(std::string key) { // strong guarantee
   std::map<std::string, std::string>::iterator it = Cache_Control.find(key);
   if (it == Cache_Control.end()) {
     return "";
