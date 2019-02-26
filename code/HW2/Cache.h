@@ -31,6 +31,7 @@ private:
   time_t getExpireTime(Response &cache_response, int max_age, int extra_age);
   time_t getUTCTime(std::string time);
   time_t addTime(time_t time, int value);
+  char *displayTime(time_t time);
   void eraseAllSubStr(std::string &mainStr, const std::string &toErase);
   void addValidateHeader(Request &request, Response &response);
   void removeValidateHeader(Request &request);
@@ -59,6 +60,10 @@ bool Cache::validate(Request &request, Response &cache_response,
 
     //  Check Request Cache Control Headers
     if (checkControlHeader(request) == true) {
+
+      std::string temp;
+      request.reconstructHeader(temp);
+      std::cout << temp << std::endl;
       if (checkControlField(request, "no-cache") == true) {
         message = "in cache, requires validation";
         addValidateHeader(request, cache_response);
@@ -96,12 +101,15 @@ bool Cache::validate(Request &request, Response &cache_response,
             max_age, std::stoi(cache_response.getCacheControlValue("max-age")));
       }
 
+      std::cout << "[CACHES] Uid " << request.getUid()
+                << "Request's max-age is " << max_age << std::endl;
+      std::cout << "[CACHES] Uid " << request.getUid()
+                << "Cache-Response's expire time is:  " << std::endl;
       double fresh_diff = checkFresh(cache_response, max_age, extra_age);
-      if (fresh_diff > 0) {
+      if (max_age == 0 || fresh_diff > 0) {
         time_t expire_time = getExpireTime(cache_response, max_age, extra_age);
-        tm *gmtm = gmtime(&expire_time);
-        char *dt = asctime(gmtm);
-        message = "in cache, but expired at " + std::string(dt);
+        message =
+            "in cache, but expired at " + std::string(displayTime(expire_time));
         if (checkControlField(cache_response, "must-revalidate") == true) {
           addValidateHeader(request, cache_response);
           return false;
@@ -131,9 +139,8 @@ bool Cache::validate(Request &request, Response &cache_response,
       time_t request_time = time(0);
       double fresh_diff = difftime(request_time, expire_time);
       if (fresh_diff > 0) {
-        tm *gmtm = gmtime(&expire_time);
-        char *dt = asctime(gmtm);
-        message = "in cache, but expired at " + std::string(dt);
+        message =
+            "in cache, but expired at " + std::string(displayTime(expire_time));
         addValidateHeader(request, cache_response);
         return false;
       } else {
@@ -142,7 +149,7 @@ bool Cache::validate(Request &request, Response &cache_response,
       }
     } else {
       double fresh_diff = checkFresh(cache_response, max_age, extra_age);
-      if (fresh_diff > 0) {
+      if (max_age == 0 || fresh_diff > 0) {
         time_t expire_time = getExpireTime(cache_response, max_age, extra_age);
         tm *gmtm = gmtime(&expire_time);
         char *dt = asctime(gmtm);
@@ -156,18 +163,18 @@ bool Cache::validate(Request &request, Response &cache_response,
   } else {
     message = "not in cache";
 
-    std::string request_header = "";
+    /*std::string request_header = "";
     request.reconstructHeader(request_header);
     std::cout << "[CACHES] Uid " << request.getUid() << " Cache before remove "
               << request_header << std::endl;
-
+    */
     removeValidateHeader(request);
-    request_header = "";
+    /*request_header = "";
     request.reconstructHeader(request_header);
 
     std::cout << "[CACHES] Uid " << request.getUid() << " Cache after remove "
               << request_header << std::endl;
-
+    */
     return false;
   }
   return false;
@@ -200,7 +207,7 @@ void Cache::update(Request &request, Response &response, std::string &message) {
 
     if (checkControlHeader(response) == true) {
       if (checkControlField(response, "no-store") == true) {
-        message = "not cacheable because response contains \"no-cache\" field";
+        message = "not cacheable because response contains \"no-store\" field";
         return;
       }
       if (checkControlField(response, "no-cache") == true) {
@@ -260,6 +267,8 @@ void Cache::getCache(std::string &url, Response &cache_response) {
 void Cache::replaceCache(Request &request, Response &response) {
   std::string host_name = request.getUrl();
   caches[host_name] = response;
+  std::cout << "[CACHES] Replacing Caches for Request UID: " << request.getUid()
+            << std::endl;
   std::cout << "[CACHES] After replacing Caches: " << std::endl;
   std::string temp;
   caches[host_name].reconstructHeader(temp);
@@ -301,8 +310,15 @@ time_t Cache::getExpireTime(Response &cache_response, int max_age,
 double Cache::checkFresh(Response &cache_response, int max_age, int extra_age) {
   std::string date_header = "Date";
   time_t request_time = time(0);
+  tm *request_time_gmt = gmtime(&request_time);
+  request_time = mktime(request_time_gmt);
   time_t cache_time = getUTCTime(cache_response.getValue(date_header));
+
   time_t expire_time = addTime(cache_time, max_age - extra_age);
+  std::cout << "[CACHES] Cache Request Time is " << displayTime(request_time)
+            << std::endl;
+  std::cout << "[CACHES] Cache Expire Time is " << displayTime(cache_time)
+            << std::endl;
   double tinterval = difftime(request_time, expire_time);
   return tinterval;
 }
@@ -318,22 +334,20 @@ void Cache::eraseAllSubStr(std::string &mainStr, const std::string &toErase) {
     mainStr.erase(pos, toErase.length());
   }
 }
-
 time_t Cache::getUTCTime(std::string time) {
   struct tm tm;
   eraseAllSubStr(time, " GMT");
+  // std::cout << "[CACHES] Cache Time is " << time << std::endl;
   strptime(time.c_str(), "%a, %d %b %Y %H:%M:%S", &tm);
   time_t t = mktime(&tm);
+  // std::cout << "[CACHES] Cache Time is " << displayTime(t) << std::endl;
   return t;
 }
 
 time_t Cache::addTime(time_t time, int value) { return time + value; }
 
 void Cache::addValidateHeader(Request &request, Response &cache_response) {
-  std::cout << "[CACHES] Validate Before Request URL " << request.getUrl()
-            << std::endl;
-  std::cout << "[CACHES] Validate Before Request UID " << request.getUid()
-            << std::endl;
+
   if (cache_response.checkExistsHeader("Etag")) {
     std::string header = "If-None-Match";
     std::string etag = cache_response.getValue(header);
@@ -351,4 +365,10 @@ void Cache::removeValidateHeader(Request &request) {
   request.removeHeaderPair("If-None-Match");
   request.removeHeaderPair("If-Modified-Since");
   return;
+}
+
+char *Cache::displayTime(time_t time) {
+  tm *gmtm = localtime(&time);
+  char *dt = asctime(gmtm);
+  return dt;
 }
