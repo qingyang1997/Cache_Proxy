@@ -8,12 +8,11 @@
 #define SEND_LENGTH 2048
 #define HEADER_LENGTH 8192
 #define DEBUG 1
-
+std::ofstream log;
 std::mutex mtx;
 int uid = 0;
-// std::ifstream log;
 
-void readHeader(int read_fd, Http &http) {
+void readHeader(int read_fd, Http &http) { // strong guarantee
   char message[HEADER_LENGTH];
   memset(message, 0, sizeof(message));
   ssize_t recv_bytes = recv(read_fd, &message, sizeof(message), 0);
@@ -23,7 +22,6 @@ void readHeader(int read_fd, Http &http) {
   if (recv_bytes == 0) {
     throw ErrorException("client close socket");
   }
-
   // only for debugging, so there is no try and catch
   std::string temp(message);
   const std::type_info &type_info = typeid(http);
@@ -36,64 +34,47 @@ void readHeader(int read_fd, Http &http) {
   }
   std::cout << temp << std::endl;
 
-  // only for debugging, so there is no try and catch
   http.parseHeader(temp);
-  //
-
-  size_t end_of_header = temp.find("\r\n\r\n") + 4;
-  try {
-    http.updateBody(&message[end_of_header], recv_bytes - end_of_header);
-  } catch (...) {
-    throw ErrorException("update failed");
+  size_t end_of_header = temp.find("\r\n\r\n");
+  if (end_of_header == temp.npos) {
+    throw ErrorException("invalid header");
+  } else {
+    end_of_header += 4;
   }
+  http.updateBody(&message[end_of_header], recv_bytes - end_of_header);
 }
-std::string getCurrentTime() {
+std::string getCurrentTime() { // strong guarantee
   time_t current_time = time(0);
   tm *gmtm = gmtime(&current_time);
   char *dt = asctime(gmtm);
   return std::string(dt);
 }
-void readMulti(int read_fd, std::string &body, int content_length) {
+void readMulti(int read_fd, std::string &body,
+               int content_length) { // strong guarantee
   int total_bytes = body.size();
+  std::string temp = body;
   while (1) {
-    body.resize(total_bytes + RECV_LENGTH);
-    ssize_t recv_bytes = recv(read_fd, &body[total_bytes], RECV_LENGTH, 0);
+    temp.resize(total_bytes + RECV_LENGTH);
+    ssize_t recv_bytes = recv(read_fd, &temp[total_bytes], RECV_LENGTH, 0);
     total_bytes += recv_bytes;
-    body.resize(total_bytes);
-    //    std::cout << "[DEBUG] read size " << total_bytes << std::endl;
+    temp.resize(total_bytes);
     if (recv_bytes == 0) {
       if (errno == EINTR) {
         // client exits
         throw ErrorException("client exit");
       }
-    } // else if (recv_bytes < RECV_LENGTH) {
-    //   // didn't get enough data
-    //   body.resize(total_bytes);
-    // }
+      // if (content_length > 0 && total_bytes < content_length) {
+      //   throw ErrorException("not finish");
+      // }
+    }
     if ((content_length > 0 && total_bytes >= content_length) ||
         (recv_bytes == 0)) {
       // finished receiving
       break;
     }
   }
+  std::swap(body, temp);
 }
-
-// void exchangeData(int client_fd, int destination_fd) {
-//   std::string temp;
-//   readMulti(client_fd, temp, 0);
-//   std::cout << "[INFO] client " << client_fd << "sent " << temp.size()
-//             << std::endl;
-//   if (temp.size() == 0) {
-//     throw ErrorException("read nothing");
-//   }
-//   int status = send(destination_fd, &temp[0], temp.size(), 0);
-//   if (status == -1) {
-//     throw ErrorException("send return -1");
-//   }
-//   std::cout << "[INFO] proxy sent " << temp.size() << " to " <<
-//   destination_fd
-//             << std::endl;
-// }
 
 void exchangeData(int client_fd, int destination_fd) {
   std::string temp;
@@ -115,11 +96,17 @@ void exchangeData(int client_fd, int destination_fd) {
   }
 }
 
+void logMsg(std::string &msg) {
+  std::lock_guard<std::mutex> lck(mtx);
+  log << msg;
+}
+
 void handler(int client_fd, Cache *cache) {
   Request request;
   Response response;
   std::string request_header = "";
   std::string response_header = "";
+  std::stringstream log_msg("");
   int status = 0;
 
   try {
@@ -134,13 +121,15 @@ void handler(int client_fd, Cache *cache) {
   try {
     readHeader(client_fd, request);
   } catch (ErrorException &e) {
-    std::cout << e.what() << std::endl;
+
     return;
   }
-  std::cout << "[DEBUG] url " << request.getUrl() << std::endl;
   request.reconstructHeader(request_header); // no exception
-  std::cout << "[LOG ID: " << request.getUid() << "] " << request.getFirstLine()
-            << " @ " << getCurrentTime() << std::endl;
+  log_msg << "[LOG ID: " << request.getUid() << "] " << request.getFirstLine()
+          << " @ " << getCurrentTime() << std::endl;
+  std::string logmsg = log_msg.str();
+  logMsg(logmsg);
+  log_msg.str("");
   // only for dubugging
   if (DEBUG == 1) {
     std::cout << "[DEBUG] parsed header " << request_header << std::endl;
@@ -223,11 +212,6 @@ void handler(int client_fd, Cache *cache) {
         std::cout << e.what() << std::endl;
         return;
       }
-      std::unordered_map<std::string, Response> m;
-      Response response2;
-      response2 = response;
-      Response response3 = response;
-      m["1"] = response;
 
       // only for dubugging
       std::string key = "Content-Length";
@@ -485,12 +469,13 @@ void handler(int client_fd, Cache *cache) {
 }
 
 int main(int argc, char **argv) {
-  // try {
-  //   log.open("/var/log/erss/proxy.log", std::ifstream::in);
-  // } catch (std::exception &e) {
-  //   std::cout << e.what() << std::endl;
-  //   return EXIT_FAILURE;
-  // }
+
+  try {
+    log.open("proxy.log", std::outstream::out);
+  } catch (std::exception &e) {
+    std::cout << e.what() << std::endl;
+    return EXIT_FAILURE;
+  }
 
   Cache cache;
   SocketInfo socket_info;

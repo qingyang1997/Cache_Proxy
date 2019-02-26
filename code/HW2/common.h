@@ -6,6 +6,7 @@
 #define PROXY_COMMON_H
 
 #include <exception>
+#include <fstream>
 #include <iostream>
 #include <map>
 #include <set>

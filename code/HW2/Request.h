@@ -23,23 +23,33 @@ private:
 public:
   Request() {}
   virtual ~Request(){};
-  Request(const Request &rhs) : Http(rhs) {
-    first_line_msg.host = rhs.first_line_msg.host;
-    first_line_msg.method = rhs.first_line_msg.method;
-    first_line_msg.port = rhs.first_line_msg.port;
-    first_line_msg.url = rhs.first_line_msg.url;
-    first_line_msg.protocol = rhs.first_line_msg.protocol;
+  Request(const Request &rhs) : Http(rhs) { // strong guarantee
   }
   Request &operator=(const Request &rhs) {
     if (this == &rhs) {
       return *this;
     }
-    this->Http::operator=(rhs);
-    first_line_msg.host = rhs.first_line_msg.host;
-    first_line_msg.method = rhs.first_line_msg.method;
-    first_line_msg.port = rhs.first_line_msg.port;
-    first_line_msg.url = rhs.first_line_msg.url;
-    first_line_msg.protocol = rhs.first_line_msg.protocol;
+    Request temp;
+    try {
+      temp.Http::operator=(rhs);
+      temp.first_line_msg.host = rhs.first_line_msg.host;
+      temp.first_line_msg.method = rhs.first_line_msg.method;
+      temp.first_line_msg.port = rhs.first_line_msg.port;
+      temp.first_line_msg.url = rhs.first_line_msg.url;
+      temp.first_line_msg.protocol = rhs.first_line_msg.protocol;
+    } catch (...) {
+      throw ErrorException("Request = failed");
+    }
+    try {
+      this->Http::operator=(rhs);
+    } catch (...) {
+      throw ErrorException("Request = failed");
+    }
+    first_line_msg.host = std::move(temp.first_line_msg.host);
+    first_line_msg.method = std::move(temp.first_line_msg.method);
+    first_line_msg.port = std::move(temp.first_line_msg.port);
+    first_line_msg.url = std::move(temp.first_line_msg.url);
+    first_line_msg.protocol = std::move(temp.first_line_msg.protocol);
     return *this;
   }
   virtual void parseFirstLine() {
