@@ -4,7 +4,7 @@
 
 #ifndef PROXY_COMMON_H
 #define PROXY_COMMON_H
-
+#include <arpa/inet.h>
 #include <exception>
 #include <fstream>
 #include <iostream>
