@@ -1,8 +1,8 @@
 #ifndef PROXY_HTTP_H
 #define PROXY_HTTP_H
-
 #include "common.h"
 #include "myexception.h"
+#include <algorithm>
 
 class Http {
 private:
@@ -178,9 +178,13 @@ void Http::parseCacheControl() {
   while (getline(ss, tmp, ',')) {
     size_t comma = tmp.find('=');
     if (comma != tmp.npos) {
-      Cache_Control[tmp.substr(0, comma)] = tmp.substr(comma + 1);
+      std::string key = tmp.substr(0, comma);
+      key.erase(remove_if(key.begin(), key.end(), isspace), key.end());
+      Cache_Control[key] = tmp.substr(comma + 1);
     } else {
-      Cache_Control[tmp] = "";
+      std::string key = tmp;
+      key.erase(remove_if(key.begin(), key.end(), isspace), key.end());
+      Cache_Control[key] = "";
     }
   }
 }
