@@ -22,17 +22,17 @@ public:
   }
   virtual ~Response() {}
   Response(const Response &rhs) {
-    first_line_msg.protocol = rhs.first_line_msg.protocol;
     first_line_msg.status_num = rhs.first_line_msg.status_num;
     first_line_msg.status_char = rhs.first_line_msg.status_char;
+    first_line_msg.protocol = rhs.first_line_msg.protocol;
   }
   Response &operator=(const Response &rhs) {
     if (this == &rhs) {
       return *this;
     }
-    first_line_msg.protocol = rhs.first_line_msg.protocol;
     first_line_msg.status_num = rhs.first_line_msg.status_num;
     first_line_msg.status_char = rhs.first_line_msg.status_char;
+    first_line_msg.protocol = rhs.first_line_msg.protocol;
     return *this;
   }
   void setProtocol(std::string value) { first_line_msg.protocol = value; }

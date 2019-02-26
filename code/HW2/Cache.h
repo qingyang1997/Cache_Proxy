@@ -163,9 +163,14 @@ void Cache::update(Request &request, Response &response, std::string &message) {
   int status_num = std::stoi(response.getStatusNum());
   if (status_num == 304) {
     std::string host_name = request.getUrl();
-    std::cout << "[DEBUG] Receive 304 Use Cache" << std::endl;
-
-    response = getCache(host_name);
+    std::cout << "[CACHES] Validate After Request URL " << request.getUrl()
+              << std::endl;
+    std::cout << "[CACHES] Validate After Request UID " << request.getUid()
+              << std::endl;
+    std::cout << "[DEBUG] Receive 304 Cache Exists" << findCache(host_name)
+              << std::endl;
+    Response response_return = getCache(host_name);
+    response = response_return;
   } else {
     if (checkControlHeader(request) == true) {
       if (checkControlField(request, "no-store") == true) {
@@ -222,13 +227,13 @@ bool Cache::findCache(std::string &url) {
 }
 
 Response Cache::getCache(std::string &url) {
-  auto iter = caches.find(url);
+  std::unordered_map<std::string, Response>::iterator iter = caches.find(url);
   std::cout << "[CACHEs] Before second" << std::endl;
   return iter->second;
 }
 
 void Cache::getCache(std::string &url, Response &cache_response) {
-  auto iter = caches.find(url);
+  std::unordered_map<std::string, Response>::iterator iter = caches.find(url);
   std::cout << "[CACHEs] Before second" << std::endl;
   cache_response = iter->second;
 }
@@ -302,6 +307,10 @@ time_t Cache::getUTCTime(std::string time) {
 time_t Cache::addTime(time_t time, int value) { return time + value; }
 
 void Cache::addValidateHeader(Request &request, Response &cache_response) {
+  std::cout << "[CACHES] Validate Before Request URL " << request.getUrl()
+            << std::endl;
+  std::cout << "[CACHES] Validate Before Request UID " << request.getUid()
+            << std::endl;
   if (cache_response.checkExistsHeader("Etag")) {
     std::string header = "If-None-Match";
     std::string etag = cache_response.getValue(header);
