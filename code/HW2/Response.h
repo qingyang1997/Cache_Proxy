@@ -35,7 +35,7 @@ public:
     first_line_msg.status_char = rhs.first_line_msg.status_char;
     return *this;
   }
-
+  void setProtocol(std::string value) { first_line_msg.protocol = value; }
   virtual void parseFirstLine() { // HTTP/1.1 200 OK
     std::string first_line = getFirstLine();
     size_t space0 = first_line.find(' ');
