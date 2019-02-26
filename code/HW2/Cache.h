@@ -50,7 +50,7 @@ bool Cache::validate(Request &request, Response &cache_response,
   //  Find Cache
   std::string host_name = request.getUrl();
   if (findCache(host_name) == true) {
-    std::cout << "[CACHE] Host name is: " << host_name << std::endl;
+
     getCache(host_name, cache_response);
     int max_age = 999999999;
     int stale_age = 0;
@@ -222,7 +222,9 @@ bool Cache::findCache(std::string &url) {
 
 void Cache::getCache(std::string &url, Response &cache_response) {
   auto iter = caches.find(url);
+  std::cout << "[CACHEs] Before second" << std::endl;
   cache_response = iter->second;
+  std::cout << "[CACHEs] After second" << std::endl;
 }
 
 void Cache::replaceCache(Request &request, Response &response) {
