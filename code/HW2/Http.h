@@ -16,57 +16,39 @@ public:
   Http() {}
   virtual ~Http(){};
   Http(const Http &rhs) { // strong guarantee
-    // uid = rhs.uid;
-    // first_line = rhs.first_line;
-    // header_pair = rhs.header_pair;
-    // Cache_Control = rhs.Cache_Control;
-    // body = rhs.body;
   }
-
-  // Http &operator=(const Http &rhs) { // strong guarantee
-  //   if (this == &rhs) {
-  //     return *this;
-  //   }
-  //   Http temp;
-  //   try {
-  //     temp.uid = rhs.uid;
-  //     temp.first_line = rhs.first_line;
-  //     temp.header_pair = rhs.header_pair;
-  //     temp.Cache_Control = rhs.Cache_Control;
-  //     temp.body = rhs.body;
-  //   } catch (...) {
-  //     throw ErrorException("Http = failed");
-  //   }
-  //   std::swap(temp, *this);
-  //   return *this;
-  // }
-
-  // Http &operator=(const Http &rhs) { // strong guarantee
-  //   if (this == &rhs) {
-  //     return *this;
-  //   }
-  //   //    Http temp;
-  //   try {
-  //     uid = rhs.uid;
-  //     first_line = rhs.first_line;
-  //     header_pair = rhs.header_pair;
-  //     Cache_Control = rhs.Cache_Control;
-  //     body = rhs.body;
-  //   } catch (...) {
-  //     throw ErrorException("Http = failed");
-  //   }
-  //   // std::swap(temp, *this);
-  //   return *this;
-  // }
+  Http &operator=(const Http &rhs) { // strong guarantee
+    if (this == &rhs) {
+      return *this;
+    }
+    Http temp;
+    try {
+      temp.uid = rhs.uid;
+      temp.first_line = rhs.first_line;
+      temp.header_pair = rhs.header_pair;
+      temp.Cache_Control = rhs.Cache_Control;
+      temp.body = rhs.body;
+    } catch (...) {
+      throw ErrorException("Http = failed");
+    }
+    this->uid = rhs.uid;
+    this->first_line = std::move(temp.first_line);
+    this->header_pair = std::move(temp.header_pair);
+    this->Cache_Control = std::move(temp.Cache_Control);
+    this->body = std::move(temp.body);
+    return *this;
+  }
 
   virtual void parseFirstLine(){};
   void parseHeader(std::string &message);
   void reconstructHeader(std::string &destination);
   void parseByLine(std::string &message);
-  void updateBody(char *buff, int length) { // basic guarantee
+  void updateBody(char *buff, int length) { // strong guarantee
+    std::string temp = body;
     for (int i = 0; i < length; ++i) {
-      body.push_back(buff[i]);
+      temp.push_back(buff[i]);
     }
+    std::swap(temp, body);
   }
 
   std::string getValue(std::string &key);
@@ -94,12 +76,12 @@ void Http::parseByLine(std::string &message) { // strong guarantee
   while (1) {
     size_t space = message.find(' ', start);
     if (space == message.npos) {
-      throw ErrorException("Invalid request header");
+      throw ErrorException("invalid header");
     }
     std::string key = message.substr(start, space - start - 1);
     std::string value = message.substr(space + 1, end - space - 1);
     if (key.empty() || value.empty()) {
-      throw ErrorException("Invalid request header");
+      throw ErrorException("invalid header");
     }
 
     header_pair[key] = value;
@@ -114,14 +96,14 @@ void Http::parseByLine(std::string &message) { // strong guarantee
 void Http::parseHeader(std::string &message) { // strong guarantee
   size_t end_pos = message.find("\r\n");
   if (end_pos == message.npos) {
-    throw ErrorException("Invalid request header");
+    throw ErrorException("invalid header");
   }
   std::string first_line = message.substr(0, end_pos);
   this->first_line = first_line;
   std::string remain = message.substr(end_pos + 2);
   end_pos = remain.find("\r\n\r\n");
   if (end_pos == remain.npos) {
-    throw ErrorException("Invalid request header");
+    throw ErrorException("invalid header");
   }
   remain = remain.substr(0, end_pos + 2);
   parseByLine(remain);

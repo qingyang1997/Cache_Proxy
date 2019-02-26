@@ -23,40 +23,25 @@ public:
       return *this;
     }
     Response temp;
-    // Response temp2;
-    // std::swap(temp, temp2);
-
     try {
       temp.Http::operator=(rhs);
-      // temp.first_line_msg.status_num = rhs.first_line_msg.status_num;
-      // temp.first_line_msg.status_char = rhs.first_line_msg.status_char;
-      // temp.first_line_msg.protocol = rhs.first_line_msg.protocol;
+      temp.first_line_msg.status_num = rhs.first_line_msg.status_num;
+      temp.first_line_msg.status_char = rhs.first_line_msg.status_char;
+      temp.first_line_msg.protocol = rhs.first_line_msg.protocol;
     } catch (...) {
       throw ErrorException("Response = failed");
     }
-    //    std::swap(*this, temp);
-    this->Http::operator=(rhs);
-    // first_line_msg.status_num = rhs.first_line_msg.status_num;
-    // first_line_msg.status_char = rhs.first_line_msg.status_char;
-    // first_line_msg.protocol = rhs.first_line_msg.protocol;
+    try {
+      this->Http::operator=(rhs);
+    } catch (...) {
+      throw ErrorException("Response = failed");
+    }
+    first_line_msg.status_num = std::move(temp.first_line_msg.status_num);
+    first_line_msg.status_char = std::move(temp.first_line_msg.status_char);
+    first_line_msg.protocol = std::move(temp.first_line_msg.protocol);
 
     return *this;
   }
-  // Response &operator=(const Response &rhs) { // strong guarantee
-  //   if (this == &rhs) {
-  //     return *this;
-  //   }
-  //   try {
-  //     this->Http::operator=(rhs);
-  //     first_line_msg.status_num = rhs.first_line_msg.status_num;
-  //     first_line_msg.status_char = rhs.first_line_msg.status_char;
-  //     first_line_msg.protocol = rhs.first_line_msg.protocol;
-  //   } catch (...) {
-  //     throw ErrorException("Response = failed");
-  //   }
-  //   // std::swap(temp, *this);
-  //   return *this;
-  // }
   void setProtocol(std::string value) {
     first_line_msg.protocol = value;
   }                               // strong guarantee
