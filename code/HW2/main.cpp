@@ -207,6 +207,8 @@ void handler(int client_fd, Cache *cache) {
       }
       std::cout << "[DEBUG] send body successfully" << std::endl;
     } else { // send to server
+      std::cout << "[DASHABI] Uid " << request.getUid()
+                << " request before send " << request_header << std::endl;
       send(server_socket_info.socket_fd, &request_header[0],
            request_header.size(), 0);
       std::cout << "[DEBUG] send to server successfully" << std::endl;
