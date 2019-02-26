@@ -14,7 +14,10 @@ private:
 
 public:
   Http() {}
-  virtual ~Http(){};
+  virtual ~Http() {
+    first_line = "";
+    body = "";
+  };
   Http(const Http &rhs) { // strong guarantee
     uid = rhs.uid;
     first_line = rhs.first_line;
@@ -63,7 +66,7 @@ public:
   void parseHeader(std::string &message);
   void reconstructHeader(std::string &destination);
   void parseByLine(std::string &message);
-  void updateBody(char *buff, int length) { // strong guarantee
+  void updateBody(char *buff, int length) { // basic guarantee
     for (int i = 0; i < length; ++i) {
       body.push_back(buff[i]);
     }

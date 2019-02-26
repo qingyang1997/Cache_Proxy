@@ -51,7 +51,8 @@ std::string getCurrentTime() { // strong guarantee
   char *dt = asctime(gmtm);
   return std::string(dt);
 }
-void readMulti(int read_fd, std::string &body, int content_length) {
+void readMulti(int read_fd, std::string &body,
+               int content_length) { // basic guarantee
   int total_bytes = body.size();
   //  std::string temp = body;
   while (1) {
