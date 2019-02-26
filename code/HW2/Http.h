@@ -55,6 +55,7 @@ public:
   bool checkExistsHeader(const char *header_name);
   bool checkExistsControlHeader(std::string header_name);
   void addHeaderPair(std::string &key, std::string &value);
+  void removeHeaderPair(const char *key);
 };
 
 void Http::addHeaderPair(std::string &key, std::string &value) {
@@ -63,6 +64,18 @@ void Http::addHeaderPair(std::string &key, std::string &value) {
   // should this function support update?
 
   header_pair[key] = value;
+}
+
+void Http::removeHeaderPair(const char *key) {
+
+  if (checkExistsHeader(key)) {
+    std::string header = std::string(key);
+
+    header_pair.erase(header);
+    std::cout << "[CACHES] find invalid pair name is: " << key << std::endl;
+    std::cout << "[CACHES]  invalid pair value is: " << getValue(header)
+              << std::endl;
+  }
 }
 void Http::parseByLine(std::string &message) {
   size_t start = 0;

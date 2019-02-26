@@ -33,6 +33,7 @@ private:
   time_t addTime(time_t time, int value);
   void eraseAllSubStr(std::string &mainStr, const std::string &toErase);
   void addValidateHeader(Request &request, Response &response);
+  void removeValidateHeader(Request &request);
   void writeLog(const char *info);
   cachemap caches;
 };
@@ -154,6 +155,19 @@ bool Cache::validate(Request &request, Response &cache_response,
     }
   } else {
     message = "not in cache";
+
+    std::string request_header = "";
+    request.reconstructHeader(request_header);
+    std::cout << "[CACHES] Uid " << request.getUid() << " Cache before remove "
+              << request_header << std::endl;
+
+    removeValidateHeader(request);
+    request_header = "";
+    request.reconstructHeader(request_header);
+
+    std::cout << "[CACHES] Uid " << request.getUid() << " Cache after remove "
+              << request_header << std::endl;
+
     return false;
   }
   return false;
@@ -233,19 +247,23 @@ bool Cache::findCache(std::string &url) {
 
 Response Cache::getCache(std::string &url) {
   std::unordered_map<std::string, Response>::iterator iter = caches.find(url);
-  std::cout << "[CACHEs] Before second" << std::endl;
+
   return iter->second;
 }
 
 void Cache::getCache(std::string &url, Response &cache_response) {
   std::unordered_map<std::string, Response>::iterator iter = caches.find(url);
-  std::cout << "[CACHEs] Before second" << std::endl;
+
   cache_response = iter->second;
 }
 
 void Cache::replaceCache(Request &request, Response &response) {
   std::string host_name = request.getUrl();
   caches[host_name] = response;
+  std::cout << "[CACHES] After replacing Caches: " << std::endl;
+  std::string temp;
+  caches[host_name].reconstructHeader(temp);
+  std::cout << temp << std::endl;
 }
 
 bool Cache::checkControlHeader(Http &http) {
@@ -326,5 +344,11 @@ void Cache::addValidateHeader(Request &request, Response &cache_response) {
     std::string modified = cache_response.getValue(header);
     request.addHeaderPair(header, modified);
   }
+  return;
+}
+
+void Cache::removeValidateHeader(Request &request) {
+  request.removeHeaderPair("If-None-Match");
+  request.removeHeaderPair("If-Modified-Since");
   return;
 }
