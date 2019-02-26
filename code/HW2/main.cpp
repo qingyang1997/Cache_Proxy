@@ -179,7 +179,8 @@ void handler(int client_fd, Cache *cache) {
     //    send_multi(server_socket_info.socket_fd, header);
     std::string log_message = "";
     bool result_cache = cache->validate(request, response, log_message);
-    std::cout << "[LOG] request " << log_message << std::endl;
+    std::cout << "[LOG] request " << log_message
+              << " And the UID is: " << request.getUid() << std::endl;
     if (result_cache == true) { // response to client directly
                                 //    only for dubbging, no tryand catch
       response.reconstructHeader(response_header); // no exception

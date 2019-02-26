@@ -10,7 +10,7 @@ Upgrade-Insecure-Requests: 1
 
 
 [DEBUG] url http://www.cplusplus.com/
-[LOG ID: 0] GET http://www.cplusplus.com/ HTTP/1.1 @ Tue Feb 26 01:57:05 2019
+[LOG ID: 0] GET http://www.cplusplus.com/ HTTP/1.1 @ Tue Feb 26 02:27:20 2019
 
 [DEBUG] parsed header GET / HTTP/1.1
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
@@ -23,11 +23,11 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 0
 [DEBUG] send to server successfully
 [DEBUG] RESPONSE 0
 HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:22 GMT
+Date: Tue, 26 Feb 2019 02:28:37 GMT
 Server: Apache/2.2.22
 X-Powered-By: PHP/5.4.38-0+deb7u1
 Vary: Accept-Encoding
@@ -39,13 +39,25 @@ Content-Type: text/html
 ‹
 [DEBUG] Content-Lenght 3250
 [DEBUG] body received successfully
+[LOG] Response for Request UID0
+HTTP/1.1 200 OK
+Connection: close
+Content-Encoding: gzip
+Content-Length: 3250
+Content-Type: text/html
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+Server: Apache/2.2.22
+Vary: Accept-Encoding
+X-Powered-By: PHP/5.4.38-0+deb7u1
+
+
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Connection: close
 Content-Encoding: gzip
 Content-Length: 3250
 Content-Type: text/html
-Date: Tue, 26 Feb 2019 01:58:22 GMT
+Date: Tue, 26 Feb 2019 02:28:37 GMT
 Server: Apache/2.2.22
 Vary: Accept-Encoding
 X-Powered-By: PHP/5.4.38-0+deb7u1
@@ -53,7 +65,7 @@ X-Powered-By: PHP/5.4.38-0+deb7u1
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] REQUEST 2
+[DEBUG] REQUEST 1
 GET http://www.cplusplus.com/v321/main.css HTTP/1.1
 Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
@@ -65,7 +77,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/v321/main.css
-[LOG ID: 2] GET http://www.cplusplus.com/v321/main.css HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+[LOG ID: 1] GET http://www.cplusplus.com/v321/main.css HTTP/1.1 @ Tue Feb 26 02:27:20 2019
 
 [DEBUG] parsed header GET /v321/main.css HTTP/1.1
 Accept: text/css,*/*;q=0.1
@@ -77,7 +89,7 @@ Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
-[DEBUG] REQUEST 1
+[DEBUG] REQUEST 2
 GET http://www.cplusplus.com/v321/main.js HTTP/1.1
 Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
@@ -89,7 +101,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/v321/main.js
-[LOG ID: 1] GET http://www.cplusplus.com/v321/main.js HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+[LOG ID: 2] GET http://www.cplusplus.com/v321/main.js HTTP/1.1 @ Tue Feb 26 02:27:20 2019
 
 [DEBUG] parsed header GET /v321/main.js HTTP/1.1
 Accept: */*
@@ -102,14 +114,14 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 1
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 2
 [DEBUG] send to server successfully
-[DEBUG] RESPONSE 2
+[DEBUG] RESPONSE 1
 HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:37 GMT
 Server: Apache/2.2.22
 Last-Modified: Fri, 05 Sep 2014 14:40:49 GMT
 ETag: "7080b16-5930-502527484fe40"
@@ -123,6 +135,20 @@ Content-Type: text/css
 ‹
 [DEBUG] Content-Lenght 5017
 [DEBUG] body received successfully
+[LOG] Response for Request UID1
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Encoding: gzip
+Content-Length: 5017
+Content-Type: text/css
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+ETag: "7080b16-5930-502527484fe40"
+Last-Modified: Fri, 05 Sep 2014 14:40:49 GMT
+Server: Apache/2.2.22
+Vary: Accept-Encoding
+
+
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
@@ -130,7 +156,7 @@ Connection: close
 Content-Encoding: gzip
 Content-Length: 5017
 Content-Type: text/css
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:37 GMT
 ETag: "7080b16-5930-502527484fe40"
 Last-Modified: Fri, 05 Sep 2014 14:40:49 GMT
 Server: Apache/2.2.22
@@ -139,9 +165,9 @@ Vary: Accept-Encoding
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] RESPONSE 1
+[DEBUG] RESPONSE 2
 HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:37 GMT
 Server: Apache/2.2.22
 Last-Modified: Tue, 17 Jun 2014 16:00:40 GMT
 ETag: "7080b17-9f14-4fc0a3ec7da00"
@@ -155,6 +181,20 @@ Content-Type: application/javascript
 ‹
 [DEBUG] Content-Lenght 11196
 [DEBUG] body received successfully
+[LOG] Response for Request UID2
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Encoding: gzip
+Content-Length: 11196
+Content-Type: application/javascript
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+ETag: "7080b17-9f14-4fc0a3ec7da00"
+Last-Modified: Tue, 17 Jun 2014 16:00:40 GMT
+Server: Apache/2.2.22
+Vary: Accept-Encoding
+
+
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
@@ -162,7 +202,7 @@ Connection: close
 Content-Encoding: gzip
 Content-Length: 11196
 Content-Type: application/javascript
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:37 GMT
 ETag: "7080b17-9f14-4fc0a3ec7da00"
 Last-Modified: Tue, 17 Jun 2014 16:00:40 GMT
 Server: Apache/2.2.22
@@ -171,7 +211,7 @@ Vary: Accept-Encoding
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] REQUEST 6
+[DEBUG] REQUEST 3
 GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1
 Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
@@ -183,7 +223,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/img/welcometo.gif
-[LOG ID: 6] GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+[LOG ID: 3] GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 @ Tue Feb 26 02:27:20 2019
 
 [DEBUG] parsed header GET /img/welcometo.gif HTTP/1.1
 Accept: image/webp,*/*
@@ -195,7 +235,7 @@ Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
-[DEBUG] REQUEST 3
+[DEBUG] REQUEST 4
 GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1
 Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
@@ -207,7 +247,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/ico/social_googleplus.png
-[LOG ID: 3] GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+[LOG ID: 4] GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 @ Tue Feb 26 02:27:20 2019
 
 [DEBUG] parsed header GET /ico/social_googleplus.png HTTP/1.1
 Accept: image/webp,*/*
@@ -231,7 +271,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/ico/social_facebook.png
-[LOG ID: 5] GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+[LOG ID: 5] GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 @ Tue Feb 26 02:27:20 2019
 
 [DEBUG] parsed header GET /ico/social_facebook.png HTTP/1.1
 Accept: image/webp,*/*
@@ -243,7 +283,7 @@ Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
-[DEBUG] REQUEST 4
+[DEBUG] REQUEST 6
 GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1
 Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
@@ -255,7 +295,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/ico/social_twitter.png
-[LOG ID: 4] GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+[LOG ID: 6] GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 @ Tue Feb 26 02:27:20 2019
 
 [DEBUG] parsed header GET /ico/social_twitter.png HTTP/1.1
 Accept: image/webp,*/*
@@ -279,7 +319,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.googletagservices.com/tag/js/gpt.js
-[LOG ID: 7] GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+[LOG ID: 7] GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 @ Tue Feb 26 02:27:20 2019
 
 [DEBUG] parsed header GET /tag/js/gpt.js HTTP/1.1
 Accept: */*
@@ -292,33 +332,20 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 4
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 3
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 5
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 6
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 7
 [DEBUG] send to server successfully
-[DEBUG] RESPONSE 6
-HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-Server: Apache/2.2.22
-Last-Modified: Fri, 18 Jan 2019 09:43:21 GMT
-ETag: "7080aef-4607-57fb8577189c6"
-Accept-Ranges: bytes
-Content-Length: 17927
-Connection: close
-Content-Type: image/gif
-
-GIF89aØ2
-[DEBUG] Content-Lenght 17927
 [DEBUG] RESPONSE 7
 HTTP/1.1 200 OK
 Vary: Accept-Encoding
@@ -326,10 +353,10 @@ Content-Encoding: gzip
 Content-Type: text/javascript
 Timing-Allow-Origin: *
 Content-Length: 10682
-Date: Tue, 26 Feb 2019 01:57:06 GMT
-Expires: Tue, 26 Feb 2019 01:57:06 GMT
+Date: Tue, 26 Feb 2019 02:27:20 GMT
+Expires: Tue, 26 Feb 2019 02:27:20 GMT
 Cache-Control: private, max-age=900, stale-while-revalidate=3600
-ETag: "94 / 629 of 1000 / last-modified: 1551137135"
+ETag: "94 / 948 of 1000 / last-modified: 1551137135"
 X-Content-Type-Options: nosniff
 Server: sffe
 X-XSS-Protection: 1; mode=block
@@ -338,16 +365,16 @@ Connection: close
 ‹
 [DEBUG] Content-Lenght 10682
 [DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
+[LOG] Response for Request UID7
+HTTP/1.1 200 OK
 Cache-Control: private, max-age=900, stale-while-revalidate=3600
 Connection: close
 Content-Encoding: gzip
 Content-Length: 10682
 Content-Type: text/javascript
-Date: Tue, 26 Feb 2019 01:57:06 GMT
-ETag: "94 / 629 of 1000 / last-modified: 1551137135"
-Expires: Tue, 26 Feb 2019 01:57:06 GMT
+Date: Tue, 26 Feb 2019 02:27:20 GMT
+ETag: "94 / 948 of 1000 / last-modified: 1551137135"
+Expires: Tue, 26 Feb 2019 02:27:20 GMT
 Server: sffe
 Timing-Allow-Origin: *
 Vary: Accept-Encoding
@@ -355,109 +382,21 @@ X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 
 
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] RESPONSE 3
-HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-Server: Apache/2.2.22
-Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
-ETag: "7080ac5-8c6-4ef4823d9c240"
-Accept-Ranges: bytes
-Content-Length: 2246
-Connection: close
-Content-Type: image/png
-
-‰PNG
-
-
-[DEBUG] Content-Lenght 2246
-[DEBUG] body received successfully
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
+Cache-Control: private, max-age=900, stale-while-revalidate=3600
 Connection: close
-Content-Length: 2246
-Content-Type: image/png
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-ETag: "7080ac5-8c6-4ef4823d9c240"
-Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
-Server: Apache/2.2.22
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] RESPONSE 4
-HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-Server: Apache/2.2.22
-Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
-ETag: "7080ac6-7ca-4ef4823d9c240"
-Accept-Ranges: bytes
-Content-Length: 1994
-Connection: close
-Content-Type: image/png
-
-‰PNG
-
-
-[DEBUG] Content-Lenght 1994
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Connection: close
-Content-Length: 1994
-Content-Type: image/png
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-ETag: "7080ac6-7ca-4ef4823d9c240"
-Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
-Server: Apache/2.2.22
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] RESPONSE 5
-HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-Server: Apache/2.2.22
-Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
-ETag: "7080ac4-6fa-4ef4823d9c240"
-Accept-Ranges: bytes
-Content-Length: 1786
-Connection: close
-Content-Type: image/png
-
-‰PNG
-
-
-[DEBUG] Content-Lenght 1786
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Connection: close
-Content-Length: 1786
-Content-Type: image/png
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-ETag: "7080ac4-6fa-4ef4823d9c240"
-Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
-Server: Apache/2.2.22
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Connection: close
-Content-Length: 17927
-Content-Type: image/gif
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-ETag: "7080aef-4607-57fb8577189c6"
-Last-Modified: Fri, 18 Jan 2019 09:43:21 GMT
-Server: Apache/2.2.22
+Content-Encoding: gzip
+Content-Length: 10682
+Content-Type: text/javascript
+Date: Tue, 26 Feb 2019 02:27:20 GMT
+ETag: "94 / 948 of 1000 / last-modified: 1551137135"
+Expires: Tue, 26 Feb 2019 02:27:20 GMT
+Server: sffe
+Timing-Allow-Origin: *
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
 
 
 [DEBUG] send header successfully
@@ -471,7 +410,7 @@ Host: securepubads.g.doubleclick.net:443
 
 
 [DEBUG] url securepubads.g.doubleclick.net:443
-[LOG ID: 8] CONNECT securepubads.g.doubleclick.net:443 HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+[LOG ID: 8] CONNECT securepubads.g.doubleclick.net:443 HTTP/1.1 @ Tue Feb 26 02:27:20 2019
 
 [DEBUG] parsed header CONNECT  HTTP/1.1
 Connection: close
@@ -489,7 +428,7 @@ Host: adservice.google.com:443
 
 
 [DEBUG] url adservice.google.com:443
-[LOG ID: 9] CONNECT adservice.google.com:443 HTTP/1.1 @ Tue Feb 26 01:57:06 2019
+[LOG ID: 9] CONNECT adservice.google.com:443 HTTP/1.1 @ Tue Feb 26 02:27:20 2019
 
 [DEBUG] parsed header CONNECT  HTTP/1.1
 Connection: close
@@ -507,24 +446,342 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 [INFO] proxy sent 646 to 22
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 21 sent 636
-[INFO] proxy sent 636 to 24
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 24 sent 212
-[INFO] proxy sent 212 to 21
+[INFO] client 21 sent 517
+[INFO] proxy sent 517 to 24
 [INFO] CONNECT
 [DEBUG] server to client
 [INFO] client 22 sent 212
 [INFO] proxy sent 212 to 19
 [INFO] CONNECT
-[DEBUG] client to server
-[INFO] client 21 sent 64
-[INFO] proxy sent 64 to 24
+[DEBUG] server to client
+[INFO] client 24 sent 1418
+[INFO] proxy sent 1418 to 21
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 24 sent 1418
+[INFO] proxy sent 1418 to 21
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 24 sent 607
+[INFO] proxy sent 607 to 21
 [INFO] CONNECT
 [DEBUG] client to server
 [INFO] client 19 sent 64
 [INFO] proxy sent 64 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 19 sent 416
+[INFO] proxy sent 416 to 22
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 502
+[INFO] proxy sent 502 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 62
+[INFO] proxy sent 62 to 19
+[INFO] CONNECT
+[DEBUG] RESPONSE 4
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+ETag: "7080ac5-8c6-4ef4823d9c240"
+Accept-Ranges: bytes
+Content-Length: 2246
+Connection: close
+Content-Type: image/png
+
+‰PNG
+
+
+[DEBUG] Content-Lenght 2246
+[DEBUG] body received successfully
+[LOG] Response for Request UID4
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 2246
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+ETag: "7080ac5-8c6-4ef4823d9c240"
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+Server: Apache/2.2.22
+
+
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 2246
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+ETag: "7080ac5-8c6-4ef4823d9c240"
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+Server: Apache/2.2.22
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
+[DEBUG] RESPONSE 5
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+ETag: "7080ac4-6fa-4ef4823d9c240"
+Accept-Ranges: bytes
+Content-Length: 1786
+Connection: close
+Content-Type: image/png
+
+‰PNG
+
+
+[DEBUG] Content-Lenght 1786
+[DEBUG] body received successfully
+[LOG] Response for Request UID5
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 1786
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+ETag: "7080ac4-6fa-4ef4823d9c240"
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+Server: Apache/2.2.22
+
+
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 1786
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+ETag: "7080ac4-6fa-4ef4823d9c240"
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+Server: Apache/2.2.22
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
+[DEBUG] RESPONSE 6
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+ETag: "7080ac6-7ca-4ef4823d9c240"
+Accept-Ranges: bytes
+Content-Length: 1994
+Connection: close
+Content-Type: image/png
+
+‰PNG
+
+
+[DEBUG] Content-Lenght 1994
+[DEBUG] body received successfully
+[LOG] Response for Request UID6
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 1994
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+ETag: "7080ac6-7ca-4ef4823d9c240"
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+Server: Apache/2.2.22
+
+
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 1994
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+ETag: "7080ac6-7ca-4ef4823d9c240"
+Last-Modified: Mon, 06 Jan 2014 07:23:45 GMT
+Server: Apache/2.2.22
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
+[DEBUG] server to client
+[INFO] client 22 sent 31
+[INFO] proxy sent 31 to 19
+[INFO] CONNECT
+[DEBUG] RESPONSE 3
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+Server: Apache/2.2.22
+Last-Modified: Fri, 18 Jan 2019 09:43:21 GMT
+ETag: "7080aef-4607-57fb8577189c6"
+Accept-Ranges: bytes
+Content-Length: 17927
+Connection: close
+Content-Type: image/gif
+
+GIF89aØ2
+[DEBUG] Content-Lenght 17927
+[DEBUG] server to client
+[INFO] client 22 sent 293
+[INFO] proxy sent 293 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 2836
+[INFO] proxy sent 2836 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 1418
+[DEBUG] body received successfully
+[LOG] Response for Request UID3
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 17927
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+ETag: "7080aef-4607-57fb8577189c6"
+Last-Modified: Fri, 18 Jan 2019 09:43:21 GMT
+Server: Apache/2.2.22
+
+
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 17927
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 02:28:37 GMT
+ETag: "7080aef-4607-57fb8577189c6"
+Last-Modified: Fri, 18 Jan 2019 09:43:21 GMT
+Server: Apache/2.2.22
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
+[INFO] proxy sent 1418 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 8192
+[INFO] proxy sent 8192 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 8192
+[INFO] proxy sent 8192 to 19
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 22 sent 3618
+[INFO] proxy sent 3618 to 19
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 19 sent 31
+[INFO] proxy sent 31 to 22
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 21 sent 64
+[INFO] proxy sent 64 to 24
 [INFO] CONNECT
 [DEBUG] client to server
 [INFO] client 21 sent 170
@@ -535,12 +792,8 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 [INFO] proxy sent 259 to 24
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 19 sent 170
-[INFO] proxy sent 170 to 22
-[INFO] CONNECT
-[DEBUG] client to server
-[INFO] client 19 sent 246
-[INFO] proxy sent 246 to 22
+[INFO] client 19 sent 39
+[INFO] proxy sent 39 to 22
 [INFO] CONNECT
 [DEBUG] server to client
 [INFO] client 24 sent 502
@@ -551,14 +804,6 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 [INFO] proxy sent 62 to 21
 [INFO] CONNECT
 [DEBUG] server to client
-[INFO] client 22 sent 502
-[INFO] proxy sent 502 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 62
-[INFO] proxy sent 62 to 19
-[INFO] CONNECT
-[DEBUG] server to client
 [INFO] client 24 sent 31
 [INFO] proxy sent 31 to 21
 [INFO] CONNECT
@@ -567,172 +812,12 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 [INFO] proxy sent 385 to 21
 [INFO] CONNECT
 [DEBUG] server to client
-[INFO] client 24 sent 278
-[INFO] proxy sent 278 to 21
+[INFO] client 24 sent 424
+[INFO] proxy sent 424 to 21
 [INFO] CONNECT
 [DEBUG] server to client
-[INFO] client 22 sent 31
-[INFO] proxy sent 31 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 293
-[INFO] proxy sent 293 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 2836
-[INFO] proxy sent 2836 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 2836
-[INFO] proxy sent 2836 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] client to server
-[INFO] client 19 sent 31
-[INFO] proxy sent 31 to 22
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 2836
-[INFO] proxy sent 2836 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 2836
-[INFO] proxy sent 2836 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 2836
-[INFO] proxy sent 2836 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 2836
-[INFO] proxy sent 2836 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 2836
-[INFO] proxy sent 2836 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 1418
-[INFO] proxy sent 1418 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 2836
-[INFO] proxy sent 2836 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 2836
-[INFO] proxy sent 2836 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 2836
-[INFO] proxy sent 2836 to 19
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 22 sent 155
-[INFO] proxy sent 155 to 19
-[INFO] CONNECT
-[DEBUG] client to server
-[INFO] client 19 sent 39
-[INFO] proxy sent 39 to 22
+[INFO] client 24 sent 39
+[INFO] proxy sent 39 to 21
 [INFO] CONNECT
 [DEBUG] client to server
 [INFO] client 21 sent 31
@@ -742,7 +827,7 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 [INFO] client 21 sent 39
 [INFO] proxy sent 39 to 24
 [INFO] CONNECT
-[DEBUG] REQUEST 10
+[DEBUG] REQUEST 11
 GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1
 Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
@@ -754,7 +839,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/v321/bgv.png
-[LOG ID: 10] GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+[LOG ID: 11] GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 @ Tue Feb 26 02:27:21 2019
 
 [DEBUG] parsed header GET /v321/bgv.png HTTP/1.1
 Accept: image/webp,*/*
@@ -766,7 +851,7 @@ Referer: http://www.cplusplus.com/v321/main.css
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
-[DEBUG] REQUEST 11
+[DEBUG] REQUEST 10
 GET http://www.cplusplus.com/v321/bg.png HTTP/1.1
 Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
@@ -778,7 +863,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/v321/bg.png
-[LOG ID: 11] GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+[LOG ID: 10] GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 @ Tue Feb 26 02:27:21 2019
 
 [DEBUG] parsed header GET /v321/bg.png HTTP/1.1
 Accept: image/webp,*/*
@@ -802,7 +887,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/v321/bgh.png
-[LOG ID: 12] GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+[LOG ID: 12] GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 @ Tue Feb 26 02:27:21 2019
 
 [DEBUG] parsed header GET /v321/bgh.png HTTP/1.1
 Accept: image/webp,*/*
@@ -826,7 +911,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/img/bg_info.gif
-[LOG ID: 13] GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+[LOG ID: 13] GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 @ Tue Feb 26 02:27:21 2019
 
 [DEBUG] parsed header GET /img/bg_info.gif HTTP/1.1
 Accept: image/webp,*/*
@@ -850,7 +935,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/img/bg_src.gif
-[LOG ID: 14] GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+[LOG ID: 14] GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 @ Tue Feb 26 02:27:21 2019
 
 [DEBUG] parsed header GET /img/bg_src.gif HTTP/1.1
 Accept: image/webp,*/*
@@ -874,7 +959,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/img/bg_ref.gif
-[LOG ID: 15] GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+[LOG ID: 15] GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 @ Tue Feb 26 02:27:21 2019
 
 [DEBUG] parsed header GET /img/bg_ref.gif HTTP/1.1
 Accept: image/webp,*/*
@@ -886,7 +971,7 @@ Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
-[DEBUG] REQUEST 16
+[DEBUG] REQUEST 17
 GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1
 Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
@@ -898,7 +983,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/img/bg_doc.gif
-[LOG ID: 16] GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+[LOG ID: 17] GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 @ Tue Feb 26 02:27:21 2019
 
 [DEBUG] parsed header GET /img/bg_doc.gif HTTP/1.1
 Accept: image/webp,*/*
@@ -910,7 +995,7 @@ Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
-[DEBUG] REQUEST 17
+[DEBUG] REQUEST 18
 GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1
 Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
@@ -922,7 +1007,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/img/bg_art.gif
-[LOG ID: 17] GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+[LOG ID: 18] GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 @ Tue Feb 26 02:27:21 2019
 
 [DEBUG] parsed header GET /img/bg_art.gif HTTP/1.1
 Accept: image/webp,*/*
@@ -934,7 +1019,7 @@ Referer: http://www.cplusplus.com/
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
-[DEBUG] REQUEST 18
+[DEBUG] REQUEST 16
 GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1
 Host: www.cplusplus.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
@@ -946,7 +1031,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/img/bg_sch.gif
-[LOG ID: 18] GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+[LOG ID: 16] GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 @ Tue Feb 26 02:27:21 2019
 
 [DEBUG] parsed header GET /img/bg_sch.gif HTTP/1.1
 Accept: image/webp,*/*
@@ -959,65 +1044,35 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 10
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 12
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 11
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 13
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 14
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 17
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 15
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 18
 [DEBUG] send to server successfully
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 16
 [DEBUG] send to server successfully
 [DEBUG] RESPONSE 10
 HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-Server: Apache/2.2.22
-Last-Modified: Tue, 17 Jun 2014 15:49:18 GMT
-ETag: "7080b11-41f-4fc0a16215b80"
-Accept-Ranges: bytes
-Content-Length: 1055
-Connection: close
-Content-Type: image/png
-
-‰PNG
-
-
-[DEBUG] Content-Lenght 1055
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Connection: close
-Content-Length: 1055
-Content-Type: image/png
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-ETag: "7080b11-41f-4fc0a16215b80"
-Last-Modified: Tue, 17 Jun 2014 15:49:18 GMT
-Server: Apache/2.2.22
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] RESPONSE 11
-HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:38 GMT
 Server: Apache/2.2.22
 Last-Modified: Tue, 17 Jun 2014 15:49:20 GMT
 ETag: "7080b0f-18785-4fc0a163fe000"
@@ -1032,7 +1087,7 @@ Content-Type: image/png
 [DEBUG] Content-Lenght 100229
 [DEBUG] RESPONSE 12
 HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:38 GMT
 Server: Apache/2.2.22
 Last-Modified: Tue, 17 Jun 2014 15:49:17 GMT
 ETag: "7080b10-76-4fc0a16121940"
@@ -1046,13 +1101,25 @@ Content-Type: image/png
 
 [DEBUG] Content-Lenght 118
 [DEBUG] body received successfully
+[LOG] Response for Request UID12
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 118
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080b10-76-4fc0a16121940"
+Last-Modified: Tue, 17 Jun 2014 15:49:17 GMT
+Server: Apache/2.2.22
+
+
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
 Connection: close
 Content-Length: 118
 Content-Type: image/png
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:38 GMT
 ETag: "7080b10-76-4fc0a16121940"
 Last-Modified: Tue, 17 Jun 2014 15:49:17 GMT
 Server: Apache/2.2.22
@@ -1060,9 +1127,51 @@ Server: Apache/2.2.22
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
+[DEBUG] RESPONSE 11
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+Server: Apache/2.2.22
+Last-Modified: Tue, 17 Jun 2014 15:49:18 GMT
+ETag: "7080b11-41f-4fc0a16215b80"
+Accept-Ranges: bytes
+Content-Length: 1055
+Connection: close
+Content-Type: image/png
+
+‰PNG
+
+
+[DEBUG] Content-Lenght 1055
+[DEBUG] body received successfully
+[LOG] Response for Request UID11
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 1055
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080b11-41f-4fc0a16215b80"
+Last-Modified: Tue, 17 Jun 2014 15:49:18 GMT
+Server: Apache/2.2.22
+
+
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 1055
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080b11-41f-4fc0a16215b80"
+Last-Modified: Tue, 17 Jun 2014 15:49:18 GMT
+Server: Apache/2.2.22
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
 [DEBUG] RESPONSE 13
 HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:38 GMT
 Server: Apache/2.2.22
 Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
 ETag: "7080ad7-e1e-4ef4824449200"
@@ -1074,13 +1183,25 @@ Content-Type: image/gif
 GIF89al
 [DEBUG] Content-Lenght 3614
 [DEBUG] body received successfully
+[LOG] Response for Request UID13
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 3614
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080ad7-e1e-4ef4824449200"
+Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
+Server: Apache/2.2.22
+
+
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
 Connection: close
 Content-Length: 3614
 Content-Type: image/gif
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:38 GMT
 ETag: "7080ad7-e1e-4ef4824449200"
 Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
 Server: Apache/2.2.22
@@ -1090,7 +1211,7 @@ Server: Apache/2.2.22
 [DEBUG] send body successfully
 [DEBUG] RESPONSE 14
 HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:38 GMT
 Server: Apache/2.2.22
 Last-Modified: Mon, 06 Jan 2014 07:23:53 GMT
 ETag: "7080ada-1514-4ef482453d440"
@@ -1102,13 +1223,25 @@ Content-Type: image/gif
 GIF89a¼
 [DEBUG] Content-Lenght 5396
 [DEBUG] body received successfully
+[LOG] Response for Request UID14
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 5396
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080ada-1514-4ef482453d440"
+Last-Modified: Mon, 06 Jan 2014 07:23:53 GMT
+Server: Apache/2.2.22
+
+
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
 Connection: close
 Content-Length: 5396
 Content-Type: image/gif
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:38 GMT
 ETag: "7080ada-1514-4ef482453d440"
 Last-Modified: Mon, 06 Jan 2014 07:23:53 GMT
 Server: Apache/2.2.22
@@ -1116,9 +1249,9 @@ Server: Apache/2.2.22
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] RESPONSE 16
+[DEBUG] RESPONSE 17
 HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:38 GMT
 Server: Apache/2.2.22
 Last-Modified: Mon, 06 Jan 2014 07:23:51 GMT
 ETag: "7080ad6-c4e-4ef4824354fc0"
@@ -1130,13 +1263,25 @@ Content-Type: image/gif
 GIF89az
 [DEBUG] Content-Lenght 3150
 [DEBUG] body received successfully
+[LOG] Response for Request UID17
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 3150
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080ad6-c4e-4ef4824354fc0"
+Last-Modified: Mon, 06 Jan 2014 07:23:51 GMT
+Server: Apache/2.2.22
+
+
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
 Connection: close
 Content-Length: 3150
 Content-Type: image/gif
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:38 GMT
 ETag: "7080ad6-c4e-4ef4824354fc0"
 Last-Modified: Mon, 06 Jan 2014 07:23:51 GMT
 Server: Apache/2.2.22
@@ -1144,57 +1289,28 @@ Server: Apache/2.2.22
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] RESPONSE 18
-HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-Server: Apache/2.2.22
-Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
-ETag: "7080ad9-1582-4ef4824449200"
-Accept-Ranges: bytes
-Content-Length: 5506
-Connection: close
-Content-Type: image/gif
-
-GIF89a©
-[DEBUG] Content-Lenght 5506
 [DEBUG] body received successfully
+[LOG] Response for Request UID10
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 100229
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080b0f-18785-4fc0a163fe000"
+Last-Modified: Tue, 17 Jun 2014 15:49:20 GMT
+Server: Apache/2.2.22
+
+
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
 Connection: close
-Content-Length: 5506
-Content-Type: image/gif
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-ETag: "7080ad9-1582-4ef4824449200"
-Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
-Server: Apache/2.2.22
-
-
-[DEBUG] send header successfully
-[DEBUG] send body successfully
-[DEBUG] RESPONSE 17
-HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-Server: Apache/2.2.22
-Last-Modified: Mon, 06 Jan 2014 07:23:51 GMT
-ETag: "7080ad5-1922-4ef4824354fc0"
-Accept-Ranges: bytes
-Content-Length: 6434
-Connection: close
-Content-Type: image/gif
-
-GIF89aˆ
-[DEBUG] Content-Lenght 6434
-[DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Connection: close
-Content-Length: 6434
-Content-Type: image/gif
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-ETag: "7080ad5-1922-4ef4824354fc0"
-Last-Modified: Mon, 06 Jan 2014 07:23:51 GMT
+Content-Length: 100229
+Content-Type: image/png
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080b0f-18785-4fc0a163fe000"
+Last-Modified: Tue, 17 Jun 2014 15:49:20 GMT
 Server: Apache/2.2.22
 
 
@@ -1202,7 +1318,7 @@ Server: Apache/2.2.22
 [DEBUG] send body successfully
 [DEBUG] RESPONSE 15
 HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:38 GMT
 Server: Apache/2.2.22
 Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
 ETag: "7080ad8-13ee-4ef4824449200"
@@ -1214,13 +1330,25 @@ Content-Type: image/gif
 GIF89a¤
 [DEBUG] Content-Lenght 5102
 [DEBUG] body received successfully
+[LOG] Response for Request UID15
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 5102
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080ad8-13ee-4ef4824449200"
+Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
+Server: Apache/2.2.22
+
+
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
 Connection: close
 Content-Length: 5102
 Content-Type: image/gif
-Date: Tue, 26 Feb 2019 01:58:23 GMT
+Date: Tue, 26 Feb 2019 02:28:38 GMT
 ETag: "7080ad8-13ee-4ef4824449200"
 Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
 Server: Apache/2.2.22
@@ -1228,16 +1356,41 @@ Server: Apache/2.2.22
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
+[DEBUG] RESPONSE 18
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:51 GMT
+ETag: "7080ad5-1922-4ef4824354fc0"
+Accept-Ranges: bytes
+Content-Length: 6434
+Connection: close
+Content-Type: image/gif
+
+GIF89aˆ
+[DEBUG] Content-Lenght 6434
 [DEBUG] body received successfully
+[LOG] Response for Request UID18
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 6434
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080ad5-1922-4ef4824354fc0"
+Last-Modified: Mon, 06 Jan 2014 07:23:51 GMT
+Server: Apache/2.2.22
+
+
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
 Connection: close
-Content-Length: 100229
-Content-Type: image/png
-Date: Tue, 26 Feb 2019 01:58:23 GMT
-ETag: "7080b0f-18785-4fc0a163fe000"
-Last-Modified: Tue, 17 Jun 2014 15:49:20 GMT
+Content-Length: 6434
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080ad5-1922-4ef4824354fc0"
+Last-Modified: Mon, 06 Jan 2014 07:23:51 GMT
 Server: Apache/2.2.22
 
 
@@ -1252,7 +1405,7 @@ Host: www.google-analytics.com:443
 
 
 [DEBUG] url www.google-analytics.com:443
-[LOG ID: 19] CONNECT www.google-analytics.com:443 HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+[LOG ID: 19] CONNECT www.google-analytics.com:443 HTTP/1.1 @ Tue Feb 26 02:27:21 2019
 
 [DEBUG] parsed header CONNECT  HTTP/1.1
 Connection: close
@@ -1272,7 +1425,7 @@ Connection: keep-alive
 
 
 [DEBUG] url http://www.cplusplus.com/favicon.ico
-[LOG ID: 20] GET http://www.cplusplus.com/favicon.ico HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+[LOG ID: 20] GET http://www.cplusplus.com/favicon.ico HTTP/1.1 @ Tue Feb 26 02:27:21 2019
 
 [DEBUG] parsed header GET /favicon.ico HTTP/1.1
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
@@ -1286,138 +1439,134 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 [INFO] CONNECT RESPONSE TO CLIENT
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 41 sent 640
+[INFO] client 37 sent 640
 [INFO] proxy sent 640 to 44
 [INFO] CONNECT
 [INFO] GET
-[LOG] request not in cache
+[LOG] request not in cache And the UID is: 20
 [DEBUG] send to server successfully
 [DEBUG] server to client
 [INFO] client 44 sent 212
-[INFO] proxy sent 212 to 41
+[INFO] proxy sent 212 to 37
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 41 sent 64
+[INFO] client 37 sent 64
 [INFO] proxy sent 64 to 44
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 41 sent 170
+[INFO] client 37 sent 170
 [INFO] proxy sent 170 to 44
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 41 sent 231
+[INFO] client 37 sent 231
 [INFO] proxy sent 231 to 44
 [INFO] CONNECT
 [DEBUG] server to client
 [INFO] client 44 sent 502
-[INFO] proxy sent 502 to 41
+[INFO] proxy sent 502 to 37
 [INFO] CONNECT
 [DEBUG] server to client
 [INFO] client 44 sent 62
-[INFO] proxy sent 62 to 41
+[INFO] proxy sent 62 to 37
 [INFO] CONNECT
-[DEBUG] RESPONSE 20
+[DEBUG] server to client
+[INFO] client 44 sent 299
+[INFO] proxy sent 299 to 37
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 1418
+[INFO] proxy sent 1418 to 37
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 2836
+[INFO] proxy sent 2836 to 37
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 2836
+[INFO] proxy sent 2836 to 37
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 2836
+[INFO] proxy sent 2836 to 37
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 37 sent 31
+[INFO] proxy sent 31 to 44
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 2836
+[INFO] proxy sent 2836 to 37
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 1418
+[INFO] proxy sent 1418 to 37
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 44 sent 1266
+[INFO] proxy sent 1266 to 37
+[INFO] CONNECT
+[DEBUG] client to server
+[INFO] client 37 sent 39
+[INFO] proxy sent 39 to 44
+[INFO] CONNECT
+[DEBUG] RESPONSE 16
 HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:24 GMT
+Date: Tue, 26 Feb 2019 02:28:38 GMT
 Server: Apache/2.2.22
-Last-Modified: Mon, 06 Jan 2014 07:23:12 GMT
-ETag: "7080a6d-57e-4ef4821e23800"
+Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
+ETag: "7080ad9-1582-4ef4824449200"
 Accept-Ranges: bytes
-Content-Length: 1406
+Content-Length: 5506
 Connection: close
-Content-Type: image/vnd.microsoft.icon
+Content-Type: image/gif
 
-
-[DEBUG] Content-Lenght 1406
+GIF89a©
+[DEBUG] Content-Lenght 5506
 [DEBUG] body received successfully
+[LOG] Response for Request UID16
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 5506
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080ad9-1582-4ef4824449200"
+Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
+Server: Apache/2.2.22
+
+
 [LOG] response cache stores successfully
 [DEBUG] reconstruct header HTTP/1.1 200 OK
 Accept-Ranges: bytes
 Connection: close
-Content-Length: 1406
-Content-Type: image/vnd.microsoft.icon
-Date: Tue, 26 Feb 2019 01:58:24 GMT
-ETag: "7080a6d-57e-4ef4821e23800"
-Last-Modified: Mon, 06 Jan 2014 07:23:12 GMT
+Content-Length: 5506
+Content-Type: image/gif
+Date: Tue, 26 Feb 2019 02:28:38 GMT
+ETag: "7080ad9-1582-4ef4824449200"
+Last-Modified: Mon, 06 Jan 2014 07:23:52 GMT
 Server: Apache/2.2.22
 
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] server to client
-[INFO] client 44 sent 301
-[INFO] proxy sent 301 to 41
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 44 sent 1418
-[INFO] proxy sent 1418 to 41
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 44 sent 1418
-[INFO] proxy sent 1418 to 41
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 44 sent 1418
-[INFO] proxy sent 1418 to 41
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 44 sent 1418
-[INFO] proxy sent 1418 to 41
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 44 sent 1418
-[INFO] proxy sent 1418 to 41
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 44 sent 1418
-[INFO] proxy sent 1418 to 41
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 44 sent 1418
-[INFO] proxy sent 1418 to 41
-[INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 41 sent 31
-[INFO] proxy sent 31 to 44
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 44 sent 1418
-[INFO] proxy sent 1418 to 41
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 44 sent 1418
-[INFO] proxy sent 1418 to 41
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 44 sent 2836
-[INFO] proxy sent 2836 to 41
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 44 sent 1913
-[INFO] proxy sent 1913 to 41
-[INFO] CONNECT
-[DEBUG] client to server
-[INFO] client 41 sent 39
-[INFO] proxy sent 39 to 44
-[INFO] CONNECT
-[DEBUG] client to server
-[INFO] client 41 sent 461
-[INFO] proxy sent 461 to 44
+[INFO] client 37 sent 462
+[INFO] proxy sent 462 to 44
 [INFO] CONNECT
 [DEBUG] server to client
 [INFO] client 44 sent 291
-[INFO] proxy sent 291 to 41
+[INFO] proxy sent 291 to 37
 [INFO] CONNECT
 [DEBUG] server to client
 [INFO] client 44 sent 428
-[INFO] proxy sent 428 to 41
+[INFO] proxy sent 428 to 37
 [INFO] CONNECT
 [DEBUG] server to client
 [INFO] client 44 sent 39
-[INFO] proxy sent 39 to 41
+[INFO] proxy sent 39 to 37
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 41 sent 39
+[INFO] client 37 sent 39
 [INFO] proxy sent 39 to 44
 [INFO] CONNECT
 [DEBUG] REQUEST 21
@@ -1429,7 +1578,7 @@ Host: stats.g.doubleclick.net:443
 
 
 [DEBUG] url stats.g.doubleclick.net:443
-[LOG ID: 21] CONNECT stats.g.doubleclick.net:443 HTTP/1.1 @ Tue Feb 26 01:57:07 2019
+[LOG ID: 21] CONNECT stats.g.doubleclick.net:443 HTTP/1.1 @ Tue Feb 26 02:27:22 2019
 
 [DEBUG] parsed header CONNECT  HTTP/1.1
 Connection: close
@@ -1441,16 +1590,12 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 [INFO] CONNECT RESPONSE TO CLIENT
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 45 sent 596
-[INFO] proxy sent 596 to 48
+[INFO] client 45 sent 639
+[INFO] proxy sent 639 to 48
 [INFO] CONNECT
 [DEBUG] server to client
-[INFO] client 48 sent 1418
-[INFO] proxy sent 1418 to 45
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 48 sent 1186
-[INFO] proxy sent 1186 to 45
+[INFO] client 48 sent 212
+[INFO] proxy sent 212 to 45
 [INFO] CONNECT
 [DEBUG] client to server
 [INFO] client 45 sent 64
@@ -1464,6 +1609,46 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 [INFO] client 45 sent 311
 [INFO] proxy sent 311 to 48
 [INFO] CONNECT
+[DEBUG] RESPONSE 20
+HTTP/1.1 200 OK
+Date: Tue, 26 Feb 2019 02:28:39 GMT
+Server: Apache/2.2.22
+Last-Modified: Mon, 06 Jan 2014 07:23:12 GMT
+ETag: "7080a6d-57e-4ef4821e23800"
+Accept-Ranges: bytes
+Content-Length: 1406
+Connection: close
+Content-Type: image/vnd.microsoft.icon
+
+
+[DEBUG] Content-Lenght 1406
+[DEBUG] body received successfully
+[LOG] Response for Request UID20
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 1406
+Content-Type: image/vnd.microsoft.icon
+Date: Tue, 26 Feb 2019 02:28:39 GMT
+ETag: "7080a6d-57e-4ef4821e23800"
+Last-Modified: Mon, 06 Jan 2014 07:23:12 GMT
+Server: Apache/2.2.22
+
+
+[LOG] response cache stores successfully
+[DEBUG] reconstruct header HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Connection: close
+Content-Length: 1406
+Content-Type: image/vnd.microsoft.icon
+Date: Tue, 26 Feb 2019 02:28:39 GMT
+ETag: "7080a6d-57e-4ef4821e23800"
+Last-Modified: Mon, 06 Jan 2014 07:23:12 GMT
+Server: Apache/2.2.22
+
+
+[DEBUG] send header successfully
+[DEBUG] send body successfully
 [DEBUG] server to client
 [INFO] client 48 sent 502
 [INFO] proxy sent 502 to 45
@@ -1485,8 +1670,12 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 [INFO] proxy sent 395 to 45
 [INFO] CONNECT
 [DEBUG] server to client
-[INFO] client 48 sent 70
-[INFO] proxy sent 70 to 45
+[INFO] client 48 sent 31
+[INFO] proxy sent 31 to 45
+[INFO] CONNECT
+[DEBUG] server to client
+[INFO] client 48 sent 39
+[INFO] proxy sent 39 to 45
 [INFO] CONNECT
 [DEBUG] client to server
 [INFO] client 45 sent 31
@@ -1505,7 +1694,7 @@ Host: www.google.com:443
 
 
 [DEBUG] url www.google.com:443
-[LOG ID: 22] CONNECT www.google.com:443 HTTP/1.1 @ Tue Feb 26 01:57:08 2019
+[LOG ID: 22] CONNECT www.google.com:443 HTTP/1.1 @ Tue Feb 26 02:27:22 2019
 
 [DEBUG] parsed header CONNECT  HTTP/1.1
 Connection: close
@@ -1517,61 +1706,9 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 [INFO] CONNECT RESPONSE TO CLIENT
 [INFO] CONNECT
 [DEBUG] client to server
-[INFO] client 47 sent 630
-[INFO] proxy sent 630 to 50
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 50 sent 1418
-[INFO] proxy sent 1418 to 47
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 50 sent 926
-[INFO] proxy sent 926 to 47
-[INFO] CONNECT
-[DEBUG] client to server
-[INFO] client 47 sent 93
-[INFO] proxy sent 93 to 50
-[INFO] CONNECT
-[DEBUG] client to server
-[INFO] client 47 sent 177
-[INFO] proxy sent 177 to 50
-[INFO] CONNECT
-[DEBUG] client to server
-[INFO] client 47 sent 318
-[INFO] proxy sent 318 to 50
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 50 sent 51
-[INFO] proxy sent 51 to 47
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 50 sent 69
-[INFO] proxy sent 69 to 47
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 50 sent 38
-[INFO] proxy sent 38 to 47
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 50 sent 352
-[INFO] proxy sent 352 to 47
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 50 sent 80
-[INFO] proxy sent 80 to 47
-[INFO] CONNECT
-[DEBUG] server to client
-[INFO] client 50 sent 84
-[INFO] proxy sent 84 to 47
-[INFO] CONNECT
-[DEBUG] client to server
-[INFO] client 47 sent 38
-[INFO] proxy sent 38 to 50
-[INFO] CONNECT
-[DEBUG] client to server
-[INFO] client 47 sent 46
-[INFO] proxy sent 46 to 50
-[INFO] CONNECT
+[INFO] client 47 sent 0
+[ERROR] exchange data failed
+read nothing
 [DEBUG] REQUEST 23
 GET http://www.cplusplus.com/ HTTP/1.1
 Host: www.cplusplus.com
@@ -1580,13 +1717,13 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Accept-Encoding: gzip, deflate
 Connection: keep-alive
-Cookie: __utma=62705790.1919130655.1551146275.1551146275.1551146275.1; __utmb=62705790.1.10.1551146275; __utmc=62705790; __utmz=62705790.1551146275.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
+Cookie: __utma=62705790.772974796.1551148089.1551148089.1551148089.1; __utmb=62705790.1.10.1551148089; __utmc=62705790; __utmz=62705790.1551148089.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
 Upgrade-Insecure-Requests: 1
 Cache-Control: max-age=0
 
 
 [DEBUG] url http://www.cplusplus.com/
-[LOG ID: 23] GET http://www.cplusplus.com/ HTTP/1.1 @ Tue Feb 26 01:57:10 2019
+[LOG ID: 23] GET http://www.cplusplus.com/ HTTP/1.1 @ Tue Feb 26 02:27:22 2019
 
 [DEBUG] parsed header GET / HTTP/1.1
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
@@ -1594,125 +1731,18 @@ Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
 Cache-Control: max-age=0
 Connection: close
-Cookie: __utma=62705790.1919130655.1551146275.1551146275.1551146275.1; __utmb=62705790.1.10.1551146275; __utmc=62705790; __utmz=62705790.1551146275.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
+Cookie: __utma=62705790.772974796.1551148089.1551148089.1551148089.1; __utmb=62705790.1.10.1551148089; __utmc=62705790; __utmz=62705790.1551148089.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
 Host: www.cplusplus.com
 Upgrade-Insecure-Requests: 1
 User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
 
 
 [INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[DEBUG] RESPONSE 23
-HTTP/1.1 200 OK
-Date: Tue, 26 Feb 2019 01:58:26 GMT
-Server: Apache/2.2.22
-X-Powered-By: PHP/5.4.38-0+deb7u1
-Vary: Accept-Encoding
-Content-Encoding: gzip
-Content-Length: 3250
-Connection: close
-Content-Type: text/html
-
-‹
-[DEBUG] Content-Lenght 3250
+[CACHEs] Before second
+[LOG] request in cache, valid And the UID is: 23
 [DEBUG] body received successfully
-[LOG] response cache stores successfully
-[DEBUG] reconstruct header HTTP/1.1 200 OK
-Connection: close
-Content-Encoding: gzip
-Content-Length: 3250
-Content-Type: text/html
-Date: Tue, 26 Feb 2019 01:58:26 GMT
-Server: Apache/2.2.22
-Vary: Accept-Encoding
-X-Powered-By: PHP/5.4.38-0+deb7u1
+[DEBUG] reconstruct header 
 
 
 [DEBUG] send header successfully
 [DEBUG] send body successfully
-[DEBUG] REQUEST 24
-GET http://www.cplusplus.com/v321/main.css HTTP/1.1
-Host: www.cplusplus.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: text/css,*/*;q=0.1
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://www.cplusplus.com/
-Connection: keep-alive
-Cookie: __utma=62705790.1919130655.1551146275.1551146275.1551146275.1; __utmb=62705790.1.10.1551146275; __utmc=62705790; __utmz=62705790.1551146275.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
-If-Modified-Since: Fri, 05 Sep 2014 14:40:49 GMT
-If-None-Match: "7080b16-5930-502527484fe40"
-Cache-Control: max-age=0
-
-
-[DEBUG] url http://www.cplusplus.com/v321/main.css
-[LOG ID: 24] GET http://www.cplusplus.com/v321/main.css HTTP/1.1 @ Tue Feb 26 01:57:10 2019
-
-[DEBUG] parsed header GET /v321/main.css HTTP/1.1
-Accept: text/css,*/*;q=0.1
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: max-age=0
-Connection: close
-Cookie: __utma=62705790.1919130655.1551146275.1551146275.1551146275.1; __utmb=62705790.1.10.1551146275; __utmc=62705790; __utmz=62705790.1551146275.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
-Host: www.cplusplus.com
-If-Modified-Since: Fri, 05 Sep 2014 14:40:49 GMT
-If-None-Match: "7080b16-5930-502527484fe40"
-Referer: http://www.cplusplus.com/
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-
-
-[DEBUG] REQUEST 25
-GET http://www.cplusplus.com/v321/main.js HTTP/1.1
-Host: www.cplusplus.com
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-Accept: */*
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Accept-Encoding: gzip, deflate
-Referer: http://www.cplusplus.com/
-Connection: keep-alive
-Cookie: __utma=62705790.1919130655.1551146275.1551146275.1551146275.1; __utmb=62705790.1.10.1551146275; __utmc=62705790; __utmz=62705790.1551146275.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
-If-Modified-Since: Tue, 17 Jun 2014 16:00:40 GMT
-If-None-Match: "7080b17-9f14-4fc0a3ec7da00"
-Cache-Control: max-age=0
-
-
-[DEBUG] url http://www.cplusplus.com/v321/main.js
-[LOG ID: 25] GET http://www.cplusplus.com/v321/main.js HTTP/1.1 @ Tue Feb 26 01:57:10 2019
-
-[DEBUG] parsed header GET /v321/main.js HTTP/1.1
-Accept: */*
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-Cache-Control: max-age=0
-Connection: close
-Cookie: __utma=62705790.1919130655.1551146275.1551146275.1551146275.1; __utmb=62705790.1.10.1551146275; __utmc=62705790; __utmz=62705790.1551146275.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
-Host: www.cplusplus.com
-If-Modified-Since: Tue, 17 Jun 2014 16:00:40 GMT
-If-None-Match: "7080b17-9f14-4fc0a3ec7da00"
-Referer: http://www.cplusplus.com/
-User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:65.0) Gecko/20100101 Firefox/65.0
-
-
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[INFO] GET
-[LOG] request not in cache
-[DEBUG] send to server successfully
-[DEBUG] RESPONSE 24
-HTTP/1.1 304 Not Modified
-Date: Tue, 26 Feb 2019 01:58:27 GMT
-Server: Apache/2.2.22
-Connection: close
-ETag: "7080b16-5930-502527484fe40"
-Vary: Accept-Encoding
-
-
-[DEBUG] Content-Lenght 
-[DEBUG] body received successfully
-[CACHES] Validate After Request URL http://www.cplusplus.com/v321/main.css
-[CACHES] Validate After Request UID 24
-[DEBUG] Receive 304 Cache Exists0
-[CACHEs] Before second
