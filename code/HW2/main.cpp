@@ -146,7 +146,6 @@ void handler(int client_fd, Cache *cache) {
     std::cout << "[DEBUG] parsed header " << request_header << std::endl;
   }
   //
-
   response.setUid(request.getUid());
 
   SocketInfo server_socket_info;
@@ -184,6 +183,10 @@ void handler(int client_fd, Cache *cache) {
     if (result_cache == true) { // response to client directly
                                 //    only for dubbging, no tryand catch
       response.reconstructHeader(response_header); // no exception
+      std::cout << "[RESP] uid " << response.getUid() << " cache hit "
+                << response_header << std::endl;
+      std::cout << "[RESP] uid " << response.getUid() << " cache hit "
+                << response.getFirstLine() << std::endl;
       if (DEBUG == 1) {
         std::cout << "[DEBUG] body received successfully" << std::endl;
         std::cout << "[DEBUG] reconstruct header " << response_header
@@ -219,6 +222,11 @@ void handler(int client_fd, Cache *cache) {
         std::cout << e.what() << std::endl;
         return;
       }
+      std::unordered_map<std::string, Response> m;
+      Response response2;
+      response2 = response;
+      Response response3 = response;
+      m["1"] = response;
 
       // only for dubugging
       std::string key = "Content-Length";

@@ -23,6 +23,25 @@ private:
 public:
   Request() {}
   virtual ~Request(){};
+  Request(const Request &rhs) : Http(rhs) {
+    first_line_msg.host = rhs.first_line_msg.host;
+    first_line_msg.method = rhs.first_line_msg.method;
+    first_line_msg.port = rhs.first_line_msg.port;
+    first_line_msg.url = rhs.first_line_msg.url;
+    first_line_msg.protocol = rhs.first_line_msg.protocol;
+  }
+  Request &operator=(const Request &rhs) {
+    if (this == &rhs) {
+      return *this;
+    }
+    this->Http::operator=(rhs);
+    first_line_msg.host = rhs.first_line_msg.host;
+    first_line_msg.method = rhs.first_line_msg.method;
+    first_line_msg.port = rhs.first_line_msg.port;
+    first_line_msg.url = rhs.first_line_msg.url;
+    first_line_msg.protocol = rhs.first_line_msg.protocol;
+    return *this;
+  }
   virtual void parseFirstLine() {
     size_t space = getFirstLine().find(' ');
     std::string value = getFirstLine().substr(0, space);
