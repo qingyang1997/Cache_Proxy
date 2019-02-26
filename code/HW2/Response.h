@@ -1,6 +1,4 @@
-//
-// Created by Duck2 on 2019-02-19.
-//
+
 
 #ifndef PROXY_RESPONSE_H
 #define PROXY_RESPONSE_H
@@ -17,13 +15,27 @@ private:
   First_line_msg first_line_msg;
 
 public:
-  Response() {}
+  Response() {
+    first_line_msg.protocol = "";
+    first_line_msg.status_num = "";
+    first_line_msg.status_char = "";
+  }
   virtual ~Response() {}
   Response(const Response &rhs) {
     first_line_msg.protocol = rhs.first_line_msg.protocol;
     first_line_msg.status_num = rhs.first_line_msg.status_num;
     first_line_msg.status_char = rhs.first_line_msg.status_char;
   }
+  Response &operator=(const Response &rhs) {
+    if (this == &rhs) {
+      return *this;
+    }
+    first_line_msg.protocol = rhs.first_line_msg.protocol;
+    first_line_msg.status_num = rhs.first_line_msg.status_num;
+    first_line_msg.status_char = rhs.first_line_msg.status_char;
+    return *this;
+  }
+  void setProtocol(std::string value) { first_line_msg.protocol = value; }
   virtual void parseFirstLine() { // HTTP/1.1 200 OK
     std::string first_line = getFirstLine();
     size_t space0 = first_line.find(' ');
