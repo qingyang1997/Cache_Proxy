@@ -13,7 +13,13 @@ private:
   std::string body;
 
 public:
-  Http() {}
+  Http() {
+    uid = -1;
+    first_line = "";
+    header_pair = std::map<std::string, std::string>();
+    Cache_Control = std::map<std::string, std::string>();
+    body = "";
+  }
   virtual ~Http(){};
   Http(const Http &rhs) {
     uid = rhs.uid;
@@ -21,6 +27,17 @@ public:
     header_pair = rhs.header_pair;
     Cache_Control = rhs.Cache_Control;
     body = rhs.body;
+  }
+  Http &operator=(const Http &rhs) {
+    if (this == &rhs) {
+      return *this;
+    }
+    uid = rhs.uid;
+    first_line = rhs.first_line;
+    header_pair = rhs.header_pair;
+    Cache_Control = rhs.Cache_Control;
+    body = rhs.body;
+    return *this;
   }
   virtual void parseFirstLine(){};
   void parseHeader(std::string &message);
