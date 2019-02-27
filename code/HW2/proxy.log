@@ -1,134 +1,143 @@
-1: CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:16 2019
-0: CONNECT tiles.services.mozilla.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:16 2019
-2: CONNECT tiles.services.mozilla.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:17 2019
-3: CONNECT baidu.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:17 2019
-4: CONNECT www.baidu.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:18 2019
-5: CONNECT www.baidu.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:19 2019
-8: CONNECT www.baidu.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:19 2019
-6: CONNECT www.baidu.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:19 2019
-7: CONNECT www.baidu.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:19 2019
-9: CONNECT ss1.bdstatic.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:19 2019
-10: GET http://www.cplusplus.com/ HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:19 2019
-10: Requesting GET http://www.cplusplus.com/ HTTP/1.1 from www.cplusplus.com
-10: Received HTTP/1.1 200 OK from www.cplusplus.com
-10: cache stores successfully
-10: Responding HTTP/1.1 200 OK
-10: Tunnel closed
-15: GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-12: GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-15: Requesting GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from www.cplusplus.com
-12: Requesting GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from www.cplusplus.com
-15: Received HTTP/1.1 200 OK from www.cplusplus.com
-15: cache stores successfully
-15: Responding HTTP/1.1 200 OK
-15: Tunnel closed
-12: Received HTTP/1.1 200 OK from www.cplusplus.com
-12: cache stores successfully
-12: Responding HTTP/1.1 200 OK
-12: Tunnel closed
-11: GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-14: GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-13: GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-16: GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-17: GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-14: Requesting GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from www.cplusplus.com
-13: Requesting GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from www.cplusplus.com
-17: Requesting GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from www.googletagservices.com
-11: Requesting GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from www.cplusplus.com
-16: Requesting GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from www.cplusplus.com
-17: Received HTTP/1.1 200 OK from www.googletagservices.com
-17: cache stores successfully
-17: Responding HTTP/1.1 200 OK
-17: Tunnel closed
-19: CONNECT adservice.google.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-18: CONNECT securepubads.g.doubleclick.net:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-14: Received HTTP/1.1 200 OK from www.cplusplus.com
-14: cache stores successfully
-14: Responding HTTP/1.1 200 OK
-14: Tunnel closed
-13: Received HTTP/1.1 200 OK from www.cplusplus.com
-13: cache stores successfully
-13: Responding HTTP/1.1 200 OK
-13: Tunnel closed
+0: GET http://www.cplusplus.com/ HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:20 2019
+0: Requesting GET http://www.cplusplus.com/ HTTP/1.1 from www.cplusplus.com
+0: Received HTTP/1.1 200 OK from www.cplusplus.com
+0: cache stores successfully
+0: Responding HTTP/1.1 200 OK
+0: Tunnel closed
+1: GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+2: GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+1: Requesting GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from www.cplusplus.com
+2: Requesting GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from www.cplusplus.com
+1: Received HTTP/1.1 200 OK from www.cplusplus.com
+1: cache stores successfully
+1: Responding HTTP/1.1 200 OK
+1: Tunnel closed
+2: Received HTTP/1.1 200 OK from www.cplusplus.com
+2: cache stores successfully
+2: Responding HTTP/1.1 200 OK
+2: Tunnel closed
+3: GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+4: GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+5: GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+6: GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+7: GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+3: Requesting GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from www.cplusplus.com
+4: Requesting GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from www.cplusplus.com
+6: Requesting GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from www.cplusplus.com
+7: Requesting GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from www.googletagservices.com
+5: Requesting GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from www.cplusplus.com
+4: Received HTTP/1.1 200 OK from www.cplusplus.com
+4: cache stores successfully
+4: Responding HTTP/1.1 200 OK
+4: Tunnel closed
+6: Received HTTP/1.1 200 OK from www.cplusplus.com
+6: cache stores successfully
+6: Responding HTTP/1.1 200 OK
+6: Tunnel closed
+7: Received HTTP/1.1 200 OK from www.googletagservices.com
+7: cache stores successfully
+7: Responding HTTP/1.1 200 OK
+7: Tunnel closed
+5: Received HTTP/1.1 200 OK from www.cplusplus.com
+5: cache stores successfully
+5: Responding HTTP/1.1 200 OK
+5: Tunnel closed
+3: Received HTTP/1.1 200 OK from www.cplusplus.com
+3: cache stores successfully
+3: Responding HTTP/1.1 200 OK
+3: Tunnel closed
+8: CONNECT securepubads.g.doubleclick.net:443 HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+9: CONNECT adservice.google.com:443 HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+11: GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+10: GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+12: GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+13: GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+14: GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+15: GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+16: GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+17: GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+18: GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:21 2019
+11: Requesting GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from www.cplusplus.com
+10: Requesting GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from www.cplusplus.com
+13: Requesting GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from www.cplusplus.com
+12: Requesting GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from www.cplusplus.com
+14: Requesting GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from www.cplusplus.com
+15: Requesting GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from www.cplusplus.com
+16: Requesting GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from www.cplusplus.com
+18: Requesting GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from www.cplusplus.com
+17: Requesting GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from www.cplusplus.com
 11: Received HTTP/1.1 200 OK from www.cplusplus.com
 11: cache stores successfully
 11: Responding HTTP/1.1 200 OK
 11: Tunnel closed
+13: Received HTTP/1.1 200 OK from www.cplusplus.com
+13: cache stores successfully
+13: Responding HTTP/1.1 200 OK
+13: Tunnel closed
+14: Received HTTP/1.1 200 OK from www.cplusplus.com
+14: cache stores successfully
+14: Responding HTTP/1.1 200 OK
+14: Tunnel closed
+12: Received HTTP/1.1 200 OK from www.cplusplus.com
+12: cache stores successfully
+12: Responding HTTP/1.1 200 OK
+12: Tunnel closed
+15: Received HTTP/1.1 200 OK from www.cplusplus.com
+15: cache stores successfully
+15: Responding HTTP/1.1 200 OK
+15: Tunnel closed
 16: Received HTTP/1.1 200 OK from www.cplusplus.com
 16: cache stores successfully
 16: Responding HTTP/1.1 200 OK
 16: Tunnel closed
-20: GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-21: GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-24: GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-26: GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-27: GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-28: GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-25: GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-22: GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-23: GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:20 2019
-20: Requesting GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from www.cplusplus.com
-21: Requesting GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from www.cplusplus.com
-28: Requesting GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from www.cplusplus.com
-27: Requesting GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from www.cplusplus.com
-23: Requesting GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from www.cplusplus.com
-22: Requesting GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from www.cplusplus.com
-26: Requesting GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from www.cplusplus.com
-24: Requesting GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from www.cplusplus.com
-25: Requesting GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from www.cplusplus.com
+18: Received HTTP/1.1 200 OK from www.cplusplus.com
+18: cache stores successfully
+18: Responding HTTP/1.1 200 OK
+18: Tunnel closed
+10: Received HTTP/1.1 200 OK from www.cplusplus.com
+10: cache stores successfully
+17: Received HTTP/1.1 200 OK from www.cplusplus.com
+17: cache stores successfully
+17: Responding HTTP/1.1 200 OK
+17: Tunnel closed
+10: Responding HTTP/1.1 200 OK
+10: Tunnel closed
+19: CONNECT www.google-analytics.com:443 HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:22 2019
+20: GET http://www.cplusplus.com/favicon.ico HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:22 2019
+20: Requesting GET http://www.cplusplus.com/favicon.ico HTTP/1.1 from www.cplusplus.com
 20: Received HTTP/1.1 200 OK from www.cplusplus.com
 20: cache stores successfully
 20: Responding HTTP/1.1 200 OK
 20: Tunnel closed
-21: Received HTTP/1.1 200 OK from www.cplusplus.com
-21: cache stores successfully
-21: Responding HTTP/1.1 200 OK
-21: Tunnel closed
-28: Received HTTP/1.1 200 OK from www.cplusplus.com
-28: cache stores successfully
-28: Responding HTTP/1.1 200 OK
-28: Tunnel closed
-27: Received HTTP/1.1 200 OK from www.cplusplus.com
-27: cache stores successfully
-27: Responding HTTP/1.1 200 OK
-27: Tunnel closed
+21: CONNECT stats.g.doubleclick.net:443 HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:22 2019
+22: CONNECT www.google.com:443 HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:22 2019
+23: GET http://www.cplusplus.com/ HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:23 2019
+23: Requesting GET http://www.cplusplus.com/ HTTP/1.1 from www.cplusplus.com
 23: Received HTTP/1.1 200 OK from www.cplusplus.com
-23: cache stores successfully
-23: Responding HTTP/1.1 200 OK
-23: Tunnel closed
-22: Received HTTP/1.1 200 OK from www.cplusplus.com
-22: cache stores successfully
-22: Responding HTTP/1.1 200 OK
-22: Tunnel closed
-29: CONNECT www.liaoxuefeng.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:21 2019
-26: Received HTTP/1.1 200 OK from www.cplusplus.com
-26: cache stores successfully
-26: Responding HTTP/1.1 200 OK
-26: Tunnel closed
-24: Received HTTP/1.1 200 OK from www.cplusplus.com
-24: cache stores successfully
-24: Responding HTTP/1.1 200 OK
-24: Tunnel closed
-30: GET http://www.cplusplus.com/favicon.ico HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:21 2019
-30: Requesting GET http://www.cplusplus.com/favicon.ico HTTP/1.1 from www.cplusplus.com
+0: cache stores successfully
+0: Responding HTTP/1.1 200 OK
+0: Tunnel closed
+24: GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:23 2019
+25: GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:23 2019
+25: Requesting GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from www.cplusplus.com
+24: Requesting GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from www.cplusplus.com
 25: Received HTTP/1.1 200 OK from www.cplusplus.com
-25: cache stores successfully
-25: Responding HTTP/1.1 200 OK
-25: Tunnel closed
-31: CONNECT www.google-analytics.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:21 2019
-32: CONNECT stats.g.doubleclick.net:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:21 2019
-33: CONNECT www.google.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:21 2019
-34: CONNECT sp0.baidu.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:22 2019
-30: Received HTTP/1.1 200 OK from www.cplusplus.com
-30: cache stores successfully
-30: Responding HTTP/1.1 200 OK
-30: Tunnel closed
-35: CONNECT cdn.liaoxuefeng.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:23 2019
-36: CONNECT tjs.sjs.sinajs.cn:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:23 2019
-37: CONNECT hm.baidu.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:27 2019
-38: CONNECT widget.weibo.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:27 2019
-39: CONNECT pagead2.googlesyndication.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:27 2019
-40: CONNECT googleads.g.doubleclick.net:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:28 2019
-41: CONNECT www.googletagservices.com:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:28 2019
-42: CONNECT img.t.sinajs.cn:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:28 2019
-44: CONNECT js.t.sinajs.cn:443 HTTP/1.1 from 10.197.99.123 @ Tue Feb 26 17:15:28 2019
+1: cache stores successfully
+1: Responding HTTP/1.1 200 OK
+1: Tunnel closed
+24: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+2: 
+2: Responding HTTP/1.1 200 OK
+2: Tunnel closed
+26: GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:24 2019
+26: Requesting GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from www.googletagservices.com
+26: Received HTTP/1.1 304 Not Modified from www.googletagservices.com
+7: 
+7: Responding HTTP/1.1 200 OK
+7: Tunnel closed
+27: GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:24 2019
+30: GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:24 2019
+28: GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:24 2019
+31: GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:24 2019
+29: GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:24 2019
+33: GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 19:41:24 2019

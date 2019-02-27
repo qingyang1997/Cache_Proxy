@@ -188,10 +188,16 @@ void Cache::update(Request &request, Response &response, std::string &message) {
               << std::endl;
     std::cout << "[CACHES] Validate After Request UID " << request.getUid()
               << std::endl;
-    std::cout << "[DEBUG] Receive 304 Cache Exists" << findCache(host_name)
+    std::cout << "[CACHES] Receive 304 Cache Exists" << findCache(host_name)
               << std::endl;
-    Response response_return = getCache(host_name);
-    response = response_return;
+
+    Response res = caches[host_name];
+    response = res;
+    std::cout << "[CACHES] USING Caches for Request UID: " << request.getUid()
+              << std::endl;
+    std::string temp;
+    response.reconstructHeader(temp);
+    std::cout << temp << std::endl;
   } else {
     std::cout << "[LOG] Response for Request UID" << request.getUid()
               << std::endl;
