@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include "myexception.h"
+#include <algorithm>
 
 class Http {
 private:
