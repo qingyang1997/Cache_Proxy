@@ -1,995 +1,324 @@
-0: CONNECT tiles.services.mozilla.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:35 2019
-1: CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:35 2019
-2: CONNECT www.google.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:44 2019
-3: CONNECT www.google.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:44 2019
-4: CONNECT www.youtube.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:47 2019
-5: CONNECT fonts.gstatic.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:47 2019
-6: CONNECT accounts.google.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:47 2019
-8: CONNECT r2---sn-hjoj-gq0e.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:47 2019
-7: CONNECT r2---sn-hjoj-gq0e.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:47 2019
-9: CONNECT googleads.g.doubleclick.net:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:47 2019
-10: CONNECT yt3.ggpht.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:48 2019
-11: CONNECT s.ytimg.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:48 2019
-12: CONNECT securepubads.g.doubleclick.net:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:48 2019
-13: CONNECT www.google.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:49 2019
-14: CONNECT i.ytimg.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:49 2019
-15: CONNECT static.doubleclick.net:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:49 2019
-16: CONNECT www.googletagservices.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:49 2019
-17: CONNECT adservice.google.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:49 2019
-18: CONNECT pagead2.googlesyndication.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:41:49 2019
-19: CONNECT i9.ytimg.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:03 2019
-20: CONNECT tiles.services.mozilla.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:08 2019
-21: CONNECT www.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:08 2019
-23: CONNECT s1.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:09 2019
-22: CONNECT s1.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:09 2019
-24: CONNECT s1.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:09 2019
-25: CONNECT static.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:11 2019
-26: CONNECT upos-hz-mirrorwcsu.acgvideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:11 2019
-27: CONNECT s1.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:11 2019
-28: CONNECT data.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:11 2019
-29: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:14 2019
-30: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:14 2019
-31: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:14 2019
-32: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:14 2019
-33: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:14 2019
-34: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:14 2019
-35: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:14 2019
-36: CONNECT api.live.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-37: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-38: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-39: CONNECT i1.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-40: CONNECT i2.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-41: CONNECT i1.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-42: CONNECT i0.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-43: CONNECT i1.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-44: CONNECT i2.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-45: CONNECT i1.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-46: CONNECT i0.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-47: CONNECT i2.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-49: CONNECT i1.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-48: CONNECT i0.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-52: CONNECT i1.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-50: CONNECT i0.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-51: CONNECT i2.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-53: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-54: CONNECT i0.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-55: CONNECT i0.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-56: CONNECT i2.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-57: CONNECT i2.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-58: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-61: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-63: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-64: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:15 2019
-59: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:16 2019
-60: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:16 2019
-62: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:16 2019
-65: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:16 2019
-66: CONNECT www.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:17 2019
-67: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:19 2019
-72: CONNECT tpc.googlesyndication.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:20 2019
-68: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:20 2019
-70: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:20 2019
-69: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:20 2019
-71: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:20 2019
-73: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:21 2019
-74: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:21 2019
-75: CONNECT www.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:26 2019
-76: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:27 2019
-77: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:27 2019
-78: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:27 2019
-79: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:27 2019
-80: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:28 2019
-81: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:28 2019
-82: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:28 2019
-83: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:28 2019
-84: CONNECT api.live.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:28 2019
-85: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:28 2019
-86: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:28 2019
-88: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:28 2019
-87: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:28 2019
-92: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:28 2019
-93: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:28 2019
-94: CONNECT r4---sn-q4fl6nez.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:29 2019
-89: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:29 2019
-90: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:29 2019
-91: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:29 2019
-95: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:29 2019
-96: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:39 2019
-97: CONNECT www.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:39 2019
-98: CONNECT s1.hdslb.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:40 2019
-99: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:41 2019
-100: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:41 2019
-101: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:41 2019
-102: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:41 2019
-103: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:41 2019
-104: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:41 2019
-105: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:41 2019
-106: CONNECT api.live.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:41 2019
-107: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:41 2019
-108: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:42 2019
-110: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:42 2019
-111: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:42 2019
-115: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:42 2019
-113: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:42 2019
-116: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:42 2019
-109: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:43 2019
-112: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:43 2019
-114: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:43 2019
-117: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:43 2019
-118: CONNECT www.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:47 2019
-119: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-120: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-121: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-122: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-123: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-124: CONNECT api.live.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-125: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-126: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-127: CONNECT r6---sn-vgqs7nlr.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-128: CONNECT r2---sn-hjoj-gq0e.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-129: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-132: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-133: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-135: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:49 2019
-134: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:50 2019
-130: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:50 2019
-131: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:50 2019
-136: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:50 2019
-137: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:50 2019
-138: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:51 2019
-139: GET http://detectportal.firefox.com/success.txt HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:54 2019
-139: Requesting GET http://detectportal.firefox.com/success.txt HTTP/1.1 from detectportal.firefox.com
-139: Received HTTP/1.1 200 OK from detectportal.firefox.com
-139: not cacheable because response contains "no-store" field
-139: Responding HTTP/1.1 200 OK
-139: Tunnel closed
-140: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:42:59 2019
-141: CONNECT p2-e7k7q7jn2hrpy-qs25pworng2z7sjm-if-v6exp3-v4.metric.gstatic.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:02 2019
-142: Responding HTTP/1.1 400 Bad Request
-143: Responding HTTP/1.1 400 Bad Request
-144: Responding HTTP/1.1 400 Bad Request
-146: CONNECT p2-e7k7q7jn2hrpy-qs25pworng2z7sjm-830513-i1-v6exp3.v4.metric.gstatic.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:12 2019
-145: CONNECT p2-e7k7q7jn2hrpy-qs25pworng2z7sjm-830513-i2-v6exp3.ds.metric.gstatic.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:12 2019
-147: CONNECT www.googleadservices.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:17 2019
-148: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:20 2019
-149: CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:21 2019
-152: CONNECT securepubads.g.doubleclick.net:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:25 2019
-150: Responding HTTP/1.1 400 Bad Request
-151: Responding HTTP/1.1 400 Bad Request
-153: CONNECT r4---sn-5hne6nsr.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:28 2019
-156: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:30 2019
-157: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:30 2019
-158: CONNECT www.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:31 2019
-154: Responding HTTP/1.1 400 Bad Request
-155: Responding HTTP/1.1 400 Bad Request
-161: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:35 2019
-162: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:35 2019
-163: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:35 2019
-164: CONNECT api.live.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:35 2019
-166: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:35 2019
-165: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:35 2019
-167: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:35 2019
-168: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:36 2019
-170: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:36 2019
-173: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:36 2019
-174: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:36 2019
-169: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:37 2019
-172: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:37 2019
-171: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:37 2019
-175: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:37 2019
-176: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:37 2019
-177: CONNECT r2---sn-hjoj-gq0e.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:38 2019
-178: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:38 2019
-179: CONNECT www.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:39 2019
-159: Responding HTTP/1.1 400 Bad Request
-160: Responding HTTP/1.1 400 Bad Request
-180: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:41 2019
-183: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:41 2019
-184: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:41 2019
-181: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:41 2019
-185: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:41 2019
-182: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:41 2019
-186: CONNECT api.live.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:41 2019
-187: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:42 2019
-188: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:42 2019
-189: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:42 2019
-190: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:42 2019
-191: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:42 2019
-192: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:42 2019
-193: CONNECT p2-f72xouqxjloco-uxfeyaicah2jg5nx-if-v6exp3-v4.metric.gstatic.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:43 2019
-194: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:43 2019
-195: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:43 2019
-196: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:43 2019
-197: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:43 2019
-201: GET http://movenowthinklater.com/ HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:44 2019
-201: Requesting GET http://movenowthinklater.com/ HTTP/1.1 from movenowthinklater.com
-201: Received HTTP/1.1 200 OK from movenowthinklater.com
-201: cache stores successfully
-201: Responding HTTP/1.1 200 OK
-201: Tunnel closed
-202: GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:44 2019
-202: Requesting GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from www.rafaelrozendaal.com
-202: Received HTTP/1.1 200 OK from www.rafaelrozendaal.com
-202: cache stores successfully
-202: Responding HTTP/1.1 200 OK
-202: Tunnel closed
-203: GET http://www.newrafael.com/favicon.ico HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-204: CONNECT www.google-analytics.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-205: GET http://movenowthinklater.com/html/ HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-205: Requesting GET http://movenowthinklater.com/html/ HTTP/1.1 from movenowthinklater.com
-203: Requesting GET http://www.newrafael.com/favicon.ico HTTP/1.1 from www.newrafael.com
-205: Received HTTP/1.1 200 OK from movenowthinklater.com
-205: cache stores successfully
-205: Responding HTTP/1.1 200 OK
-205: Tunnel closed
-203: Received HTTP/1.1 301 Moved Permanently from www.newrafael.com
-203: cache stores successfully
-203: Responding HTTP/1.1 301 Moved Permanently
-206: GET http://movenowthinklater.com/html/libs/easeljs-0.4.2.min.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-207: GET http://movenowthinklater.com/html/libs/buzz.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-210: GET http://movenowthinklater.com/html/CheckersGame.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-208: GET http://movenowthinklater.com/html/Game.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-212: GET http://movenowthinklater.com/html/Config.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-209: GET http://movenowthinklater.com/html/Checker.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-211: GET http://movenowthinklater.com/html/rf/util/RandomUtil.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-213: GET http://movenowthinklater.com/html/SoundController.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-214: GET http://movenowthinklater.com/html/Board.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-215: GET http://movenowthinklater.com/html/main.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-216: CONNECT www.newrafael.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-206: Requesting GET http://movenowthinklater.com/html/libs/easeljs-0.4.2.min.js HTTP/1.1 from movenowthinklater.com
-210: Requesting GET http://movenowthinklater.com/html/CheckersGame.js HTTP/1.1 from movenowthinklater.com
-208: Requesting GET http://movenowthinklater.com/html/Game.js HTTP/1.1 from movenowthinklater.com
-207: Requesting GET http://movenowthinklater.com/html/libs/buzz.js HTTP/1.1 from movenowthinklater.com
-211: Requesting GET http://movenowthinklater.com/html/rf/util/RandomUtil.js HTTP/1.1 from movenowthinklater.com
-212: Requesting GET http://movenowthinklater.com/html/Config.js HTTP/1.1 from movenowthinklater.com
-209: Requesting GET http://movenowthinklater.com/html/Checker.js HTTP/1.1 from movenowthinklater.com
-213: Requesting GET http://movenowthinklater.com/html/SoundController.js HTTP/1.1 from movenowthinklater.com
-214: Requesting GET http://movenowthinklater.com/html/Board.js HTTP/1.1 from movenowthinklater.com
-215: Requesting GET http://movenowthinklater.com/html/main.js HTTP/1.1 from movenowthinklater.com
-210: Received HTTP/1.1 200 OK from movenowthinklater.com
-210: cache stores successfully
-210: Responding HTTP/1.1 200 OK
-210: Tunnel closed
-207: Received HTTP/1.1 200 OK from movenowthinklater.com
-207: cache stores successfully
-207: Responding HTTP/1.1 200 OK
-207: Tunnel closed
-208: Received HTTP/1.1 200 OK from movenowthinklater.com
-208: cache stores successfully
-208: Responding HTTP/1.1 200 OK
-208: Tunnel closed
-206: Received HTTP/1.1 200 OK from movenowthinklater.com
-206: cache stores successfully
-206: Responding HTTP/1.1 200 OK
-206: Tunnel closed
-212: Received HTTP/1.1 200 OK from movenowthinklater.com
-212: cache stores successfully
-212: Responding HTTP/1.1 200 OK
-212: Tunnel closed
-209: Received HTTP/1.1 200 OK from movenowthinklater.com
-209: cache stores successfully
-209: Responding HTTP/1.1 200 OK
-209: Tunnel closed
-211: Received HTTP/1.1 200 OK from movenowthinklater.com
-211: cache stores successfully
-211: Responding HTTP/1.1 200 OK
-211: Tunnel closed
-213: Received HTTP/1.1 200 OK from movenowthinklater.com
-215: Received HTTP/1.1 200 OK from movenowthinklater.com
-213: cache stores successfully
-213: Responding HTTP/1.1 200 OK
-213: Tunnel closed
-215: cache stores successfully
-215: Responding HTTP/1.1 200 OK
-215: Tunnel closed
-214: Received HTTP/1.1 200 OK from movenowthinklater.com
-214: cache stores successfully
-214: Responding HTTP/1.1 200 OK
-214: Tunnel closed
-217: GET http://movenowthinklater.com/html/sounds/checkers-sound-1.ogg HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-218: GET http://movenowthinklater.com/html/sounds/checkers-sound-2.ogg HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:45 2019
-218: Requesting GET http://movenowthinklater.com/html/sounds/checkers-sound-2.ogg HTTP/1.1 from movenowthinklater.com
-217: Requesting GET http://movenowthinklater.com/html/sounds/checkers-sound-1.ogg HTTP/1.1 from movenowthinklater.com
-218: Received HTTP/1.1 206 Partial Content from movenowthinklater.com
-218: cache stores successfully
-218: Responding HTTP/1.1 206 Partial Content
-217: Received HTTP/1.1 206 Partial Content from movenowthinklater.com
-217: cache stores successfully
-217: Responding HTTP/1.1 206 Partial Content
-219: CONNECT r8---sn-bvvbax-2ims.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-220: GET http://movenowthinklater.com/ HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-220: Requesting GET http://movenowthinklater.com/ HTTP/1.1 from movenowthinklater.com
-221: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-220: Received HTTP/1.1 304 Not Modified from movenowthinklater.com
-201: 
-201: Responding HTTP/1.1 200 OK
-201: Tunnel closed
-222: GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-222: Requesting GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from www.rafaelrozendaal.com
-222: Received HTTP/1.1 200 OK from www.rafaelrozendaal.com
-202: cached, but requires validation
-202: Responding HTTP/1.1 200 OK
-202: Tunnel closed
-223: GET http://movenowthinklater.com/html/ HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-223: Requesting GET http://movenowthinklater.com/html/ HTTP/1.1 from movenowthinklater.com
-223: Received HTTP/1.1 304 Not Modified from movenowthinklater.com
-205: 
-205: Responding HTTP/1.1 200 OK
-205: Tunnel closed
-224: GET http://movenowthinklater.com/html/libs/easeljs-0.4.2.min.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-225: GET http://movenowthinklater.com/html/libs/buzz.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-226: GET http://movenowthinklater.com/html/CheckersGame.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-227: GET http://movenowthinklater.com/html/Game.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-229: GET http://movenowthinklater.com/html/Checker.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-228: GET http://movenowthinklater.com/html/Board.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-230: GET http://movenowthinklater.com/html/main.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-233: GET http://movenowthinklater.com/html/SoundController.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-231: GET http://movenowthinklater.com/html/rf/util/RandomUtil.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-232: GET http://movenowthinklater.com/html/Config.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:46 2019
-225: Requesting GET http://movenowthinklater.com/html/libs/buzz.js HTTP/1.1 from movenowthinklater.com
-224: Requesting GET http://movenowthinklater.com/html/libs/easeljs-0.4.2.min.js HTTP/1.1 from movenowthinklater.com
-226: Requesting GET http://movenowthinklater.com/html/CheckersGame.js HTTP/1.1 from movenowthinklater.com
-227: Requesting GET http://movenowthinklater.com/html/Game.js HTTP/1.1 from movenowthinklater.com
-228: Requesting GET http://movenowthinklater.com/html/Board.js HTTP/1.1 from movenowthinklater.com
-229: Requesting GET http://movenowthinklater.com/html/Checker.js HTTP/1.1 from movenowthinklater.com
-233: Requesting GET http://movenowthinklater.com/html/SoundController.js HTTP/1.1 from movenowthinklater.com
-232: Requesting GET http://movenowthinklater.com/html/Config.js HTTP/1.1 from movenowthinklater.com
-231: Requesting GET http://movenowthinklater.com/html/rf/util/RandomUtil.js HTTP/1.1 from movenowthinklater.com
-230: Requesting GET http://movenowthinklater.com/html/main.js HTTP/1.1 from movenowthinklater.com
-225: Received HTTP/1.1 200 OK from movenowthinklater.com
-207: cached, but requires validation
-207: Responding HTTP/1.1 200 OK
-207: Tunnel closed
-227: Received HTTP/1.1 200 OK from movenowthinklater.com
-208: cached, but requires validation
-208: Responding HTTP/1.1 200 OK
-208: Tunnel closed
-228: Received HTTP/1.1 200 OK from movenowthinklater.com
-214: cached, but requires validation
-214: Responding HTTP/1.1 200 OK
-214: Tunnel closed
-229: Received HTTP/1.1 200 OK from movenowthinklater.com
-209: cached, but requires validation
-209: Responding HTTP/1.1 200 OK
-209: Tunnel closed
-224: Received HTTP/1.1 200 OK from movenowthinklater.com
-206: cached, but requires validation
-206: Responding HTTP/1.1 200 OK
-206: Tunnel closed
-226: Received HTTP/1.1 200 OK from movenowthinklater.com
-210: cached, but requires validation
-210: Responding HTTP/1.1 200 OK
-210: Tunnel closed
-233: Received HTTP/1.1 200 OK from movenowthinklater.com
-213: cached, but requires validation
-213: Responding HTTP/1.1 200 OK
-213: Tunnel closed
-232: Received HTTP/1.1 200 OK from movenowthinklater.com
-212: cached, but requires validation
-212: Responding HTTP/1.1 200 OK
-212: Tunnel closed
-231: Received HTTP/1.1 200 OK from movenowthinklater.com
-211: cached, but requires validation
-211: Responding HTTP/1.1 200 OK
-211: Tunnel closed
-230: Received HTTP/1.1 200 OK from movenowthinklater.com
-215: cached, but requires validation
-215: Responding HTTP/1.1 200 OK
-215: Tunnel closed
-234: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:48 2019
-235: CONNECT tpc.googlesyndication.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:48 2019
-237: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:49 2019
-236: GET http://www.cplusplus.com/ HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:49 2019
-236: Requesting GET http://www.cplusplus.com/ HTTP/1.1 from www.cplusplus.com
-200: Responding HTTP/1.1 400 Bad Request
-198: Responding HTTP/1.1 400 Bad Request
-199: Responding HTTP/1.1 400 Bad Request
-236: Received HTTP/1.1 200 OK from www.cplusplus.com
-236: cache stores successfully
-236: Responding HTTP/1.1 200 OK
-236: Tunnel closed
-238: GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:50 2019
-241: GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:50 2019
-238: Requesting GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from www.cplusplus.com
-241: Requesting GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from www.cplusplus.com
-238: Received HTTP/1.1 200 OK from www.cplusplus.com
-238: cache stores successfully
-238: Responding HTTP/1.1 200 OK
-238: Tunnel closed
-241: Received HTTP/1.1 200 OK from www.cplusplus.com
-241: cache stores successfully
-241: Responding HTTP/1.1 200 OK
-241: Tunnel closed
-240: GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:50 2019
-242: GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:50 2019
-239: GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:50 2019
-243: GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:50 2019
-244: GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:50 2019
-239: Requesting GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from www.cplusplus.com
-240: Requesting GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from www.cplusplus.com
-242: Requesting GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from www.cplusplus.com
-243: Requesting GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from www.cplusplus.com
-244: Requesting GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from www.googletagservices.com
-244: Received HTTP/1.1 200 OK from www.googletagservices.com
-244: cache stores successfully
-244: Responding HTTP/1.1 200 OK
-244: Tunnel closed
-245: GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:51 2019
-246: GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:51 2019
-248: GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:51 2019
-247: GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:51 2019
-249: GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:51 2019
-251: GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:51 2019
-250: GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:51 2019
-252: GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:51 2019
-253: GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:51 2019
-245: Requesting GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from www.cplusplus.com
-249: Requesting GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from www.cplusplus.com
-248: Requesting GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from www.cplusplus.com
-251: Requesting GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from www.cplusplus.com
-250: Requesting GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from www.cplusplus.com
-246: Requesting GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from www.cplusplus.com
-252: Requesting GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from www.cplusplus.com
-247: Requesting GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from www.cplusplus.com
-253: Requesting GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from www.cplusplus.com
-239: Received HTTP/1.1 200 OK from www.cplusplus.com
-239: cache stores successfully
-239: Responding HTTP/1.1 200 OK
-239: Tunnel closed
-242: Received HTTP/1.1 200 OK from www.cplusplus.com
-242: cache stores successfully
-242: Responding HTTP/1.1 200 OK
-242: Tunnel closed
-243: Received HTTP/1.1 200 OK from www.cplusplus.com
-243: cache stores successfully
-243: Responding HTTP/1.1 200 OK
-243: Tunnel closed
-240: Received HTTP/1.1 200 OK from www.cplusplus.com
-240: cache stores successfully
-240: Responding HTTP/1.1 200 OK
-240: Tunnel closed
-249: Received HTTP/1.1 200 OK from www.cplusplus.com
-249: cache stores successfully
-249: Responding HTTP/1.1 200 OK
-249: Tunnel closed
-248: Received HTTP/1.1 200 OK from www.cplusplus.com
-248: cache stores successfully
-248: Responding HTTP/1.1 200 OK
-248: Tunnel closed
-251: Received HTTP/1.1 200 OK from www.cplusplus.com
-251: cache stores successfully
-251: Responding HTTP/1.1 200 OK
-251: Tunnel closed
-245: Received HTTP/1.1 200 OK from www.cplusplus.com
-245: cache stores successfully
-245: Responding HTTP/1.1 200 OK
-245: Tunnel closed
-250: Received HTTP/1.1 200 OK from www.cplusplus.com
-250: cache stores successfully
-250: Responding HTTP/1.1 200 OK
-250: Tunnel closed
-246: Received HTTP/1.1 200 OK from www.cplusplus.com
-246: cache stores successfully
-246: Responding HTTP/1.1 200 OK
-246: Tunnel closed
-252: Received HTTP/1.1 200 OK from www.cplusplus.com
-252: cache stores successfully
-252: Responding HTTP/1.1 200 OK
-252: Tunnel closed
-254: CONNECT r6---sn-o097znlk.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:51 2019
-247: Received HTTP/1.1 200 OK from www.cplusplus.com
-247: cache stores successfully
-247: Responding HTTP/1.1 200 OK
-247: Tunnel closed
-253: Received HTTP/1.1 200 OK from www.cplusplus.com
-253: cache stores successfully
-253: Responding HTTP/1.1 200 OK
-253: Tunnel closed
-255: GET http://www.cplusplus.com/favicon.ico HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:51 2019
-255: Requesting GET http://www.cplusplus.com/favicon.ico HTTP/1.1 from www.cplusplus.com
-256: CONNECT stats.g.doubleclick.net:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:51 2019
-255: Received HTTP/1.1 200 OK from www.cplusplus.com
-255: cache stores successfully
-255: Responding HTTP/1.1 200 OK
-255: Tunnel closed
-257: GET http://www.cplusplus.com/ HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-257: Requesting GET http://www.cplusplus.com/ HTTP/1.1 from www.cplusplus.com
-257: Received HTTP/1.1 200 OK from www.cplusplus.com
-236: cache stores successfully
-236: Responding HTTP/1.1 200 OK
-236: Tunnel closed
-259: GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-258: GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-259: Requesting GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from www.cplusplus.com
-258: Requesting GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from www.cplusplus.com
-259: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-258: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-241: 
-241: Responding HTTP/1.1 200 OK
-241: Tunnel closed
-238: 
-238: Responding HTTP/1.1 200 OK
-238: Tunnel closed
-260: GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-260: Requesting GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from www.googletagservices.com
-260: Received HTTP/1.1 304 Not Modified from www.googletagservices.com
-244: 
-244: Responding HTTP/1.1 200 OK
-244: Tunnel closed
-261: GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-263: GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-264: GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-262: GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-265: GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-267: GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-268: GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-269: GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-266: GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-270: GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-271: GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-272: GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-263: Requesting GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from www.cplusplus.com
-261: Requesting GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from www.cplusplus.com
-264: Requesting GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from www.cplusplus.com
-262: Requesting GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from www.cplusplus.com
-269: Requesting GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from www.cplusplus.com
-265: Requesting GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from www.cplusplus.com
-266: Requesting GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from www.cplusplus.com
-268: Requesting GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from www.cplusplus.com
-267: Requesting GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from www.cplusplus.com
-270: Requesting GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from www.cplusplus.com
-271: Requesting GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from www.cplusplus.com
-273: GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-272: Requesting GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from www.cplusplus.com
-263: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-239: 
-239: Responding HTTP/1.1 200 OK
-239: Tunnel closed
-261: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-240: 
-240: Responding HTTP/1.1 200 OK
-240: Tunnel closed
-264: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-243: 
-243: Responding HTTP/1.1 200 OK
-243: Tunnel closed
-262: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-242: 
-242: Responding HTTP/1.1 200 OK
-242: Tunnel closed
-269: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-250: 
-250: Responding HTTP/1.1 200 OK
-250: Tunnel closed
-266: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-247: 
-247: Responding HTTP/1.1 200 OK
-247: Tunnel closed
-265: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-245: 
-271: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-268: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-249: 
-248: 
-249: Responding HTTP/1.1 200 OK
-249: Tunnel closed
-248: Responding HTTP/1.1 200 OK
-248: Tunnel closed
-267: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-246: 
-246: Responding HTTP/1.1 200 OK
-246: Tunnel closed
-270: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-251: 
-251: Responding HTTP/1.1 200 OK
-251: Tunnel closed
-273: Requesting GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from www.cplusplus.com
-245: Responding HTTP/1.1 200 OK
-245: Tunnel closed
-272: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-252: 
-252: Responding HTTP/1.1 200 OK
-252: Tunnel closed
-273: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-253: 
-253: Responding HTTP/1.1 200 OK
-253: Tunnel closed
-274: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-276: CONNECT p2-f72xouqxjloco-uxfeyaicah2jg5nx-904559-i1-v6exp3.v4.metric.gstatic.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-275: CONNECT p2-f72xouqxjloco-uxfeyaicah2jg5nx-904559-i2-v6exp3.ds.metric.gstatic.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:53 2019
-277: GET http://www.cplusplus.com/ HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-277: Requesting GET http://www.cplusplus.com/ HTTP/1.1 from www.cplusplus.com
-277: Received HTTP/1.1 200 OK from www.cplusplus.com
-236: cache stores successfully
-236: Responding HTTP/1.1 200 OK
-236: Tunnel closed
-278: GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-279: GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-278: Requesting GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from www.cplusplus.com
-279: Requesting GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from www.cplusplus.com
-278: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-241: 
-241: Responding HTTP/1.1 200 OK
-241: Tunnel closed
-279: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-238: 
-238: Responding HTTP/1.1 200 OK
-238: Tunnel closed
-280: GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-280: Requesting GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from www.googletagservices.com
-280: Received HTTP/1.1 304 Not Modified from www.googletagservices.com
-244: 
-244: Responding HTTP/1.1 200 OK
-244: Tunnel closed
-282: GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-281: GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-283: GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-284: GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-282: Requesting GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from www.cplusplus.com
-281: Requesting GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from www.cplusplus.com
-286: GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-283: Requesting GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from www.cplusplus.com
-285: GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-287: GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-284: Requesting GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from www.cplusplus.com
-288: GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-291: GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-290: GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-289: GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-292: GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-293: GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:54 2019
-282: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-240: 
-240: Responding HTTP/1.1 200 OK
-240: Tunnel closed
-285: Requesting GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from www.cplusplus.com
-286: Requesting GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from www.cplusplus.com
-288: Requesting GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from www.cplusplus.com
-281: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-239: 
-239: Responding HTTP/1.1 200 OK
-239: Tunnel closed
-283: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-242: 
-242: Responding HTTP/1.1 200 OK
-242: Tunnel closed
-284: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-243: 
-243: Responding HTTP/1.1 200 OK
-243: Tunnel closed
-287: Requesting GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from www.cplusplus.com
-290: Requesting GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from www.cplusplus.com
-292: Requesting GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from www.cplusplus.com
-291: Requesting GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from www.cplusplus.com
-293: Requesting GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from www.cplusplus.com
-289: Requesting GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from www.cplusplus.com
-285: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-246: 
-246: Responding HTTP/1.1 200 OK
-246: Tunnel closed
-286: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-248: 
-248: Responding HTTP/1.1 200 OK
-248: Tunnel closed
-288: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-245: 
-245: Responding HTTP/1.1 200 OK
-245: Tunnel closed
-287: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-247: 
-247: Responding HTTP/1.1 200 OK
-247: Tunnel closed
-290: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-252: 
-252: Responding HTTP/1.1 200 OK
-252: Tunnel closed
-292: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-250: 
-250: Responding HTTP/1.1 200 OK
-250: Tunnel closed
-291: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-251: 
-251: Responding HTTP/1.1 200 OK
-251: Tunnel closed
-293: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-253: 
-253: Responding HTTP/1.1 200 OK
-253: Tunnel closed
-289: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-249: 
-249: Responding HTTP/1.1 200 OK
-249: Tunnel closed
-294: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:43:56 2019
-295: CONNECT i.ytimg.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:01 2019
-296: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:01 2019
-300: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:02 2019
-301: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:03 2019
-299: Responding HTTP/1.1 400 Bad Request
-298: Responding HTTP/1.1 400 Bad Request
-297: Responding HTTP/1.1 400 Bad Request
-302: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:08 2019
-306: GET http://movenowthinklater.com/ HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:13 2019
-306: Requesting GET http://movenowthinklater.com/ HTTP/1.1 from movenowthinklater.com
-306: Received HTTP/1.1 304 Not Modified from movenowthinklater.com
-201: 
-201: Responding HTTP/1.1 200 OK
-201: Tunnel closed
-307: GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-307: Requesting GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from www.rafaelrozendaal.com
-307: Received HTTP/1.1 200 OK from www.rafaelrozendaal.com
-202: cached, but requires validation
-202: Responding HTTP/1.1 200 OK
-202: Tunnel closed
-308: GET http://movenowthinklater.com/html/ HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-308: Requesting GET http://movenowthinklater.com/html/ HTTP/1.1 from movenowthinklater.com
-309: CONNECT r3---sn-p5qlsns6.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-308: Received HTTP/1.1 304 Not Modified from movenowthinklater.com
-205: 
-205: Responding HTTP/1.1 200 OK
-205: Tunnel closed
-311: GET http://movenowthinklater.com/html/libs/buzz.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-310: GET http://movenowthinklater.com/html/libs/easeljs-0.4.2.min.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-314: GET http://movenowthinklater.com/html/Board.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-312: GET http://movenowthinklater.com/html/CheckersGame.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-315: GET http://movenowthinklater.com/html/Game.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-313: GET http://movenowthinklater.com/html/Checker.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-316: GET http://movenowthinklater.com/html/Config.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-317: GET http://movenowthinklater.com/html/rf/util/RandomUtil.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-318: GET http://movenowthinklater.com/html/SoundController.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-319: GET http://movenowthinklater.com/html/main.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-311: Requesting GET http://movenowthinklater.com/html/libs/buzz.js HTTP/1.1 from movenowthinklater.com
-310: Requesting GET http://movenowthinklater.com/html/libs/easeljs-0.4.2.min.js HTTP/1.1 from movenowthinklater.com
-314: Requesting GET http://movenowthinklater.com/html/Board.js HTTP/1.1 from movenowthinklater.com
-313: Requesting GET http://movenowthinklater.com/html/Checker.js HTTP/1.1 from movenowthinklater.com
-312: Requesting GET http://movenowthinklater.com/html/CheckersGame.js HTTP/1.1 from movenowthinklater.com
-316: Requesting GET http://movenowthinklater.com/html/Config.js HTTP/1.1 from movenowthinklater.com
-315: Requesting GET http://movenowthinklater.com/html/Game.js HTTP/1.1 from movenowthinklater.com
-317: Requesting GET http://movenowthinklater.com/html/rf/util/RandomUtil.js HTTP/1.1 from movenowthinklater.com
-318: Requesting GET http://movenowthinklater.com/html/SoundController.js HTTP/1.1 from movenowthinklater.com
-319: Requesting GET http://movenowthinklater.com/html/main.js HTTP/1.1 from movenowthinklater.com
-311: Received HTTP/1.1 200 OK from movenowthinklater.com
-207: cached, but requires validation
-207: Responding HTTP/1.1 200 OK
-207: Tunnel closed
-310: Received HTTP/1.1 200 OK from movenowthinklater.com
-206: cached, but requires validation
-206: Responding HTTP/1.1 200 OK
-206: Tunnel closed
-314: Received HTTP/1.1 200 OK from movenowthinklater.com
-214: cached, but requires validation
-214: Responding HTTP/1.1 200 OK
-214: Tunnel closed
-313: Received HTTP/1.1 200 OK from movenowthinklater.com
-209: cached, but requires validation
-209: Responding HTTP/1.1 200 OK
-209: Tunnel closed
-312: Received HTTP/1.1 200 OK from movenowthinklater.com
-316: Received HTTP/1.1 200 OK from movenowthinklater.com
-212: cached, but requires validation
-212: Responding HTTP/1.1 200 OK
-212: Tunnel closed
-210: cached, but requires validation
-210: Responding HTTP/1.1 200 OK
-210: Tunnel closed
-315: Received HTTP/1.1 200 OK from movenowthinklater.com
-318: Received HTTP/1.1 200 OK from movenowthinklater.com
-208: cached, but requires validation
-213: cached, but requires validation
-213: Responding HTTP/1.1 200 OK
-213: Tunnel closed
-317: Received HTTP/1.1 200 OK from movenowthinklater.com
-208: Responding HTTP/1.1 200 OK
-208: Tunnel closed
-211: cached, but requires validation
-211: Responding HTTP/1.1 200 OK
-211: Tunnel closed
-319: Received HTTP/1.1 200 OK from movenowthinklater.com
-215: cached, but requires validation
-215: Responding HTTP/1.1 200 OK
-215: Tunnel closed
-305: Responding HTTP/1.1 400 Bad Request
-304: Responding HTTP/1.1 400 Bad Request
-303: Responding HTTP/1.1 400 Bad Request
-320: CONNECT r3---sn-q4flrnez.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:14 2019
-321: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-322: GET http://www.cplusplus.com/ HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-322: Requesting GET http://www.cplusplus.com/ HTTP/1.1 from www.cplusplus.com
-322: Received HTTP/1.1 200 OK from www.cplusplus.com
-236: cache stores successfully
-236: Responding HTTP/1.1 200 OK
-236: Tunnel closed
-323: GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-324: GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-323: Requesting GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from www.cplusplus.com
-324: Requesting GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from www.cplusplus.com
-323: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-238: 
-238: Responding HTTP/1.1 200 OK
-238: Tunnel closed
-324: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-241: 
-241: Responding HTTP/1.1 200 OK
-241: Tunnel closed
-325: GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-325: Requesting GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from www.googletagservices.com
-325: Received HTTP/1.1 304 Not Modified from www.googletagservices.com
-244: 
-244: Responding HTTP/1.1 200 OK
-244: Tunnel closed
-326: GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-327: GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-328: GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-329: GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-330: GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-331: GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-332: GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-333: GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-334: GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-335: GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-336: GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-337: GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-326: Requesting GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from www.cplusplus.com
-328: Requesting GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from www.cplusplus.com
-329: Requesting GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from www.cplusplus.com
-327: Requesting GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from www.cplusplus.com
-330: Requesting GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from www.cplusplus.com
-331: Requesting GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from www.cplusplus.com
-338: GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:18 2019
-332: Requesting GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from www.cplusplus.com
-333: Requesting GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from www.cplusplus.com
-334: Requesting GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from www.cplusplus.com
-335: Requesting GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from www.cplusplus.com
-336: Requesting GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from www.cplusplus.com
-337: Requesting GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from www.cplusplus.com
-328: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-243: 
-243: Responding HTTP/1.1 200 OK
-243: Tunnel closed
-329: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-242: 
-242: Responding HTTP/1.1 200 OK
-242: Tunnel closed
-326: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-239: 
-239: Responding HTTP/1.1 200 OK
-239: Tunnel closed
-338: Requesting GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from www.cplusplus.com
-327: Received HTTP/1.1 200 OK from www.cplusplus.com
-240: cache stores successfully
-240: Responding HTTP/1.1 200 OK
-240: Tunnel closed
-330: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-332: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-247: 
-245: 
-247: Responding HTTP/1.1 200 OK
-247: Tunnel closed
-333: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-250: 
-250: Responding HTTP/1.1 200 OK
-250: Tunnel closed
-331: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-246: 
-246: Responding HTTP/1.1 200 OK
-246: Tunnel closed
-334: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-251: 
-251: Responding HTTP/1.1 200 OK
-251: Tunnel closed
-335: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-248: 
-248: Responding HTTP/1.1 200 OK
-248: Tunnel closed
-336: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-249: 
-249: Responding HTTP/1.1 200 OK
-249: Tunnel closed
-245: Responding HTTP/1.1 200 OK
-245: Tunnel closed
-337: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-252: 
-252: Responding HTTP/1.1 200 OK
-252: Tunnel closed
-338: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
-253: 
-253: Responding HTTP/1.1 200 OK
-253: Tunnel closed
-339: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:19 2019
-340: CONNECT r2---sn-hjoj-gq0e.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:22 2019
-343: Responding HTTP/1.1 400 Bad Request
-342: Responding HTTP/1.1 400 Bad Request
-341: Responding HTTP/1.1 400 Bad Request
-347: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:33 2019
-348: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:34 2019
-346: Responding HTTP/1.1 400 Bad Request
-345: Responding HTTP/1.1 400 Bad Request
-344: Responding HTTP/1.1 400 Bad Request
-349: Responding HTTP/1.1 400 Bad Request
-351: CONNECT r4---sn-bvvbax-2iml.googlevideo.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:42 2019
-350: Responding HTTP/1.1 400 Bad Request
-352: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:43 2019
-353: CONNECT www.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:44 2019
-354: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:45 2019
-355: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:45 2019
-356: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-357: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-358: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-359: CONNECT pagead2.googlesyndication.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-360: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-361: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-362: CONNECT api.live.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-363: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-367: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-368: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-371: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-373: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-374: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:46 2019
-369: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:47 2019
-370: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:47 2019
-372: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:47 2019
-375: CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:47 2019
-365: Responding HTTP/1.1 400 Bad Request
-364: Responding HTTP/1.1 400 Bad Request
-366: Responding HTTP/1.1 400 Bad Request
-376: Responding HTTP/1.1 400 Bad Request
-377: Responding HTTP/1.1 400 Bad Request
-378: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:56 2019
-379: CONNECT p2-hvc6emwyeptbu-yozn2xi3milqvieo-if-v6exp3-v4.metric.gstatic.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:57 2019
-380: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:44:57 2019
-383: CONNECT tiles.services.mozilla.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:02 2019
-381: Responding HTTP/1.1 400 Bad Request
-382: Responding HTTP/1.1 400 Bad Request
-384: CONNECT www.google.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:04 2019
-385: CONNECT p2-hvc6emwyeptbu-yozn2xi3milqvieo-182265-i1-v6exp3.v4.metric.gstatic.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:07 2019
-386: CONNECT p2-hvc6emwyeptbu-yozn2xi3milqvieo-182265-i2-v6exp3.ds.metric.gstatic.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:07 2019
-387: CONNECT www.douyu.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:07 2019
-388: CONNECT sta-op.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:09 2019
-389: CONNECT passport.douyu.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:10 2019
-390: CONNECT webconf.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:10 2019
-391: CONNECT dotcounter.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:10 2019
-392: CONNECT hm.baidu.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:11 2019
-393: CONNECT apmconfig.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:11 2019
-394: CONNECT dotserver.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:11 2019
-395: CONNECT butterfly.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:11 2019
-396: CONNECT apic.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:12 2019
-397: CONNECT rtbapi.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:12 2019
-398: CONNECT g.wan.douyu.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:12 2019
-399: CONNECT bjfesdk.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:12 2019
-400: CONNECT marketing.douyu.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:12 2019
-401: CONNECT accp.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:13 2019
-402: CONNECT gfs-op.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:14 2019
-403: CONNECT wsproxy.douyu.com:6672 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:14 2019
-404: CONNECT apm.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:14 2019
-405: CONNECT wsproxy.douyu.com:6671 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:14 2019
-406: CONNECT rpic.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:14 2019
-407: CONNECT msg.douyu.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:14 2019
-408: CONNECT wsproxy.douyu.com:6673 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:15 2019
-409: CONNECT uact.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:15 2019
-410: CONNECT msgstatic.douyucdn.cn:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:15 2019
-411: CONNECT static.geetest.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:15 2019
-412: CONNECT wsproxy.douyu.com:6674 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:16 2019
-413: CONNECT wsproxy.douyu.com:6675 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:17 2019
-414: CONNECT dy2.douyu.com:6671 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:17 2019
-415: CONNECT hm.baidu.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:19 2019
-416: CONNECT wsproxy.douyu.com:6671 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:21 2019
-417: CONNECT yt3.ggpht.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:22 2019
-418: CONNECT www.google.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:23 2019
-421: CONNECT adservice.google.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:23 2019
-422: CONNECT wsproxy.douyu.com:6674 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:23 2019
-423: CONNECT p2-gs55t5tg4l7ly-nddrsshejakbelc5-if-v6exp3-v4.metric.gstatic.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:25 2019
-424: CONNECT wsproxy.douyu.com:6673 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:26 2019
-419: Responding HTTP/1.1 400 Bad Request
-420: Responding HTTP/1.1 400 Bad Request
-426: CONNECT wsproxy.douyu.com:6672 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:30 2019
-427: CONNECT broadcast.chat.bilibili.com:7823 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:32 2019
-425: Responding HTTP/1.1 400 Bad Request
-428: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:33 2019
-431: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:34 2019
-432: CONNECT www.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:35 2019
-433: CONNECT wsproxy.douyu.com:6675 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:35 2019
-434: CONNECT dy2.douyu.com:6673 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:36 2019
-435: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:36 2019
-436: CONNECT dy2.douyu.com:6672 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:36 2019
-437: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:37 2019
-438: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:37 2019
-439: CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.99.123 @ Wed Feb 27 12:45:37 2019
+0: GET http://www.cplusplus.com/ HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:49 2019
+0: not in cache
+0: Requesting GET http://www.cplusplus.com/ HTTP/1.1 from www.cplusplus.com
+0: Received HTTP/1.1 200 OK from www.cplusplus.com
+0: cache stores successfully
+0: Responding HTTP/1.1 200 OK
+0: Tunnel closed
+1: GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:51 2019
+2: GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:51 2019
+1: not in cache
+1: Requesting GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from www.cplusplus.com
+2: not in cache
+2: Requesting GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from www.cplusplus.com
+1: Received HTTP/1.1 200 OK from www.cplusplus.com
+1: cache stores successfully
+1: Responding HTTP/1.1 200 OK
+1: Tunnel closed
+2: Received HTTP/1.1 200 OK from www.cplusplus.com
+2: cache stores successfully
+2: Responding HTTP/1.1 200 OK
+2: Tunnel closed
+3: GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:53 2019
+3: not in cache
+3: Requesting GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from www.googletagservices.com
+3: Received HTTP/1.1 200 OK from www.googletagservices.com
+3: cached, but requires validation
+3: Responding HTTP/1.1 200 OK
+3: Tunnel closed
+4: CONNECT securepubads.g.doubleclick.net:443 HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:53 2019
+5: CONNECT adservice.google.com:443 HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:53 2019
+6: POST http://ocsp.pki.goog/GTSGIAG3 HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:53 2019
+6: Requesting POST http://ocsp.pki.goog/GTSGIAG3 HTTP/1.1 from POST http://ocsp.pki.goog/GTSGIAG3 HTTP/1.1
+6: Received HTTP/1.1 200 OK from POST http://ocsp.pki.goog/GTSGIAG3 HTTP/1.1
+6: Responding HTTP/1.1 200 OK
+6: Tunnel closed
+7: GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+8: GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+9: GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+10: GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+11: GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+12: GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+7: not in cache
+7: Requesting GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from www.cplusplus.com
+13: GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+14: GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+8: not in cache
+8: Requesting GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from www.cplusplus.com
+9: not in cache
+9: Requesting GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from www.cplusplus.com
+10: not in cache
+10: Requesting GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from www.cplusplus.com
+15: GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+16: GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+11: not in cache
+11: Requesting GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from www.cplusplus.com
+17: GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+18: GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+19: GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+12: not in cache
+12: Requesting GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from www.cplusplus.com
+13: not in cache
+13: Requesting GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from www.cplusplus.com
+14: not in cache
+14: Requesting GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from www.cplusplus.com
+15: not in cache
+15: Requesting GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from www.cplusplus.com
+16: not in cache
+16: Requesting GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from www.cplusplus.com
+17: not in cache
+17: Requesting GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from www.cplusplus.com
+19: not in cache
+19: Requesting GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from www.cplusplus.com
+18: not in cache
+18: Requesting GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from www.cplusplus.com
+20: GET http://www.cplusplus.com/ HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:54 2019
+0: in cache, but expired at Wed Feb 27 19:04:10 2019
+
+20: Requesting GET http://www.cplusplus.com/ HTTP/1.1 from www.cplusplus.com
+7: Received HTTP/1.1 200 OK from www.cplusplus.com
+7: cache stores successfully
+7: Responding HTTP/1.1 200 OK
+7: Tunnel closed
+8: Received HTTP/1.1 200 OK from www.cplusplus.com
+8: cache stores successfully
+8: Responding HTTP/1.1 200 OK
+8: Tunnel closed
+9: Received HTTP/1.1 200 OK from www.cplusplus.com
+9: cache stores successfully
+9: Responding HTTP/1.1 200 OK
+9: Tunnel closed
+10: Received HTTP/1.1 200 OK from www.cplusplus.com
+10: cache stores successfully
+10: Responding HTTP/1.1 200 OK
+10: Tunnel closed
+11: Received HTTP/1.1 200 OK from www.cplusplus.com
+11: cache stores successfully
+11: Responding HTTP/1.1 200 OK
+11: Tunnel closed
+14: Received HTTP/1.1 200 OK from www.cplusplus.com
+14: cache stores successfully
+14: Responding HTTP/1.1 200 OK
+14: Tunnel closed
+13: Received HTTP/1.1 200 OK from www.cplusplus.com
+13: cache stores successfully
+13: Responding HTTP/1.1 200 OK
+13: Tunnel closed
+16: Received HTTP/1.1 200 OK from www.cplusplus.com
+16: cache stores successfully
+16: Responding HTTP/1.1 200 OK
+16: Tunnel closed
+15: Received HTTP/1.1 200 OK from www.cplusplus.com
+15: cache stores successfully
+15: Responding HTTP/1.1 200 OK
+15: Tunnel closed
+12: Received HTTP/1.1 200 OK from www.cplusplus.com
+12: cache stores successfully
+17: Received HTTP/1.1 200 OK from www.cplusplus.com
+17: cache stores successfully
+17: Responding HTTP/1.1 200 OK
+17: Tunnel closed
+12: Responding HTTP/1.1 200 OK
+12: Tunnel closed
+19: Received HTTP/1.1 200 OK from www.cplusplus.com
+19: cache stores successfully
+19: Responding HTTP/1.1 200 OK
+19: Tunnel closed
+18: Received HTTP/1.1 200 OK from www.cplusplus.com
+18: cache stores successfully
+18: Responding HTTP/1.1 200 OK
+18: Tunnel closed
+20: Received HTTP/1.1 200 OK from www.cplusplus.com
+0: cache stores successfully
+0: Responding HTTP/1.1 200 OK
+0: Tunnel closed
+21: GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:56 2019
+22: GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:56 2019
+1: in cache, but expired at Wed Feb 27 20:04:13 2019
+
+21: Requesting GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from www.cplusplus.com
+2: in cache, but expired at Wed Feb 27 19:04:13 2019
+
+22: Requesting GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from www.cplusplus.com
+21: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+1: 
+1: Responding HTTP/1.1 200 OK
+1: Tunnel closed
+22: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+2: 
+2: Responding HTTP/1.1 200 OK
+2: Tunnel closed
+23: GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+24: GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+25: GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+26: GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+27: GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+8: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+24: Requesting GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from www.cplusplus.com
+7: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+23: Requesting GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from www.cplusplus.com
+9: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+25: Requesting GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from www.cplusplus.com
+3: in cache, requires validation
+27: Requesting GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from www.googletagservices.com
+10: in cache, but expired at Wed Feb 27 19:04:15 2019
+
+26: Requesting GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from www.cplusplus.com
+27: Received HTTP/1.1 304 Not Modified from www.googletagservices.com
+3: 
+3: Responding HTTP/1.1 200 OK
+3: Tunnel closed
+28: GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+29: GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+30: GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+33: GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+32: GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+31: GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+34: GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+35: GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+36: GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:02:59 2019
+11: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+28: Requesting GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from www.cplusplus.com
+12: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+29: Requesting GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from www.cplusplus.com
+13: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+30: Requesting GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from www.cplusplus.com
+15: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+32: Requesting GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from www.cplusplus.com
+14: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+33: Requesting GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from www.cplusplus.com
+16: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+31: Requesting GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from www.cplusplus.com
+17: in cache, but expired at Wed Feb 27 20:04:16 2019
+
+34: Requesting GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from www.cplusplus.com
+19: in cache, but expired at Wed Feb 27 20:04:16 2019
+
+36: Requesting GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from www.cplusplus.com
+18: in cache, but expired at Wed Feb 27 20:04:16 2019
+
+35: Requesting GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from www.cplusplus.com
+37: CONNECT www.google-analytics.com:443 HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:01 2019
+24: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+8: 
+8: Responding HTTP/1.1 200 OK
+8: Tunnel closed
+23: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+7: 
+7: Responding HTTP/1.1 200 OK
+7: Tunnel closed
+25: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+9: 
+9: Responding HTTP/1.1 200 OK
+9: Tunnel closed
+26: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+10: 
+10: Responding HTTP/1.1 200 OK
+10: Tunnel closed
+28: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+11: 
+11: Responding HTTP/1.1 200 OK
+11: Tunnel closed
+29: Received HTTP/1.1 206 Partial Content from www.cplusplus.com
+12: cache stores successfully
+30: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+13: 
+13: Responding HTTP/1.1 200 OK
+13: Tunnel closed
+12: Responding HTTP/1.1 206 Partial Content
+32: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+15: 
+15: Responding HTTP/1.1 200 OK
+15: Tunnel closed
+33: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+14: 
+14: Responding HTTP/1.1 200 OK
+14: Tunnel closed
+31: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+16: 
+16: Responding HTTP/1.1 200 OK
+16: Tunnel closed
+34: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+17: 
+17: Responding HTTP/1.1 200 OK
+17: Tunnel closed
+36: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+19: 
+19: Responding HTTP/1.1 200 OK
+19: Tunnel closed
+35: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+18: 
+18: Responding HTTP/1.1 200 OK
+18: Tunnel closed
+38: CONNECT push.services.mozilla.com:443 HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:07 2019
+39: GET http://detectportal.firefox.com/success.txt HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:08 2019
+39: not in cache
+39: Requesting GET http://detectportal.firefox.com/success.txt HTTP/1.1 from detectportal.firefox.com
+39: Received HTTP/1.1 200 OK from detectportal.firefox.com
+39: not cacheable because response contains "no-store" field
+39: Responding HTTP/1.1 200 OK
+39: Tunnel closed
+40: GET http://www.cplusplus.com/ HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:13 2019
+0: in cache, but expired at Wed Feb 27 20:04:16 2019
+
+40: Requesting GET http://www.cplusplus.com/ HTTP/1.1 from www.cplusplus.com
+40: Received HTTP/1.1 200 OK from www.cplusplus.com
+0: cache stores successfully
+0: Responding HTTP/1.1 200 OK
+0: Tunnel closed
+41: GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:15 2019
+42: GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:15 2019
+1: in cache, but expired at Wed Feb 27 20:04:13 2019
+
+41: Requesting GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from www.cplusplus.com
+2: in cache, but expired at Wed Feb 27 20:04:13 2019
+
+42: Requesting GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from www.cplusplus.com
+41: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+1: 
+1: Responding HTTP/1.1 200 OK
+1: Tunnel closed
+42: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+2: 
+2: Responding HTTP/1.1 200 OK
+2: Tunnel closed
+43: GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:17 2019
+3: in cache, requires validation
+43: Requesting GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from www.googletagservices.com
+43: Received HTTP/1.1 304 Not Modified from www.googletagservices.com
+3: 
+3: Responding HTTP/1.1 200 OK
+3: Tunnel closed
+44: GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:18 2019
+45: GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:18 2019
+46: GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:18 2019
+47: GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:18 2019
+48: GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:18 2019
+49: GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:18 2019
+7: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+44: Requesting GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from www.cplusplus.com
+50: GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:18 2019
+51: GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:18 2019
+8: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+45: Requesting GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from www.cplusplus.com
+52: GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:18 2019
+53: GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:18 2019
+54: GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:18 2019
+10: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+47: Requesting GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from www.cplusplus.com
+11: in cache, but expired at Wed Feb 27 20:04:15 2019
+
+48: Requesting GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from www.cplusplus.com
+55: GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from 10.197.45.142 @ Wed Feb 27 15:03:18 2019

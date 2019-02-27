@@ -210,6 +210,11 @@ void handler(int client_fd, Cache *cache) {
     bool result_cache = cache->validate(request, response, log_message);
     std::cout << "[LOG] request " << log_message
               << " And the UID is: " << request.getUid() << std::endl;
+
+    log_msg << response.getUid() << ": " << log_message << std::endl;
+    logmsg = log_msg.str();
+    logMsg(logmsg);
+    log_msg.str("");
     if (result_cache == true) { // response to client directly
                                 //    only for dubbging, no tryand catch
       response.reconstructHeader(response_header);
@@ -218,11 +223,6 @@ void handler(int client_fd, Cache *cache) {
         std::cout << "[DEBUG] reconstruct header " << response_header
                   << std::endl;
       }
-
-      log_msg << response.getUid() << " " << log_message << std::endl;
-      logmsg = log_msg.str();
-      logMsg(logmsg);
-      log_msg.str("");
 
       // send_multi(client_fd, header);
 
