@@ -1,5 +1,11 @@
+This is the danger log for erss-hwk2.
+In this file, We will list thoughts on possible risks our  program may have.
+
+
 [Cache]
-1. Browser has local cache and even if we close our proxy they are still existed and will send revalidate request.
-2. When reading a cache, some other thread maybe do something to such cache.
-3. Cache-Control field are splited with comma and space, not only comma.
-4. 
+1. Browser has local cache and even if we close our proxy they are still existed and will send revalidate request;
+2. When reading a cache, some other thread maybe do something to such cache;
+3. Cache-Control field are splited with comma and space, not only comma;
+4. Time value are not GMT version;
+5. HTTP Field is sometimes lower-case;
+6. 
