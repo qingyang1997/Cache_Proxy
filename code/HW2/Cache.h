@@ -2,10 +2,14 @@
 #include "Response.h"
 #include <ctime>
 #include <list>
+#include <mutex>
 #include <string>
 #include <unordered_map>
 
+#define CACHESIZE 300
 typedef std::unordered_map<std::string, Response> cachemap;
+
+std::mutex mtx_cache;
 
 class Cache {
 public:
@@ -19,23 +23,32 @@ private:
   bool checkControlHeader(Http &http);
   bool checkControlField(Http &http, const char *header);
   bool checkReValidateField(Http &http);
-  bool findCache(std::string &url);
+
   bool checkExpireHeader(Response &response);
   bool checkPragmaHeader(Http &http);
   double checkFresh(Response &cache_response, int max_age, int extra_age);
-  bool timeCompare(time_t t1, time_t t2);
+
+  bool findCache(std::string &url);
   Response getCache(std::string &url);
   void getCache(std::string &url, Response &cache_response);
+
   void replaceCache(Request &request, Response &response);
 
   time_t getExpireTime(Response &cache_response, int max_age, int extra_age);
   time_t getUTCTime(std::string time);
   time_t addTime(time_t time, int value);
   char *displayTime(time_t time);
+
   void eraseAllSubStr(std::string &mainStr, const std::string &toErase);
+
   void addValidateHeader(Request &request, Response &response);
   void removeValidateHeader(Request &request);
-  void writeLog(const char *info);
+
+  void evictCache();
+  void refreshLRU(std::string);
+
+  std::list<std::string> lru_queue;
+
   cachemap caches;
 };
 
@@ -100,13 +113,16 @@ bool Cache::validate(Request &request, Response &cache_response,
         max_age = std::min(
             max_age, std::stoi(cache_response.getCacheControlValue("max-age")));
       }
+      if (max_age == 0) {
+        message = "in cache, requires validation";
+        addValidateHeader(request, cache_response);
+        return false;
+      }
 
       std::cout << "[CACHES] Uid " << request.getUid()
-                << "Request's max-age is " << max_age << std::endl;
-      std::cout << "[CACHES] Uid " << request.getUid()
-                << "Cache-Response's expire time is:  " << std::endl;
+                << " Request's max-age is " << max_age << std::endl;
       double fresh_diff = checkFresh(cache_response, max_age, extra_age);
-      if (max_age == 0 || fresh_diff > 0) {
+      if (fresh_diff > 0) {
         time_t expire_time = getExpireTime(cache_response, max_age, extra_age);
         message =
             "in cache, but expired at " + std::string(displayTime(expire_time));
@@ -151,9 +167,8 @@ bool Cache::validate(Request &request, Response &cache_response,
       double fresh_diff = checkFresh(cache_response, max_age, extra_age);
       if (max_age == 0 || fresh_diff > 0) {
         time_t expire_time = getExpireTime(cache_response, max_age, extra_age);
-        tm *gmtm = gmtime(&expire_time);
-        char *dt = asctime(gmtm);
-        message = "in cache, but expired at " + std::string(dt);
+        message =
+            "in cache, but expired at " + std::string(displayTime(expire_time));
         return false;
       } else {
         message = "in cache, valid";
@@ -223,9 +238,8 @@ void Cache::update(Request &request, Response &response, std::string &message) {
           return;
         } else {
           time_t expire_time = getExpireTime(response, max_age, 0);
-          tm *gmtm = gmtime(&expire_time);
-          char *dt = asctime(gmtm);
-          message = "cached, expires at " + std::string(dt);
+          message =
+              "cached, expires at " + std::string(displayTime(expire_time));
           replaceCache(request, response);
           return;
         }
@@ -253,20 +267,24 @@ bool Cache::findCache(std::string &url) {
 }
 
 Response Cache::getCache(std::string &url) {
+  std::lock_guard<std::mutex> lck(mtx_cache);
   std::unordered_map<std::string, Response>::iterator iter = caches.find(url);
-
   return iter->second;
 }
 
 void Cache::getCache(std::string &url, Response &cache_response) {
+  std::lock_guard<std::mutex> lck(mtx_cache);
   std::unordered_map<std::string, Response>::iterator iter = caches.find(url);
-
   cache_response = iter->second;
 }
 
 void Cache::replaceCache(Request &request, Response &response) {
+  std::lock_guard<std::mutex> lck(mtx_cache);
   std::string host_name = request.getUrl();
+  if (lru_queue.size() > CACHESIZE)
+    evictCache();
   caches[host_name] = response;
+  refreshLRU(host_name);
   std::cout << "[CACHES] Replacing Caches for Request UID: " << request.getUid()
             << std::endl;
   std::cout << "[CACHES] After replacing Caches: " << std::endl;
@@ -297,8 +315,6 @@ bool Cache::checkPragmaHeader(Http &http) {
   return http.checkExistsHeader("Pragma");
 }
 
-void Cache::writeLog(const char *info) { return; }
-
 time_t Cache::getExpireTime(Response &cache_response, int max_age,
                             int extra_age) {
   std::string date_header = "Date";
@@ -319,11 +335,12 @@ double Cache::checkFresh(Response &cache_response, int max_age, int extra_age) {
             << std::endl;
   std::cout << "[CACHES] Cache Expire Time is " << displayTime(cache_time)
             << std::endl;
+  std::cout << "[CACHES] Cache Real Date is "
+            << cache_response.getValue(date_header)
+            << " and max_age = " << max_age << std::endl;
   double tinterval = difftime(request_time, expire_time);
   return tinterval;
 }
-
-bool Cache::timeCompare(time_t t1, time_t t2) {}
 
 void Cache::eraseAllSubStr(std::string &mainStr, const std::string &toErase) {
   size_t pos = std::string::npos;
@@ -334,13 +351,15 @@ void Cache::eraseAllSubStr(std::string &mainStr, const std::string &toErase) {
     mainStr.erase(pos, toErase.length());
   }
 }
-time_t Cache::getUTCTime(std::string time) {
-  struct tm tm;
-  eraseAllSubStr(time, " GMT");
-  // std::cout << "[CACHES] Cache Time is " << time << std::endl;
-  strptime(time.c_str(), "%a, %d %b %Y %H:%M:%S", &tm);
+time_t Cache::getUTCTime(std::string time_k) {
+  std::lock_guard<std::mutex> lck(mtx_cache);
+  tm tm;
+  eraseAllSubStr(time_k, " GMT");
+  std::cout << "[CACHES] Cache Time is " << time_k << std::endl;
+  strptime(time_k.c_str(), "%a, %d %b %Y %H:%M:%S", &tm);
   time_t t = mktime(&tm);
-  // std::cout << "[CACHES] Cache Time is " << displayTime(t) << std::endl;
+  std::cout << "[CACHES] Cache Time is " << displayTime(t) << std::endl;
+
   return t;
 }
 
@@ -371,4 +390,21 @@ char *Cache::displayTime(time_t time) {
   tm *gmtm = localtime(&time);
   char *dt = asctime(gmtm);
   return dt;
+}
+
+void Cache::evictCache() {
+  std::string last = lru_queue.back();
+  std::cout << "[LRU] EVICT CACHE URL : " << last << std::endl;
+  lru_queue.pop_back();
+  caches.erase(last);
+}
+void Cache::refreshLRU(std::string url) {
+  std::cout << "[LRU] CACHE SIZE IS : " << lru_queue.size() << std::endl;
+  std::cout << "[LRU] REFRESH : " << url << std::endl;
+  if (findCache(url)) {
+    lru_queue.remove(url);
+    lru_queue.push_front(url);
+  } else {
+    lru_queue.push_front(url);
+  }
 }

@@ -1,140 +1,295 @@
-0: GET http://movenowthinklater.com/ HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:46 2019
-0: Requesting GET http://movenowthinklater.com/ HTTP/1.1 from movenowthinklater.com
-0: Received HTTP/1.1 200 OK from movenowthinklater.com
+0: GET http://www.cplusplus.com/ HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:14 2019
+0: Requesting GET http://www.cplusplus.com/ HTTP/1.1 from www.cplusplus.com
+0: Received HTTP/1.1 200 OK from www.cplusplus.com
 0: cache stores successfully
 0: Responding HTTP/1.1 200 OK
 0: Tunnel closed
-1: GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:46 2019
-1: Requesting GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from www.rafaelrozendaal.com
-1: Received HTTP/1.1 200 OK from www.rafaelrozendaal.com
+1: GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:14 2019
+2: GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:14 2019
+1: Requesting GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from www.cplusplus.com
+2: Requesting GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from www.cplusplus.com
+1: Received HTTP/1.1 200 OK from www.cplusplus.com
 1: cache stores successfully
 1: Responding HTTP/1.1 200 OK
 1: Tunnel closed
-2: GET http://www.newrafael.com/favicon.ico HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-3: CONNECT www.google-analytics.com:443 HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-4: GET http://movenowthinklater.com/html/ HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-4: Requesting GET http://movenowthinklater.com/html/ HTTP/1.1 from movenowthinklater.com
-2: Requesting GET http://www.newrafael.com/favicon.ico HTTP/1.1 from www.newrafael.com
-4: Received HTTP/1.1 200 OK from movenowthinklater.com
-4: cache stores successfully
-4: Responding HTTP/1.1 200 OK
-4: Tunnel closed
-2: Received HTTP/1.1 301 Moved Permanently from www.newrafael.com
+2: Received HTTP/1.1 200 OK from www.cplusplus.com
 2: cache stores successfully
-2: Responding HTTP/1.1 301 Moved Permanently
-5: GET http://movenowthinklater.com/html/libs/buzz.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-6: GET http://movenowthinklater.com/html/Config.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-7: GET http://movenowthinklater.com/html/CheckersGame.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-9: GET http://movenowthinklater.com/html/rf/util/RandomUtil.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-8: GET http://movenowthinklater.com/html/libs/easeljs-0.4.2.min.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-10: GET http://movenowthinklater.com/html/Checker.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-11: CONNECT www.newrafael.com:443 HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-12: GET http://movenowthinklater.com/html/Board.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-13: GET http://movenowthinklater.com/html/main.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-14: GET http://movenowthinklater.com/html/Game.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-15: GET http://movenowthinklater.com/html/SoundController.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-5: Requesting GET http://movenowthinklater.com/html/libs/buzz.js HTTP/1.1 from movenowthinklater.com
-7: Requesting GET http://movenowthinklater.com/html/CheckersGame.js HTTP/1.1 from movenowthinklater.com
-9: Requesting GET http://movenowthinklater.com/html/rf/util/RandomUtil.js HTTP/1.1 from movenowthinklater.com
-8: Requesting GET http://movenowthinklater.com/html/libs/easeljs-0.4.2.min.js HTTP/1.1 from movenowthinklater.com
-10: Requesting GET http://movenowthinklater.com/html/Checker.js HTTP/1.1 from movenowthinklater.com
-12: Requesting GET http://movenowthinklater.com/html/Board.js HTTP/1.1 from movenowthinklater.com
-13: Requesting GET http://movenowthinklater.com/html/main.js HTTP/1.1 from movenowthinklater.com
-14: Requesting GET http://movenowthinklater.com/html/Game.js HTTP/1.1 from movenowthinklater.com
-6: Requesting GET http://movenowthinklater.com/html/Config.js HTTP/1.1 from movenowthinklater.com
-15: Requesting GET http://movenowthinklater.com/html/SoundController.js HTTP/1.1 from movenowthinklater.com
-9: Received HTTP/1.1 200 OK from movenowthinklater.com
-9: cache stores successfully
-9: Responding HTTP/1.1 200 OK
-9: Tunnel closed
-8: Received HTTP/1.1 200 OK from movenowthinklater.com
-8: cache stores successfully
-8: Responding HTTP/1.1 200 OK
-8: Tunnel closed
-5: Received HTTP/1.1 200 OK from movenowthinklater.com
-5: cache stores successfully
-5: Responding HTTP/1.1 200 OK
-5: Tunnel closed
-6: Received HTTP/1.1 200 OK from movenowthinklater.com
-6: cache stores successfully
-6: Responding HTTP/1.1 200 OK
-6: Tunnel closed
-13: Received HTTP/1.1 200 OK from movenowthinklater.com
-13: cache stores successfully
-13: Responding HTTP/1.1 200 OK
-13: Tunnel closed
-7: Received HTTP/1.1 200 OK from movenowthinklater.com
+2: Responding HTTP/1.1 200 OK
+2: Tunnel closed
+3: GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:14 2019
+3: Requesting GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from www.googletagservices.com
+3: Received HTTP/1.1 200 OK from www.googletagservices.com
+3: cached, but requires validation
+3: Responding HTTP/1.1 200 OK
+3: Tunnel closed
+5: CONNECT adservice.google.com:443 HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:14 2019
+6: GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+7: GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+8: GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+9: GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+10: GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+11: GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+6: Requesting GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from www.cplusplus.com
+7: Requesting GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from www.cplusplus.com
+12: GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+13: GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+14: GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+15: GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+16: GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+17: GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+8: Requesting GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from www.cplusplus.com
+9: Requesting GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from www.cplusplus.com
+10: Requesting GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from www.cplusplus.com
+11: Requesting GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from www.cplusplus.com
+18: GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+7: Received HTTP/1.1 200 OK from www.cplusplus.com
 7: cache stores successfully
 7: Responding HTTP/1.1 200 OK
 7: Tunnel closed
-10: Received HTTP/1.1 200 OK from movenowthinklater.com
-14: Received HTTP/1.1 200 OK from movenowthinklater.com
+12: Requesting GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from www.cplusplus.com
+15: Requesting GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from www.cplusplus.com
+14: Requesting GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from www.cplusplus.com
+13: Requesting GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from www.cplusplus.com
+16: Requesting GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from www.cplusplus.com
+8: Received HTTP/1.1 200 OK from www.cplusplus.com
+8: cache stores successfully
+8: Responding HTTP/1.1 200 OK
+8: Tunnel closed
+17: Requesting GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from www.cplusplus.com
+9: Received HTTP/1.1 200 OK from www.cplusplus.com
+9: cache stores successfully
+9: Responding HTTP/1.1 200 OK
+9: Tunnel closed
+10: Received HTTP/1.1 200 OK from www.cplusplus.com
 10: cache stores successfully
-14: cache stores successfully
 10: Responding HTTP/1.1 200 OK
 10: Tunnel closed
-14: Responding HTTP/1.1 200 OK
-14: Tunnel closed
-12: Received HTTP/1.1 200 OK from movenowthinklater.com
-15: Received HTTP/1.1 200 OK from movenowthinklater.com
+6: Received HTTP/1.1 200 OK from www.cplusplus.com
+6: cache stores successfully
+6: Responding HTTP/1.1 200 OK
+6: Tunnel closed
+18: Requesting GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from www.cplusplus.com
+12: Received HTTP/1.1 200 OK from www.cplusplus.com
 12: cache stores successfully
-15: cache stores successfully
 12: Responding HTTP/1.1 200 OK
 12: Tunnel closed
+15: Received HTTP/1.1 200 OK from www.cplusplus.com
+15: cache stores successfully
 15: Responding HTTP/1.1 200 OK
 15: Tunnel closed
-16: GET http://movenowthinklater.com/html/sounds/checkers-sound-1.ogg HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-17: GET http://movenowthinklater.com/html/sounds/checkers-sound-2.ogg HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
-16: Requesting GET http://movenowthinklater.com/html/sounds/checkers-sound-1.ogg HTTP/1.1 from movenowthinklater.com
-16: Received HTTP/1.1 206 Partial Content from movenowthinklater.com
+14: Received HTTP/1.1 200 OK from www.cplusplus.com
+14: cache stores successfully
+14: Responding HTTP/1.1 200 OK
+14: Tunnel closed
+13: Received HTTP/1.1 200 OK from www.cplusplus.com
+13: cache stores successfully
+13: Responding HTTP/1.1 200 OK
+13: Tunnel closed
+16: Received HTTP/1.1 200 OK from www.cplusplus.com
 16: cache stores successfully
-16: Responding HTTP/1.1 206 Partial Content
-18: CONNECT getpocket.cdn.mozilla.net:443 HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:48 2019
-17: Requesting GET http://movenowthinklater.com/html/sounds/checkers-sound-2.ogg HTTP/1.1 from movenowthinklater.com
-17: Received HTTP/1.1 206 Partial Content from movenowthinklater.com
+16: Responding HTTP/1.1 200 OK
+16: Tunnel closed
+17: Received HTTP/1.1 200 OK from www.cplusplus.com
 17: cache stores successfully
-17: Responding HTTP/1.1 206 Partial Content
-20: CONNECT tiles.services.mozilla.com:443 HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:49 2019
-19: CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:49 2019
-21: CONNECT tiles.services.mozilla.com:443 HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:49 2019
-22: GET http://movenowthinklater.com/ HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:49 2019
-22: Requesting GET http://movenowthinklater.com/ HTTP/1.1 from movenowthinklater.com
-22: Received HTTP/1.1 304 Not Modified from movenowthinklater.com
-0: 
+17: Responding HTTP/1.1 200 OK
+17: Tunnel closed
+18: Received HTTP/1.1 200 OK from www.cplusplus.com
+18: cache stores successfully
+18: Responding HTTP/1.1 200 OK
+18: Tunnel closed
+11: Received HTTP/1.1 200 OK from www.cplusplus.com
+11: cache stores successfully
+11: Responding HTTP/1.1 200 OK
+11: Tunnel closed
+19: CONNECT www.google-analytics.com:443 HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:15 2019
+20: GET http://www.cplusplus.com/ HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+20: Requesting GET http://www.cplusplus.com/ HTTP/1.1 from www.cplusplus.com
+20: Received HTTP/1.1 200 OK from www.cplusplus.com
+0: cache stores successfully
 0: Responding HTTP/1.1 200 OK
 0: Tunnel closed
-23: GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:49 2019
-23: Requesting GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from www.rafaelrozendaal.com
-23: Received HTTP/1.1 200 OK from www.rafaelrozendaal.com
-1: cached, but requires validation
+21: GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+22: GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+21: Requesting GET http://www.cplusplus.com/v321/main.css HTTP/1.1 from www.cplusplus.com
+22: Requesting GET http://www.cplusplus.com/v321/main.js HTTP/1.1 from www.cplusplus.com
+21: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+1: 
 1: Responding HTTP/1.1 200 OK
 1: Tunnel closed
-24: GET http://movenowthinklater.com/ HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:54 2019
-24: Requesting GET http://movenowthinklater.com/ HTTP/1.1 from movenowthinklater.com
-24: Received HTTP/1.1 304 Not Modified from movenowthinklater.com
-0: 
-0: Responding HTTP/1.1 200 OK
-0: Tunnel closed
-27: GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:54 2019
-27: Requesting GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from www.rafaelrozendaal.com
-27: Received HTTP/1.1 200 OK from www.rafaelrozendaal.com
-1: cached, but requires validation
-1: Responding HTTP/1.1 200 OK
-1: Tunnel closed
-28: Responding HTTP/1.1 400 Bad Request
-25: Responding HTTP/1.1 400 Bad Request
-26: Responding HTTP/1.1 400 Bad Request
-29: Responding HTTP/1.1 400 Bad Request
-30: GET http://movenowthinklater.com/ HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:58:00 2019
-0 in cache, valid
-0: Responding HTTP/1.1 200 OK
-0: Tunnel closed
-31: GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:58:01 2019
-1 in cache, valid
-1: Responding HTTP/1.1 200 OK
-1: Tunnel closed
-32: GET http://www.newrafael.com/favicon.ico HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:58:01 2019
-33: GET http://movenowthinklater.com/html/ HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:58:01 2019
-4 in cache, valid
-4: Responding HTTP/1.1 200 OK
-4: Tunnel closed
+22: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+2: 
+2: Responding HTTP/1.1 200 OK
+2: Tunnel closed
+23: GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+23: Requesting GET http://www.googletagservices.com/tag/js/gpt.js HTTP/1.1 from www.googletagservices.com
+23: Received HTTP/1.1 304 Not Modified from www.googletagservices.com
+3: 
+3: Responding HTTP/1.1 200 OK
+3: Tunnel closed
+25: GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+24: GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+26: GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+27: GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+28: GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+29: GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+30: GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+31: GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+32: GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+34: GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+33: GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+35: GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+36: GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:17 2019
+24: Requesting GET http://www.cplusplus.com/ico/social_googleplus.png HTTP/1.1 from www.cplusplus.com
+25: Requesting GET http://www.cplusplus.com/img/welcometo.gif HTTP/1.1 from www.cplusplus.com
+26: Requesting GET http://www.cplusplus.com/ico/social_facebook.png HTTP/1.1 from www.cplusplus.com
+27: Requesting GET http://www.cplusplus.com/ico/social_twitter.png HTTP/1.1 from www.cplusplus.com
+28: Requesting GET http://www.cplusplus.com/v321/bgv.png HTTP/1.1 from www.cplusplus.com
+29: Requesting GET http://www.cplusplus.com/v321/bgh.png HTTP/1.1 from www.cplusplus.com
+30: Requesting GET http://www.cplusplus.com/v321/bg.png HTTP/1.1 from www.cplusplus.com
+31: Requesting GET http://www.cplusplus.com/img/bg_info.gif HTTP/1.1 from www.cplusplus.com
+32: Requesting GET http://www.cplusplus.com/img/bg_src.gif HTTP/1.1 from www.cplusplus.com
+34: Requesting GET http://www.cplusplus.com/img/bg_ref.gif HTTP/1.1 from www.cplusplus.com
+35: Requesting GET http://www.cplusplus.com/img/bg_art.gif HTTP/1.1 from www.cplusplus.com
+33: Requesting GET http://www.cplusplus.com/img/bg_doc.gif HTTP/1.1 from www.cplusplus.com
+25: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+6: 
+6: Responding HTTP/1.1 200 OK
+6: Tunnel closed
+24: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+7: 
+7: Responding HTTP/1.1 200 OK
+7: Tunnel closed
+26: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+8: 
+8: Responding HTTP/1.1 200 OK
+8: Tunnel closed
+27: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+9: 
+9: Responding HTTP/1.1 200 OK
+9: Tunnel closed
+36: Requesting GET http://www.cplusplus.com/img/bg_sch.gif HTTP/1.1 from www.cplusplus.com
+28: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+10: 
+10: Responding HTTP/1.1 200 OK
+10: Tunnel closed
+29: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+12: 
+12: Responding HTTP/1.1 200 OK
+12: Tunnel closed
+30: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+11: 
+31: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+13: 
+13: Responding HTTP/1.1 200 OK
+13: Tunnel closed
+11: Responding HTTP/1.1 200 OK
+11: Tunnel closed
+32: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+14: 
+14: Responding HTTP/1.1 200 OK
+14: Tunnel closed
+35: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+17: 
+17: Responding HTTP/1.1 200 OK
+17: Tunnel closed
+34: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+15: 
+15: Responding HTTP/1.1 200 OK
+15: Tunnel closed
+33: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+16: 
+16: Responding HTTP/1.1 200 OK
+16: Tunnel closed
+36: Received HTTP/1.1 304 Not Modified from www.cplusplus.com
+18: 
+18: Responding HTTP/1.1 200 OK
+18: Tunnel closed
+4: Responding HTTP/1.1 400 Bad Request
+37: GET http://rabihyounes.com/ HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+37: Requesting GET http://rabihyounes.com/ HTTP/1.1 from rabihyounes.com
+37: Received HTTP/1.1 200 OK from rabihyounes.com
+37: cached, but requires validation
+37: Responding HTTP/1.1 200 OK
+37: Tunnel closed
+38: GET http://rabihyounes.com/css/style.css HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+39: GET http://rabihyounes.com/scripts/jquery.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+40: GET http://rabihyounes.com/scripts/jquery.min.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+41: GET http://rabihyounes.com/scripts/cycle.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+42: GET http://rabihyounes.com/scripts/jquery.prettyPhoto.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+43: GET http://rabihyounes.com/scripts/custom.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+44: GET http://rabihyounes.com/scripts/cufon.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+45: GET http://rabihyounes.com/scripts/cufon.font.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+46: GET http://rabihyounes.com/scripts/vcard.packed.js HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+47: GET http://rabihyounes.com/css/prettyPhoto.css HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+48: GET http://rabihyounes.com/css/pop.css HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+38: Requesting GET http://rabihyounes.com/css/style.css HTTP/1.1 from rabihyounes.com
+40: Requesting GET http://rabihyounes.com/scripts/jquery.min.js HTTP/1.1 from rabihyounes.com
+41: Requesting GET http://rabihyounes.com/scripts/cycle.js HTTP/1.1 from rabihyounes.com
+42: Requesting GET http://rabihyounes.com/scripts/jquery.prettyPhoto.js HTTP/1.1 from rabihyounes.com
+47: Requesting GET http://rabihyounes.com/css/prettyPhoto.css HTTP/1.1 from rabihyounes.com
+39: Requesting GET http://rabihyounes.com/scripts/jquery.js HTTP/1.1 from rabihyounes.com
+43: Requesting GET http://rabihyounes.com/scripts/custom.js HTTP/1.1 from rabihyounes.com
+44: Requesting GET http://rabihyounes.com/scripts/cufon.js HTTP/1.1 from rabihyounes.com
+45: Requesting GET http://rabihyounes.com/scripts/cufon.font.js HTTP/1.1 from rabihyounes.com
+46: Requesting GET http://rabihyounes.com/scripts/vcard.packed.js HTTP/1.1 from rabihyounes.com
+48: Requesting GET http://rabihyounes.com/css/pop.css HTTP/1.1 from rabihyounes.com
+38: Received HTTP/1.1 200 OK from rabihyounes.com
+38: cached, but requires validation
+38: Responding HTTP/1.1 200 OK
+38: Tunnel closed
+41: Received HTTP/1.1 200 OK from rabihyounes.com
+41: cached, but requires validation
+41: Responding HTTP/1.1 200 OK
+41: Tunnel closed
+42: Received HTTP/1.1 200 OK from rabihyounes.com
+42: cached, but requires validation
+42: Responding HTTP/1.1 200 OK
+42: Tunnel closed
+47: Received HTTP/1.1 200 OK from rabihyounes.com
+47: cached, but requires validation
+47: Responding HTTP/1.1 200 OK
+47: Tunnel closed
+48: Received HTTP/1.1 200 OK from rabihyounes.com
+48: cached, but requires validation
+48: Responding HTTP/1.1 200 OK
+48: Tunnel closed
+44: Received HTTP/1.1 200 OK from rabihyounes.com
+44: cached, but requires validation
+44: Responding HTTP/1.1 200 OK
+44: Tunnel closed
+43: Received HTTP/1.1 200 OK from rabihyounes.com
+43: cached, but requires validation
+43: Responding HTTP/1.1 200 OK
+43: Tunnel closed
+46: Received HTTP/1.1 200 OK from rabihyounes.com
+46: cached, but requires validation
+46: Responding HTTP/1.1 200 OK
+46: Tunnel closed
+45: Received HTTP/1.1 200 OK from rabihyounes.com
+45: cached, but requires validation
+45: Responding HTTP/1.1 200 OK
+45: Tunnel closed
+49: GET http://rabihyounes.com/css/reset.css HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+40: Received HTTP/1.1 200 OK from rabihyounes.com
+40: cached, but requires validation
+40: Responding HTTP/1.1 200 OK
+40: Tunnel closed
+39: Received HTTP/1.1 200 OK from rabihyounes.com
+39: cached, but requires validation
+39: Responding HTTP/1.1 200 OK
+39: Tunnel closed
+49: Requesting GET http://rabihyounes.com/css/reset.css HTTP/1.1 from rabihyounes.com
+49: Received HTTP/1.1 200 OK from rabihyounes.com
+49: cached, but requires validation
+49: Responding HTTP/1.1 200 OK
+49: Tunnel closed
+50: GET http://rabihyounes.com/images/vcard/my-pic.jpg HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+51: GET http://rabihyounes.com/images/networks/gscholar.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+52: GET http://rabihyounes.com/images/networks/linkedin.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+53: GET http://rabihyounes.com/images/networks/facebook.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+54: GET http://rabihyounes.com/images/networks/twitter.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+55: GET http://rabihyounes.com/images/vcard/wrapper.jpg HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+56: GET http://rabihyounes.com/images/vcard/wrapper.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+57: GET http://rabihyounes.com/images/vcard/logo.png HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+58: GET http://rabihyounes.com/images/vcard/hr.gif HTTP/1.1 from 10.197.45.142 @ Tue Feb 26 22:03:20 2019
+50: Requesting GET http://rabihyounes.com/images/vcard/my-pic.jpg HTTP/1.1 from rabihyounes.com
