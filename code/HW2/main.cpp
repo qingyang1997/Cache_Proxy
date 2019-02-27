@@ -61,16 +61,11 @@ void readMulti(int read_fd, std::string &body,
     temp.resize(total_bytes);
     if (recv_bytes == 0) {
       if (errno == EINTR) {
-        // client exits
         throw ErrorException("client exit");
       }
-      // if (content_length > 0 && total_bytes < content_length) {
-      //   throw ErrorException("not finish");
-      // }
     }
     if ((content_length > 0 && total_bytes >= content_length) ||
         (recv_bytes == 0)) {
-      // finished receiving
       break;
     }
   }
@@ -128,8 +123,8 @@ void handler(int client_fd, Cache *cache) {
   struct sockaddr_in sa;
   socklen_t len = sizeof(sa);
   getpeername(client_fd, (struct sockaddr *)&sa, &len);
-  // CCLog("[SEND]on sending data %d\n", ntohs(sa.sin_port));
   std::string peername(inet_ntoa(*(struct in_addr *)&sa.sin_addr.s_addr));
+
   try {
     std::lock_guard<std::mutex> lck(mtx);
     request.setUid(uid);
@@ -174,11 +169,8 @@ void handler(int client_fd, Cache *cache) {
   std::string logmsg = log_msg.str();
   logMsg(logmsg);
   log_msg.str("");
-  // only for dubugging
-  if (DEBUG == 1) {
-    std::cout << "[DEBUG] parsed header " << request_header << std::endl;
-  }
-  //
+  std::cout << "[DEBUG] parsed header " << request_header << std::endl;
+
   response.setUid(request.getUid());
 
   SocketInfo server_socket_info;
@@ -187,7 +179,6 @@ void handler(int client_fd, Cache *cache) {
   std::string port = request.getPort();
   server_socket_info.port = port.c_str();
 
-  // std::cout << "[INFO] CONNECTING SERVER" << std::endl;
   try {
     server_socket_info.clientSetup();
   } catch (ErrorException &e) {
@@ -195,23 +186,18 @@ void handler(int client_fd, Cache *cache) {
     return;
   }
 
-  // std::cout << "[DEBUG] setup successfully" << std::endl;
   try {
     server_socket_info.connectSocket();
   } catch (ErrorException &e) {
     std::cout << e.what() << std::endl;
     return;
   }
-  //  std::cout << "[DEBUG] connect successfully" << std::endl;
 
   if (request.getMethod() == "GET") {
     std::cout << "[INFO] GET" << std::endl;
     std::string log_message = "";
     bool result_cache = cache->validate(request, response, log_message);
-    std::cout << "[LOG] request " << log_message
-              << " And the UID is: " << request.getUid() << std::endl;
     if (result_cache == true) { // response to client directly
-                                //    only for dubbging, no tryand catch
       response.reconstructHeader(response_header);
       if (DEBUG == 1) {
         std::cout << "[DEBUG] body received successfully" << std::endl;
@@ -224,15 +210,14 @@ void handler(int client_fd, Cache *cache) {
       logMsg(logmsg);
       log_msg.str("");
 
-      // send_multi(client_fd, header);
-
       status = send(client_fd, &response_header[0], response_header.size(), 0);
       if (status == -1) {
         std::cout << "[ERROR] send to client failed" << std::endl;
         return;
       }
-      std::cout << "[DEBUG] send header successfully" << std::endl;
-      //      send_multi(client_fd, response.get_body());
+      if (DEBUG == 1) {
+        std::cout << "[DEBUG] send header successfully" << std::endl;
+      }
 
       std::string body = response.getBody();
       status = send(client_fd, &body[0], body.size(), 0);
@@ -240,7 +225,9 @@ void handler(int client_fd, Cache *cache) {
         std::cout << "[ERROR] send to client failed" << std::endl;
         return;
       }
-      std::cout << "[DEBUG] send body successfully" << std::endl;
+      if (DEBUG == 1) {
+        std::cout << "[DEBUG] send body successfully" << std::endl;
+      }
       log_msg << response.getUid() << ": Responding " << response.getFirstLine()
               << std::endl;
       logmsg = log_msg.str();
@@ -256,10 +243,10 @@ void handler(int client_fd, Cache *cache) {
     } else { // send to server
 
       request.reconstructHeader(request_header);
-
-      std::cout << "[DASHABI] Uid " << request.getUid()
-                << " request before send " << request_header << std::endl;
-
+      if (DEBUG) {
+        std::cout << "[DASHABI] Uid " << request.getUid()
+                  << " request before send " << request_header << std::endl;
+      }
       log_msg << request.getUid() << ": Requesting " << request.getFirstLine()
               << " from " << request.getHost() << std::endl;
       logmsg = log_msg.str();
@@ -271,8 +258,9 @@ void handler(int client_fd, Cache *cache) {
       if (status == -1) {
         std::cout << "send failed" << std::endl;
       }
-
-      std::cout << "[DEBUG] send to server successfully" << std::endl;
+      if (DEBUG == 1) {
+        std::cout << "[DEBUG] send to server successfully" << std::endl;
+      }
       try {
         readHeader(server_socket_info.socket_fd, response);
       } catch (ErrorException &e) {
@@ -286,10 +274,7 @@ void handler(int client_fd, Cache *cache) {
         return;
       }
 
-      // // only for dubugging
       std::string key = "Content-Length";
-      // std::cout << "[DEBUG] Content-Lenght " << response.getValue(key)
-      //           << std::endl;
 
       if (response.getBody().size() != 0) { // check other readMulti
         try {
@@ -317,28 +302,31 @@ void handler(int client_fd, Cache *cache) {
       logmsg = log_msg.str();
       logMsg(logmsg);
       log_msg.str("");
-
-      std::cout << "[DEBUG] body received successfully" << std::endl;
+      if (DEBUG == 1) {
+        std::cout << "[DEBUG] body received successfully" << std::endl;
+      }
       log_message = "";
       cache->update(request, response,
                     log_message); // only for dubbging, no try and catch
-      std::cout << "[LOG] response " << log_message << std::endl;
+
       response.reconstructHeader(response_header); // no exception
-      std::cout << "[DEBUG] reconstruct header " << response_header
-                << std::endl;
+      if (DEBUG == 1) {
+        std::cout << "[DEBUG] reconstruct header " << response_header
+                  << std::endl;
+      }
       log_msg << response.getUid() << ": " << log_message << std::endl;
       logmsg = log_msg.str();
       logMsg(logmsg);
       log_msg.str("");
 
-      // send_multi(client_fd, header);
       status = send(client_fd, &response_header[0], response_header.size(), 0);
       if (status == -1) {
         std::cout << "[ERROR] send to client failed" << std::endl;
         return;
       }
-      std::cout << "[DEBUG] send header successfully" << std::endl;
-      //      send_multi(client_fd, response.get_body());
+      if (DEBUG == 1) {
+        std::cout << "[DEBUG] send header successfully" << std::endl;
+      }
 
       std::string body = response.getBody();
       status = send(client_fd, &body[0], body.size(), 0);
@@ -346,7 +334,9 @@ void handler(int client_fd, Cache *cache) {
         std::cout << "[ERROR] send to client failed" << std::endl;
         return;
       }
-      std::cout << "[DEBUG] send body successfully" << std::endl;
+      if (DEBUG == 1) {
+        std::cout << "[DEBUG] send body successfully" << std::endl;
+      }
       log_msg << response.getUid() << ": Responding " << response.getFirstLine()
               << std::endl;
       logmsg = log_msg.str();
@@ -362,12 +352,16 @@ void handler(int client_fd, Cache *cache) {
 
   } // if method == GET
   else if (request.getMethod() == "POST") {
-    std::cout << "[INFO] POST" << std::endl;
+    if (DEBUG == 1) {
+      std::cout << "[INFO] POST" << std::endl;
+    }
 
     // only for debugging
     std::string key = "Content-Length";
-    std::cout << "[DEBUG] Request Content-Lenght " << request.getValue(key)
-              << std::endl;
+    if (DEBUG == 1) {
+      std::cout << "[DEBUG] Request Content-Lenght " << request.getValue(key)
+                << std::endl;
+    }
 
     if (atoi(request.getValue(key).c_str()) > (int)request.getBody().size()) {
       try {
@@ -387,9 +381,9 @@ void handler(int client_fd, Cache *cache) {
         return;
       }
     }
-
-    std::cout << "[DEBUG] send to server successfully" << std::endl;
-    //      send_multi(server_socket_info.socket_fd, header);
+    if (DEBUG == 1) {
+      std::cout << "[DEBUG] send to server successfully" << std::endl;
+    }
     status = send(server_socket_info.socket_fd, &request_header[0],
                   request_header.size(), 0);
     if (status == -1) {
@@ -410,7 +404,6 @@ void handler(int client_fd, Cache *cache) {
     logMsg(logmsg);
     log_msg.str("");
 
-    std::cout << "[DEBUG] waiting for response" << std::endl;
     try {
       readHeader(server_socket_info.socket_fd, response);
     } catch (ErrorException &e) {
@@ -426,9 +419,6 @@ void handler(int client_fd, Cache *cache) {
       std::cout << e.what() << std::endl;
       return;
     }
-
-    std::cout << "[DEBUG] Response Content-Lenght " << response.getValue(key)
-              << std::endl;
 
     if (response.getBody().size() != 0) {
       try {
@@ -453,22 +443,21 @@ void handler(int client_fd, Cache *cache) {
     logmsg = log_msg.str();
     logMsg(logmsg);
     log_msg.str("");
-
-    std::cout << "[DEBUG] body received successfully" << std::endl;
+    if (DEBUG == 1) {
+      std::cout << "[DEBUG] body received successfully" << std::endl;
+    }
 
     std::string response_header = "";
     response.reconstructHeader(response_header);
-    std::cout << "[DEBUG] reconstruct header " << response_header << std::endl;
-    // send_multi(client_fd, header);
 
     status = send(client_fd, &response_header[0], response_header.size(), 0);
     if (status == -1) {
       std::cout << "[ERROR] send to client failed" << std::endl;
       return;
     }
-
-    std::cout << "[DEBUG] send header successfully" << std::endl;
-    //      send_multi(client_fd, response.get_body());
+    if (DEBUG == 1) {
+      std::cout << "[DEBUG] send header successfully" << std::endl;
+    }
     body = response.getBody();
     status = send(client_fd, &body[0], body.size(), 0);
     if (status == -1) {
@@ -574,6 +563,7 @@ int main(int argc, char **argv) {
     std::cout << e.what() << std::endl;
     return EXIT_FAILURE;
   }
+
   try {
     socket_info.wait();
   } // Bind & Listen
@@ -584,12 +574,10 @@ int main(int argc, char **argv) {
 
   while (1) {
     int client_fd;
-
     try {
       socket_info.acc(&client_fd);
     } // Bind & Listen
     catch (ErrorException &e) {
-      std::cout << "exit main" << std::endl;
       std::cout << e.what() << std::endl;
       //      return EXIT_FAILURE;
     }
