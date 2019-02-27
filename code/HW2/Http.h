@@ -184,9 +184,14 @@ void Http::parseCacheControl() { // strong guarantee
   while (getline(ss, tmp, ',')) { // seperate Cache-Control by comma
     size_t comma = tmp.find('=');
     if (comma != tmp.npos) {
-      Cache_Control[tmp.substr(0, comma)] = tmp.substr(comma + 1);
+      std::string key = tmp.substr(0, comma);
+      key.erase(remove_if(key.begin(), key.end(), isspace), key.end());
+      Cache_Control[key] = tmp.substr(comma + 1);
+
     } else {
-      Cache_Control[tmp] = "";
+      std::string key = tmp;
+      key.erase(remove_if(key.begin(), key.end(), isspace), key.end());
+      Cache_Control[key] = "";
     }
   }
 }
