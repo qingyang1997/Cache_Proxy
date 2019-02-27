@@ -8,4 +8,7 @@ In this file, We will list thoughts on possible risks our  program may have.
 3. Cache-Control field are splited with comma and space, not only comma;
 4. Time value are not GMT version;
 5. HTTP Field is sometimes lower-case;
-6. 
+6. Both Request and Response Header may contain "no-store";
+7. Storing too much cache is wasteful and we need a evicting method;
+8. Calling copy constructor may cause failure of copying;
+9. 
