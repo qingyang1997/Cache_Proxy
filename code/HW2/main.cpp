@@ -197,6 +197,11 @@ void handler(int client_fd, Cache *cache) {
     std::cout << "[INFO] GET" << std::endl;
     std::string log_message = "";
     bool result_cache = cache->validate(request, response, log_message);
+
+    log_msg << response.getUid() << ": " << log_message << std::endl;
+    logmsg = log_msg.str();
+    logMsg(logmsg);
+    log_msg.str("");
     if (result_cache == true) { // response to client directly
       response.reconstructHeader(response_header);
       if (DEBUG == 1) {
@@ -204,11 +209,6 @@ void handler(int client_fd, Cache *cache) {
         std::cout << "[DEBUG] reconstruct header " << response_header
                   << std::endl;
       }
-
-      log_msg << response.getUid() << " " << log_message << std::endl;
-      logmsg = log_msg.str();
-      logMsg(logmsg);
-      log_msg.str("");
 
       status = send(client_fd, &response_header[0], response_header.size(), 0);
       if (status == -1) {
