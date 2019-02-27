@@ -9,7 +9,7 @@
 #define HEADER_LENGTH 8192
 #define DEBUG 1
 
-std::ofstream log;
+std::ofstream LOG;
 std::mutex mtx;
 int uid = 0;
 
@@ -99,7 +99,7 @@ void exchangeData(int client_fd, int destination_fd) {
 
 void logMsg(std::string &msg) {
   std::lock_guard<std::mutex> lck(mtx);
-  log << msg;
+  LOG << msg;
 }
 
 void handler(int client_fd, Cache *cache) {
@@ -282,7 +282,7 @@ void handler(int client_fd, Cache *cache) {
           return;
         }
       }
-
+      Response new_res = response;
       log_msg << request.getUid() << ": Received " << response.getFirstLine()
               << " from " << request.getHost() << std::endl;
       logmsg = log_msg.str();
@@ -509,7 +509,7 @@ void handler(int client_fd, Cache *cache) {
 int main(int argc, char **argv) {
 
   try {
-    log.open("proxy.log", std::ostream::out);
+    LOG.open("proxy.log", std::ostream::out);
   } catch (std::exception &e) {
     std::cout << e.what() << std::endl;
     return EXIT_FAILURE;

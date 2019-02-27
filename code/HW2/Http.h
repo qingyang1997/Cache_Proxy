@@ -15,7 +15,9 @@ private:
 public:
   Http() {}
   virtual ~Http(){};
-  Http(const Http &rhs) { // strong guarantee
+  Http(const Http &rhs)
+      : uid(rhs.uid), first_line(rhs.first_line), header_pair(rhs.header_pair),
+        Cache_Control(rhs.Cache_Control), body(rhs.body) { // strong guarantee
   }
   Http &operator=(const Http &rhs) { // strong guarantee
     if (this == &rhs) {

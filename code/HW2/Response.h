@@ -16,6 +16,7 @@ public:
   Response() {}
   virtual ~Response() {}
   Response(const Response &rhs) : Http(rhs) { // strong guarantee
+    first_line_msg = rhs.first_line_msg;
   }
 
   Response &operator=(const Response &rhs) { // strong guarantee
