@@ -122,7 +122,7 @@ bool Cache::validate(Request &request, Response &cache_response,
       std::cout << "[CACHES] Uid " << request.getUid()
                 << " Request's max-age is " << max_age << std::endl;
       double fresh_diff = checkFresh(cache_response, max_age, extra_age);
-      if (fresh_diff > 0) {
+      if (fresh_diff > 3600) {
         time_t expire_time = getExpireTime(cache_response, max_age, extra_age);
         message =
             "in cache, but expired at " + std::string(displayTime(expire_time));
@@ -154,7 +154,7 @@ bool Cache::validate(Request &request, Response &cache_response,
       time_t expire_time = std::min(expire_time_response, expire_time_request);
       time_t request_time = time(0);
       double fresh_diff = difftime(request_time, expire_time);
-      if (fresh_diff > 0) {
+      if (fresh_diff > 3600) {
         message =
             "in cache, but expired at " + std::string(displayTime(expire_time));
         addValidateHeader(request, cache_response);
@@ -165,7 +165,7 @@ bool Cache::validate(Request &request, Response &cache_response,
       }
     } else {
       double fresh_diff = checkFresh(cache_response, max_age, extra_age);
-      if (max_age == 0 || fresh_diff > 0) {
+      if (max_age == 0 || fresh_diff > 3600) {
         time_t expire_time = getExpireTime(cache_response, max_age, extra_age);
         message =
             "in cache, but expired at " + std::string(displayTime(expire_time));

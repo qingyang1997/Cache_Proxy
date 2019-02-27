@@ -6,7 +6,7 @@ appropriate, respond with the cached copy of a resource rather than re-fetching 
 
 ## Summary
 
-**For Details, please checkout our [spreadsheet]()**
+**For Details, please checkout our [Requirement Spreadsheet](https://gitlab.oit.duke.edu/wl177/erss-hwk2-aw343-wl177/src/SpreadSheet.xlsx)**
 
 ### Proxy
 1. Support GET
@@ -29,8 +29,8 @@ appropriate, respond with the cached copy of a resource rather than re-fetching 
 
 ## Design
 
-###
-<div align=center><img  src="pic/er.png"/></div>
+### Cache Validate Procedure
+<div align=center><img  src="src/cache_validate.jpg"/></div>
 
 ### Flow Chart
 <div align=center><img  src="pic/flowchart.png"/></div>
