@@ -6,7 +6,7 @@ appropriate, respond with the cached copy of a resource rather than re-fetching 
 
 ## Summary
 
-**For Details, please checkout our [Requirement Spreadsheet](https://gitlab.oit.duke.edu/wl177/erss-hwk2-aw343-wl177/src/SpreadSheet.xlsx)**
+**For Details, please checkout our [Requirement Spreadsheet](https://gitlab.oit.duke.edu/wl177/erss-hwk2-aw343-wl177/blob/master/src/SpreadSheet.xlsx)**
 
 ### Proxy
 1. Support GET
