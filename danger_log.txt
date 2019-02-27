@@ -1,0 +1,5 @@
+[Cache]
+1. Browser has local cache and even if we close our proxy they are still existed and will send revalidate request.
+2. When reading a cache, some other thread maybe do something to such cache.
+3. Cache-Control field are splited with comma and space, not only comma.
+4. 
