@@ -11,6 +11,19 @@
 #include <sys/socket.h>
 #include <unistd.h>
 // using namespace std;
+
+class Fd {
+public:
+  int fd;
+  Fd() {}
+  Fd(int r_fd) : fd(r_fd) {}
+  ~Fd() {
+    if (fd != 0) {
+      close(fd);
+    }
+  }
+};
+
 class SocketInfo {
 public:
   int socket_fd;
@@ -76,6 +89,7 @@ void SocketInfo::acc(int *client_connection_fd) {
   *client_connection_fd =
       accept(socket_fd, (struct sockaddr *)&socket_addr, &socket_addr_len);
   if (*client_connection_fd == -1) {
+    perror("accept ");
     throw ErrorException("accept failure");
   } // if
 }

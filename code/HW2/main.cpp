@@ -79,10 +79,17 @@ void readMulti(int read_fd, std::string &body,
 
 void exchangeData(int client_fd, int destination_fd) {
   std::string temp;
-  temp.resize(8192);
+  temp.resize(65536);
   ssize_t recv_bytes;
-  recv_bytes = recv(client_fd, &temp[0], 8192, 0);
-  temp.resize(recv_bytes);
+  ssize_t total_bytes = 0;
+  recv_bytes = recv(client_fd, &temp[0], 65536, 0);
+  total_bytes = recv_bytes;
+  while (recv_bytes == 65536) {
+    temp.resize(total_bytes + 65536);
+    recv_bytes = recv(client_fd, &temp[total_bytes], 65536, 0);
+    total_bytes += recv_bytes;
+  }
+  temp.resize(total_bytes);
   if (DEBUG == 1) {
     std::cout << "[INFO] client " << client_fd << " sent " << temp.size()
               << std::endl;
@@ -90,7 +97,11 @@ void exchangeData(int client_fd, int destination_fd) {
   if (temp.size() == 0) {
     throw ErrorException("read nothing");
   }
-  send(destination_fd, &temp.data()[0], temp.size(), 0);
+  int status = send(destination_fd, &temp.data()[0], temp.size(), 0);
+  if (status == -1) {
+    throw ErrorException("send failed");
+    return;
+  }
   if (DEBUG == 1) {
     std::cout << "[INFO] proxy sent " << temp.size() << " to " << destination_fd
               << std::endl;
@@ -112,6 +123,8 @@ void handler(int client_fd, Cache *cache) {
   std::string bad_gateway = "HTTP/1.1 502 Bad Gateway\r\n\r\n";
   int status = 0;
 
+  Fd fd(client_fd);
+
   struct sockaddr_in sa;
   socklen_t len = sizeof(sa);
   getpeername(client_fd, (struct sockaddr *)&sa, &len);
@@ -130,17 +143,28 @@ void handler(int client_fd, Cache *cache) {
     readHeader(client_fd, request);
   } catch (ErrorException &e) {
     std::cout << e.what() << std::endl;
-    send(client_fd, &bad_request[0], bad_request.size(), 0);
+
+    status = send(client_fd, &bad_request[0], bad_request.size(), 0);
+    if (status == -1) {
+      std::cout << "send to cliend failed" << std::endl;
+      return;
+    }
     log_msg << request.getUid() << ": Responding "
             << "HTTP/1.1 400 Bad Request" << std::endl;
     std::string logmsg = log_msg.str();
     logMsg(logmsg);
     log_msg.str("");
     return;
+  } catch (std::exception &e) {
+    std::cout << e.what() << std::endl;
+    return;
   }
   try {
     request.reconstructHeader(request_header);
   } catch (ErrorException &e) {
+    std::cout << e.what() << std::endl;
+    return;
+  } catch (std::exception &e) {
     std::cout << e.what() << std::endl;
     return;
   }
@@ -168,7 +192,6 @@ void handler(int client_fd, Cache *cache) {
     server_socket_info.clientSetup();
   } catch (ErrorException &e) {
     std::cout << e.what() << std::endl;
-    //    close(client_fd);
     return;
   }
 
@@ -177,7 +200,6 @@ void handler(int client_fd, Cache *cache) {
     server_socket_info.connectSocket();
   } catch (ErrorException &e) {
     std::cout << e.what() << std::endl;
-    //    close(client_fd);
     return;
   }
   //  std::cout << "[DEBUG] connect successfully" << std::endl;
@@ -244,8 +266,12 @@ void handler(int client_fd, Cache *cache) {
       logMsg(logmsg);
       log_msg.str("");
 
-      send(server_socket_info.socket_fd, &request_header[0],
-           request_header.size(), 0);
+      status = send(server_socket_info.socket_fd, &request_header[0],
+                    request_header.size(), 0);
+      if (status == -1) {
+        std::cout << "send failed" << std::endl;
+      }
+
       std::cout << "[DEBUG] send to server successfully" << std::endl;
       try {
         readHeader(server_socket_info.socket_fd, response);
@@ -279,6 +305,9 @@ void handler(int client_fd, Cache *cache) {
           std::string logmsg = log_msg.str();
           logMsg(logmsg);
           log_msg.str("");
+          return;
+        } catch (std::exception &e) {
+          std::cout << e.what() << std::endl;
           return;
         }
       }
@@ -353,6 +382,9 @@ void handler(int client_fd, Cache *cache) {
         logMsg(logmsg);
         log_msg.str("");
         return;
+      } catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+        return;
       }
     }
 
@@ -390,6 +422,9 @@ void handler(int client_fd, Cache *cache) {
       logMsg(logmsg);
       log_msg.str("");
       return;
+    } catch (std::exception &e) {
+      std::cout << e.what() << std::endl;
+      return;
     }
 
     std::cout << "[DEBUG] Response Content-Lenght " << response.getValue(key)
@@ -407,6 +442,9 @@ void handler(int client_fd, Cache *cache) {
         std::string logmsg = log_msg.str();
         logMsg(logmsg);
         log_msg.str("");
+        return;
+      } catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
         return;
       }
     }
@@ -452,7 +490,11 @@ void handler(int client_fd, Cache *cache) {
     }
   } else if (request.getMethod() == "CONNECT") {
     std::string message = "HTTP/1.1 200 OK\r\n\r\n";
-    send(client_fd, message.c_str(), message.size(), 0);
+    status = send(client_fd, message.c_str(), message.size(), 0);
+    if (status == -1) {
+      std::cout << "send to client failed" << std::endl;
+      return;
+    }
     std::cout << "[INFO] CONNECT RESPONSE TO CLIENT" << std::endl;
     while (1) {
       std::cout << "[INFO] CONNECT" << std::endl;
@@ -486,6 +528,9 @@ void handler(int client_fd, Cache *cache) {
           std::cout << "[ERROR] exchange data failed" << std::endl;
           std::cout << e.what() << std::endl;
           break;
+        } catch (std::exception &e) {
+          std::cout << e.what() << std::endl;
+          return;
         }
 
       } else {
@@ -497,11 +542,14 @@ void handler(int client_fd, Cache *cache) {
           std::cout << "[ERROR] exchange data failed" << std::endl;
           std::cout << e.what() << std::endl;
           break;
+        } catch (std::exception &e) {
+          std::cout << e.what() << std::endl;
+          return;
         }
       }
 
     } // while
-    // close(client_fd);
+    //    close(client_fd);
     // close(server_socket_info.socket_fd);
   } // if CONNECT
 }
@@ -543,16 +591,17 @@ int main(int argc, char **argv) {
     catch (ErrorException &e) {
       std::cout << "exit main" << std::endl;
       std::cout << e.what() << std::endl;
-      return EXIT_FAILURE;
+      //      return EXIT_FAILURE;
     }
-
-    try { // delete after finish
-      std::thread th(handler, client_fd, &cache);
-      th.detach();
-    } catch (...) {
-      std::cout << "[NOOOOOOOOOO]" << std::endl;
+    if (client_fd > 0) {
+      try { // delete after finish
+        std::thread th(handler, client_fd, &cache);
+        th.detach();
+      } catch (...) {
+        std::cout << "[NOOOOOOOOOO]" << std::endl;
+      }
     }
   }
-
+  std::cout << "NOOOOOOOO" << std::endl;
   return EXIT_SUCCESS;
 }
