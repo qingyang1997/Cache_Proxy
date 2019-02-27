@@ -24,6 +24,7 @@ public:
   Request() {}
   virtual ~Request(){};
   Request(const Request &rhs) : Http(rhs) { // strong guarantee
+    first_line_msg = rhs.first_line_msg;
   }
   Request &operator=(const Request &rhs) {
     if (this == &rhs) {

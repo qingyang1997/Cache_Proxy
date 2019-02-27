@@ -1,0 +1,140 @@
+0: GET http://movenowthinklater.com/ HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:46 2019
+0: Requesting GET http://movenowthinklater.com/ HTTP/1.1 from movenowthinklater.com
+0: Received HTTP/1.1 200 OK from movenowthinklater.com
+0: cache stores successfully
+0: Responding HTTP/1.1 200 OK
+0: Tunnel closed
+1: GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:46 2019
+1: Requesting GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from www.rafaelrozendaal.com
+1: Received HTTP/1.1 200 OK from www.rafaelrozendaal.com
+1: cache stores successfully
+1: Responding HTTP/1.1 200 OK
+1: Tunnel closed
+2: GET http://www.newrafael.com/favicon.ico HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+3: CONNECT www.google-analytics.com:443 HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+4: GET http://movenowthinklater.com/html/ HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+4: Requesting GET http://movenowthinklater.com/html/ HTTP/1.1 from movenowthinklater.com
+2: Requesting GET http://www.newrafael.com/favicon.ico HTTP/1.1 from www.newrafael.com
+4: Received HTTP/1.1 200 OK from movenowthinklater.com
+4: cache stores successfully
+4: Responding HTTP/1.1 200 OK
+4: Tunnel closed
+2: Received HTTP/1.1 301 Moved Permanently from www.newrafael.com
+2: cache stores successfully
+2: Responding HTTP/1.1 301 Moved Permanently
+5: GET http://movenowthinklater.com/html/libs/buzz.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+6: GET http://movenowthinklater.com/html/Config.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+7: GET http://movenowthinklater.com/html/CheckersGame.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+9: GET http://movenowthinklater.com/html/rf/util/RandomUtil.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+8: GET http://movenowthinklater.com/html/libs/easeljs-0.4.2.min.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+10: GET http://movenowthinklater.com/html/Checker.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+11: CONNECT www.newrafael.com:443 HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+12: GET http://movenowthinklater.com/html/Board.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+13: GET http://movenowthinklater.com/html/main.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+14: GET http://movenowthinklater.com/html/Game.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+15: GET http://movenowthinklater.com/html/SoundController.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+5: Requesting GET http://movenowthinklater.com/html/libs/buzz.js HTTP/1.1 from movenowthinklater.com
+7: Requesting GET http://movenowthinklater.com/html/CheckersGame.js HTTP/1.1 from movenowthinklater.com
+9: Requesting GET http://movenowthinklater.com/html/rf/util/RandomUtil.js HTTP/1.1 from movenowthinklater.com
+8: Requesting GET http://movenowthinklater.com/html/libs/easeljs-0.4.2.min.js HTTP/1.1 from movenowthinklater.com
+10: Requesting GET http://movenowthinklater.com/html/Checker.js HTTP/1.1 from movenowthinklater.com
+12: Requesting GET http://movenowthinklater.com/html/Board.js HTTP/1.1 from movenowthinklater.com
+13: Requesting GET http://movenowthinklater.com/html/main.js HTTP/1.1 from movenowthinklater.com
+14: Requesting GET http://movenowthinklater.com/html/Game.js HTTP/1.1 from movenowthinklater.com
+6: Requesting GET http://movenowthinklater.com/html/Config.js HTTP/1.1 from movenowthinklater.com
+15: Requesting GET http://movenowthinklater.com/html/SoundController.js HTTP/1.1 from movenowthinklater.com
+9: Received HTTP/1.1 200 OK from movenowthinklater.com
+9: cache stores successfully
+9: Responding HTTP/1.1 200 OK
+9: Tunnel closed
+8: Received HTTP/1.1 200 OK from movenowthinklater.com
+8: cache stores successfully
+8: Responding HTTP/1.1 200 OK
+8: Tunnel closed
+5: Received HTTP/1.1 200 OK from movenowthinklater.com
+5: cache stores successfully
+5: Responding HTTP/1.1 200 OK
+5: Tunnel closed
+6: Received HTTP/1.1 200 OK from movenowthinklater.com
+6: cache stores successfully
+6: Responding HTTP/1.1 200 OK
+6: Tunnel closed
+13: Received HTTP/1.1 200 OK from movenowthinklater.com
+13: cache stores successfully
+13: Responding HTTP/1.1 200 OK
+13: Tunnel closed
+7: Received HTTP/1.1 200 OK from movenowthinklater.com
+7: cache stores successfully
+7: Responding HTTP/1.1 200 OK
+7: Tunnel closed
+10: Received HTTP/1.1 200 OK from movenowthinklater.com
+14: Received HTTP/1.1 200 OK from movenowthinklater.com
+10: cache stores successfully
+14: cache stores successfully
+10: Responding HTTP/1.1 200 OK
+10: Tunnel closed
+14: Responding HTTP/1.1 200 OK
+14: Tunnel closed
+12: Received HTTP/1.1 200 OK from movenowthinklater.com
+15: Received HTTP/1.1 200 OK from movenowthinklater.com
+12: cache stores successfully
+15: cache stores successfully
+12: Responding HTTP/1.1 200 OK
+12: Tunnel closed
+15: Responding HTTP/1.1 200 OK
+15: Tunnel closed
+16: GET http://movenowthinklater.com/html/sounds/checkers-sound-1.ogg HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+17: GET http://movenowthinklater.com/html/sounds/checkers-sound-2.ogg HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:47 2019
+16: Requesting GET http://movenowthinklater.com/html/sounds/checkers-sound-1.ogg HTTP/1.1 from movenowthinklater.com
+16: Received HTTP/1.1 206 Partial Content from movenowthinklater.com
+16: cache stores successfully
+16: Responding HTTP/1.1 206 Partial Content
+18: CONNECT getpocket.cdn.mozilla.net:443 HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:48 2019
+17: Requesting GET http://movenowthinklater.com/html/sounds/checkers-sound-2.ogg HTTP/1.1 from movenowthinklater.com
+17: Received HTTP/1.1 206 Partial Content from movenowthinklater.com
+17: cache stores successfully
+17: Responding HTTP/1.1 206 Partial Content
+20: CONNECT tiles.services.mozilla.com:443 HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:49 2019
+19: CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:49 2019
+21: CONNECT tiles.services.mozilla.com:443 HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:49 2019
+22: GET http://movenowthinklater.com/ HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:49 2019
+22: Requesting GET http://movenowthinklater.com/ HTTP/1.1 from movenowthinklater.com
+22: Received HTTP/1.1 304 Not Modified from movenowthinklater.com
+0: 
+0: Responding HTTP/1.1 200 OK
+0: Tunnel closed
+23: GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:49 2019
+23: Requesting GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from www.rafaelrozendaal.com
+23: Received HTTP/1.1 200 OK from www.rafaelrozendaal.com
+1: cached, but requires validation
+1: Responding HTTP/1.1 200 OK
+1: Tunnel closed
+24: GET http://movenowthinklater.com/ HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:54 2019
+24: Requesting GET http://movenowthinklater.com/ HTTP/1.1 from movenowthinklater.com
+24: Received HTTP/1.1 304 Not Modified from movenowthinklater.com
+0: 
+0: Responding HTTP/1.1 200 OK
+0: Tunnel closed
+27: GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:57:54 2019
+27: Requesting GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from www.rafaelrozendaal.com
+27: Received HTTP/1.1 200 OK from www.rafaelrozendaal.com
+1: cached, but requires validation
+1: Responding HTTP/1.1 200 OK
+1: Tunnel closed
+28: Responding HTTP/1.1 400 Bad Request
+25: Responding HTTP/1.1 400 Bad Request
+26: Responding HTTP/1.1 400 Bad Request
+29: Responding HTTP/1.1 400 Bad Request
+30: GET http://movenowthinklater.com/ HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:58:00 2019
+0 in cache, valid
+0: Responding HTTP/1.1 200 OK
+0: Tunnel closed
+31: GET http://www.rafaelrozendaal.com/template/lib/swfobject.js HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:58:01 2019
+1 in cache, valid
+1: Responding HTTP/1.1 200 OK
+1: Tunnel closed
+32: GET http://www.newrafael.com/favicon.ico HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:58:01 2019
+33: GET http://movenowthinklater.com/html/ HTTP/1.1 from 174.109.97.7 @ Tue Feb 26 19:58:01 2019
+4 in cache, valid
+4: Responding HTTP/1.1 200 OK
+4: Tunnel closed
