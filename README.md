@@ -1,4 +1,4 @@
-	# erss-hwk2-aw343-wl177
+# erss-hwk2-aw343-wl177
 
 This project is for ECE-568 Homework2
 For this assignment you will be writing an http proxy – a server whose job it is to forward requests to the origin server on behalf of the client. Your proxy will cache responses, and, when
@@ -46,7 +46,10 @@ These instructions will get you a basic idea of how to run the web
 
 ### Run the Cache-Proxy
 1. git clone https://gitlab.oit.duke.edu/wl177/erss-hwk2-aw343-wl177.git
-2. 
+2. cd erss-hw2-aw343-wl177
+3. sudo docker-compose up
+4. use your browser to check
+5. exam the /var/log/erss/proxy.log file
 
 
 
