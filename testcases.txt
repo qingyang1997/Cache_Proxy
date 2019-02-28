@@ -18,6 +18,9 @@ NOTE: I have also included each cache's validate hints with (NOTE);
 404: www.ilove568.com
 
 NOTE: For the following, you can use netcat to send request to the proxy
+400: echo -e "GGGGGGGGGGGGGGGET http://bilibili" | nc <your_proxy_address> 12345
+502: Open and listen to a port (nc -l <your_port>), Then
+echo -e "GET <server_address>:<your_port> HTTP/1.1\r\n\r\n" | nc <your_proxy_address> 12345
 
 3. Concurrent Request
 Open many tags to test website which contains many data
