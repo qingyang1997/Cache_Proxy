@@ -1,6 +1,16 @@
 This is the danger log for erss-hwk2.
-In this file, We will list thoughts on possible risks our  program may have.
+In this file, We will list thoughts on possible risks our program may have.
 
+[Proxy]
+1. The proxy may receive some malformed requests or responses.
+2. The body of requests or responses can be very huge and the size of it may exceed the max_size of the container.
+3. We designed a socket class and a fd class which have destructors releasing resources automacatically when these classes go out of the scope.
+4. When the proxy meets some situations which it cannot handle, it will print error messages and exit gracefully.
+5. When the proxy need to do some changes to those resources already existed, we use a temperary object to avoid modifying in case of exceptions.
+especially in the copy constructor, the assignment operator and the function updates the body.
+6. The client may send bad requests.
+7. Sometimes the file descriptor may be too much.
+8. Different protocols like FTP from user.
 
 [Cache]
 1. Browser has local cache and even if we close our proxy they are still existed and will send revalidate request;
@@ -11,12 +21,5 @@ In this file, We will list thoughts on possible risks our  program may have.
 6. Both Request and Response Header may contain "no-store";
 7. Storing too much cache is wasteful and we need a evicting method;
 8. Calling copy constructor may cause failure of copying;
-9. 
 
-[Other]
-1. The proxy may receive some malformed requests or responses.
-2. The body of requests or responses can be very huge and the size of it may exceed the max_size of the container.
-3. We designed a socket class and a fd class which have destructors releasing resources automacatically when these classes go out of the scope.
-4. When the proxy meets some situations which it cannot handle, it will print error messages and exit gracefully.
-5. When the proxy need to do some changes to those resources already existed, we use a temperary object to avoid modifying in case of exceptions.
-especially in the copy constructor, the assignment operator and the function updates the body.
+
