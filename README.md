@@ -35,14 +35,9 @@ appropriate, respond with the cached copy of a resource rather than re-fetching 
 ### Cache Validate Procedure
 <div align=center><img  src="src/cache_validate.jpg"/></div>
 
-### Cache Update Procedure
-<div align=center><img  src="src/cache_update.jpg"/></div>
 
 ## Getting Started
-These instructions will get you a basic idea of how to run the web
-
-### Docker Installation
-
+These instructions will get you a basic idea of how to run
 
 ### Run the Cache-Proxy
 1. git clone https://gitlab.oit.duke.edu/wl177/erss-hwk2-aw343-wl177.git
@@ -50,12 +45,6 @@ These instructions will get you a basic idea of how to run the web
 3. sudo docker-compose up
 4. use your browser to check
 5. exam the /var/log/erss/proxy.log file
-
-
-
-## Function Introduction
-
-
 
 
 ## Reference
