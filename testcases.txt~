@@ -1,0 +1,151 @@
+This file
+
+
+1. testing for normal cases
+We use netcat and web browser for testing the
+common cases.
+
+To use netcat, simply type in a terminal:
+echo -e "GET <URL> HTTP/1.1\r\n\r\n" | nc <proxy_address> 12345
+
+and the proxy will return the server's response.
+
+For using browser, simply try some websites.
+
+Here are some websits we used for testing:
+
+Some smaller ones:
+(the first one is not HTTPS and the rests are)
+http://www.addall.com/New/submitNew.cgi?query=0470128720&type=ISBN&location=10000&state=NC&dispCurr=USD
+
+https://www.baidu.com/
+
+https://google.com/
+
+Some larger ones:
+http://sina.com.cn/
+
+http://www.sohu.com/
+
+http://www.espn.com/
+
+https://www.youtube.com/
+
+we have tried to use both ESPN and YouTube to watch videos, both works fine.
+
+Note, for testing POST method, we use website like:
+http://so.csdn.net/so/search/
+
+and type something to search in their search box, then the searching results
+will be returned normally. Also, netcat can be used to post data to a specific
+website like the above one.
+
+
+For testing, we have added many information. If the user want to view those
+information, simply make sure that DEBUG and CACHE_DEBUG macros in the
+http_proxy.cpp are set to 1, and do something like:
+
+./proxy > output
+
+Then the results can be reviewed in output file, the information includes the
+request and response data, results or parsing, creation and close of connections,
+creation and exit of threads and so forth.
+
+
+
+
+
+2. testing for error cases:
+
+2.1 testing for 400 and 404
+For 400 Bad Request, we use netcat to do the testing. Simply do like:
+echo -e "GsET http://s999" | nc <proxy_address> 12345
+
+where GsET http://s999 is the incorrect request information, the proxy will return
+something like:
+
+	HTTP/1.1 400 Bad Request
+	Content-Length: 36
+	Content-Type: text/plain
+
+	Invalid request, incorrect format...
+
+The proxy will handle many cases where the request format is incorrect, the correct
+format for the first request line should be:
+
+<menthod><space><URL><"HTTP/1.1"><"\r\n\r\n">
+
+
+For 404 Not Found, brower is a good choice, we simply type:
+www.s.com
+
+in our browser and the browser will return:
+
+Cannot find server: www.s.com
+
+which indicates that our proxy actually send 404 response to the browser.
+
+
+2.2 testing for 502, 504
+
+For testing 502 Bad Gateway, we use netcat. Firstly, use our host (can be the
+same as proxy) to open and listen to a port like:
+
+nc -l 8080
+
+and then we open our proxy and another remote client, on the client side,
+we do like:
+
+echo -e "GET <server_address>:8080 HTTP/1.1\r\n\r\n" | nc <proxy_address> 12345
+
+One the server side, there will be "GET <server_address>:8080 HTTP/1.1" displayed,
+and the server may now response. As a test, the server can response something
+like "foo bar", and what the client will receive will be something like:
+
+	HTTP/1.1 502 Bad Gateway
+	Content-Length: 58
+	Content-Type: text/plain
+
+
+The proxy also handles with 504 Gateway Timeout where recv() or send() calls
+return something less than 0. The client will receive a response like:
+
+	HTTP/1.1 504 Gateway Timeout
+	Content-Length: 54
+	Content-Type: text/plain
+
+
+
+3. testing for concurrent request and under pressure
+
+For this part of testing, the user may want to turn off both DEBUG and CACHE_DEBUG
+flags as there may be tons of information printed out and it may considerable delay
+the proxy from handling the traffic.
+
+We opened many tags on the browser and most of them will try to access to a website
+with large amount of data (like sina, sohu and espn). As in our implementation, each
+request will be handled by a single thread, hence a relatively large amount of threads
+will be created and the loading time for increase.
+
+For comparison, the proxy also supports single thread, simply set MULTI_THREAD macro
+to 0, and the proxy will run in a single process. By using multiple threads, the
+loading time will be reduced greatly, especially when creating many tabs or loading
+websites like ESPN and sina.
+
+
+
+4. cache and others
+
+To check the testing results or monitoring the traffic, DEBUG macro can be set to 1.
+The request received and responses returned will be printed.
+
+Also, for checking caching status of proxy, set CACHE_DEBUG macro to 1. There will be
+information about response stored to the cache, fetched from cache, caching status
+and so forth. The user of this program may also set the maximum number of responses
+he/she wants the cache to store by changing CACHE_SIZE macro value.
+
+Also, we tried to browse http://sports.sina.com.cn/nba/ and other websites, after first
+time loading complete, we refreshed the page and could see the responding time becomes
+much less.
+
+

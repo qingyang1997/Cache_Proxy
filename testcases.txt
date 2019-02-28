@@ -1,0 +1,24 @@
+This file is written for possible testcases:
+
+1. Normal Websites
+https://www.baidu.com/
+https://google.com/
+www.taobao.com (many images)
+bilibili.tv (videos)
+https://www.youtube.com/ (videos)
+http://httpbin.org/forms/post (posts)
+http://www.artsci.utoronto.ca/futurestudents (Response's max-age is 0)
+http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx (Chunked image)
+
+NOTE: I have also included each cache's validate hints with (NOTE);
+
+
+2. Special cases:
+
+404: www.ilove568.com
+
+NOTE: For the following, you can use netcat to send request to the proxy
+
+3. Concurrent Request
+Open many tags to test website which contains many data
+

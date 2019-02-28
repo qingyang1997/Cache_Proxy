@@ -43,7 +43,7 @@ These instructions will get you a basic idea of how to run
 1. git clone https://gitlab.oit.duke.edu/wl177/erss-hwk2-aw343-wl177.git
 2. cd erss-hw2-aw343-wl177
 3. sudo docker-compose up
-4. use your browser to check
+4. use your browser(**Expected Firefox**) to check
 5. exam the /var/log/erss/proxy.log file
 
 
