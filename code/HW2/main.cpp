@@ -198,7 +198,7 @@ void handler(int client_fd, Cache *cache) {
     std::string log_message = "";
     bool result_cache = cache->validate(request, response, log_message);
 
-    log_msg << response.getUid() << ": " << log_message << std::endl;
+    log_msg << request.getUid() << ": " << log_message << std::endl;
     logmsg = log_msg.str();
     logMsg(logmsg);
     log_msg.str("");
@@ -228,14 +228,14 @@ void handler(int client_fd, Cache *cache) {
       if (DEBUG == 1) {
         std::cout << "[DEBUG] send body successfully" << std::endl;
       }
-      log_msg << response.getUid() << ": Responding " << response.getFirstLine()
+      log_msg << request.getUid() << ": Responding " << response.getFirstLine()
               << std::endl;
       logmsg = log_msg.str();
       logMsg(logmsg);
       log_msg.str("");
 
       if (response.getStatusNum() == "200") {
-        log_msg << response.getUid() << ": Tunnel closed" << std::endl;
+        log_msg << request.getUid() << ": Tunnel closed" << std::endl;
         logmsg = log_msg.str();
         logMsg(logmsg);
         log_msg.str("");
@@ -314,7 +314,7 @@ void handler(int client_fd, Cache *cache) {
         std::cout << "[DEBUG] reconstruct header " << response_header
                   << std::endl;
       }
-      log_msg << response.getUid() << ": " << log_message << std::endl;
+      log_msg << request.getUid() << ": " << log_message << std::endl;
       logmsg = log_msg.str();
       logMsg(logmsg);
       log_msg.str("");
@@ -337,13 +337,13 @@ void handler(int client_fd, Cache *cache) {
       if (DEBUG == 1) {
         std::cout << "[DEBUG] send body successfully" << std::endl;
       }
-      log_msg << response.getUid() << ": Responding " << response.getFirstLine()
+      log_msg << request.getUid() << ": Responding " << response.getFirstLine()
               << std::endl;
       logmsg = log_msg.str();
       logMsg(logmsg);
       log_msg.str("");
       if (response.getStatusNum() == "200") {
-        log_msg << response.getUid() << ": Tunnel closed" << std::endl;
+        log_msg << request.getUid() << ": Tunnel closed" << std::endl;
         logmsg = log_msg.str();
         logMsg(logmsg);
         log_msg.str("");
@@ -438,7 +438,7 @@ void handler(int client_fd, Cache *cache) {
         return;
       }
     }
-    log_msg << response.getUid() << ": Received " << response.getFirstLine()
+    log_msg << request.getUid() << ": Received " << response.getFirstLine()
             << " from " << request.getFirstLine() << std::endl;
     logmsg = log_msg.str();
     logMsg(logmsg);
@@ -546,7 +546,7 @@ void handler(int client_fd, Cache *cache) {
 int main(int argc, char **argv) {
 
   try {
-    LOG.open("proxy.log", std::ostream::out);
+    LOG.open("../proxy.log", std::ostream::out);
   } catch (std::exception &e) {
     std::cout << e.what() << std::endl;
     return EXIT_FAILURE;

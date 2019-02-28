@@ -1,4 +1,4 @@
-# erss-hwk2-aw343-wl177
+	# erss-hwk2-aw343-wl177
 
 This project is for ECE-568 Homework2
 For this assignment you will be writing an http proxy – a server whose job it is to forward requests to the origin server on behalf of the client. Your proxy will cache responses, and, when
@@ -29,11 +29,14 @@ appropriate, respond with the cached copy of a resource rather than re-fetching 
 
 ## Design
 
+### Proxy System Design
+<div align=center><img  src="src/procedure.jpg"/></div>
+
 ### Cache Validate Procedure
 <div align=center><img  src="src/cache_validate.jpg"/></div>
 
-### Flow Chart
-<div align=center><img  src="pic/flowchart.png"/></div>
+### Cache Update Procedure
+<div align=center><img  src="src/cache_update.jpg"/></div>
 
 ## Getting Started
 These instructions will get you a basic idea of how to run the web
