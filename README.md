@@ -4,6 +4,17 @@ This project is for ECE-568 Homework2
 For this assignment you will be writing an http proxy – a server whose job it is to forward requests to the origin server on behalf of the client. Your proxy will cache responses, and, when
 appropriate, respond with the cached copy of a resource rather than re-fetching it. 
 
+## Getting Started
+These instructions will get you a basic idea of how to run
+
+### Run the Cache-Proxy
+1. git clone https://gitlab.oit.duke.edu/wl177/erss-hwk2-aw343-wl177.git
+2. cd erss-hw2-aw343-wl177
+3. sudo docker-compose up
+4. use your browser(**Expected Firefox**) to check
+5. exam the /var/log/erss/proxy.log file
+
+
 ## Summary
 
 **For Details, please checkout our [Requirement Spreadsheet](https://gitlab.oit.duke.edu/wl177/erss-hwk2-aw343-wl177/blob/master/src/SpreadSheet.xlsx)**
@@ -36,15 +47,7 @@ appropriate, respond with the cached copy of a resource rather than re-fetching 
 <div align=center><img  src="src/cache_validate.jpg"/></div>
 
 
-## Getting Started
-These instructions will get you a basic idea of how to run
 
-### Run the Cache-Proxy
-1. git clone https://gitlab.oit.duke.edu/wl177/erss-hwk2-aw343-wl177.git
-2. cd erss-hw2-aw343-wl177
-3. sudo docker-compose up
-4. use your browser(**Expected Firefox**) to check
-5. exam the /var/log/erss/proxy.log file
 
 
 ## Reference
